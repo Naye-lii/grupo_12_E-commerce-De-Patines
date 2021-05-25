@@ -12,7 +12,7 @@ Nuestra audiencia objetivo es todo aquel que esté interesado en el patinaje des
 Con el fin de impulsa y mantener el interés por el patinaje, y a su vez en los productos que ofrece el e-comerse, se incluirá un blog, que muestre artículos de interés y calidad para nuestro público, el diseño de la pagina web se ajustaremos para que denote diversión, velocidad, calidad, tambien se ofrese una gran variedad de marcas de calidad y productos atractivos para el público.
 
 
---------- Sobre Nosotros ----------
+------------------- Sobre Nosotros ------------------
 
 Leslie De la Cruz Correa
 
@@ -33,3 +33,32 @@ Ramiro Alejandro González Garza
 
 Es estudiante de ingeniería en negocios y tecnologías de la información en el Tec de Monterrey, está por graduarse.
 Trabaja en Cemex como analista de datos, le gustan mucho los deportes y hacer ejercicio.
+
+-------------- E-commerces de inspiración ----------------
+
+1. https://www.filaskates.com
+
+Justificación:
+La página presenta un estilo visual limpio, así como elementos visuales que incentivan a la diversión. El tamano en el que se presentan los productos es grande lo que los hace atractivos a la vista e incentiva a su compra.
+Combina elementos gráficos como imágenes, videos, texto, iconos, haciéndola una página más atractiva.
+
+2. https://www.beyondproshop.com
+
+Justificación:
+Este sitio vende productos relacionados a lo que queremos vender. Nos da una idea en referente a tipografía, maquetación, paleta de colores, estilo a seguir y elementos a incluir en nuestro e-commerce.
+
+3. https://dbrmskateshop.com
+
+Justificación:
+Aquí de maneja una paleta de colores limitada pero eficiente, ya que destaca en color naranja algunos elementos. Presenta coherencia en el acomodo de sus productos, mantiene su identidad visual dando un tratamiento interesante a algunas de sus imágenes, dotandolas de un filtro de color asociado a la marca.
+Además podemos encontrar elementos que nosotros aplicaremos como carrito de compras, inicio de sesión, catálogo, redes sociales, entre otros.
+
+4. https://www.rollerblade.com
+
+Justificación:
+Esta pagina presenta sus productos de una forma organizada y tiene un aspecto es amigable y facil de entender, en el se incluye una sección de "Experiencia", la cual contiene consejos, guías para la selección de productos e información de interés.
+
+5. https://www.decathlon.com.mx
+
+Justificación:
+Esta pagina es un poco agresiva a la vista, ya que se ven muchos elementos a la vez, sin embargo, te sugiere un grupo de productos según el deporte que practiques, lo cual se puede aplicar en nuestro e-commerce.
