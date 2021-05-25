@@ -5,6 +5,7 @@ Nuestro e-commerce ofrece distintos tipos de patines como:
 - para hielo
 - clásicos (4 ruedas)
 - otros
+
 También se ofrece equipo de protección, accesorios y refacciones.
 
 Nuestra audiencia objetivo es todo aquel que esté interesado en el patinaje desde principiantes hasta profesionales, enfocándonos principalmente en los aficionados y aficionadas jovenes entre 15 y 24 años.
