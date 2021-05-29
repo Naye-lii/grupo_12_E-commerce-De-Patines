@@ -10,7 +10,7 @@ También se ofrece equipo de protección, accesorios y refacciones.
 
 Nuestra audiencia objetivo es todo aquel que esté interesado en el patinaje desde principiantes hasta profesionales, enfocándonos principalmente en los aficionados y aficionadas jovenes entre 15 y 24 años.
 
-Con el fin de impulsa y mantener el interés por el patinaje, y a su vez en los productos que ofrece el e-comerse, se incluirá un blog, que muestre artículos de interés y calidad para nuestro público, el diseño de la pagina web se ajustaremos para que denote diversión, velocidad, calidad, tambien se ofrese una gran variedad de marcas de calidad y productos atractivos para el público.
+Con el fin de impulsar y mantener el interés por el patinaje, y a su vez en los productos que ofrece el e-commerce, se incluirá un blog, que muestre artículos de interés y calidad para nuestro público, el diseño de la página web se ajustaremos para que denote diversión, velocidad, calidad, también se ofrece una gran variedad de marcas de calidad y productos atractivos para el público.
 
 
 ------------------- Sobre Nosotros ------------------
@@ -63,3 +63,5 @@ Esta pagina presenta sus productos de una forma organizada y tiene un aspecto es
 
 Justificación:
 Esta pagina es un poco agresiva a la vista, ya que se ven muchos elementos a la vez, sin embargo, te sugiere un grupo de productos según el deporte que practiques, lo cual se puede aplicar en nuestro e-commerce.
+
+
