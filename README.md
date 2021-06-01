@@ -40,7 +40,7 @@ Trabaja en Cemex como analista de datos, le gustan mucho los deportes y hacer ej
 1. https://www.filaskates.com
 
 Justificación:
-La página presenta un estilo visual limpio, así como elementos visuales que incentivan a la diversión. El tamano en el que se presentan los productos es grande lo que los hace atractivos a la vista e incentiva a su compra.
+La página presenta un estilo visual limpio, así como elementos visuales que incentivan a la diversión. El tamaño en el que se presentan los productos es grande lo que los hace atractivos a la vista e incentiva a su compra.
 Combina elementos gráficos como imágenes, videos, texto, iconos, haciéndola una página más atractiva.
 
 2. https://www.beyondproshop.com
@@ -51,18 +51,18 @@ Este sitio vende productos relacionados a lo que queremos vender. Nos da una ide
 3. https://dbrmskateshop.com
 
 Justificación:
-Aquí de maneja una paleta de colores limitada pero eficiente, ya que destaca en color naranja algunos elementos. Presenta coherencia en el acomodo de sus productos, mantiene su identidad visual dando un tratamiento interesante a algunas de sus imágenes, dotandolas de un filtro de color asociado a la marca.
-Además podemos encontrar elementos que nosotros aplicaremos como carrito de compras, inicio de sesión, catálogo, redes sociales, entre otros.
+Aquí se maneja una paleta de colores limitada pero eficiente, ya que destaca en color naranja algunos elementos. Presenta coherencia en el acomodo de sus productos, mantiene su identidad visual dando un tratamiento interesante a algunas de sus imágenes, dotándolas de un filtro de color asociado a la marca.
+Además, podemos encontrar elementos que nosotros aplicaremos como carrito de compras, inicio de sesión, catálogo, redes sociales, entre otros.
 
 4. https://www.rollerblade.com
 
 Justificación:
-Esta pagina presenta sus productos de una forma organizada y tiene un aspecto es amigable y facil de entender, en el se incluye una sección de "Experiencia", la cual contiene consejos, guías para la selección de productos e información de interés.
+Esta página presenta sus productos de una forma organizada y tiene un aspecto es amigable y facil de entender, en él se incluye una sección de "Experiencia", la cual contiene consejos, guías para la selección de productos e información de interés.
 
 5. https://www.decathlon.com.mx
 
 Justificación:
-Esta pagina es un poco agresiva a la vista, ya que se ven muchos elementos a la vez, sin embargo, te sugiere un grupo de productos según el deporte que practiques, lo cual se puede aplicar en nuestro e-commerce.
+Esta página es un poco agresiva a la vista, ya que se ven muchos elementos a la vez, sin embargo, te sugiere un grupo de productos según el deporte que practiques, lo cual se puede aplicar en nuestro e-commerce.
 
 ------------- Tablero de trabajo ---------------
 
