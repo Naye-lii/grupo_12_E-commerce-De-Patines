@@ -64,4 +64,7 @@ Esta pagina presenta sus productos de una forma organizada y tiene un aspecto es
 Justificación:
 Esta pagina es un poco agresiva a la vista, ya que se ven muchos elementos a la vez, sin embargo, te sugiere un grupo de productos según el deporte que practiques, lo cual se puede aplicar en nuestro e-commerce.
 
+------------- Tablero de trabajo ---------------
 
+Podrán seguir el progreso del proyecto, así como la asignación de tareas en el siguiente link:
+https://trello.com/b/wAq1TxVU/proyecto-e-commerce
