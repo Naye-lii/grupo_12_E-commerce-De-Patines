@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+header{
+    background-color: white;
+    
+}
+.img-cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.img-usuario{
+    width: 8vw;
+}
+.logo-cabecera{
+    width: 30vw;
+}
+.navbar_menu, submenu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:none;
+}
+.navbar_menu > li{
+    width: 100%;
+    border-style: solid;
+    border-color: #ffd522;
+    border-width: 0 0 1px;
+    text-align: center;
+    background-color: #e57d0c;
+    display: block;
+    min-height: 40px;
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar_menu > li:hover{
+    background-color: #a6aaad;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navbar_menu > li a, .navbar_menu > li label{
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+    min-height: inherit;
+    padding: 8px;
+}
+input[type="checkbox"]:checked + .navbar_menu{
+    display: block;
+}
