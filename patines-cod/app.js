@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/public'));
 //app.get ('/', (req, res) => {
   //   res.sendFile("/home.html", {root: "views"})
 //});
-
+// aquí estoy llamando el html que modifico, para poder visualizar el suyo cambien el contenido de res.sendFile("/su archivo", {root: "views"})
 app.get ('/', (req, res) => {
      res.sendFile("/productDetail.html", {root: "views"})
 });

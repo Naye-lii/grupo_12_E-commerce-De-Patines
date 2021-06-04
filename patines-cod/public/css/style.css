@@ -1,27 +1,67 @@
-*{
-    box-sizing: border-box;
-}
+/*Defino el color de fondo del encabezado y el color del borde inferior del encabezado*/
 header{
     background-color: white;
+    border-bottom: #000 solid;
     
 }
+
+/*Establesco la distrubucion de los elementos en la cabecera*/
 .img-cabecera{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
 }
+/*Uso este estilo para que los iconos de la imagen de usuario, lupa y carrito se alinien verticalmente*/
+.icon-right{
+    display: flex;
+    align-items: center;
+}
+/*Este estilo permite que la imagen del usuario y el nombre este uno debajo del otro sin dejar espacios*/
+.usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*Define el estilo del nombre del usuario*/
+.usuario > p{
+    font-size: 2vw;
+    height: 2vw;
+    margin: 0;
+    padding: 0;
+}
+/*Define el tamaño y estilo de la imagen del usuario, la cual se ajusta segun el ancho del portview*/
 .img-usuario{
-    width: 8vw;
+    width: 5vw;
+    border-radius: 50%;
 }
+
+/*Define el tamaño del logo en relacion al ancho del portview*/
 .logo-cabecera{
-    width: 30vw;
+    height: 10vw;
 }
+/*Define el estilo de la barra de busqueda*/
+.barra-buscar{
+    width: 100%;
+    max-height: 30px;
+    border-radius: 25px;
+
+}
+
+/*Define el estilo de de la lista del menú principal*/
 .navbar_menu, submenu{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display:none;
 }
+
+/*Define el estilo de los items en la lista del menú principal*/
 .navbar_menu > li{
     width: 100%;
     border-style: solid;
@@ -30,18 +70,16 @@ header{
     text-align: center;
     background-color: #e57d0c;
     display: block;
-    min-height: 40px;
+    min-height: 20px;
     position: relative;
-    color: #000;
-    text-decoration: none;
     font-weight: bold;
 }
+
+/*Define el aspecto de los items de la lista al ser selecionados o al paras el cursor por ellos*/
 .navbar_menu > li:hover{
     background-color: #a6aaad;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
 }
+
 .navbar_menu > li a, .navbar_menu > li label{
     color: #000;
     text-decoration: none;
@@ -51,6 +89,8 @@ header{
     min-height: inherit;
     padding: 8px;
 }
+
+/*Permite que al dar clik en el menu de amburguesa, se despliegue la lista del menu*/
 input[type="checkbox"]:checked + .navbar_menu{
     display: block;
 }

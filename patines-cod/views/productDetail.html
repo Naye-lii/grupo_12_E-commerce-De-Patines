@@ -11,7 +11,9 @@
 </head>
 
 <header>
+    <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
     <div class="img-cabecera">
+        <!--Aqui esta el menu tipo hamburguesa-->
         <div class="navbar_button">
             <label for="show-nav">
                 <span class = "material-icons material-icons-outlined" >
@@ -21,16 +23,30 @@
         </div>
 
         <div>
-            <img class="logo-cabecera" src = '/img/Logo Rojo.svg' alt='Logo Fun-N-Skate'>  
-          </div>
-      
-          <div>
+            <img class="logo-cabecera" src = '/img/Logo Fun N Skate naranja.svg' alt='Logo Fun-N-Skate'>  
+        </div>
+        <div class="icon-right">
+            <div class="usuario">
               <img class="img-usuario" src = '/img/img-usuario.jpg' alt='imagen del  usuario'>
-              <p>Nombre</p>
+              <p>Usuario</p>
           </div>
+          <div>
+            <span class="material-icons material-icons-outlined">
+                search
+                </span>
+          </div>
+          <div>
+            <span class="material-icons material-iconsmaterial-icons-outlined">
+                shopping_cart
+                </span>
+          </div>
+        </div>
+          
     </div>
+<!--Se declara el chec box que permite ocultar y mostra la lista del menu-->
     <input type="checkbox" id="show-nav" hidden/>
-
+    
+<!--lista del menu principal-->
     <ul class="navbar_menu">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#productos">Productos</a></li>
@@ -41,6 +57,7 @@
         <li><a href="#otros">Otros</a></li>
 
     </ul>
+<!--Lista del menu/productos-->
     <ul>
         <li><a href="#patines">Patines</a></li>
         <li><a href="#equipoProteccion">Equipo de protección</a></li>
@@ -48,9 +65,9 @@
         <li><a href="#refacciones">Refacciones</a></li>
 
     </ul>
-       
+<!--Barra de busqueda--> 
       <div>
-          <input type="search"/>
+          <input class="barra-buscar" type="search"/>
       </div>  
 
     
@@ -58,12 +75,14 @@
 </header>
 
 <body>
+<!--Imagenes del primer producto-->
     <div>
         <img class="img-productos" src = '/img/patin-01.jpg' alt='Patines clasicos blancos con flor bordada'>
         <img class="img-productos" src = '/img/patin-02.jpg' alt='Patines clasicos blancos con flor bordada'>
         <img class="img-productos" src = '/img/patin-02.jpg' alt='Patines clasicos blancos con flor bordada'>
         <img class="img-productos" src = '/img/patin-04.jpg' alt='Patines clasicos blancos con flor bordada'>
     </div>
+<!--Datos de cista rapida del producto-->
     <div>
         <h2>Patines con flor bordada</h2>
         <p>marca XXX superX</p>
@@ -82,9 +101,10 @@
         <a href="#reseñas">12 reseñas</a>
     </div>
     <div>
-        <input type="button"/>
-        <input type="button"/>
+        <input type="button" value="Pagar"/>
+        <input type="button" value="Agregar al carrito"/>
     </div>
+<!--Menu de detalles del producto-->
     <div>
         <ul>
             <li><a href="#descripción">Descripción</a></li>
@@ -98,10 +118,10 @@
         </ul>
     </div>
 </body>
-
+<!--Pie de pagína-->
 <footer>
     <div>
-        <img class="logo-cabecera" src = '/img/Logo Rojo.svg' alt='Logo Fun-N-Skate'>
+        <img class="logo-cabecera" src = '/img/Logo Fun N Skate naranja.svg' alt='Logo Fun-N-Skate'>
     </div>
     <div>
         <a href="facebook">
@@ -121,7 +141,8 @@
         <h3>Suscribete!!</h3>
         <h3>Obten noticias y ofertas</h3>
         <input type="email"/>
-        <input type="button"/>
+        <button>Enviar</button>
+        
     </div>
 
     <div>
