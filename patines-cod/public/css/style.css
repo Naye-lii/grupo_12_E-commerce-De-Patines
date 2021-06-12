@@ -1,37 +1,55 @@
 /*Defino el color de fondo del encabezado y el color del borde inferior del encabezado*/
 header{
     background-color: white;
-    border-bottom: #000 solid;
-    
+    width: 100%;
+    margin:0;
+    padding: 0;
+    position:fixed;
+    top:0;
+    border-bottom: black 1px solid;
 }
-
+main{
+    
+    margin-top: 25vw;
+}
 /*Establesco la distrubucion de los elementos en la cabecera*/
 .img-cabecera{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    justify-content: space-between;
+
     
 }
+.icons{
+    color: black;
+}
+.navbar_button{
+    display: flex;
+    align-items: center;
+}
+
 /*Uso este estilo para que los iconos de la imagen de usuario, lupa y carrito se alinien verticalmente*/
 .icon-right{
     display: flex;
-    align-items: center;
+    align-items:center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    margin-right: 16px;
 }
 /*Este estilo permite que la imagen del usuario y el nombre este uno debajo del otro sin dejar espacios*/
 .usuario{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin-right: 10px;
+
 }
+
 
 /*Define el estilo del nombre del usuario*/
 .usuario > p{
     font-size: 2vw;
-    height: 2vw;
+    height: 1.5vw;
     margin: 0;
     padding: 0;
 }
@@ -43,27 +61,34 @@ header{
 
 /*Define el tamaño del logo en relacion al ancho del portview*/
 .logo-cabecera{
-    height: 10vw;
+    height: 8vw;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-left: 15px;
 }
 /*Define el estilo de la barra de busqueda*/
 .barra-buscar{
-    width: 100%;
-    max-height: 30px;
+    width: 85vw;
     border-radius: 25px;
-
+    position: absolute;
+    right: 7.5vw;
+    margin: 5px;
 }
 
+
 /*Define el estilo de de la lista del menú principal*/
-.navbar_menu, submenu{
+.navbar_menu, .submenu {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display:none;
 }
 
+
 /*Define el estilo de los items en la lista del menú principal*/
 .navbar_menu > li{
-    width: 100%;
+    margin: 0;
+    padding: 0;
     border-style: solid;
     border-color: #ffd522;
     border-width: 0 0 1px;
@@ -73,24 +98,126 @@ header{
     min-height: 20px;
     position: relative;
     font-weight: bold;
+    
 }
 
 /*Define el aspecto de los items de la lista al ser selecionados o al paras el cursor por ellos*/
-.navbar_menu > li:hover{
-    background-color: #a6aaad;
+.navbar_menu > li :hover{
+    background-color: #ffd522;
 }
 
-.navbar_menu > li a, .navbar_menu > li label{
+.navbar_menu > li  a,
+.navbar_menu > li label{
     color: #000;
     text-decoration: none;
     font-weight: bold;
     width: 100%;
+    margin: 0;
     display: block;
     min-height: inherit;
     padding: 8px;
+    
 }
 
 /*Permite que al dar clik en el menu de amburguesa, se despliegue la lista del menu*/
-input[type="checkbox"]:checked + .navbar_menu{
+input[type="checkbox"]:checked + .navbar_menu, 
+input[type="checkbox"]:checked + .submenu {
     display: block;
 }
+.boton-detail{
+    font-size: 16px;
+    padding: 8px;
+    font-weight: bold;
+    color: #fff;
+    background-color:#000;
+    border-radius: 10px;
+    width: 45vw;
+}
+.caja1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+
+}
+
+.img-producto
+{   
+    width: 70vw;
+    padding: 10px;
+    border: #e57d0c solid 0.2px;
+}
+.subimg-producto
+{   
+    width: 15vw;
+    margin-top: 20px;
+    padding: 10px;
+    border: #e57d0c solid 0.2px;
+}
+
+
+@media(min-width:560px){
+
+
+    .navbar_menu{
+        display: inline-block;
+        width: 100vw;
+        height: inherit;
+    }
+    label {
+        display:none;
+    }
+    .navbar_menu > li {
+        width: 14.285%;
+        float: left;
+        height: inherit;
+        background-color: #fff;
+        border-bottom: #fff;
+        border-top: black;
+    }
+    .img-cabecera{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-cabecera{
+        margin-top: 2.5vw;
+        margin-right: 3vw;
+        height: 65px;
+        order:0;
+    }
+    .navbar_button{
+        order: 1;
+    }
+    .icon-right{
+        margin-top: 1.5vw;
+        margin-right: 3vw;
+        order:3 ;
+    }
+
+    .barra-buscar{
+        width: 50vw;
+        height: 30px;
+        border-radius: 25px;
+        position: absolute;
+        top: 45px;
+        left: 32vw;
+        z-index: 1;
+    }
+
+    .usuario > p{
+        
+        font-size: 1.5vw;
+        height: 1.5vw;
+        margin: 0;
+        padding: 0;
+    }
+    /*Define el tamaño y estilo de la imagen del usuario, la cual se ajusta segun el ancho del portview*/
+    .img-usuario{
+        width: 4vw;
+        border-radius: 50%;
+        
+    }
+
+ 
+ }

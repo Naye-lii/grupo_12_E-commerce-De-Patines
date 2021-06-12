@@ -11,6 +11,9 @@ app.use(express.static(__dirname + '/public'));
 app.get ('/', (req, res) => {
      res.sendFile("/productDetail.html", {root: "views"})
 });
+app.get ('/productCar.html', (req, res) => {
+  res.sendFile("/productCar.html", {root: "views"})
+});
 
 const port = process.env.PORT || 3000
 
