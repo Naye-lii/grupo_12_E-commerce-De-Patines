@@ -125,15 +125,18 @@ input[type="checkbox"]:checked + .submenu {
     display: block;
 }
 .boton-detail{
-    font-size: 16px;
-    padding: 8px;
+    font-size: 14px;
+    box-sizing: border-box;
     font-weight: bold;
     color: #fff;
     background-color:#000;
     border-radius: 10px;
-    width: 45vw;
+    width: 110px;
+    height: 60px;
 }
 .caja1{
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -157,7 +160,10 @@ input[type="checkbox"]:checked + .submenu {
 
 
 @media(min-width:560px){
+    header{
+        position:inherit;
 
+    }
 
     .navbar_menu{
         display: inline-block;
@@ -181,7 +187,7 @@ input[type="checkbox"]:checked + .submenu {
         justify-content: space-between;
     }
     .logo-cabecera{
-        margin-top: 2.5vw;
+        margin-top: 1vw;
         margin-right: 3vw;
         height: 65px;
         order:0;
@@ -200,7 +206,7 @@ input[type="checkbox"]:checked + .submenu {
         height: 30px;
         border-radius: 25px;
         position: absolute;
-        top: 45px;
+        top: 40px;
         left: 32vw;
         z-index: 1;
     }
@@ -218,6 +224,7 @@ input[type="checkbox"]:checked + .submenu {
         border-radius: 50%;
         
     }
+
 
  
  }
