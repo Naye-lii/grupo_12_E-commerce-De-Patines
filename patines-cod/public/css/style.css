@@ -124,6 +124,7 @@ input[type="checkbox"]:checked + .navbar_menu,
 input[type="checkbox"]:checked + .submenu {
     display: block;
 }
+<<<<<<< HEAD
 .boton-detail{
     font-size: 14px;
     box-sizing: border-box;
@@ -228,3 +229,125 @@ input[type="checkbox"]:checked + .submenu {
 
  
  }
+=======
+
+/*Aquí comienza el CSS de Home*/
+
+.carrusel {
+    max-width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.carrusel > img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.texto-carrusel{
+    top: 50px;
+    color:white;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: bold-italic;
+    text-align: center;
+    }
+
+        .boton-amarillo {
+        font-family: 'Oswald', sans-serif;
+        font-style:semi-bold;
+        font-size: 20px;
+        color: black;
+        background-color: #ffd522;
+        justify-content: center;
+        padding:10px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin:30px;
+        }
+        
+
+/*Termina carrusel*/
+
+/*Aquí comienza sección recomendaciones*/
+
+.contenedor-recomendaciones {
+    background-color: black;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: bold-italic;
+    text-align: center;
+    color: white;
+    align-content: center;
+    max-width:100%;
+    height: auto;
+    padding: 20px;
+}
+
+.contenedor-recomendaciones > img {
+    display: flex;
+    max-width:100%;
+    height: auto;
+    align-content: center;
+}
+
+.boton-recomendaciones{
+    font-family: 'Oswald', sans-serif;
+    font-style:semi-bold;
+    font-size: 20px;
+    color:black;
+    background-color: #ffd522;
+    justify-content: center;
+    padding:10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin:30px;
+}
+
+/*Aquí comienza sección info iconos*/
+
+.info-iconos{
+font-family: 'Bai Jamjuree', sans-serif;
+    max-width:80%;
+    height: auto;
+    text-align:center;
+    justify-content: center;
+}
+
+.info-iconos > img {
+    align-content: center;
+    max-width:50%;
+    height:auto;
+    margin: 5vh, 2vh;
+    padding: 40px;
+}
+
+.info-iconos > p {
+  font-size: 10x;
+  font-style: light;
+}
+
+/*Aquí comienza sección info cuadros*/
+
+.info-cuadrados {
+    max-width:100%;
+    height: auto;
+    background-color: #ffd522;
+    font-family: 'Bai Jamjuree', sans-serif;
+    text-align: center;
+}
+
+.boton-negro {
+    font-family: 'Oswald', sans-serif;
+    font-style:semi-bold;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    justify-content: center;
+    padding:10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin:30px;
+    }  
+
+
+>>>>>>> 4e17f2903d33026c32d3ed64914bf5f2df0c5925
