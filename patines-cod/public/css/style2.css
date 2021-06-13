@@ -232,10 +232,11 @@ input[type="checkbox"]:checked + .submenu {
 /*Aquí comienza el CSS de Home*/
 body{
     margin: 0px;
+    align-content: center;
 }
 
 .carrusel {
-    max-width: 100%;
+    max-width: 100vh;
     height: auto;
     background-color: black;
 }
@@ -292,7 +293,6 @@ background-color:#e57d0c;
 
 .contenedor-recomendaciones > img {
     display: flex;
-    flex-direction: column;
     max-width:100%;
     height: auto;
     align-content: center;
@@ -367,5 +367,3 @@ font-family: 'Bai Jamjuree', sans-serif;
     .boton-negro:hover{
         background-color: #e57d0c;
     }
-
-
