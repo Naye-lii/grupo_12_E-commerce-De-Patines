@@ -160,17 +160,45 @@ input[type="checkbox"]:checked + .descripcion {
     margin-top: 20px;  
     margin-bottom: 20px;  
 }
+.boton-sug{
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    box-sizing: border-box;
+    font-weight: bold;
+    color: #fff;
+    background-color:#000;
+    border-radius: 10px;
+    width: 120px;
+    height: 35px; 
+    margin-top: 2px;  
+    margin-bottom: 10px;  
+}
+
 /*Permite centrar una sola imagen en el portview*/
 .caja1{
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100vw;
+    flex-wrap: wrap;
+    align-items:flex-end  ;
+    justify-content: space-around ;
+    max-width: 100vw;
     box-sizing: border-box;
 
 }
+/* Caja que contiene los elementos del articulo sugerido (imagen, nombre del articulo y boton */
+.caja2{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center ;
+    justify-content: space-around ;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
 /* define el tamaño y el estilo de la imagen principal*/
 .img-producto
 {   
@@ -197,8 +225,18 @@ input[type="checkbox"]:checked + .descripcion {
     width: 100vw;
 }
 
+/*Estilo de texto del nombre del articulo*/
 .nombre-art{
     font-family: 'Bai Jamjuree', sans-serif;
+    color: #000;
+}
+
+.nombre-sug{
+    width: 45vw;
+    font-family: 'Bai Jamjuree', sans-serif;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
     color: #000;
 }
 
@@ -258,6 +296,79 @@ input[type="checkbox"]:checked + .descripcion {
     background-color: #29303B;  
     box-sizing: border-box; 
 }
+
+.img-sug
+{   
+    width: 40vw;
+    margin-top: 20px;
+    padding: 10px;
+    border: #e57d0c solid 0.2px;
+    box-sizing: border-box;
+}
+/* Estilo del Pie de página*/
+footer{
+    background-color: #29303B;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+footer a{
+    text-decoration: none;
+}
+    
+
+.boton-sus{
+    font-family: "Oswald", sans-serif;
+    font-size: 15px;
+    background-color: #e57d0c;
+    color: #fff;
+    border-radius: 8px;
+}
+.barra-correo{
+    border-radius: 8px;
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.redes{
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.logo-footer{
+    width: 200px;
+    margin-top: 25px;
+}
+footer h3{
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+.cont-list{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.cont-list > ul{
+    width: 40vw;
+    list-style: none;
+    padding: 0;
+    margin-left: 25px;
+    font-family: 'lato', sans-serif;
+    line-height: 20pt;
+}
+
+.cont-list > ul a{
+    width: 40vw;
+    padding: 0;
+    color: #fff;
+    font-size: 13px;
+}
+
 
 @media(min-width:560px){
     header{
@@ -328,14 +439,11 @@ input[type="checkbox"]:checked + .descripcion {
         border-radius: 50%;
         
     }
-
-
- 
  }
 
 /*Aquí comienza el CSS de Home*/
-body{
-    margin: 0px;
+body {
+    margin: 0;
 }
 
 .carrusel {
