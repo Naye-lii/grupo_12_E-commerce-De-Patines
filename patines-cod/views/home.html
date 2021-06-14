@@ -4,61 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="/css/style.css" rel = "stylesheet" >
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@1,700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@1,700&family=Oswald:wght@600&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel = "stylesheet" >
+
     <title>Fun-N-Skate Inicio</title>
 </head>
 
-<header>
-    <div class="img-cabecera">
-        <div class="navbar_button">
-            <label for="show-nav">
-                <span class = "material-icons material-icons-outlined" >
-                    menu
-                </span>  
-            </label> 
+<body>
+
+    <header>
+        <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
+        <div class="img-cabecera">
+            <!--Aqui esta el menu tipo hamburguesa-->
+            <div class="icons navbar_button">
+                <label for="show-nav">
+                    <span class = "material-icons material-icons-outlined" >
+                        menu
+                    </span>  
+                </label> 
+            </div>
+
+            <div>
+                <img class="logo-cabecera" src = '/img/Logo Fun N Skate naranja.svg' alt='Logo Fun-N-Skate'>  
+            </div>
+
+            <div class="icon-right">
+                <div class="usuario">
+                    <img class="img-usuario" src = '/img/img-usuario.jpg' alt='imagen del  usuario'>
+                    <p>Usuario</p>
+                </div>
+                <div>
+                    <label for="show-buscar">
+                        <span class="icons material-icons material-icons-outlined">
+                            search
+                        </span>
+                    </label>
+                </div>
+                <div>
+                    <a href="/productCar"> <span class="icons material-icons material-iconsmaterial-icons-outlined">
+                        shopping_cart
+                    </span></a>
+                </div>
+            </div>          
         </div>
 
-        <div>
-            <img class="logo-cabecera" src = '/img/Logo Fun N Skate naranja.svg' alt='Logo Fun-N-Skate'>  
-          </div>
-      
-          <div>
-              <img class="img-usuario" src = '/img/img-usuario.jpg' alt='imagen del  usuario'>
-              <p>Nombre</p>
-          </div>
-    </div>
-    <input type="checkbox" id="show-nav" hidden/>
+        <!--Barra de busqueda--> 
+        <input type="checkbox" id="show-buscar" hidden>
+        <div class="navbar_menu">
+            <input class="barra-buscar" type="search" placeholder="  ¿Qué está buscando?"/>
+        </div>
+   
 
-    <ul class="navbar_menu">
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#carrito">Carrito</a></li>
-        <li><a href="#compras">Compras</a></li>
-        <li><a href="#miCuenta">Mi cuenta</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#otros">Otros</a></li>
+<!--Se declara el chec box que permite ocultar y mostra la lista del menu-->
+        <input type="checkbox" id="show-nav" hidden/>
+<!--lista del menu principal-->
+        <ul class="navbar_menu">
+            <li><a href="/">Inicio</a></li>
+            <li>
+                <label for="show-submenu">Productos</label>
+                <input type="checkbox" id="show-submenu" hidden>
+<!--Lista del menu/productos-->
+                <ul class="submenu">
+                    <li><a href="/Details">Patines</a></li>
+                    <li><a href="#equipoProteccion">Equipo de protección</a></li>
+                    <li><a href="#accesorios">Accesorios</a></li>
+                    <li><a href="#refacciones">Refacciones</a></li>
+                </ul>            
+           </li>
+            <li><a href="#carrito">Carrito</a></li>
+            <li><a href="#compras">Compras</a></li>
+            <li><a href="#miCuenta">Mi cuenta</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#otros">Otros</a></li>
 
-    </ul>
-    <ul>
-        <li><a href="#patines">Patines</a></li>
-        <li><a href="#equipoProteccion">Equipo de protección</a></li>
-        <li><a href="#accesorios">Accesorios</a></li>
-        <li><a href="#refacciones">Refacciones</a></li>
+        </ul>   
+    </header>
 
-    </ul>
-       
-      <div>
-          <input type="search"/>
-      </div>    
-</header>
-
-<body>
-    <section>
     <!--Imagen de carrusel-->
     <div class="carrusel">
         <img class="img-carrusel" src="/img/producto-carrusel-1.jpg" alt='patin-freeskate-RDS'></img>
@@ -69,62 +95,56 @@
      <button class="boton-amarillo">Ver más</button>
     </div>
 </div>
-</section>
  <!--Recomendaciones de producto-->
- <section>
  <div class="contenedor-recomendaciones">
     <h1>Nuestras recomendaciones</h1>
     <br>
+
     <img src="/img/home-producto1.png" alt='patines-RDS-Aerio10'></img>
     <h2>RDS Aerio 10</h2>
     <p>Patines de 4 ruedas, con gran velocidad.</p>
     <input type="button" value="Ver más" class="boton-recomendaciones">
     <br>
     <br>
-</div>
-<div class="contenedor-recomendaciones">
+
     <img src="/img/home-producto2.png" alt='patines-RDS-Aerio11'></img>
     <h2>RDS Aerio 11</h2>
     <p>Patines de 4 ruedas, coloridos y veloces.</p>
     <input type="button" value="Ver más" class="boton-recomendaciones">
     <br>
     <br>
-</div>
-<div class="contenedor-recomendaciones">
+
     <img  src="/img/home-producto3.png" alt='patines-RDS-Aerio12'></img>
     <h2>RDS Aerio 12</h2>
     <p>Patines de 4 ruedas, azules, ajustables y con 4 ruedas</p>
     <input type="button" value="Ver más" class="boton-recomendaciones">
     <br>
     <br>
-</div>
+
  </div>
-</section>
   <!--Sección de información con cuadrados-->
-  <section>
   <div class="info-cuadrados">
     <img src="/img/home-cuadros-superior-img2.jpg" alt=''></img>
     <div class="cuadro1">
-    <h3>¿Eres nuevo en el patinaje?</h3> 
+    <h4>¿Eres nuevo en el patinaje?</h4> 
     <p>Conoce los tutoriales que tenemos para ti.</p>
     <input type="button" value="Ver más" class="boton-negro">
 </div>
  <img src="/img/home-cuadros-superior-img1.jpg" alt='jovenes-patinando'></img> 
   
  <div class="cuadro1">
- <h3>Noticias sobre patinaje</h3> 
+ <h4>Noticias sobre patinaje</h4> 
     <p>Mantente actualizado con lo mejor del patinaje.</p>
     <input type="button" value="Ver más" class="boton-negro"> 
 
-    <h3>Tiendas nacionales a tu alcance</h3> 
+    <h4>Tiendas nacionales a tu alcance</h4> 
     <p>Encuentra la más cercana.</p>
     <img src="/img/home-cuadros-superior-img3.jpg" alt='jovenes-patinando'></img> 
     <br>
 </div>
 </div>
-</section>
+
   <!--Sección de información con 3 iconos y breve descripción-->
-  <section>
   <div class="info-iconos">
   <img class="iconos-info-home" src="/img/icono-home-info1.svg" alt='icono-compra-segura'></img> 
   <h2>Compra segura</h2>
@@ -140,27 +160,25 @@
   <br>
   <div>
 </div>
-</section>
   <!--Segunda sección de información con cuadrados-->
-  <section>
   <div class="info-cuadrados">
       <br>
       <div class="contenedor-cuadrado">
-    <h3>¡Nuevos modelos 2021!</h3> 
+    <h4>¡Nuevos modelos 2021!</h4> 
     <p>Pares de patines con diseños únicos.</p>
     <input type="button" value="Ver más" class="boton-negro">
 </div>
 
     <img class="imagen-cuadrada" src="/img/home-cuadros-img2.jpg" alt='joven-patinando'>
     <div class="contenedor-cuadrado">
-   <h3>Crea tu cuenta para una mejor experiencia</h3> 
+   <h4>Crea tu cuenta para una mejor experiencia</h4> 
     <p>Contenido exclusivo para ti.</p>
     <input type="button" value="Ver más" class="boton-negro">
 </div>
 
 <img class="imagen-cuadrada" src="/img/home-cuadros-img1.jpg" alt='patines'> 
  <div class="contenedor-cuadrado">
-  <h3>¡Encuentra los mejores precios!</h3> 
+  <h4>¡Encuentra los mejores precios!</h4> 
     <p>Grandes marcas, grandes descuentos.</p>
     <input type="button" value="Ver más" class="boton-negro">
 </div>
@@ -171,7 +189,6 @@
 </div>
   <div>
 </div>
-</section>
 </body>
 <!--Pie de pagína-->
 <footer>
@@ -230,4 +247,3 @@
 
 </footer>
 </html>
-

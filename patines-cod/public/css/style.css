@@ -1,16 +1,17 @@
 /*Defino el color de fondo del encabezado y el color del borde inferior del encabezado*/
 header{
     background-color: white;
-    width: 100%;
+    width: 100vw;
     margin:0;
     padding: 0;
     position:fixed;
     top:0;
     border-bottom: black 1px solid;
+    box-sizing: border-box;
 }
 main{
-    
-    margin-top: 25vw;
+    margin-top: 20vw;
+    box-sizing: border-box;
 }
 /*Establesco la distrubucion de los elementos en la cabecera*/
 .img-cabecera{
@@ -35,6 +36,7 @@ main{
     justify-content:space-around;
     flex-wrap: wrap;
     margin-right: 16px;
+    box-sizing: border-box;
 }
 /*Este estilo permite que la imagen del usuario y el nombre este uno debajo del otro sin dejar espacios*/
 .usuario{
@@ -42,6 +44,7 @@ main{
     flex-direction: column;
     align-items: center;
     margin-right: 10px;
+    box-sizing: border-box;
 
 }
 
@@ -52,11 +55,13 @@ main{
     height: 1.5vw;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 /*Define el tamaño y estilo de la imagen del usuario, la cual se ajusta segun el ancho del portview*/
 .img-usuario{
     width: 5vw;
     border-radius: 50%;
+    box-sizing: border-box;
 }
 
 /*Define el tamaño del logo en relacion al ancho del portview*/
@@ -65,6 +70,7 @@ main{
     margin-top: 10px;
     margin-bottom: 8px;
     margin-left: 15px;
+    box-sizing: border-box;
 }
 /*Define el estilo de la barra de busqueda*/
 .barra-buscar{
@@ -73,43 +79,58 @@ main{
     position: absolute;
     right: 7.5vw;
     margin: 5px;
+    box-sizing: border-box;
 }
 
 
 /*Define el estilo de de la lista del menú principal*/
-.navbar_menu, .submenu {
+.navbar_menu, .submenu, .descripcion{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display:none;
 }
+.descripcion
 
 
 /*Define el estilo de los items en la lista del menú principal*/
 .navbar_menu > li{
+    border-style: solid;
+    border-color: #000;
+    border-width: 0 0 1px;
+    text-align: center;
+    background-color: #fff;
+    display: block;
+    min-height: 20px;
+    font-weight: bold;
+}
+
+.submenu > li {
     margin: 0;
     padding: 0;
     border-style: solid;
-    border-color: #ffd522;
+    border-color: #000;
     border-width: 0 0 1px;
     text-align: center;
-    background-color: #e57d0c;
+    background-color: #A6AAAD;
     display: block;
     min-height: 20px;
     position: relative;
     font-weight: bold;
-    
 }
 
 /*Define el aspecto de los items de la lista al ser selecionados o al paras el cursor por ellos*/
 .navbar_menu > li :hover{
-    background-color: #ffd522;
+    background-color: #000;
+    color: #fff;
 }
 
 .navbar_menu > li  a,
 .navbar_menu > li label{
+    font-family: 'Oswald', sans-serif;
     color: #000;
     text-decoration: none;
+    text-transform: uppercase;
     font-weight: bold;
     width: 100%;
     margin: 0;
@@ -121,19 +142,25 @@ main{
 
 /*Permite que al dar clik en el menu de amburguesa, se despliegue la lista del menu*/
 input[type="checkbox"]:checked + .navbar_menu, 
-input[type="checkbox"]:checked + .submenu {
+input[type="checkbox"]:checked + .submenu,
+input[type="checkbox"]:checked + .descripcion {
     display: block;
 }
+/*Define el estilo del boton comprar ahora y añadir al carrito*/
 .boton-detail{
-    font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1em;
     box-sizing: border-box;
     font-weight: bold;
     color: #fff;
     background-color:#000;
     border-radius: 10px;
-    width: 110px;
-    height: 60px;
+    width: 140px;
+    height: 45px; 
+    margin-top: 20px;  
+    margin-bottom: 20px;  
 }
+/*Permite centrar una sola imagen en el portview*/
 .caja1{
     margin: 0;
     padding: 0;
@@ -141,28 +168,105 @@ input[type="checkbox"]:checked + .submenu {
     align-items: center;
     justify-content: space-evenly;
     width: 100vw;
+    box-sizing: border-box;
 
 }
-
+/* define el tamaño y el estilo de la imagen principal*/
 .img-producto
 {   
     width: 70vw;
     padding: 10px;
     border: #e57d0c solid 0.2px;
+    box-sizing: border-box;
 }
+/*Define el estilo de las imagenes incluidas en la descripcion del producto*/
 .subimg-producto
 {   
     width: 15vw;
     margin-top: 20px;
     padding: 10px;
     border: #e57d0c solid 0.2px;
+    box-sizing: border-box;
 }
 
+/*Define el estilo de la descripción resumida del producto*/
+.sec-resum{
+    padding-left: 8vw;
+    padding-right: 8vw;
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+.nombre-art{
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: #000;
+}
+
+.resum-des{
+    font-family: 'lato', sans-serif;
+    color: #29303B;
+
+}
+
+.precio-des{
+    font-family: 'lato', sans-serif;
+    color: #e57d0c;
+}
+.selec{
+    font-family: 'lato', sans-serif;
+    border-radius: 10px;
+    height: 20px;
+    background-color: #fff;
+    border: #e57d0c solid 1px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+
+}
+
+.details-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.details-menu > li> label{
+    box-sizing: border-box;
+    padding: 8px;
+    border-style: solid;
+    border-color: #fff;
+    border-width: 0 0 2px;
+    text-align: center;
+    background-color: #A6AAAD;
+    display: block;
+    min-height: 45px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.details-menu > li > label:hover{
+    background-color: #e57d0c;
+    color: #000;
+}
+.descripcion{
+    font-family: "lato", sans-serif;
+    padding: 20px;
+    color: #fff;
+    background-color: #29303B;  
+    box-sizing: border-box; 
+}
 
 @media(min-width:560px){
     header{
         position:inherit;
 
+    }
+    main{
+        margin-top: 5vw;
+        box-sizing: border-box;
     }
 
     .navbar_menu{
@@ -170,7 +274,7 @@ input[type="checkbox"]:checked + .submenu {
         width: 100vw;
         height: inherit;
     }
-    label {
+    header>label {
         display:none;
     }
     .navbar_menu > li {
@@ -189,7 +293,7 @@ input[type="checkbox"]:checked + .submenu {
     .logo-cabecera{
         margin-top: 1vw;
         margin-right: 3vw;
-        height: 65px;
+        height: 50px;
         order:0;
     }
     .navbar_button{
@@ -206,8 +310,8 @@ input[type="checkbox"]:checked + .submenu {
         height: 30px;
         border-radius: 25px;
         position: absolute;
-        top: 40px;
-        left: 32vw;
+        top: 20px;
+        left: 25vw;
         z-index: 1;
     }
 
@@ -269,7 +373,7 @@ body{
         transition: background-color 420ms;
         }
 
-        boton-amarillo:hover {
+        .boton-amarillo:hover {
 background-color:#e57d0c;
         }
         
@@ -319,7 +423,7 @@ background-color:#e57d0c;
 /*Aquí comienza sección info iconos*/
 
 .info-iconos{
-font-family: 'Bai Jamjuree', sans-serif;
+    font-family: 'Bai Jamjuree', sans-serif;
     max-width:100vh;
     height: auto;
     text-align:center;
@@ -364,7 +468,7 @@ font-family: 'Bai Jamjuree', sans-serif;
     transition: background-color 420ms;
     }  
 
-    .boton-negro:hover{
+    .boton-negro:hover, .boton-detail:hover{
         background-color: #e57d0c;
     }
 

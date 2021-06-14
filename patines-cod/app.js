@@ -11,6 +11,9 @@ app.use(express.static(__dirname + '/public'));
 app.get ('/', (req, res) => {
      res.sendFile("/home.html", {root: "views"})
 });
+app.get ('/Details', (req, res) => {
+  res.sendFile("/productDetail.html", {root: "views"})
+});
 app.get ('/productCar', (req, res) => {
   res.sendFile("/productCar.html", {root: "views"})
 });
