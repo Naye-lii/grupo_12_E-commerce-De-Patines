@@ -37,9 +37,9 @@
                     <img class="img-usuario" src = '/img/img-usuario.jpg' alt='imagen del  usuario'>
                     <p>Usuario</p>
                 </div>
-                <div>
+                <div class="icons navbar_button">
                     <label for="show-buscar">
-                        <span class="icons material-icons material-icons-outlined">
+                        <span class="material-icons material-icons-outlined">
                             search
                         </span>
                     </label>
@@ -86,7 +86,8 @@
 
     <main>
 <!--Imagenes del primer producto-->
-        <div class="caja1">
+    <div class="caja3">
+        <div class="caja2">
             <img class="img-producto" src = '/img/patin-01.jpg' alt='Patines clasicos blancos con flor bordada'>
         </div>
 
@@ -96,14 +97,13 @@
             <img class="subimg-producto" src = '/img/patin-02.jpg' alt='Patines clasicos blancos con flor bordada'>
             <img class="subimg-producto" src = '/img/patin-04.jpg' alt='Patines clasicos blancos con flor bordada'>
         </div>
+    
 <!--Datos de vista rapida del producto-->
         <div class="sec-resum"> 
             <h2 class="nombre-art">Patines con flor bordada</h2>
             <p class="resum-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <h3 class="precio-des">$3658.70</h3>
-        </div>
-        
-        <div class="sec-resum">
+
             <form action="#none" method="GET">
                 <label class="resum-des"> Talla: </label> 
                 <select name="talla" class="selec">
@@ -115,9 +115,6 @@
                 </select>
             </form>
                 
-        </div> 
-        
-        <div class="sec-resum">
             <form action="#none" method="GET">
                 <label class="resum-des">Color: </label>
                 <select class="selec">
@@ -126,8 +123,8 @@
                     <option value="#fff">blanco</option>
                 </select>
             </form>
-        </div>  
-        <div class="sec-resum">
+     
+     <!-- Calificación por estrellas -->
             <span class="material-icons material-icons-round">
                 star
             </span>
@@ -143,41 +140,43 @@
             <span class="material-icons material-icons-round">
                 star_half
             </span>
-        </div> 
-        <div class="sec-resum">
+            <br>
             <a href="#reseñas">12 reseñas</a>
-        </div>
-
-        <div class="caja1">
+            <br>
+        
             <button class= "boton-detail" type="submit">Agregar al carrito</button>
             <button class= "boton-detail" type="submit">Comprar ahora</button> 
+
         </div>
-<!--Menu de detalles del producto-->
+    </div>
+    <!--Menu de detalles del producto-->
         <div>
             <ul class="details-menu">
                 <li >
                     <label for="show-des">Descripción</label>
                     <input type="checkbox" id="show-des" hidden>
-                    <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt lacinia nunc nec venenatis. Sed euismod, lacus vel fermentum imperdiet, felis eros imperdiet enim, ac pulvinar lacus erat sit amet augue. Integer vitae ipsum varius, ultricies arcu nec, iaculis eros. Etiam non eleifend nibh. Aliquam ac erat sed velit rhoncus dictum. Aliquam suscipit convallis aliquet. Quisque in dolor sit amet tellus venenatis rutrum. Ut a mauris tincidunt, tempor purus eget, suscipit lacus. Nulla rutrum lectus at lacus dictum aliquam. Aliquam placerat consectetur elementum. Vestibulum quis tortor vitae ligula semper suscipit quis et diam. Donec non lorem sed magna scelerisque porta. Aenean nec turpis nisi. Mauris metus erat, pulvinar rhoncus turpis ut, rhoncus molestie ipsum. Vestibulum mattis risus ac mauris commodo, ut sodales nibh dictum.</p>
+                    <div class="descripcion"><p class="cuadro-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt lacinia nunc nec venenatis. Sed euismod, lacus vel fermentum imperdiet, felis eros imperdiet enim, ac pulvinar lacus erat sit amet augue. Integer vitae ipsum varius, ultricies arcu nec, iaculis eros. Etiam non eleifend nibh. Aliquam ac erat sed velit rhoncus dictum. Aliquam suscipit convallis aliquet. Quisque in dolor sit amet tellus venenatis rutrum. Ut a mauris tincidunt, tempor purus eget, suscipit lacus. Nulla rutrum lectus at lacus dictum aliquam. Aliquam placerat consectetur elementum. Vestibulum quis tortor vitae ligula semper suscipit quis et diam. Donec non lorem sed magna scelerisque porta. Aenean nec turpis nisi. Mauris metus erat, pulvinar rhoncus turpis ut, rhoncus molestie ipsum. Vestibulum mattis risus ac mauris commodo, ut sodales nibh dictum.</p></div>
                 </li>
                 <li> 
                     <label for="show-talla">Selección de talla</label>
                     <input type="checkbox" id="show-talla" hidden>
-                    <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt lacinia nunc nec venenatis. Sed euismod, lacus vel fermentum imperdiet, felis eros imperdiet enim, ac pulvinar lacus erat sit amet augue. Integer vitae ipsum varius, ultricies arcu nec, iaculis eros. Etiam non eleifend nibh. Aliquam ac erat sed velit rhoncus dictum. Aliquam suscipit convallis aliquet. Quisque in dolor sit amet tellus venenatis rutrum. Ut a mauris tincidunt, tempor purus eget, suscipit lacus. Nulla rutrum lectus at lacus dictum aliquam. Aliquam placerat consectetur elementum. Vestibulum quis tortor vitae ligula semper suscipit quis et diam. Donec non lorem sed magna scelerisque porta. Aenean nec turpis nisi. Mauris metus erat, pulvinar rhoncus turpis ut, rhoncus molestie ipsum. Vestibulum mattis risus ac mauris commodo, ut sodales nibh dictum.</p>
+                    <div class="descripcion"><p class="cuadro-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt lacinia nunc nec venenatis. Sed euismod, lacus vel fermentum imperdiet, felis eros imperdiet enim, ac pulvinar lacus erat sit amet augue. Integer vitae ipsum varius, ultricies arcu nec, iaculis eros. Etiam non eleifend nibh. Aliquam ac erat sed velit rhoncus dictum. Aliquam suscipit convallis aliquet. Quisque in dolor sit amet tellus venenatis rutrum. Ut a mauris tincidunt, tempor purus eget, suscipit lacus. Nulla rutrum lectus at lacus dictum aliquam. Aliquam placerat consectetur elementum. Vestibulum quis tortor vitae ligula semper suscipit quis et diam. Donec non lorem sed magna scelerisque porta. Aenean nec turpis nisi. Mauris metus erat, pulvinar rhoncus turpis ut, rhoncus molestie ipsum. Vestibulum mattis risus ac mauris commodo, ut sodales nibh dictum.</p></div>
                 
                 </li>
                 <li>
                     <label for="show-consejo">Consejos</label>
                     <input type="checkbox" id="show-consejo" hidden>
-                    <p class="descripcion">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt lacinia nunc nec venenatis. Sed euismod, lacus vel fermentum imperdiet, felis eros imperdiet enim, ac pulvinar lacus erat sit amet augue. Integer vitae ipsum varius, ultricies arcu nec, iaculis eros. Etiam non eleifend nibh. Aliquam ac erat sed velit rhoncus dictum. Aliquam suscipit convallis aliquet. Quisque in dolor sit amet tellus venenatis rutrum. Ut a mauris tincidunt, tempor purus eget, suscipit lacus. Nulla rutrum lectus at lacus dictum aliquam. Aliquam placerat consectetur elementum. Vestibulum quis tortor vitae ligula semper suscipit quis et diam. Donec non lorem sed magna scelerisque porta. Aenean nec turpis nisi. Mauris metus erat, pulvinar rhoncus turpis ut, rhoncus molestie ipsum. Vestibulum mattis risus ac mauris commodo, ut sodales nibh dictum.</p>
+                    <div class="descripcion"><p class="cuadro-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt lacinia nunc nec venenatis. Sed euismod, lacus vel fermentum imperdiet, felis eros imperdiet enim, ac pulvinar lacus erat sit amet augue. Integer vitae ipsum varius, ultricies arcu nec, iaculis eros. Etiam non eleifend nibh. Aliquam ac erat sed velit rhoncus dictum. Aliquam suscipit convallis aliquet. Quisque in dolor sit amet tellus venenatis rutrum. Ut a mauris tincidunt, tempor purus eget, suscipit lacus. Nulla rutrum lectus at lacus dictum aliquam. Aliquam placerat consectetur elementum. Vestibulum quis tortor vitae ligula semper suscipit quis et diam. Donec non lorem sed magna scelerisque porta. Aenean nec turpis nisi. Mauris metus erat, pulvinar rhoncus turpis ut, rhoncus molestie ipsum. Vestibulum mattis risus ac mauris commodo, ut sodales nibh dictum.</p></div>
                 
                 </li>
             </ul>
         </div>
         <!-- Seccion de sugerencias -->
-        <section class="caja1">
-            <h1 class="nombre-art">También Podrías Necesitar </h1>
-
+        <div class="caja4">
+            <h2 class="nombre-art">También Podrías Necesitar </h2>
+        </div>
+        <section class="caja4">
+                   
             <div class="caja2">
                 <img class="img-sug" src = '/img/casco-01.jpg' alt='casco'>
                 <h2 class="nombre-sug">Casco verde militar</h2>
@@ -205,11 +204,14 @@
     </main>
 <!--Pie de pagína-->
     <footer>
-        <div>
+<!--Logo Fun N Skate-->
+         <div>
             <img class="logo-footer" src = '/img/Logo Blanco.svg' alt='Logo Fun-N-Skate'>
         </div>
-        <h3>¡Siguenos!</h3>
-        <div>
+        
+        <!--Logotipos de redes sociales-->
+        <div class="caja-redes">
+            <h3 class="titulo-redes">¡Siguenos!</h3>
             <a href="facebook">
                 <img class="redes" src = '/img/icon-fb.svg' alt='Logo Fun-N-Skate'>
             </a>
@@ -224,14 +226,15 @@
 
             <a href="instagram">
                 <img class="redes" src = '/img/icon-inst.svg' alt='Logo Fun-N-Skate'>
-            </a>
+            </a> 
+            <div>
+                <h3>¡Suscribete! <br> Obten noticias y ofertas</h3>
+                <input class="barra-correo" type="email"/>
+                <button class="boton-sus">Suscribete</button>
+            </div>
         </div>
-        <div>
-            <h3>¡Suscribete! <br> Obten noticias y ofertas</h3>
-            <input class="barra-correo" type="email"/>
-            <button class="boton-sus">Suscribete</button>
-        
-        </div>
+        <!--Area de suscripción -->
+      
 
         <div class="cont-list">
             <ul>
