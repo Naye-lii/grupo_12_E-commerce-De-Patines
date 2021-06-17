@@ -526,6 +526,8 @@ a{
     display: flex;
     flex-direction: column;
     border-radius: 15px;
+    width: 90vw;
+    margin: 5vw;
 }
 
 .cont-resum-pedido > h2{
@@ -788,7 +790,7 @@ a{
     .cont-producto{
         width: 70vw;
         margin-top: 50px;
-        margin-bottom: 100px;
+        margin-bottom: 200px;
     }
 
     .cont-prdct-car{
@@ -861,8 +863,9 @@ a{
     .cont-resum-pedido{
         width: 30vw;
         position: absolute;
-        top:301px ;
+        top: 306px ;
         right: 15px;
+        margin: 0;
     }
 
     .titulo-carrito>h1{
@@ -882,9 +885,9 @@ a{
         font-size: 16px;
     }
 
-    .bar-codig{
-        margin-left: 12.5%;
-    }
+   /* .bar-codig{
+        margin-left: 2vw;
+    }*/
 
     .cont-boton{
         width: 30vw; 
