@@ -10,7 +10,6 @@ header{
     box-sizing: border-box;
 }
 main{
-    margin-top: 20vw;
     box-sizing: border-box;
 }
 /*Establesco la distrubucion de los elementos en la cabecera*/
@@ -198,6 +197,11 @@ input[type="checkbox"]:checked + .descripcion {
     justify-content: space-between ;
     max-width: 100vw;
     box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.caja3{
+    margin-top: 60px;
 }
 
 /* define el tamaño y el estilo de la imagen principal*/
@@ -298,8 +302,7 @@ input[type="checkbox"]:checked + .descripcion {
     box-sizing: border-box; 
 }
 
-.img-sug
-{   
+.img-sug{   
     width: 35vw;
     margin-top: 20px;
     padding: 10px;
@@ -379,12 +382,13 @@ footer h3{
     flex-wrap: wrap;
     align-items:initial ;
     justify-content: space-around ;
-    max-width: 100vw;
+    width: 100vw;
     box-sizing: border-box;
 }
 
 .caja4 > h2 {
     text-align: center;
+    margin-bottom: 0;
 }
 
 .caja-redes{
@@ -396,6 +400,212 @@ footer h3{
     width: 252px;
     text-align: center;
 }
+/* Empieza estilo carrito de compras*/
+
+.titulo-carrito > h1 {
+    background-color: #ffd522;
+    width: 100vw;
+    font-family: 'Bai Jamjuree', sans-serif;
+    text-align: center;
+    margin-top: 44px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+.desglose-car{
+    font-family: 'Bai jamjuree', sans-serif;
+    display: none; 
+}
+
+.cont-prdct-car{
+    margin-top: 10px ;
+    margin-left: 5vw;
+    border: #29303B solid 3px;
+    background-color: #A6AAAD;
+    border-radius: 15px;
+    width: 90vw;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.img-car{
+    width: 30vw;
+    height: inherit;
+    border-radius: 5px;
+}
+
+.resum-productcar{
+    width: 47vw;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.cont-des-tit > h2{
+    font-family: 'Bai jamjuree', sans-serif;
+    font-size: 15px;
+    margin:0;
+    padding: 0;
+    width: 47vw;
+}
+
+.cont-des-tit > p{
+    font-family: 'lato', sans-serif;
+    font-size: 12px;
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    width: 47vw;
+}
+.cont-precio > h3{
+    font-family: 'lato', sans-serif;
+    font-size: 16px;
+    padding-top: 3px;
+    margin-bottom: 0;
+    width: fit-content;
+    margin: 0;
+}
+
+.precio-car{
+    color: #e57d0c;
+}
+
+.resum-productcar > form{
+    font-size: 16px;
+    font-weight: bold;
+    width: 20vw;
+    padding-top: 3px;
+    text-align: right;
+    font-family: 'lato', sans-serif
+}
+
+.resum-productcar > form >select{
+    height: 25px;
+    border-radius: 8px;
+}
+
+.quitar{
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+
+.cont-total{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.total{
+    margin-left: 20vw;
+    font-family: 'lato', sans-serif;
+}
+
+
+.precio-total{
+    margin-left: 10px;
+    font-family: 'lato', sans-serif;
+    color: #e57d0c;
+}
+
+.cont-producto> p{
+    margin-left: 5vw;
+    font-family: 'lato', sans-serif;
+}
+
+.cont-resum-pedido{
+    background-color: #29303B;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+.cont-resum-pedido > h2{
+    width: 100%;
+    text-align: center;
+    font-family: 'Bai jamjuree', sans-serif;
+}
+
+.cont-costos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont-costos > p{
+    width: 50%;
+    text-align: left;
+    justify-content: space-between;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10%;
+}
+
+.cont-cupon{
+    display: flex;
+    flex-direction: column;
+    align-content:space-between;
+    justify-content:space-evenly;
+    border-bottom: #fff solid 2px;
+}
+
+.cont-cupon > p{
+    font-family: 'lato', sans-serif;
+    color: #e57d0c;
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.bar-codig{
+    width: 70%;
+    height: 40px;
+    font-family: 'lato', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 15%;
+}
+
+.cont-boton{
+    display: flex;
+    justify-content: space-around;
+}
+
+.boton-car{
+    background-color: #ffd522;
+    font-family: "lato", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    height: 50px;
+    width: 40%;
+    border-radius: 10px;
+    border-right: #e57d0c solid;
+    border-bottom: #e57d0c solid;
+    border-left: #fff solid;
+    border-top: #fff solid;
+    margin-top: 20px;
+}
+
+.boton-car:hover{
+    background-color: #e57d0c;
+    border-radius: 10px;
+    border-right: #fff solid;
+    border-bottom: #fff solid;
+    border-left: #A6AAAD solid;
+    border-top: #A6AAAD solid;
+}
+
+
+
 /* Modificaciones del estilo para resolucines  pantalla mayores a 560px*/
 @media(min-width:560px){
     header{
@@ -403,7 +613,6 @@ footer h3{
 
     }
     main{
-        margin-top: 5vw;
         box-sizing: border-box;
     }
 /*Muestra las barras de menu principal y la de los detalles*/
@@ -544,8 +753,12 @@ footer h3{
         border: #fff solid 2px
     }
     .caja4 > h2{
-        margin-top: 600px;
         width: 100vw;
+        text-align: center;
+    }
+
+    .cont-detalle{
+        height: 600px;
     }
 
     footer{
@@ -570,6 +783,121 @@ footer h3{
     }
     .redes{
         width: 40px;
+    }
+    /* empieza adaptativo carrito de compra*/
+    .cont-producto{
+        width: 70vw;
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    .cont-prdct-car{
+        width: 60vw;
+        margin-left: 3vw;
+    }
+
+    .img-car{
+        width: 10vw;
+    }
+    .resum-productcar{
+        width: 30vw;
+        margin-left: 10px;
+       
+
+    }
+    
+    .cont-des-tit > h2{
+         width: fit-content;
+         height:16px;
+         font-size: 12px;
+    }
+
+    .cont-des-tit>p{
+        width: fit-content;
+
+    }
+    
+    .cont-precio{
+        margin-left: 10px;
+        order:1;
+    }
+
+    .cont-precio > h3{
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+    .resum-productcar>form{
+        width: 70px;
+        order:2;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .resum-productcar > form > select{
+        margin-top: 25px;
+    }
+
+    .resum-des{
+        order: 3;
+    }
+    
+    .cont-total{
+       flex-direction: column;
+       justify-content: flex-start; 
+       margin-top: 0.3em;
+    }
+
+    .total{
+        margin: 0;
+        font-size: 12px;  
+    }
+
+    .precio-total{
+        margin:30px 0 0 0;
+        font-size: 12px;
+    }
+
+    .cont-resum-pedido{
+        width: 30vw;
+        position: absolute;
+        top:301px ;
+        right: 15px;
+    }
+
+    .titulo-carrito>h1{
+        margin: 0;
+    }
+
+    .cont-costos>p{
+        margin-right: 4vw;
+        font-size: 14px;
+    }
+
+    .cont-resum-pedido>h2{
+        font-size: 20px;
+    }
+
+    .cont-cupon > p{
+        font-size: 16px;
+    }
+
+    .bar-codig{
+        margin-left: 12.5%;
+    }
+
+    .cont-boton{
+        width: 30vw; 
+        flex-wrap: wrap;
+        position: absolute;
+        top: 650px;
+        right: 10px;
+
+    }
+
+    .boton-car{
+        width: 30vw;
+        box-sizing: border-box;
     }
 
  }
@@ -662,6 +990,8 @@ body {
 }
 
 /*Aquí comienza sección info iconos*/
+
+
 
 .info-iconos{
     font-family: 'Bai Jamjuree', sans-serif;
