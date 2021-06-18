@@ -606,8 +606,265 @@ a{
     border-top: #A6AAAD solid;
 }
 
+/*Aquí comienza el CSS de Home*/
 
+* {
+    box-sizing: border-box;
+    align-content:center;
+}
 
+/*Aquí comienza el carrusel*/
+
+* body {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: black;
+    align-content: center;
+    width: 100%;
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#contenedor-carrusel {
+    width: 100vw;
+    margin: auto;
+    padding: 0;
+    padding-bottom: 30px;
+    position: relative;
+    top: 7.4vh;
+}
+
+#contenedor-carrusel img{
+    width: 100vw;
+    margin: auto;
+    padding: 0;
+}
+
+.carrusel{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.boton-carrusel{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #e2d6b3;
+    transition: background-color 450ms;
+    border-style: none;
+    margin: 20px;
+}
+
+.boton-carrusel:hover{
+    background-color:#ffd522;
+}
+
+.carrusel img {
+    width: 68vw;
+    height: auto;
+}
+
+.texto-carrusel{
+    top: 50px;
+    color:white;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    text-align: center;
+
+    }
+
+    .texto-carrusel h1{
+        color: #ffd522;
+        font-size: 4vh;
+        }
+
+        .texto-carrusel h3{
+            color: #e57d0c;
+            }
+
+        .boton-amarillo {
+        font-family: 'Oswald', sans-serif;
+        font-weight: 600;
+        font-size: 25px;
+        color: black;
+        background-color: #ffd522;
+        justify-content: center;
+        padding:10px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin:30px;
+        transition: background-color 420ms;
+        border-style: none;
+}
+
+.boton-amarillo:hover{
+    background-color: #e57d0c
+}
+
+/*Termina carrusel*/
+
+/*Aquí comienza sección recomendaciones*/
+#recomendaciones-titulo{
+    color: #ffd522;
+    font-family: 'Bai Jamjuree';
+    text-align: center;
+    margin: auto;
+    font-size: 2.5vh;
+    font-style: italic;
+    position: relative;
+    bottom: 30px;
+}
+
+.row {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: bold-italic;
+    text-align: center;
+    color: white;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0; 
+  }
+
+  .info-recomendaciones h2{
+    font-style: bold;
+    color: #ffd522;  
+    font-size: 1.6rem;
+  }
+
+  .info-recomendaciones p{
+    font-style: bold;
+    font-size: 1.4rem; 
+  }
+
+.info-recomendaciones > img {
+    display: flex;
+    flex-direction: column;
+    max-width:70vh;
+    height: auto;
+    align-content: center;
+    justify-content: center;
+}
+
+/*Aquí comienza sección cuadros*/
+
+.cuadros {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: bold-italic;
+    text-align: center;
+    background-color: #ffd522;
+    color: white;
+    align-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px; 
+  }
+  
+  .info-cuadros{
+width: 100%;
+margin: auto;
+padding: 0;
+margin: 0;
+  }
+
+  .info-cuadros h3{
+    font-size: 1.6rem;
+  }
+    
+  .info-cuadros p{
+    font-size: 1.4rem;
+  }
+
+  .cuadros h3{
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: talic;
+    text-align: center;
+    color: black;
+  }
+
+  .cuadros p{
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: talic;
+    text-align: center;
+    color: black;
+  }
+
+  .boton-negro {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
+    color:white;
+    background-color: black;
+    justify-content: center;
+    padding:10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin:30px;
+    transition: background-color 420ms;
+    border-style: none;
+}
+
+.info-iconos > img {
+    display: flex;
+    flex-direction: column;
+    max-width:70vh;
+    height: auto;
+    align-content: center;
+    justify-content: center;
+}
+.boton-negro:hover{
+    background-color: #e57d0c;
+}
+
+/*Aquí comienza info iconoss*/
+
+.info-iconos-contenedor {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: bold-italic;
+    text-align: center;
+    background-color:white;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    padding: 50px; 
+    padding-bottom: 80px;
+    margin-top: -36px;
+  }
+
+  .info-iconos h2{
+    color: black;
+  }
+
+  .info-iconos h2 {
+font-size: 1.4rem;
+}
+
+.info-iconos p{
+    font-size: 1.2rem;
+    }
+
+  .img-info-iconos {
+    width: 60%;
+    padding: 40px;
+    align-self: center;
+    margin: auto;
+  }
+
+/*Aquí comienza el media querie*/
 /* Modificaciones del estilo para resolucines  pantalla mayores a 560px*/
 @media(min-width:560px){
     header{
@@ -899,147 +1156,184 @@ a{
         box-sizing: border-box;
     }
 
- }
+    /* Aqui comienza estilo Home */
+
+    h2 {
+        text-align: center
+      }
+      
+      * body{
+          flex-direction: row;
+      }
+
+      .boton-carrusel{
+          position: relative;
+          bottom: 60px;
+      }
+
+      .boton-carrusel:hover{
+          background-color: black;
+      }
+
+      #contenedor-carrusel{
+          position: relative;
+          top: 0vh;
+      }
 
 
-/*Aquí comienza el CSS de Home*/
-body {
-    margin: 0;
-}
+      .texto-carrusel {
+          position: absolute;
+          width: 30vw;
+          bottom: -780px;
+          left: -5px;
+          padding: 35px;
+          text-align: center;
+      }
 
-.carrusel {
-    max-width: 100%;
-    height: auto;
-    background-color: black;
-}
-.carrusel > img {
-    max-width: 100vh;
-    height: auto;
-    padding: 195px 0px 20px;
-}
+      .texto-carrusel h1{
+       font-size: 3rem;
+      }
 
+      .texto-carrusel h2{
+          font-size: 2rem;
+      }
 
-.texto-carrusel{
-    top: 50px;
-    color:white;
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-style: bold-italic;
-    text-align: center;
+      .texto-carrusel h3{
+          font-size: 1.8rem;
+      }
+      
+      .row {
+      background-image: url(/img/fondo-recomendaciones.svg);
+        width: 100%;
+        text-align: center;
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-bottom: 60px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+
+      .info-recomendaciones{
+          float: left;
+          width: 33.33%;
+          padding: 10px;
+      }
+
+      .info-iconos{
+          float: left;
+          width: 33.33%;
+          padding: 5px;   
+      }
+
+      .cuadros {
+          background-color:#232323;
+          width: 100%;
+          height: 100%;
+          padding: 70px 60px;
+          align-content: center;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
+        .contenedor-cuadros{
+          width: 1000px;
+          height: 60%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin: auto;
+          align-items: stretch;
+          justify-content: center;
+          background-color:#ffd522;
+        }
+
+        .info-cuadros{
+          width: 28.6%;
+          height: 60%;
+          align-items: baseline;
+          margin: 0;
+          justify-content: center;
+          background-color: #ffd522;
+          flex-grow: 1;
+        }
+
+        .boton-negro{
+      padding-bottom: 13px;
+        }
+
+        .img-cuadros{
+          width: 100%;
+          height: auto;
+        }
+
+      .info-iconos {
+        float: left;
+        width: 33.33%;
+        height: 40%;
+        background-color: #fff;
+        padding: 0;
+        margin: 0;
+      }
+
+      .img-fondo{
+          position: relative;
+          z-index: -1;
+          top: 60px;
+      }
+      
+      .img-cuadrados{
+        width: 100%;
+      }
+      
+    /*Aquí comienza info iconos*/
+    
+
+    .info-iconos-contenedor *{
+      background-color: #fff;
+      background-image: url(/img/fondo-blanco.svg);
+      margin: auto;
+      align-content: space-between;
     }
 
-.boton-amarillo {
-    font-family: 'Oswald', sans-serif;
-    font-style:semi-bold;
-    font-size: 20px;
-    color: black;
-    background-color: #ffd522;
-    justify-content: center;
-    padding:10px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin:30px;
-    transition: background-color 420ms;
-}
-
-    .boton-amarillo:hover {
-        background-color:#e57d0c;
+    
+    .info-iconos-contenedor {
+      display: flex;
+      padding: 0;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width:100%;
     }
-        
-
-/*Termina carrusel*/
-
-/*Aquí comienza sección recomendaciones*/
-
-.contenedor-recomendaciones {
-    background-color: black;
-    font-family: 'Bai Jamjuree', sans-serif;
-    font-style: bold-italic;
-    text-align: center;
-    color: white;
-    align-content: center;
-    max-width:100vh;
-    height: auto;
-    padding: 20px;
-}
-
-.contenedor-recomendaciones > img {
-    display: flex;
-    flex-direction: column;
-    max-width:100%;
-    height: auto;
-    align-content: center;
-}
-
-.boton-recomendaciones{
-    font-family: 'Oswald', sans-serif;
-    font-style:semi-bold;
-    font-size: 20px;
-    color:black;
-    background-color: #ffd522;
-    justify-content: center;
-    padding:10px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin:30px;
-    transition: background-color 420ms;
-}
-
-.boton-recomendaciones:hover{
-    background-color: #e57d0c
-}
-
-/*Aquí comienza sección info iconos*/
-
-
-
-.info-iconos{
-    font-family: 'Bai Jamjuree', sans-serif;
-    max-width:100vh;
-    height: auto;
-    text-align:center;
-    justify-content: center;
-}
-
-.info-iconos > img {
-    align-content: center;
-    max-width:50%;
-    height:auto;
-    margin: 5vh, 2vh;
-    padding: 40px;
-}
-
-.info-iconos > p {
-  font-size: 10x;
-  font-style: light;
-}
-
-/*Aquí comienza sección info cuadros*/
-
-.info-cuadrados {
-    max-width:105vh;
-    height: auto;
-    background-color: #ffd522;
-    font-family: 'Bai Jamjuree', sans-serif;
-    text-align: center;
-    justify-content: center;
-}
-
-.boton-negro {
-    font-family: 'Oswald', sans-serif;
-    font-style:semi-bold;
-    font-size: 20px;
-    color: white;
-    background-color: black;
-    justify-content: center;
-    padding:10px;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    margin:30px;
-    transition: background-color 420ms;
-    }  
-
-    .boton-negro:hover, .boton-detail:hover{
-        background-color: #e57d0c;
+    
+    .info-iconos {
+      float: left;
+      padding: 6vh;
+      width: 33.33%;
+      padding: 50px;
+      align-items: baseline;
     }
+    
+    .img-info-iconos{
+      width: 20vw;
+      background-color: #fff;
+    }
+    
+    .boton-negro{
+        position: relative;
+        top: -5px;
+    }
+  }
 
+  @media (min-width: 561px) and (max-width: 1020px) {
+      .texto-carrusel{
+              width: 100vw;
+              margin: auto;
+              padding: 0;
+              padding-bottom: 30px;
+              position: relative;
+              bottom: 500px;
+      }
 
+  }
