@@ -1,0 +1,216 @@
+/*Defino el color de fondo del encabezado y el color del borde inferior del encabezado*/
+header{
+    background-color: white;
+    width: 100vw;
+    margin:0;
+    padding: 0;
+    position:fixed;
+    top:0;
+    border-bottom: black 1px solid;
+    box-sizing: border-box;
+}
+
+/*Establesco la distrubucion de los elementos en la cabecera*/
+.img-cabecera{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    
+}
+.icons{
+    color: black;
+}
+.navbar_button{
+    display: flex;
+    align-items: center;
+}
+
+/*Uso este estilo para que los iconos de la imagen de usuario, lupa y carrito se alinien verticalmente*/
+.icon-right{
+    display: flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    margin-right: 16px;
+    box-sizing: border-box;
+}
+/*Este estilo permite que la imagen del usuario y el nombre este uno debajo del otro sin dejar espacios*/
+.usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    box-sizing: border-box;
+
+}
+
+
+/*Define el estilo del nombre del usuario*/
+.usuario > p{
+    font-size: 2vw;
+    height: 1.5vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Define el tamaño y estilo de la imagen del usuario, la cual se ajusta segun el ancho del portview*/
+.img-usuario{
+    width: 5vw;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+/*Define el tamaño del logo en relacion al ancho del portview*/
+.logo-cabecera{
+    height: 6vw;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    }
+/*Define el estilo de la barra de busqueda*/
+.barra-buscar{
+    width: 85vw;
+    border-radius: 25px;
+    position: absolute;
+    right: 7.5vw;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+
+/*Define el estilo de de la lista del menú principal*/
+.navbar_menu, .submenu, .descripcion{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display:none;
+}
+.descripcion{
+    display: none;
+}
+
+/*Define el estilo de los items en la lista del menú principal*/
+.navbar_menu > li{
+    border-style: solid;
+    border-color: #000;
+    border-width: 0 0 1px;
+    text-align: center;
+    background-color: #fff;
+    display: block;
+    min-height: 20px;
+    font-weight: bold;
+}
+
+.submenu > li {
+    margin: 0;
+    padding: 0;
+    border-style: solid;
+    border-color: #000;
+    border-width: 0 0 1px;
+    text-align: center;
+    background-color: #A6AAAD;
+    display: block;
+    min-height: 20px;
+    position: relative;
+    font-weight: bold;
+}
+
+/*Define el aspecto de los items de la lista al ser selecionados o al paras el cursor por ellos*/
+.navbar_menu > li :hover{
+    background-color: #000;
+    color: #fff;
+}
+
+.navbar_menu > li  a,
+.navbar_menu > li label{
+    font-family: 'Oswald', sans-serif;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    margin: 0;
+    display: block;
+    min-height: inherit;
+    padding: 8px;
+    
+}
+
+/*Permite que al dar clik en el menu de amburguesa, se despliegue la lista del menu*/
+input[type="checkbox"]:checked + .navbar_menu, 
+input[type="checkbox"]:checked + .submenu,
+input[type="checkbox"]:checked + .descripcion {
+    display: block;
+}
+
+@media(min-width:560px){
+    header{
+        position:inherit;
+
+    }
+/*Muestra las barras de menu principal y la de los detalles*/
+    .navbar_menu, .details-menu{
+        display: inline-block;
+        width: 100vw;
+        height: inherit;
+    }
+
+    /*Oculta el menu de hamburguesa*/
+    header>label {
+        display:none;
+    }
+
+    /* Cambia el estilo de la lista del menu*/
+    .navbar_menu > li{
+        width: 14.285%;
+        float: left;
+        height: inherit;
+        background-color: #fff;
+        border-bottom: #fff;
+        border-top: black;
+    }
+    .img-cabecera{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .logo-cabecera{
+        margin-top: 3vw;
+        margin-left: 3vw;
+        max-height: 50px;
+        order:0;
+    }
+    .navbar_button{
+        display: none;
+    
+    }
+    .icon-right{
+        margin-top: 1.5vw;
+        margin-right: 3vw;
+        order:3 ;
+    }
+
+    .barra-buscar{
+        width: 50vw;
+        max-width: 800px;
+        height: 30px;
+        border-radius: 25px;
+        position: absolute;
+        top: 3.5vw;
+        left: 25vw;
+    }
+
+    .usuario > p{
+        
+        font-size: 1.5vw;
+        height: 1.5vw;
+        margin: 0;
+        padding: 0;
+    }
+    /*Define el tamaño y estilo de la imagen del usuario, la cual se ajusta segun el ancho del portview*/
+    .img-usuario{
+        width: 4vw;
+        border-radius: 50%;
+    }
+}
