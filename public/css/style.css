@@ -91,7 +91,6 @@ main{
     display: none;
 }
 
-
 /*Define el estilo de los items en la lista del menú principal*/
 .navbar_menu > li{
     border-style: solid;
@@ -201,7 +200,8 @@ input[type="checkbox"]:checked + .descripcion {
 }
 
 .caja3{
-    margin-top: 60px;
+    padding-top: 15vw;
+    background-color: #fff;
 }
 
 /* define el tamaño y el estilo de la imagen principal*/
@@ -317,7 +317,6 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
 }
 
 footer a{
@@ -384,6 +383,7 @@ footer h3{
     justify-content: space-around ;
     width: 100vw;
     box-sizing: border-box;
+    background-color: #fff;
 }
 
 .caja4 > h2 {
@@ -401,6 +401,10 @@ footer h3{
     text-align: center;
 }
 /* Empieza estilo carrito de compras*/
+
+.main-car{
+    background-color: #fff;
+}
 
 .titulo-carrito > h1 {
     background-color: #ffd522;
@@ -634,6 +638,7 @@ a{
     padding-bottom: 30px;
     position: relative;
     top: 7.4vh;
+    order: -1;
 }
 
 #contenedor-carrusel img{
@@ -647,6 +652,8 @@ a{
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    order: -2;
+    
 }
 
 .boton-carrusel{
@@ -947,8 +954,9 @@ font-size: 1.4rem;
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        margin-bottom: 5vw;
-        
+        padding-bottom: 5vw;
+        padding-top: 10vw;
+        background-color: #fff;
     }
     .caja2{
         order: 1;
