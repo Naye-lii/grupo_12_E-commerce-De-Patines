@@ -317,6 +317,7 @@ footer{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100vw;
 }
 
 footer a{
@@ -1027,7 +1028,9 @@ font-size: 1.4rem;
 
     footer{
         flex-direction: row;
-        align-items:flex-start ;
+        align-items: flex-start ;
+        justify-content: space-around;
+
     }
     .cont-list >ul{
         padding: 0;
