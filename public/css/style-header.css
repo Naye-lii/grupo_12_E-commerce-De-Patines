@@ -170,6 +170,18 @@ input[type="checkbox"]:checked + .descripcion {
         border-bottom: #fff;
         border-top: black;
     }
+
+    .submenu{
+        position: fixed;
+        top:165px;
+    }
+
+    .submenu > li{
+        width: 200px;
+        margin: 0;
+        padding: 0;
+    }
+
     .img-cabecera{
         display: flex;
         align-items: center;

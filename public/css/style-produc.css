@@ -431,17 +431,6 @@ a{
         margin-top: 40px;
     }
 
-    .submenu{
-        position: fixed;
-        top: 165px;
-    }
-
-    .submenu > li{
-        width: 200px;
-        margin: 0;
-        padding: 0;
-    }
-
     .details-menu > li {
         width: 33.33vw;
         float: left;

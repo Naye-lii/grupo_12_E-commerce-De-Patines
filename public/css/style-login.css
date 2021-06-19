@@ -6,6 +6,7 @@ h1.login-h1{
     font-family: 'Lato', sans-serif;
     text-align: center;
     font-style: italic;
+    margin-top: 50px;
 }
 label.texto-inputs{
     display: none;
@@ -59,6 +60,7 @@ label.texto-inputs{
 a.link-registro{
     color:#FFD522;
     font-family:'Lato', sans-serif;
+    margin: 10px 0 30px 0;
 }
 
 a.no-password{

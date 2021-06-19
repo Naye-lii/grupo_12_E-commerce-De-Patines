@@ -97,28 +97,42 @@
         </ul>   
     </header>
 
+    <h1 class="login-h1">Crear cuenta</h1>
 
-    <h1 class="login-h1">Iniciar sesión</h1>
-    <form class="login-form" method="GET" action="/login">
+    <form class="login-form" method="POST" action="/registro">
+
+
+        <label class="texto-inputs" for="nombre">Nombre</label>
+        <div class="div-input">
+            <i class="far fa-user"></i>
+            <input type="text" name="nombre" class="login-data" id="nombre" placeholder="Nombre" required>
+            <!-- required lo hace obligatorio -->
+        </div>
+
+        <label class="texto-inputs" for="apellido">Apellido</label>
+        <div class="div-input">
+            <i class="far fa-user"></i>
+            <input type="text" name="apellido" class="login-data" id="apellido" placeholder="Apellido" required>
+            <!-- required lo hace obligatorio -->
+        </div>
 
         <label class="texto-inputs" for="email">Correo Electrónico</label>
         <div class="div-input">
             <i class="fas fa-at"></i>
-            <input type="email" name="email" id="email" class="login-data" placeholder="Correo" required>
+            <input type="email" name="email" class="login-data" id="email" placeholder="Correo" required>
             <!-- required lo hace obligatorio -->
         </div>
 
         <label class="texto-inputs" for="password">Contraseña</label>
         <div class="div-input">
             <i class="fas fa-lock"></i>
-            <input type="password" name="password" class="login-data" id="password" placeholder="Contraseña" required>
+            <input type="password" name="password" id="password" class="login-data" placeholder="Contraseña" required>
         </div>
-        <a class="no-password" href="#">¿Olvidaste tu contraseña?</a>
 
-        <button type="submit" class="submit-btn">Ingresar</button>
+        <button type="submit" class="submit-btn">Registrarse</button>
     </form>
-    <p class="texto-registro">¿No tienes una cuenta?</p>
-    <a class="link-registro" href="#">Registrate</a>
+    <p class="texto-registro">¿Ya tienes una cuenta?</p>
+    <a class="link-registro" href="/login">Inicia sesión</a>
 
     <!--Pie de pagína-->
     <footer>
