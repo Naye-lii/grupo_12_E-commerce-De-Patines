@@ -456,32 +456,6 @@ a{
     .cont-detalle{
         height: 600px;
     }
-
-    footer{
-        flex-direction: row;
-        align-items: flex-start ;
-        justify-content: space-around;
-
-    }
-    .cont-list >ul{
-        padding: 0;
-        margin:20px 10px 0 10px;
-        width:fit-content;
-    }
-    .caja-redes{
-        width: 252px;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        order: 1;
-        padding-right: 30px;
-    }
-    .logo-footer{
-        padding-left: 30px;
-    }
-    .redes{
-        width: 40px;
-    }
     /* empieza adaptativo carrito de compra*/
     .cont-producto{
         width: 70vw;
