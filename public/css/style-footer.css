@@ -1,0 +1,122 @@
+/* Estilo del Pie de página*/
+footer{
+    background-color: #29303B;
+    color:#fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+}
+
+footer a{
+    text-decoration: none;
+}
+    
+
+.boton-sus{
+    font-family: "Oswald", sans-serif;
+    font-size: 15px;
+    background-color: #e57d0c;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow:none ;
+}
+.barra-correo{
+    border-radius: 8px;
+    font-family: "lato", sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    width: 160px;
+}
+.redes{
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.logo-footer{
+    width: 200px;
+    margin-top: 25px;
+}
+footer h3{
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+.cont-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+}
+.cont-list > ul{
+    width: 40vw;
+    list-style: none;
+    padding: 0;
+    margin-left: 25px;
+    font-family: 'lato', sans-serif;
+    line-height: 20pt;
+}
+
+.cont-list > ul a{
+    width: 40vw;
+    padding: 0;
+    color: #fff;
+    font-size: 13px;
+}
+
+.caja4{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:initial ;
+    justify-content: space-around ;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.caja4 > h2 {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.caja-redes{
+    width: 252px;
+    align-items: center;
+}
+
+.titulo-redes{
+    width: 252px;
+    text-align: center;
+}
+
+@media(min-width:560px){
+
+    footer{
+        flex-direction: row;
+        align-items: flex-start ;
+        justify-content: space-around;
+
+    }
+    .cont-list >ul{
+        padding: 0;
+        margin:20px 10px 0 10px;
+        width:fit-content;
+    }
+    .caja-redes{
+        width: 252px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 1;
+        padding-right: 30px;
+    }
+    .logo-footer{
+        padding-left: 30px;
+    }
+    .redes{
+        width: 40px;
+    }
+
+  }
