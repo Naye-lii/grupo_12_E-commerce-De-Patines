@@ -137,7 +137,6 @@
     height: auto;
     align-content: center;
     justify-content: center;
-    margin-left: 15vw;
 }
 
 
@@ -321,13 +320,21 @@ font-size: 1.4rem;
             .info-recomendaciones{
                 float: left;
                 width: 33.33%;
-                padding: 10px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
+
 
             .info-iconos{
                 float: left;
                 width: 33.33%;
-                padding: 5px;   
+                padding: 5px; 
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
             }
 
             .cuadros {
