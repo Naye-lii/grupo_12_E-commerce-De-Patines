@@ -12,18 +12,18 @@
     box-sizing: border-box;
 }
 
+.header-home{
+  position: relative;
+  z-index: 3;
+}
+
 #contenedor-carrusel {
     width: 100vw;
-    margin: auto;
     padding: 0;
-    padding-bottom: 30px;
-    position: relative;
-    top: 7.4vh;
 }
 
 #contenedor-carrusel img{
     width: 100vw;
-    margin: auto;
     padding: 0;
 }
 
@@ -32,6 +32,8 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .boton-carrusel{
@@ -60,7 +62,8 @@
     font-style: italic;
     font-weight: 500;
     text-align: center;
-
+    position: relative;
+    z-index: 2;
     }
 
     .texto-carrusel h1{
@@ -101,8 +104,6 @@
     margin: auto;
     font-size: 2.5vh;
     font-style: italic;
-    position: relative;
-    bottom: 30px;
 }
 
 .row {
@@ -117,6 +118,8 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0; 
+    background:url(/img/fondo_recomendaciones_1.png);
+    background-size: cover;
   }
 
   .info-recomendaciones h2{
@@ -133,10 +136,11 @@
 .info-recomendaciones > img {
     display: flex;
     flex-direction: column;
-    max-width:70vw;
+    max-width:30vw;
     height: auto;
     align-content: center;
     justify-content: center;
+    margin-bottom: 10px;;
 }
 
 
@@ -306,7 +310,6 @@ font-size: 1.4rem;
             }
             
             .row {
-            background-image: url(/img/fondo-recomendaciones-home.svg) width: 100%;
               width: 100%;
               text-align: center;
               padding-right: 50px;
@@ -406,12 +409,6 @@ font-size: 1.4rem;
             .info-iconos > img {
               max-width:20vh;
               padding: 20px;
-            }
-
-            .img-fondo{
-                position: relative;
-                z-index: -1;
-                top: 60px;
             }
             
           /*Aquí comienza info iconos*/
