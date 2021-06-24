@@ -306,7 +306,7 @@ font-size: 1.4rem;
             }
             
             .row {
-            background-image: url(/img/fondo-recomendaciones.svg);
+            background-image: url(/img/fondo-recomendaciones-home.svg) width: 100%;
               width: 100%;
               text-align: center;
               padding-right: 50px;
