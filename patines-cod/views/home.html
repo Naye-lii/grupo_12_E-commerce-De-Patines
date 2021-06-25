@@ -1,7 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head class="nav-home">
+<head class="header-home">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,244 +17,223 @@
     <title>Fun-N-Skate Inicio</title>
 </head>
 
-    <body>
+<body>
 
-        <head class="nav-home">
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <title>Login</title>
-            <link rel="stylesheet" href="css/style-header.css">
-            <link rel="stylesheet" href="css/style-footer.css">
-            <link rel="stylesheet" href="css/style-login.css">
-            <!-- Enlace al css -->
-        
-            <!-- Enlace a las fontawesome para utilizar los íconos -->
-            <script src="https://kit.fontawesome.com/de7a83a17a.js" crossorigin="anonymous"></script>
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@1,700&family=Oswald:wght@600&display=swap" rel="stylesheet">
-        
-        
-            <!-- Enlace a las fonts de google utilizadas -->
-            <link rel="preconnect" href="https://fonts.gstatic.com">
-            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
-        </head>
-        
-        <body>
-            <header class="nav-home">
-                <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
-                <div class="img-cabecera">
-                    <!--Aqui esta el menu tipo hamburguesa-->
-                    <div class="icons navbar_button">
-                        <label for="show-nav">
-                            <span class = "material-icons material-icons-outlined" >
-                                menu
-                            </span>  
-                        </label> 
-                    </div>
-        
-                    <div>
-                        <img class="logo-cabecera" src = '/img/Logo Fun N Skate naranja.svg' alt='Logo Fun-N-Skate'>  
-                    </div>
-        
-                    <div class="icon-right">
-                        <div class="usuario">
-                            <img class="img-usuario" src = '/img/img-usuario.jpg' alt='imagen del  usuario'>
-                            <p>Usuario</p>
-                        </div>
-                        <div>
-                            <label for="show-buscar">
-                                <span class="icons material-icons material-icons-outlined">
-                                    search
-                                </span>
-                            </label>
-                        </div>
-                        <div>
-                            <a href="/productCar"> <span class="icons material-icons material-iconsmaterial-icons-outlined">
-                                shopping_cart
-                            </span></a>
-                        </div>
-                    </div>          
-                </div>
-        
-                <!--Barra de busqueda--> 
-                <input type="checkbox" id="show-buscar" hidden>
-                <div class="navbar_menu">
-                    <input class="barra-buscar" type="search" placeholder="  ¿Qué está buscando?"/>
-                </div>
-           
-        
-        <!--Se declara el chec box que permite ocultar y mostra la lista del menu-->
-                <input type="checkbox" id="show-nav" hidden/>
-        <!--lista del menu principal-->
-                <ul class="navbar_menu">
-                    <li><a href="/">Inicio</a></li>
-                    <li>
-                        <label for="show-submenu">Productos</label>
-                        <input type="checkbox" id="show-submenu" hidden>
-        <!--Lista del menu/productos-->
-                        <ul class="submenu">
-                            <li><a href="/Details">Patines</a></li>
-                            <li><a href="#equipoProteccion">Equipo de protección</a></li>
-                            <li><a href="#accesorios">Accesorios</a></li>
-                            <li><a href="#refacciones">Refacciones</a></li>
-                        </ul>            
-                   </li>
-                    <li><a href="#carrito">Carrito</a></li>
-                    <li><a href="#compras">Compras</a></li>
-                    <li><a href="/login">Mi cuenta</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#otros">Otros</a></li>
-        
-                </ul>   
-            </header>
+    <header class="header-home">
+        <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
+        <div class="img-cabecera">
+            <!--Aqui esta el menu tipo hamburguesa-->
+            <div class="icons navbar_button">
+                <label for="show-nav">
+                    <span class = "material-icons material-icons-outlined" >
+                        menu
+                    </span>  
+                </label> 
+            </div>
 
-        <!--Imagen de carrusel-->
+            <div>
+                <img class="logo-cabecera" src = '/img/Logo Fun N Skate naranja.svg' alt='Logo Fun-N-Skate'>  
+            </div>
+
+            <div class="icon-right">
+                <div class="usuario">
+                    <img class="img-usuario" src = '/img/img-usuario.jpg' alt='imagen del  usuario'>
+                    <p>Usuario</p>
+                </div>
+                <div>
+                    <label for="show-buscar">
+                        <span class="icons material-icons material-icons-outlined">
+                            search
+                        </span>
+                    </label>
+                </div>
+                <div>
+                    <a href="/productCar"> <span class="icons material-icons material-iconsmaterial-icons-outlined">
+                        shopping_cart
+                    </span></a>
+                </div>
+            </div>          
+        </div>
+
+        <!--Barra de busqueda--> 
+        <input type="checkbox" id="show-buscar" hidden>
+        <div class="navbar_menu">
+            <input class="barra-buscar" type="search" placeholder="  ¿Qué está buscando?"/>
+        </div>
+   
+
+<!--Se declara el chec box que permite ocultar y mostra la lista del menu-->
+        <input type="checkbox" id="show-nav" hidden/>
+<!--lista del menu principal-->
+        <ul class="navbar_menu">
+            <li><a href="/">Inicio</a></li>
+            <li>
+                <label for="show-submenu">Productos</label>
+                <input type="checkbox" id="show-submenu" hidden>
+<!--Lista del menu/productos-->
+                <ul class="submenu">
+                    <li><a href="/Details">Patines</a></li>
+                    <li><a href="#equipoProteccion">Equipo de protección</a></li>
+                    <li><a href="#accesorios">Accesorios</a></li>
+                    <li><a href="#refacciones">Refacciones</a></li>
+                </ul>            
+           </li>
+            <li><a href="#carrito">Carrito</a></li>
+            <li><a href="#compras">Compras</a></li>
+            <li><a href="/login">Mi cuenta</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#otros">Otros</a></li>
+
+        </ul>   
+    </header>
+
+    <!--Imagen de carrusel-->
 
     <section>
-       <div id="contenedor-carrusel">
-         <div class="carrusel">
-         <img src="/img/carrusel-img.svg" alt="Patines-Aerio-2021">
-             <button class="boton-carrusel"></button>
-             <button class="boton-carrusel"></button>
-             <button class="boton-carrusel"></button>
-       </div>
-           <div class="texto-carrusel">
-           <h1>PATINES FREESKATE</h1>
-           <h2>Más velocidad, más seguridad.</h2>
-           <h3>¡Pruébalos!</h3>
-        <button class="boton-amarillo">Ver más</button>
-   </div>
-   </section>
+        <div id="contenedor-carrusel">
+          <div class="carrusel">
+          <img src="/img/carrusel-img.svg" alt="Patines-Aerio-2021">
+              <button class="boton-carrusel"></button>
+              <button class="boton-carrusel"></button>
+              <button class="boton-carrusel"></button>
+        </div>
+            <div class="texto-carrusel">
+            <h1>PATINES FREESKATE</h1>
+            <h2>Más velocidad, más seguridad.</h2>
+            <h3>¡Pruébalos!</h3>
+         <button class="boton-amarillo">Ver más</button>
+    </div>
+    </section>
+    
+    <div id="recomendaciones-titulo">
+      <h1> Nuestras recomendaciones</h1>
+    </div>
    
-   <div id="recomendaciones-titulo">
-     <h1> Nuestras recomendaciones</h1>
-   </div>
-  
-       <div class="row">
-           <div class="info-recomendaciones">
-             <img src="/img/home-producto1.png" alt="Patines RDS Aerio 10">
-             <h2>RDS Aerio 10</h2>
-          <p>Patines de 4 ruedas, gran velocidad.</p>
-          <input type="button" value="Comprar" class="boton-amarillo">
-           </div>
-           <div class="info-recomendaciones">
-             <img src="/img/home-producto2.png" alt="Patines RDS Aerio 11">
-             <h2>RDS Aerio 11</h2>
-          <p>Patines de 4 ruedas, tonos arcoiris.</p>
-          <input type="button" value="Comprar" class="boton-amarillo">
-           </div>
-           <div class="info-recomendaciones">
-             <img src="/img/home-producto3.png" alt="Patines RDS Aerio 12">
-              <h2>RDS Aerio 12</h2>
-          <p>Patines de 4 ruedas, tonos azules.</p>
-          <input type="button" value="Comprar" class="boton-amarillo">
-         </div>
-         <br>
-         <br>
-         <br>
-         </div>
-  
+        <div class="row">
+            <div class="info-recomendaciones">
+              <img src="/img/home-producto1.png" class="img-cuadrados" alt="Patines RDS Aerio 10">
+              <h2>RDS Aerio 10</h2>
+           <p>Patines de 4 ruedas, gran velocidad.</p>
+           <input type="button" value="Comprar" class="boton-amarillo">
+            </div>
+            <div class="info-recomendaciones">
+              <img src="/img/home-producto2.png" class="img-cuadrados" alt="Patines RDS Aerio 11">
+              <h2>RDS Aerio 11</h2>
+           <p>Patines de 4 ruedas, tonos arcoiris.</p>
+           <input type="button" value="Comprar" class="boton-amarillo">
+            </div>
+            <div class="info-recomendaciones">
+              <img src="/img/home-producto3.png" class="img-cuadrados" alt="Patines RDS Aerio 12">
+               <h2>RDS Aerio 12</h2>
+           <p>Patines de 4 ruedas, tonos azules.</p>
+           <input type="button" value="Comprar" class="boton-amarillo">
+          </div>
+          <br>
+          <br>
+          <br>
+          </div>
+   
 
-       <section class="cuadros">
-           <div class="contenedor-cuadros" style="background-image: url('img/home-cuadros-superior-img1.jpg');">
-           </div>
-           <div class="contenedor-cuadros" style="background-color: #ffd522">
-           <div class="cuadros-texto">
-               <div>
-                ¡Nuevos modelos 2021!
-               <input type="button" value="Ver más" class="boton-negro">
-               </div>
-           </div>
-       </div>
-           </div>
-           <div class="contenedor-cuadros"
-               style="background-image: url('img/home-cuadros-superior-img2.jpg')">
-           </div>
-           </div>
-           <div
-               class="contenedor-cuadros"
-               style="background-color: #ffd522"
-           >
-               <div class="cuadros-texto">
-                   <div>
-                    ¡Encuentra los mejores descuentos!
-               <input type="button" value="Ver más" class="boton-negro">
-                   </div>
-               </div>
-           </div>
-
-           <div
-           class="contenedor-cuadros"
-           style="background-image: url('img/home-cuadros-superior-img3.jpg');"
-       >
-           </div>
-       </div>
-       <div
-               class="contenedor-cuadros"
-               style="background-color: #ffd522"
-           >
-               <div class="cuadros-texto">
-                   <div>
-                    Accesorios que combinan con tus patines
+        <section class="cuadros">
+            <div
+                class="contenedor-cuadros"
+                style="background-image: url('img/home-cuadros-superior-img1.jpg');"
+            >
+            </div>
+            <div
+            class="contenedor-cuadros"
+            style="background-color: #ffd522"
+        >
+            <div class="cuadros-texto">
+                <div>
+                    ¡Nuevos modelos 2021!
                     <input type="button" value="Ver más" class="boton-negro">
-                   </div>
-               </div>
-           </div>
-           <br>
-           <br>
-           <br>
+                </div>
+            </div>
+        </div>
+            </div>
+            <div class="contenedor-cuadros"
+                style="background-image: url('img/home-cuadros-superior-img2.jpg')">
+            </div>
+            </div>
+            <div
+                class="contenedor-cuadros"
+                style="background-color: #ffd522"
+            >
+                <div class="cuadros-texto">
+                    <div>
+                        ¡Encuentra los mejores descuentos!
+                        <input type="button" value="Ver más" class="boton-negro">
+                    </div>
+                </div>
+            </div>
+
+            <div
+            class="contenedor-cuadros"
+            style="background-image: url('img/home-cuadros-superior-img3.jpg');"
+        >
+            </div>
+        </div>
+        <div
+                class="contenedor-cuadros"
+                style="background-color: #ffd522"
+            >
+                <div class="cuadros-texto">
+                    <div>
+                        ¡Encuentra los mejores descuentos!
+                        <input type="button" value="Ver más" class="boton-negro">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
 </section>
 
 
 <!--Sección de información con 3 iconos y breve descripción-->
-   
-   
+    
+    
 <div class="info-iconos-contenedor">
+    <div class="info-iconos">
+     <img class="img-info-iconos" src="/img/icono-home-info1.svg" alt='icono-compra-segura'></img> 
+     <h2>Compra segura</h2>
+     <p>Tus compras son 100% seguras.</p>
+   <br>
+     </div>
+   
    <div class="info-iconos">
-    <img class="img-info-iconos" src="/img/icono-home-info1.svg" alt='icono-compra-segura'></img> 
-    <h2>Compra segura</h2>
-    <p>Tus compras son 100% seguras.</p>
-  <br>
-    </div>
-  
-  <div class="info-iconos">
-  <img class="img-info-iconos" src="/img/icono-home-info2.svg" alt='icono-envios-internacionales'/> 
-  <h2>Envíos internacionales</h2>
-  <p>No te preocupes por salir de casa, nosotros te lo llevamos.</p>
-  </div>
-  
-  <div class="info-iconos">
-  <img class="img-info-iconos" src="/img/icono-home-info3.svg" alt='icono-entrega-inmediata'/> 
-  <h2>Entrega inmediata</h2>
-  <p>Pidelo hoy y recibelo mañana.</p>
-  <br>
-  </div>
-  </div>
-  </div>
+   <img class="img-info-iconos" src="/img/icono-home-info2.svg" alt='icono-envios-internacionales'/> 
+   <h2>Envíos internacionales</h2>
+   <p>No te preocupes por salir de casa, nosotros te lo llevamos.</p>
+   </div>
+   
+   <div class="info-iconos">
+   <img class="img-info-iconos" src="/img/icono-home-info3.svg" alt='icono-entrega-inmediata'/> 
+   <h2>Entrega inmediata</h2>
+   <p>Pidelo hoy y recibelo mañana.</p>
+   <br>
+   </div>
+   </div>
+   </div>
 
 <section class="cuadros">
 
-   <div
-   class="contenedor-cuadros"
-   style="background-color: #ffd522"
+    <div
+    class="contenedor-cuadros"
+    style="background-color: #ffd522"
 >
-   <div class="cuadros-texto">
-       <div>
-        Aprende con tutoriales que tenemos disponibles
-        <input type="button" value="Ver más" class="boton-negro">
-       </div>
-   </div>
+    <div class="cuadros-texto">
+        <div>
+            Noticias sobre patinaje
+            <input type="button" value="Ver más" class="boton-negro">
+        </div>
+    </div>
 </div>
- 
-   <div class="contenedor-cuadros"
-       style="background-image: url('img/home-cuadros-img1.jpg')">
-   </div>
+  
+    <div class="contenedor-cuadros"
+        style="background-image: url('img/home-cuadros-img1.jpg')">
+    </div>
 </div>
 
 <div
@@ -263,40 +241,37 @@ class="contenedor-cuadros"
 style="background-color: #ffd522"
 >
 <div class="cuadros-texto">
-   <div>
-    Noticias sobre patinaje
-    <input type="button" value="Ver más" class="boton-negro">
-   </div>
-</div>
-</div>
-
-   <div class="contenedor-cuadros"
-   style="background-image: url('img/home-cuadros-img2.jpg')">
-</div>
-
-   <div
-   class="contenedor-cuadros"
-   style="background-color: #ffd522"
->
-   <div class="cuadros-texto">
-       <div>
+    <div>
         Tiendas nacionales a tu alcance, visitanos
         <input type="button" value="Ver más" class="boton-negro">
-       </div>
-   </div>
+    </div>
 </div>
-   <div
-   class="contenedor-cuadros"
-   style="background-image: url('img/home-cuadros-img3.jpg');"
+</div>
+
+    <div class="contenedor-cuadros"
+    style="background-image: url('img/home-cuadros-img2.jpg')">
+</div>
+
+    <div
+    class="contenedor-cuadros"
+    style="background-color: #ffd522"
 >
-   </div>
+    <div class="cuadros-texto">
+        <div>
+            Aprende con tutoriales que tenemos disponibles
+            <input type="button" value="Ver más" class="boton-negro">
+        </div>
+    </div>
+</div>
+    <div
+    class="contenedor-cuadros"
+    style="background-image: url('img/home-cuadros-img3.jpg');"
+>
+    </div>
 </div>
 </section>
 
-   </body>
-
     <!--Pie de pagína-->
-    
     <footer>
         <!--Logo Fun N Skate-->
                  <div>
