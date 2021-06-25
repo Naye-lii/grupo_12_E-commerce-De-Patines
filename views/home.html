@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head class="header-home">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
 
 <body>
 
-    <header>
+    <header class="header-home">
         <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
         <div class="img-cabecera">
             <!--Aqui esta el menu tipo hamburguesa-->
@@ -87,10 +87,9 @@
         </ul>   
     </header>
 
-     <!--Imagen de carrusel-->
+    <!--Imagen de carrusel-->
 
-
-     <section>
+    <section>
         <div id="contenedor-carrusel">
           <div class="carrusel">
           <img src="/img/carrusel-img.svg" alt="Patines-Aerio-2021">
@@ -108,141 +107,169 @@
     
     <div id="recomendaciones-titulo">
       <h1> Nuestras recomendaciones</h1>
-      <br>
     </div>
+   
+        <div class="row">
+            <div class="info-recomendaciones">
+              <img src="/img/home-producto1.png" class="img-cuadrados" alt="Patines RDS Aerio 10">
+              <h2>RDS Aerio 10</h2>
+           <p>Patines de 4 ruedas, gran velocidad.</p>
+           <input type="button" value="Comprar" class="boton-amarillo">
+            </div>
+            <div class="info-recomendaciones">
+              <img src="/img/home-producto2.png" class="img-cuadrados" alt="Patines RDS Aerio 11">
+              <h2>RDS Aerio 11</h2>
+           <p>Patines de 4 ruedas, tonos arcoiris.</p>
+           <input type="button" value="Comprar" class="boton-amarillo">
+            </div>
+            <div class="info-recomendaciones">
+              <img src="/img/home-producto3.png" class="img-cuadrados" alt="Patines RDS Aerio 12">
+               <h2>RDS Aerio 12</h2>
+           <p>Patines de 4 ruedas, tonos azules.</p>
+           <input type="button" value="Comprar" class="boton-amarillo">
+          </div>
+          <br>
+          <br>
+          <br>
+          </div>
+   
+
+        <section class="cuadros">
+            <div
+                class="contenedor-cuadros"
+                style="background-image: url('img/home-cuadros-superior-img1.jpg');"
+            >
+            </div>
+            <div
+            class="contenedor-cuadros"
+            style="background-color: #ffd522"
+        >
+            <div class="cuadros-texto">
+                <div>
+                    ¡Nuevos modelos 2021!
+                    <input type="button" value="Ver más" class="boton-negro">
+                </div>
+            </div>
+        </div>
+            </div>
+            <div class="contenedor-cuadros"
+                style="background-image: url('img/home-cuadros-superior-img2.jpg')">
+            </div>
+            </div>
+            <div
+                class="contenedor-cuadros"
+                style="background-color: #ffd522"
+            >
+                <div class="cuadros-texto">
+                    <div>
+                        ¡Encuentra los mejores descuentos!
+                        <input type="button" value="Ver más" class="boton-negro">
+                    </div>
+                </div>
+            </div>
+
+            <div
+            class="contenedor-cuadros"
+            style="background-image: url('img/home-cuadros-superior-img3.jpg');"
+        >
+            </div>
+        </div>
+        <div
+                class="contenedor-cuadros"
+                style="background-color: #ffd522"
+            >
+                <div class="cuadros-texto">
+                    <div>
+                        ¡Encuentra los mejores descuentos!
+                        <input type="button" value="Ver más" class="boton-negro">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+</section>
+
+
+<!--Sección de información con 3 iconos y breve descripción-->
     
     
-     <!--Recomendaciones de producto-->
-    
-    
-     <div class="row">
-      <div class="info-recomendaciones">
-        <img src="/img/home-producto1.png" class="img-cuadrados" alt="Patines RDS Aerio 10">
-        <h2>RDS Aerio 10</h2>
-     <p>Patines de 4 ruedas y con gran velocidad.</p>
-     <input type="button" value="Ver más" class="boton-amarillo">
-      </div>
-      <div class="info-recomendaciones">
-        <img src="/img/home-producto2.png" class="img-cuadrados" alt="Patines RDS Aerio 11">
-        <h2>RDS Aerio 11</h2>
-     <p>Patines de 4 ruedas, tonos arcoiris.</p>
-     <input type="button" value="Ver más" class="boton-amarillo">
-      </div>
-      <div class="info-recomendaciones">
-        <img src="/img/home-producto3.png" class="img-cuadrados" alt="Patines RDS Aerio 12">
-         <h2>RDS Aerio 12</h2>
-     <p>Patines de 4 ruedas, tonos azules.</p>
-     <input type="button" value="Ver más" class="boton-amarillo">
+<div class="info-iconos-contenedor">
+    <div class="info-iconos">
+     <img class="img-info-iconos" src="/img/icono-home-info1.svg" alt='icono-compra-segura'></img> 
+     <h2>Compra segura</h2>
+     <p>Tus compras son 100% seguras.</p>
+   <br>
+     </div>
+   
+   <div class="info-iconos">
+   <img class="img-info-iconos" src="/img/icono-home-info2.svg" alt='icono-envios-internacionales'/> 
+   <h2>Envíos internacionales</h2>
+   <p>No te preocupes por salir de casa, nosotros te lo llevamos.</p>
+   </div>
+   
+   <div class="info-iconos">
+   <img class="img-info-iconos" src="/img/icono-home-info3.svg" alt='icono-entrega-inmediata'/> 
+   <h2>Entrega inmediata</h2>
+   <p>Pidelo hoy y recibelo mañana.</p>
+   <br>
+   </div>
+   </div>
+   </div>
+
+<section class="cuadros">
+
+    <div
+    class="contenedor-cuadros"
+    style="background-color: #ffd522"
+>
+    <div class="cuadros-texto">
+        <div>
+            Noticias sobre patinaje
+            <input type="button" value="Ver más" class="boton-negro">
+        </div>
     </div>
+</div>
+  
+    <div class="contenedor-cuadros"
+        style="background-image: url('img/home-cuadros-img1.jpg')">
     </div>
-    
-    
-       <!--Sección de información con cuadrados-->
-    
-    
-    <div class="cuadros">
-        <div class="contenedor-cuadros">
-      <div class="info-cuadros">
-        <img src="/img/home-cuadros-superior-img2.jpg" alt='' class="img-cuadrados"></img>
-      </div>
-    
-      <div class="info-cuadros">
-        <h3>¿Eres nuevo en el patinaje?</h3> 
-        <p>Conoce los tutoriales que tenemos para ti.</p>
+</div>
+
+<div
+class="contenedor-cuadros"
+style="background-color: #ffd522"
+>
+<div class="cuadros-texto">
+    <div>
+        Tiendas nacionales a tu alcance, visitanos
         <input type="button" value="Ver más" class="boton-negro">
-      <br>
-      </div>
-    
-      <div class="info-cuadros">
-        <img src="/img/home-cuadros-superior-img1.jpg" alt='jovenes-patinando' class="img-cuadrados"></img> 
-      </div>
     </div>
-    <div class="contenedor-cuadros">
-    <div class="info-cuadros">
-      <h3>Noticias sobre patinaje para ti</h3> 
-      <p>Mantente actualizado con lo mejor del patinaje.</p>
-      <input type="button" value="Ver más" class="boton-negro"> 
+</div>
+</div>
+
+    <div class="contenedor-cuadros"
+    style="background-image: url('img/home-cuadros-img2.jpg')">
+</div>
+
+    <div
+    class="contenedor-cuadros"
+    style="background-color: #ffd522"
+>
+    <div class="cuadros-texto">
+        <div>
+            Aprende con tutoriales que tenemos disponibles
+            <input type="button" value="Ver más" class="boton-negro">
+        </div>
     </div>
-    
-    <div class="info-cuadros">
-      <img src="/img/home-cuadros-superior-img3.jpg" alt='jovenes-patinando' class="img-cuadrados"></img>
+</div>
+    <div
+    class="contenedor-cuadros"
+    style="background-image: url('img/home-cuadros-img3.jpg');"
+>
     </div>
-    
-    <div class="info-cuadros">
-      <h3>Tiendas nacionales a tu alcance</h3> 
-      <p>Encuentra la más cercana.</p>
-      <input type="button" value="Ver más" class="boton-negro"> 
-        <br>
-        <br>
-    </div>
-    </div>
-    <br>
-    </div>
-    
-    
-     <!--Sección de información con 3 iconos y breve descripción-->
-    
-    
-     <div class="info-iconos-contenedor">
-     <div class="info-iconos">
-      <img class="img-info-iconos" src="/img/icono-home-info1.svg" alt='icono-compra-segura'></img> 
-      <h2>Compra segura</h2>
-      <br>
-      <p>Tus compras son 100% seguras.</p>
-    <br>
-      </div>
-    
-    <div class="info-iconos">
-    <img class="img-info-iconos" src="/img/icono-home-info2.svg" alt='icono-envios-internacionales'/> 
-    <h2>Envíos internacionales</h2>
-    <br>
-    <p>No te preocupes por salir de casa, nosotros te lo llevamos.</p>
-    </div>
-    
-    <div class="info-iconos">
-    <img class="img-info-iconos" src="/img/icono-home-info3.svg" alt='icono-entrega-inmediata'/> 
-    <h2>Entrega inmediata</h2>
-    <br>
-    <p>Pidelo hoy y recibelo mañana.</p>
-    <br>
-    <br>
-    </div>
-    </div>
-    </div>
-    
-    
-    <!--Segunda sección de información con cuadrados-->
-    
-    
-    <div class="cuadros">
-      <div class="contenedor-cuadros">
-      <div class="info-cuadros">
-        <h3>¡Nuevos modelos 2021!</h3> 
-    <p>Pares de patines con diseños únicos.</p>
-    <input type="button" value="Ver más" class="boton-negro"> 
-      </div>
-      <div class="info-cuadros">
-        <img class="img-cuadrados" src="/img/home-cuadros-img2.jpg" alt='joven-patinando'>
-      </div>
-      <div class="info-cuadros">
-        <h3>¡Encuentra los mejores precios!</h3> 
-        <p>Grandes marcas, grandes descuentos.</p>
-        <input type="button" value="Ver más" class="boton-negro"> 
-      </div>
-    
-    <div class="info-cuadros">
-      <img class="img-cuadrados" src="/img/home-cuadros-img3.jpg" alt='patines-4-ruedas'> 
-    </div>
-    <div class="info-cuadros">
-      <h3>Tiendas nacionales a tu alcance</h3> 
-      <p>Encuentra la más cercana.</p>
-      <input type="button" value="Ver más" class="boton-negro"> 
-    </div>
-    <div class="info-cuadros">
-        <img class="img-cuadrados" src="/img/home-cuadros-superior-img3.jpg" alt='jovenes-patinando'></img>
-    </div>
-    </div>
-    </div>
+</div>
+</section>
 
     <!--Pie de pagína-->
     <footer>
