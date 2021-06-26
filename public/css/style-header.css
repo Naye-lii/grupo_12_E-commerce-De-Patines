@@ -171,6 +171,10 @@ input[type="checkbox"]:checked + .descripcion {
         border-top: black;
     }
 
+    .lupa{
+       display: none; 
+    }
+
     .submenu{
         position: fixed;
         top:165px;
