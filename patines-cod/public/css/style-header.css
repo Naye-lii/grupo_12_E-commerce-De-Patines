@@ -79,15 +79,13 @@ header{
 
 
 /*Define el estilo de de la lista del menú principal*/
-.navbar_menu, .submenu, .descripcion{
+.navbar_menu, .submenu, .descripcion, .bar_buscar{
     list-style-type: none;
     margin: 0;
     padding: 0;
     display:none;
 }
-.descripcion{
-    display: none;
-}
+
 
 /*Define el estilo de los items en la lista del menú principal*/
 .navbar_menu > li{
@@ -97,7 +95,7 @@ header{
     text-align: center;
     background-color: #fff;
     display: block;
-    min-height: 20px;
+    max-height: 40px;
     font-weight: bold;
 }
 
@@ -110,10 +108,16 @@ header{
     text-align: center;
     background-color: #A6AAAD;
     display: block;
-    min-height: 20px;
+    height: fit-content;
     position: relative;
     font-weight: bold;
 }
+
+.submenu > li > a {
+    font-size: 14px;
+}
+
+
 
 /*Define el aspecto de los items de la lista al ser selecionados o al paras el cursor por ellos*/
 .navbar_menu > li :hover{
@@ -132,7 +136,7 @@ header{
     width: 100%;
     margin: 0;
     display: block;
-    min-height: inherit;
+    max-height: inherit;
     padding: 8px;
     
 }
@@ -140,20 +144,19 @@ header{
 /*Permite que al dar clik en el menu de amburguesa, se despliegue la lista del menu*/
 input[type="checkbox"]:checked + .navbar_menu, 
 input[type="checkbox"]:checked + .submenu,
-input[type="checkbox"]:checked + .descripcion {
+input[type="checkbox"]:checked + .descripcion, 
+input[type="checkbox"]:checked + .bar_buscar {
     display: block;
 }
 
 @media(min-width:560px){
     header{
         position:inherit;
-
     }
 /*Muestra las barras de menu principal y la de los detalles*/
     .navbar_menu, .details-menu{
         display: inline-block;
         width: 100vw;
-        height: inherit;
     }
 
     /*Oculta el menu de hamburguesa*/
@@ -161,9 +164,14 @@ input[type="checkbox"]:checked + .descripcion {
         display:none;
     }
 
+    /*Oculta la lupa de bucar*/
+    .lupa{
+        display: none;
+    }
+
     /* Cambia el estilo de la lista del menu*/
     .navbar_menu > li{
-        width: 14.285%;
+        width: 14.285vw;
         float: left;
         height: inherit;
         background-color: #fff;
@@ -171,13 +179,8 @@ input[type="checkbox"]:checked + .descripcion {
         border-top: black;
     }
 
-    .submenu{
-        position: fixed;
-        top:165px;
-    }
-
     .submenu > li{
-        width: 200px;
+        width: 14.285vw;
         margin: 0;
         padding: 0;
     }
@@ -215,14 +218,14 @@ input[type="checkbox"]:checked + .descripcion {
 
     .usuario > p{
         
-        font-size: 1.5vw;
-        height: 1.5vw;
+        font-size: 14px;
         margin: 0;
         padding: 0;
     }
     /*Define el tamaño y estilo de la imagen del usuario, la cual se ajusta segun el ancho del portview*/
     .img-usuario{
         width: 4vw;
+        max-width: 45px;
         border-radius: 50%;
     }
 }
