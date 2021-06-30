@@ -3,7 +3,11 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '/public')); 
+app.use(express.static('../public')); 
+
+const port = process.env.PORT || 3000
+
+app.listen (port, () => {console.log (`App listening at http://localhost:${port}`)});
 
 //app.get ('/', (req, res) => {
   //   res.sendFile("/productDetail.html", {root: "views"})
@@ -14,21 +18,18 @@ app.get ('/', (req, res) => {
 });
 
 app.get ('/login', (req, res) => {
-  res.sendFile("/login.html", {root: "views"})
+  res.render("login")
 });
 
 app.get ('/registro', (req, res) => {
-  res.sendFile("/registro.html", {root: "views"})
+  res.render("registro")
 });
 
 app.get ('/Details', (req, res) => {
-  res.sendFile("/productDetail.html", {root: "views"})
+  res.render("productDetail")
 });
 
 app.get ('/productCar', (req, res) => {
-  res.sendFile("/productCar.html", {root: "../views"})
+  res.render("productCar")
 });
 
-const port = process.env.PORT || 3000
-
-app.listen (port, () => {console.log (`App listening at http://localhost:${port}`)});
