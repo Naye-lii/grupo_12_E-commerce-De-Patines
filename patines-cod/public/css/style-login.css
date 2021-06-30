@@ -3,9 +3,9 @@
 }
 
 h1.login-h1{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Bai Jamjuree', sans-serif;
     text-align: center;
-    font-style: italic;
+    font-style: bold;
     margin-top: 50px;
 }
 label.texto-inputs{
@@ -17,6 +17,7 @@ label.texto-inputs{
     width: 50%;
     text-align: left;
     margin-bottom: 10px;
+    font-size: medium;
 }
 
 .login-form{
