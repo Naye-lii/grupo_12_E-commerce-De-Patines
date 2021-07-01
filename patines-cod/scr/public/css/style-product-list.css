@@ -234,12 +234,9 @@ padding: 0 5px;
     margin: 10px 10px 0 0;
   }
 
-  .caption h2 p{
-    padding-right: 20px;
-  }
-
   .caption h2{
     font-size: 1.4rem;
+    padding-right: 60px;
   }
 
   .caption p{
