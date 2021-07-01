@@ -1,93 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head class="header-home">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@1,700&family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link href="/css/style-footer.css" rel = "stylesheet" >
-    <link href="/css/style-header.css" rel = "stylesheet" >
-    <link href="/css/style-home.css" rel = "stylesheet" >
 
-    <title>Fun-N-Skate Inicio</title>
-</head>
+<%- include('partials/head.ejs')%>
 
-<body class="body-home">
-
-    <header class="header-home">
-        <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
-        <div class="img-cabecera">
-            <!--Aqui esta el menu tipo hamburguesa-->
-            <div class="icons navbar_button">
-                <label for="show-nav">
-                    <span class = "material-icons material-icons-outlined" >
-                        menu
-                    </span>  
-                </label> 
-            </div>
-
-            <div>
-                <img class="logo-cabecera" src = '/img/Logo Fun N Skate naranja.svg' alt='Logo Fun-N-Skate'>  
-            </div>
-
-            <div class="icon-right">
-                <div class="usuario">
-                    <img class="img-usuario" src = '/img/img-usuario.jpg' alt='imagen del  usuario'>
-                    <p>Usuario</p>
-                </div>
-                <div>
-                    <label for="show-buscar">
-                        <span class="icons material-icons material-icons-outlined">
-                            search
-                        </span>
-                    </label>
-                </div>
-                <div>
-                    <a href="/productCar"> <span class="icons material-icons material-iconsmaterial-icons-outlined">
-                        shopping_cart
-                    </span></a>
-                </div>
-            </div>          
-        </div>
-
-        <!--Barra de busqueda--> 
-        <input type="checkbox" id="show-buscar" hidden>
-        <div class="navbar_menu">
-            <input class="barra-buscar" type="search" placeholder="  ¿Qué está buscando?"/>
-        </div>
-   
-
-<!--Se declara el chec box que permite ocultar y mostra la lista del menu-->
-        <input type="checkbox" id="show-nav" hidden/>
-<!--lista del menu principal-->
-        <ul class="navbar_menu">
-            <li><a href="/">Inicio</a></li>
-            <li>
-                <label for="show-submenu"> Productos</label>
-                <input type="checkbox" id="show-submenu" hidden>
-<!--Lista del menu/productos-->
-                <ul class="submenu">
-                    <li><a href="/products-list">Todos</a></li>
-                    <li><a href="/Details">Patines</a></li>
-                    <li><a href="#equipoProteccion">Equipo de protección</a></li>
-                    <li><a href="#accesorios">Accesorios</a></li>
-                    <li><a href="#refacciones">Refacciones</a></li>
-                </ul>            
-           </li>
-            <li><a href="#carrito">Carrito</a></li>
-            <li><a href="#compras">Compras</a></li>
-            <li><a href="/login">Mi cuenta</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#otros">Otros</a></li>
-
-        </ul>   
-    </header>
-
+<body class="home">
+    <%- include('partials/header.ejs')%>
     <!--Imagen de carrusel-->
 
     <section>
@@ -273,66 +190,8 @@ style="background-color: #ffd522"
 </section>
 
     <!--Pie de pagína-->
-    <footer>
-        <!--Logo Fun N Skate-->
-                 <div>
-                    <img class="logo-footer" src = '/img/Logo Blanco.svg' alt='Logo Fun-N-Skate'>
-                </div>
-                
-                <!--Logotipos de redes sociales-->
-                <div class="caja-redes">
-                    <h3 class="titulo-redes">¡Siguenos!</h3>
-                    <a href="facebook">
-                        <img class="redes" src = '/img/icon-fb.svg' alt='Logo Fun-N-Skate'>
-                    </a>
-        
-                    <a href="twitter">
-                        <img class="redes" src = '/img/icon-twit.svg' alt='Logo Fun-N-Skate'>
-                    </a>
-        
-                    <a href="whatsapp">
-                        <img class="redes" src = '/img/icon-whats.svg' alt='Logo Fun-N-Skate'>
-                    </a>
-        
-                    <a href="instagram">
-                        <img class="redes" src = '/img/icon-inst.svg' alt='Logo Fun-N-Skate'>
-                    </a> 
-                    <div>
-                        <h3>¡Suscribete! <br> Obten noticias y ofertas</h3>
-                        <input class="barra-correo" type="email"/>
-                        <button class="boton-sus">Suscribete</button>
-                    </div>
-                </div>
-                <!--Area de suscripción -->
-              
-        
-                <div class="cont-list">
-                    <ul>
-                        <li>
-                            <a href="#terminos-condiciones">Terminos y condiciones</a>
-                        </li>
-                        <li>
-                            <a href="#metodosEnvio">Metodos de envio</a>
-                        </li>
-                        <li>
-                            <a href="#privacidad">politicas de privacidad</a>
-                        </li>
-                    </ul>
-                
-                    <ul>
-                        <li>
-                            <a href="#sucursal1">Sucursal 1. direccion</a>
-                        </li>
-                        <li>
-                            <a href="#sucursal2">Sucursal 2. dirección</a>
-                        </li>
-                        <li>
-                            <a href="#sucursal3">Sucursal 3. direccion</a>
-                        </li>
-                    </ul>
-                </div>
-            
-            </footer>
+    <%- include('partials/footer.ejs')%>
+    
 </body>
 
 </html>
