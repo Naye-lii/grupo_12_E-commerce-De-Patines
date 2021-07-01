@@ -1,0 +1,288 @@
+/*Aquí comienza sección recomendaciones*/
+
+#recomendaciones-titulo{
+  background-color: #ffd522;
+  color: black;
+  font-family: 'Bai Jamjuree';
+  text-align: center;
+  margin: auto;
+  font-size: 5vh;
+  padding: 30px;
+}
+
+*body{
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+*main {
+box-sizing: border-box;
+}
+
+.lista{
+  display: flex;
+  flex-wrap: wrap;
+  -ms-flex-align: start;
+  background-color: white;
+  list-style: none;
+  padding: 0 15px;
+  margin: 0;
+  position: relative;
+  top: 15px;
+}
+
+.lista li{
+  font-family: 'Lato', sans-serif;
+  color:#A6AAAD;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 20px 10px;
+  padding: 0px;
+  text-align: center;
+}
+
+.filter-container{
+  background-color: white;
+  margin: 0;
+}
+
+
+.filter-h2{
+  color: #29303B;
+  font-size: 2rem;
+  padding: 20px 0;
+  text-align: center;
+  background-color:#eee 
+}
+
+.filter-h3{
+  color: #29303B;
+  font-size: 1.6rem;
+  background-color: #A6AAAD;
+  padding: 10px 0;
+  text-align: center;
+  background-color: white; 
+}
+
+.filters-filter{
+font-size: 20px;
+font-weight: 100;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+border-radius: 42px;
+padding: 0.5rem 0.7rem;
+margin: 10px;
+}
+
+.filters-filter:hover{
+ cursor: pointer;
+ background-color: black;
+ color: white;
+  }
+  
+
+.lista-filter{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#negro{
+  background-color: black;
+  color: white;
+}
+
+#naranja{
+  background-color:orange;
+  color: white;
+}
+
+#azul{
+  background-color:blue;
+  color: white;
+}
+
+#rojo{
+  background-color: red;
+  color: white;
+}
+
+/*Aquí termina filter*/
+
+/*Comienza sección con productos*/
+
+.boton-negro {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+  justify-content: center;
+  padding:10px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin:30px;
+  transition: background-color cursor 420ms;
+  border-style: none;
+}
+
+.boton-negro:hover{
+background-color: #e57d0c;
+cursor: pointer;
+}
+
+.caption{
+  text-align: center;
+  background-color: white;
+  margin: 10px;
+}
+
+.caption h3{
+letter-spacing: 1px;
+font-size: 1.4em;
+text-align: center;
+margin: auto;
+width: 40%;
+background-color: #ffd522;
+padding: 0 5px;
+}
+
+.p{
+  font-weight: 320;
+  font-size: 1em;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.products-container {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  background-color:white;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.row-products{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 0;
+  padding: 0px;
+}
+
+.product img {
+  width: 100vw;
+  padding: 0px;
+  align-self: center;
+  margin: auto;
+  transition: background-color, 450ms;
+}
+
+.description ul{
+  list-style: none;
+  display: flex;
+  border-radius: 45%;
+}
+
+
+.list-description{
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+@media (min-width: 560px) {
+
+* .row-products{
+  align-content: space-between;
+}
+
+  .row-products {
+    padding: 0px;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .product{
+    float: left;
+    width: 25.33%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 10px;
+    margin: 35px 10px 0 0;
+  }
+
+  .caption{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 100px;
+    align-items: baseline;
+    margin: 10px 10px 0 0;
+  }
+
+  .caption h2 p{
+    padding-right: 20px;
+  }
+
+  .caption h2{
+    font-size: 1.4rem;
+  }
+
+  .caption p{
+    font-size: 1.2rem;
+    position: relative;
+    bottom: 30px;
+  }
+  .description ul{
+    list-style: none;
+    display: flex;
+    border-radius: 45%;
+    position: relative;
+    bottom: 30px;
+  }
+
+  .marca{
+    font-size: 0.6rem; 
+    position: relative;
+    color: #29303B;
+    font-weight: 450;
+  }
+
+  .text-description{
+    color: #76797c;
+    font-size: 0.4rem;
+    font-weight: 400;
+  }
+
+  .product > img{
+    width: 25.33vw;
+    height: auto;
+ }
+
+ .description{
+   position: relative;
+   bottom: 2.3rem;
+   margin:0 3rem 0 0;
+   padding: 0;
+ }
+
+ .products-container{
+   margin-bottom: 40px;
+ }
+
+}
+
+  

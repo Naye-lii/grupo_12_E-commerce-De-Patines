@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: 'Bai Jamjuree', sans-serif;
   font-weight: 400;
-  background-color: black;
+}
+.body-home{
+background-color: black;
 }
 
 .header-home{
@@ -468,4 +470,3 @@ cursor: pointer;
   }
 }
 }
-
