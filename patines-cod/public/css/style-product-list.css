@@ -45,6 +45,7 @@ box-sizing: border-box;
 .filter-container{
   background-color: white;
   margin: 0;
+  font-family: 'Bai Jamjuree', sans-serif;
 }
 
 
@@ -186,17 +187,12 @@ padding: 0 5px;
   list-style: none;
   display: flex;
   border-radius: 45%;
-}
-
-
-.list-description{
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
+.list-description{
+  margin-bottom: 30px;
+  }
 
 @media (min-width: 560px) {
 
@@ -228,7 +224,7 @@ padding: 0 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 100px;
+    height: 250px;
     align-items: baseline;
     margin: 10px 10px 0 0;
   }
@@ -243,20 +239,16 @@ padding: 0 5px;
 
   .caption p{
     font-size: 1.2rem;
-    position: relative;
-    bottom: 30px;
+
   }
   .description ul{
     list-style: none;
     display: flex;
     border-radius: 45%;
-    position: relative;
-    bottom: 30px;
   }
 
   .marca{
     font-size: 0.6rem; 
-    position: relative;
     color: #29303B;
     font-weight: 450;
   }
@@ -273,9 +265,6 @@ padding: 0 5px;
  }
 
  .description{
-   position: relative;
-   bottom: 2.3rem;
-   margin:0 3rem 0 0;
    padding: 0;
  }
 
@@ -283,6 +272,24 @@ padding: 0 5px;
    margin-bottom: 40px;
  }
 
+.list-description{
+  position: relative;
+  bottom: 30px;
 }
 
+.product-description{
+  font-size: 20px;
+  font-weight: 100;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 42px;
+  margin: 0;
+  transform: translate(0, -5s)
+  }
+
   
+  .product-description:hover{
+   cursor: pointer;
+   background-color: black;
+   color: white;
+    }
+  }
