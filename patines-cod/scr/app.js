@@ -33,3 +33,6 @@ app.get ('/productCar', (req, res) => {
   res.render("productCar")
 });
 
+app.get ('/products-list', (req, res) => {
+  res.render("products-list")
+});
