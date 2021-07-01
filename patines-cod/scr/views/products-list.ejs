@@ -1,24 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head class="header-home">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@1,700&family=Oswald:wght@600&display=swap" rel="stylesheet">
-    <link href="/css/style-footer.css" rel = "stylesheet" >
-    <link href="/css/style-header.css" rel = "stylesheet" >
-    <link href="/css/style-home.css" rel = "stylesheet" >
-    <link href="/css/style-product-list.css" rel = "stylesheet" >
 
-    <title>Fun-N-Skate Inicio</title>
-</head>
+<%- include('partials/head.ejs')%>
 
-<body>
+<body class="home">
+    <%- include('partials/header.ejs')%>
 
     <header class="header-home">
         <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
@@ -372,49 +358,12 @@
                  
                     </div>
                     </div>
-        
-          
-          
-
-				
-			
-
-
-
-                              
-                <!-- more products -->
-              
+  
               </section>
-            <!--Area de suscripción -->
-          
-    
-            <div class="cont-list">
-                <ul>
-                    <li>
-                        <a href="#terminos-condiciones">Terminos y condiciones</a>
-                    </li>
-                    <li>
-                        <a href="#metodosEnvio">Metodos de envio</a>
-                    </li>
-                    <li>
-                        <a href="#privacidad">politicas de privacidad</a>
-                    </li>
-                </ul>
-            
-                <ul>
-                    <li>
-                        <a href="#sucursal1">Sucursal 1. direccion</a>
-                    </li>
-                    <li>
-                        <a href="#sucursal2">Sucursal 2. dirección</a>
-                    </li>
-                    <li>
-                        <a href="#sucursal3">Sucursal 3. direccion</a>
-                    </li>
-                </ul>
-            </div>
-        
-        </footer>
+
+                <!--Pie de pagína-->
+    <%- include('partials/footer.ejs')%>
+           
 </body>
 
 </html>
