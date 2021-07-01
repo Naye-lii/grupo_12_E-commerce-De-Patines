@@ -1,13 +1,7 @@
 const controlador = {
-    index: (req, res) => {
-        res.send('products-list');
+    detail: function (req, res) {
+        res.render("productDetail");
     },
-    show: (req, res) => {
-        res.send('products-list');
-    },
-    create: (req, res) => {
-        res.send('products-list');
-    },
-}
+};
 
 module.exports = controlador;
