@@ -295,3 +295,15 @@ padding: 0 5px;
    color: white;
     }
   }
+
+  @media (min-width: 561px) and (max-width: 867px){
+    .product{
+      float: left;
+      width: 40.33%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 0px;
+      margin: 35px 10px 0 0;
+    }
+  }
