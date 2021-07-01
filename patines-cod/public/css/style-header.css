@@ -95,7 +95,7 @@ header{
     text-align: center;
     background-color: #fff;
     display: block;
-    max-height: 40px;
+    min-height: 20px;
     font-weight: bold;
 }
 
@@ -136,7 +136,7 @@ header{
     width: 100%;
     margin: 0;
     display: block;
-    max-height: inherit;
+    min-height: inherit;
     padding: 8px;
     
 }
@@ -177,6 +177,7 @@ input[type="checkbox"]:checked + .bar_buscar {
         background-color: #fff;
         border-bottom: #fff;
         border-top: black;
+        max-height: 40px;
     }
 
     .submenu > li{
