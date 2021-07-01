@@ -194,6 +194,11 @@ padding: 0 5px;
   margin-bottom: 30px;
   }
 
+.caption > h2 > a {
+  font-style: 'Oswald', sans-serif;
+  color: #000;
+}
+
 @media (min-width: 560px) {
 
 * .row-products{
