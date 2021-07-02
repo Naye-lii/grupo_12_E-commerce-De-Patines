@@ -83,13 +83,13 @@ font-family:'Lato', sans-serif;
 button.submit-btn{
     color: white;
     background-color: #000000;
-    margin-top: 15px;
+     margin-top: 15px;
     padding: 10px 15px;
     font-family: 'Oswald', sans-serif;
     font-style: bold;
     font-size: 1.2rem;
     transition-duration: 0.4s;
-    border-style: none;
+    border-radius: 10px;
 }
 
 button.submit-btn:hover {
@@ -102,6 +102,34 @@ button.submit-btn:hover {
       font-size: 14px;
       text-align: left;
   }
+
+  .cont-chargeImg, .cont-categoria{
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      margin-bottom: 25px;
+      text-align: left;
+  }
+
+  .chargeImg{
+    color: #E57D0C;
+    font-style: 'Lato', sans-serif;
+  }
+
+  .list-categoria{
+      border: #E57D0C solid 2px;
+      width: 50%;
+      height: 35px;
+      border-radius: 5px;
+      font-style: 'Lato', sans-serif;
+  }
+
+  .sec-addProduct{
+      margin-top: 20px;
+      margin-bottom: 10px;
+  }
+
+  
 
   /* Media queries para dar formato a pantallas de diferente tamaño */
 
