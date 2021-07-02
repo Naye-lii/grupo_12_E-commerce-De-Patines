@@ -79,7 +79,7 @@ header{
 
 
 /*Define el estilo de de la lista del menú principal*/
-.navbar_menu, .submenu, .descripcion, .bar_buscar{
+.navbar_menu, .submenu, .descripcion, .bar_buscar, .filtro_menu,.lista-filter{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -145,16 +145,17 @@ header{
 input[type="checkbox"]:checked + .navbar_menu, 
 input[type="checkbox"]:checked + .submenu,
 input[type="checkbox"]:checked + .descripcion, 
-input[type="checkbox"]:checked + .bar_buscar {
+input[type="checkbox"]:checked + .bar_buscar,
+input[type="checkbox"]:checked + .filtro_menu {
     display: block;
 }
 
-@media(min-width:560px){
+@media(min-width:600px){
     header{
         position:inherit;
     }
 /*Muestra las barras de menu principal y la de los detalles*/
-    .navbar_menu, .details-menu{
+    .navbar_menu, .details-menu, .bar_buscar{
         display: inline-block;
         width: 100vw;
     }
@@ -208,6 +209,7 @@ input[type="checkbox"]:checked + .bar_buscar {
     }
 
     .barra-buscar{
+        display: block;
         width: 50vw;
         max-width: 800px;
         height: 30px;
@@ -215,6 +217,7 @@ input[type="checkbox"]:checked + .bar_buscar {
         position: absolute;
         top: 3.5vw;
         left: 25vw;
+        z-index: 10;
     }
 
     .usuario > p{

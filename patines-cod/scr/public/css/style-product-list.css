@@ -82,7 +82,7 @@ margin: 10px;
   }
   
 
-.lista-filter{
+input[type="checkbox"]:checked + .lista-filter{
   list-style: none;
   padding: 0;
   display: flex;
