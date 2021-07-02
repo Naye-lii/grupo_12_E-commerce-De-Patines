@@ -1,6 +1,6 @@
 /*Aquí comienza sección recomendaciones*/
 
-#recomendaciones-titulo{
+#products-titulo{
   background-color: #ffd522;
   color: black;
   font-family: 'Bai Jamjuree';
@@ -234,12 +234,9 @@ padding: 0 5px;
     margin: 10px 10px 0 0;
   }
 
-  .caption h2 p{
-    padding-right: 20px;
-  }
-
   .caption h2{
     font-size: 1.4rem;
+    padding-right: 60px;
   }
 
   .caption p{
@@ -296,5 +293,17 @@ padding: 0 5px;
    cursor: pointer;
    background-color: black;
    color: white;
+    }
+  }
+
+  @media (min-width: 561px) and (max-width: 867px){
+    .product{
+      float: left;
+      width: 40.33%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 0 0px;
+      margin: 35px 10px 0 0;
     }
   }

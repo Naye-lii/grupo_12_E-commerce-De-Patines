@@ -3,14 +3,13 @@
 
 <%- include('partials/head.ejs')%>
 
-<body class="home">
     <%- include('partials/header.ejs')%>
  <!--Comienza lista de productos-->
 
     <body>
         <main>
 
-            <h1 id="recomendaciones-titulo">Todos los productos</h1>
+            <h1 id="products-titulo">Todos los productos</h1>
     <!--lista del menu principal-->
        <div id="filter">
            <section class="filter-container">
@@ -65,9 +64,6 @@
 </ul>
 </div>
 </section>
-
-<div class="products-container">
-	<div class="row-products">
        
         <div class="products-container">
             <div class="row-products">
@@ -139,20 +135,16 @@
                         </div>
                     </div>
                     </div>
-                </div>
-            </div>
 
-    <div class="products-container">
-        <div class="row-products">
-                <div class="product">
-                    <img src="img/product4.png">
-                    <div class="caption">
-                        <h2><a href="/products/detail">Patines W10</a></h2>
-                        <h3>$3500</h3>
-                        <p class="marca">Roller Blade</p>
-                        <p class="text-description">Patines de 4 ruedas.</p>
-                        <div class="description">
-                           <ul class="list-description">
+                    <div class="product">
+                        <img src="img/product3.png">
+                        <div class="caption">
+                            <h2><a href="/products/detail">Patines W10</a></h2>
+                            <h3>$3500</h3>
+                            <p class="marca">Roller Blade</p>
+                                <p class="text-description">Patines de 4 ruedas.</p>
+                            <div class="description">
+                                <ul class="list-description">
                             <li class="filters-filter">Freeskate</li>
                             <li class="filters-filter">
                                 <select name="talla" class="selec">
@@ -162,10 +154,34 @@
                                     <option value="26">26</option>
                                     <option value="27">27</option>
                                 </select></li>
+                        </ul>
+                        </div>
                     </div>
-                </div>
-                </div>
-    
+                    </div>
+
+                    <div class="product">
+                        <img src="img/product4.png">
+                        <div class="caption">
+                            <h2><a href="/products/detail">Patines W10</a></h2>
+                            <h3>$3500</h3>
+                            <p class="marca">Roller Blade</p>
+                                <p class="text-description">Patines de 4 ruedas.</p>
+                            <div class="description">
+                                <ul class="list-description">
+                            <li class="filters-filter">Freeskate</li>
+                            <li class="filters-filter">
+                                <select name="talla" class="selec">
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                </select></li>
+                        </ul>
+                        </div>
+                    </div>
+                    </div>
+
                     <div class="product">
                         <img src="img/product5.png">
                         <div class="caption">
@@ -188,7 +204,11 @@
                         </div>
                     </div>
                     </div>
-    
+                    </div>
+
+
+    <div class="products-container">
+        <div class="row-products">
                 <div class="product">
                     <img src="img/product6.png">
                     <div class="caption">
@@ -206,15 +226,11 @@
                                     <option value="25">25</option>
                                     <option value="26">26</option>
                                     <option value="27">27</option>
-                                </select>
+                                </select></li>
                     </div>
                 </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="products-container">
-            <div class="row-products">
+    
                     <div class="product">
                         <img src="img/product7.png">
                         <div class="caption">
@@ -232,61 +248,11 @@
                                     <option value="25">25</option>
                                     <option value="26">26</option>
                                     <option value="27">27</option>
-                                </select>
-                            </li>
+                                </select></li>
                         </ul>
                         </div>
                     </div>
-                    </div>
-        
-                        <div class="product">
-                            <img src="img/product5.png">
-                            <div class="caption">
-                                <h2><a href="/products/detail">Patines W10</a></h2>
-                                <h3>$3500</h3>
-                                <p class="marca">Roller Blade</p>
-                                    <p class="text-description">Patines de 4 ruedas.</p>
-                                <div class="description">
-                                    <ul class="list-description">
-                                <li class="filters-filter">Freeskate</li>
-                                <li class="filters-filter">
-                                    <select name="talla" class="selec">
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                    </select></li>
-                            </ul>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="product">
-                            <img src="img/product5.png">
-                            <div class="caption">
-                                <h2><a href="/products/detail">Patines W10</a></h2>
-                                <h3>$3500</h3>
-                                <p class="marca">Roller Blade</p>
-                                    <p class="text-description">Patines de 4 ruedas.</p>
-                                <div class="description">
-                                    <ul class="list-description">
-                                <li class="filters-filter">Freeskate</li>
-                                <li class="filters-filter">
-                                    <select name="talla" class="selec">
-                                        <option value="23">23</option>
-                                        <option value="24">24</option>
-                                        <option value="25">25</option>
-                                        <option value="26">26</option>
-                                        <option value="27">27</option>
-                                    </select></li>
-                            </ul>
-                        </div>
-                            </div>
-                        </div>
-                        </div>
-        
-                 
+                    </div>                 
                     </div>
                     </div>
   
