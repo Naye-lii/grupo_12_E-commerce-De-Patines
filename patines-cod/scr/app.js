@@ -4,6 +4,9 @@ const app = express();
 const rutasMain = require('./routes/main.js');
 const rutasProducts = require('./routes/products.js');
 
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
 app.set('view engine', 'ejs');
 app.use(express.static('./public')); 
 
