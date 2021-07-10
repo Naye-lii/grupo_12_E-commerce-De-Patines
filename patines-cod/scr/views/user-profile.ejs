@@ -4,16 +4,32 @@
 
 <body>
     <%- include('partials/header.ejs')%>
-    <Section>
-        <div>
-            <h1>Tu Perfil De Usuario</h1>
-        </div>
+    <div class="tituloPerfil">
+        <h1>Tu Perfil</h1>
+    </div>
+
+    <Section class="sec-user">
+        
         <div >
-            <img class="img-sug" src = '/img/casco-01.jpg' alt='casco'>
-            <h2 class="nombre-sug">Casco verde militar</h2>
-            <button class= "boton-sug" type="submit">Agregar al carrito</button>
+            <img class="img-userProf" src = '/img/users/imagen-user-default.png' alt='casco'>
+            
+            <h2 class="text-userProf"><%= userLog.firstName%> <%= userLog.lastName%></h2>
+
+            <label class="etiqueta" for="nombre">Correo Electrónico</label>
+            <div class="div-text">
+                <h2 class="text-userProf"><%= userLog.email %></h2> 
+            </div>
+            
+
+            <label class="etiqueta" for="nombre">Tipo</label>
+            <div class="div-text">
+                <h2 class="text-userProf"><%= userLog.type %></h2>   
+            </div>
+            
+            <br/>
+            
         </div>
     </Section>
-
+    <%- include('partials/footer.ejs')%>
 </body>
 </html>

@@ -91,6 +91,7 @@ main{
 .nombre-art{
     font-family: 'Bai Jamjuree', sans-serif;
     color: #000;
+    text-align: left;
 }
 
 .nombre-sug{
@@ -177,6 +178,7 @@ main{
     background-color: #ffd522;
     width: 100vw;
     font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 5vh;
     text-align: center;
     margin-top: 4px;
     padding-top: 30px;

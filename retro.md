@@ -25,3 +25,11 @@ Retrospectiva Sprint 2
 4. Hacer menos pruebas de forma local, probar más con servidores como heroku puesto que la visualización cambia.
 
 5.  Dejar de hacer la parte que nos corresponde de forma individual, ya que al final se generan errores. También dejar de no realizar todos los ejercicios del curso, como los de MercadoLiebre, para no atrasarnos en caso de tener que entregarlos y que no se junten con el sprint a entregar.
+
+Retrospectiva Sprint 3
+
+1.	Comenzar a hacer un informe sobre los avances del proyecto ya sea mediante un dailys o weeklys.
+2.	Realizar avances de forma periódica y anticipada a la fecha de entrega para poder realizar correcciones y mejoras. También informar a los miembros del equipo si tenemos alguna dificultad personal o técnica que nos impida progresar con los alcances del proyecto.
+3.	Continuar haciendo uso de las plataformas de trello, github y slack, las cuales nos permiten organizar el proyecto y las actividades, así como mantener la comunicación entre los miembros del equipo.
+4.	Hacer menos acumulación de trabajo y evitar el trabajo individualizado.
+5.	Por ahora no hay algo que se deba dejar de hacer.

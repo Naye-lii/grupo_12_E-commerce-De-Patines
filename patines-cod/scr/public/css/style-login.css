@@ -2,12 +2,17 @@
     box-sizing: border-box;
 }
 
-h1.login-h1{
+.login-h1 > h1{
     font-family: 'Bai Jamjuree', sans-serif;
     text-align: center;
     font-style: bold;
-    margin-top: 50px;
+    font-size: 5vh;
+    background-color: #ffd522;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0;
 }
+
 label.texto-inputs{
     display: none;
     font-family: 'Lato', sans-serif;
@@ -22,6 +27,7 @@ label.texto-inputs{
 
 .login-form{
     text-align: center;
+    margin-top: 30px;
 }
 
 .div-input{
