@@ -2,31 +2,21 @@
     {
         "id": 1,
         "name": "Patines con flor bordada",
-        "description": "Patines blancos",
+        "price": 500.00,
+        "brand": "Skate Roller",
+        "description": "Patines 4 ruedas",
         "image": "url('https://drive.google.com/file/d/1SWnRJawuLx_AHv9zT0pELUdTt_ndB9rU/view?usp=sharing')",
         "category": "Fitness",
-        "brand": "Skate Roller",
-        "size": 22,
-        "price": 500.00
+        "size": 22
     },
     {
-        "id": 2,
+        "id": 1,
         "name": "Patines con flor bordada",
-        "description": "Patines blancos",
+        "price": 500.00,
+        "brand": "Skate Roller",
+        "description": "Patines 4 ruedas",
         "image": "url('https://drive.google.com/file/d/1SWnRJawuLx_AHv9zT0pELUdTt_ndB9rU/view?usp=sharing')",
         "category": "Fitness",
-        "brand": "Skate Roller",
-        "size": 22,
-        "price": 500.00
-    },
-    {
-        "id": 3,
-        "name": "Patines con flor bordada",
-        "description": "Patines blancos",
-        "image": "url('https://drive.google.com/file/d/1SWnRJawuLx_AHv9zT0pELUdTt_ndB9rU/view?usp=sharing')",
-        "category": "Fitness",
-        "brand": "Skate Roller",
-        "size": 22,
-        "price": 500.00
+        "size": 22
     }
 ]
