@@ -10,26 +10,35 @@
             <h1>Añadir Producto</h1>
         </div>
         <section class="sec-addProduct">
-            <form class="login-form" method="POST" action="/newProduct">
+            <form class="login-form" method="POST" action="/products">
                 <label class="texto-inputs" for="productName">Nombre del producto</label>
                 <div class="div-input">
-                    <input type="text" name="nombreProducto" id="productName" class="login-data" placeholder="Nombre del producto" required>
+                    <input type="text" name="name" id="productName" class="login-data" placeholder="Nombre del producto" required>
+                </div>
+
+                <label class="texto-inputs" for="precio">Precio</label>
+                <div class="div-input">
+                    <input type="text" name="price" id="precio" class="login-data" placeholder="$10000.00" required>   
+                </div>
+
+                <label class="texto-inputs" for="marca">Marca</label>
+                <div class="div-input">
+                    <input type="text" name="brand" id="marca" class="login-data" placeholder="Marca" required>   
                 </div>
 
                 <label class="texto-inputs" for="des">Descripción</label>
                 <div class="div-input">    
-                    <input type="textarea" name="Descripcion" id="des" class="login-data" placeholder="Nombre del producto" required>
+                    <textarea name="description" id="des" class="login-data" placeholder="Descripción" rows="5" required></textarea>
                 </div>
-                
+
                 <label class="texto-inputs" for="imagenP">Imagen del producto</label>
                 <div class="cont-chargeImg">
-                    <input type="file" name="productImg" id="imagenP" accept=".jpg, .png" class="chargeImg">  
+                    <input type="file" name="image" id="imagenP" accept=".jpg, .png" class="chargeImg">  
                 </div>
-                
 
                 <label class="texto-inputs" for="categoria">Categoría</label>
                 <div class="cont-categoria" >
-                    <select name="categoria" id="categoria" required class="list-categoria">
+                    <select name="category" id="categoria" required class="list-categoria">
                         <option value="Na">Seleccione categoría</option>
                         <option value="patines">Patines</option>
                         <option value="protect">Equipo de protección</option>
@@ -37,37 +46,18 @@
                         <option value="refaccion">Refacción</option>
                     </select>  
                 </div>
-                
-
+            
                 <label class="texto-inputs" for="tallas">Tallas disponibles</label>
                 <div class="div-input">
-                    <input type="text" name="talla" id="tallas" placeholder="talla1, talla2, ..." class="login-data">
+                    <input type="text" name="size" id="tallas" placeholder="talla1, talla2, ..." class="login-data">
                 </div>
                 
-                <label class="texto-inputs" for="coloress">Colores disponibles</label>
+                <label class="texto-inputs" for="colores">Colores disponibles</label>
                 <div class="div-input">
                     <input type="text" name="color" id="colores" class="login-data" placeholder="color1, color2, ...">
                 </div>
                 
-                <label class="texto-inputs" for="coloress">Precio</label>
-                <div class="div-input">
-                    <input type="text" name="color" id="colores" class="login-data">   
-                </div>
-                
                 <button type="submit" class="submit-btn">Guardar</button>
-            </form>
-        </section>
-
-        <section class="sec-addProduct">
-            <h2>Modificar Producto</h2>
-            <form class="login-form" method="POST" action="/newProduct">
-                <label class="texto-inputs" for="productName">Id del producto que desea modificar</label>
-                <div class="div-input">
-                    <input type="text" name="nombreProducto" id="productName" class="login-data" placeholder="Id del producto" required>
-                </div>
-               
-                <button type="submit" class="submit-btn">Buscar</button>
-                <button type="delete" class="submit-btn">Eliminar</button>
             </form>
         </section>
 

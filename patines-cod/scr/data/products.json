@@ -1,22 +1,70 @@
 [
-    {
-        "id": 1,
-        "name": "Patines con flor bordada",
-        "price": 500.00,
-        "brand": "Skate Roller",
-        "description": "Patines 4 ruedas",
-        "image": "url('https://drive.google.com/file/d/1SWnRJawuLx_AHv9zT0pELUdTt_ndB9rU/view?usp=sharing')",
-        "category": "Fitness",
-        "size": 22
-    },
-    {
-        "id": 1,
-        "name": "Patines con flor bordada",
-        "price": 500.00,
-        "brand": "Skate Roller",
-        "description": "Patines 4 ruedas",
-        "image": "url('https://drive.google.com/file/d/1SWnRJawuLx_AHv9zT0pELUdTt_ndB9rU/view?usp=sharing')",
-        "category": "Fitness",
-        "size": 22
-    }
+  {
+    "id": 1,
+    "name": "Patines con flor bordada",
+    "price": 500,
+    "brand": "Skate Roller",
+    "description": "Patines 4 ruedas",
+    "image": "url('https://drive.google.com/file/d/1SWnRJawuLx_AHv9zT0pELUdTt_ndB9rU/view?usp=sharing')",
+    "category": "Fitness",
+    "size": 22,
+    "color": [
+      "negro",
+      "blanco"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Patines con flor bordada",
+    "price": 500,
+    "brand": "Skate Roller",
+    "description": "Patines 4 ruedas",
+    "image": "url('https://drive.google.com/file/d/1SWnRJawuLx_AHv9zT0pELUdTt_ndB9rU/view?usp=sharing')",
+    "category": "Fitness",
+    "size": 22,
+    "color": [
+      "negro",
+      "blanco"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Patín en línea PR1300",
+    "price": "$1360.66",
+    "brand": "Black",
+    "description": "Patines en línea tipo fitness marca Black para niño con rueda R16 y freno de tacón",
+    "image": "",
+    "category": "patines",
+    "size": [
+      "18",
+      " 20",
+      " 22",
+      " 24"
+    ],
+    "color": [
+      "negro",
+      " rosa",
+      " azul"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Patín en línea PZ3000",
+    "price": "$3500.00",
+    "brand": "Adidas",
+    "description": "Patines tipo free skate marca Adidas para hombre, configuración de ruedas rokering y frame de acero.",
+    "image": "",
+    "category": "patines",
+    "size": [
+      "25",
+      "26",
+      "27",
+      "28"
+    ],
+    "color": [
+      "negro",
+      " rojo",
+      " gris"
+    ]
+  }
 ]
