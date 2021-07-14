@@ -1,3 +1,4 @@
+
 const controlador = {
     index: function(req, res){
         res.render("home");
@@ -12,7 +13,7 @@ const controlador = {
         res.render("productCar")
     },
     products: function (req, res){
-        res.render("products-list")
+        res.render("products-list");
     },
 };
 

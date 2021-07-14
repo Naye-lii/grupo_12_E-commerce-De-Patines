@@ -90,13 +90,15 @@ font-family:'Lato', sans-serif;
 button.submit-btn{
     color: white;
     background-color: #000000;
-     margin-top: 15px;
+    margin-top: 15px;
     padding: 10px 15px;
     font-family: 'Oswald', sans-serif;
     font-style: bold;
     font-size: 1.2rem;
     transition-duration: 0.4s;
     border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 button.submit-btn:hover {
@@ -139,8 +141,7 @@ button.submit-btn:hover {
       padding-top: 20px;
       padding-bottom: 10px;
   }
-
-  
+ 
 
   /* Media queries para dar formato a pantallas de diferente tamaño */
 

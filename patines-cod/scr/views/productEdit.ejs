@@ -13,22 +13,22 @@
             <form class="login-form" method="POST" action="/products">
                 <label class="texto-inputs" for="productName">Nombre del producto</label>
                 <div class="div-input">
-                    <input type="text" name="name" id="productName" class="login-data" placeholder="Nombre del producto" required>
+                    <input type="text" name="name" id="productName" class="login-data" placeholder="Nombre del producto" required value="<%=productEdit.name%>">
                 </div>
 
                 <label class="texto-inputs" for="precio">Precio</label>
                 <div class="div-input">
-                    <input type="text" name="price" id="precio" class="login-data" placeholder="$10000.00" required>   
+                    <input type="text" name="price" id="precio" class="login-data" placeholder="$10000.00" required value="<%=productEdit.price%>">   
                 </div>
 
                 <label class="texto-inputs" for="marca">Marca</label>
                 <div class="div-input">
-                    <input type="text" name="brand" id="marca" class="login-data" placeholder="Marca" required>   
+                    <input type="text" name="brand" id="marca" class="login-data" placeholder="Marca" required value="<%=productEdit.brand%>">   
                 </div>
 
                 <label class="texto-inputs" for="des">Descripción</label>
                 <div class="div-input">    
-                    <textarea name="description" id="des" class="login-data" placeholder="Descripción" rows="5" required></textarea>
+                    <textarea name="description" id="des" class="login-data" placeholder="Descripción" rows="5" required> <%= productEdit.description %> </textarea>
                 </div>
 
                 <label class="texto-inputs" for="imagenP">Imagen del producto</label>
@@ -40,7 +40,7 @@
                 <div class="cont-categoria" >
                     <select name="category" id="categoria" required class="list-categoria">
                         <option value="Na">Seleccione categoría</option>
-                        <option value="patines">Patines</option>
+                        <option value="patines" >Patines</option>
                         <option value="protect">Equipo de protección</option>
                         <option value="accesorio">Accesorio</option>
                         <option value="refaccion">Refacción</option>
@@ -49,12 +49,12 @@
             
                 <label class="texto-inputs" for="tallas">Tallas disponibles</label>
                 <div class="div-input">
-                    <input type="text" name="size" id="tallas" placeholder="talla1, talla2, ..." class="login-data">
+                    <input type="text" name="size" id="tallas" placeholder="talla1, talla2, ..." class="login-data" value="<%= productEdit.size %>">
                 </div>
                 
                 <label class="texto-inputs" for="colores">Colores disponibles</label>
                 <div class="div-input">
-                    <input type="text" name="color" id="colores" class="login-data" placeholder="color1, color2, ...">
+                    <input type="text" name="color" id="colores" class="login-data" placeholder="color1, color2, ..." value="<%= productEdit.color %>">
                 </div>
                 
                 <button type="submit" class="submit-btn">Guardar</button>
