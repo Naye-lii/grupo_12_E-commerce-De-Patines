@@ -1,30 +1,36 @@
 [
   {
-    "id": 1,
+    "id": "1",
     "name": "Patines con flor bordada",
-    "price": 500,
+    "price": "$750.00",
     "brand": "Skate Roller",
-    "description": "Patines 4 ruedas",
+    "description": "  Patines 4 ruedas  ",
     "image": "/img/product1.png",
-    "category": "Fitness",
-    "size": 22,
+    "category": "patines",
+    "size": [
+      "22"
+    ],
     "color": [
       "negro",
       "blanco"
     ]
   },
   {
-    "id": 2,
+    "id": "2",
     "name": "Patines con flor bordada",
-    "price": 500,
+    "price": "$1500.00",
     "brand": "Skate Roller",
-    "description": "Patines 4 ruedas",
+    "description": "  Patines 4 ruedas  ",
     "image": "/img/product1.png",
-    "category": "Fitness",
-    "size": 22,
+    "category": "patines",
+    "size": [
+      "22",
+      "25"
+    ],
     "color": [
       "negro",
-      "blanco"
+      "blanco",
+      " morado"
     ]
   },
   {
@@ -48,11 +54,11 @@
     ]
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "Patín en línea PZ3000",
     "price": "$3500.00",
     "brand": "Adidas",
-    "description": "Patines tipo free skate marca Adidas para hombre, configuración de ruedas rokering y frame de acero.",
+    "description": " Patines tipo free skate marca Adidas para hombre, configuración de ruedas rokering y frame de acero. ",
     "image": "/img/product3.png",
     "category": "patines",
     "size": [
@@ -64,7 +70,8 @@
     "color": [
       "negro",
       " rojo",
-      " gris"
+      " gris",
+      " verde"
     ]
   },
   {

@@ -93,10 +93,10 @@
                                 <p class="marca"><%=products[i].brand%></p>
                             </div>
                             <div class="contButton">
-                                <form action="/products/edit/<%= products[i].id %>" method="GET">
+                                <form action="/products/<%= products[i].id %>/edit" method="GET">
                                     <button class="submit-btn" type="submit">Editar</button>
                                 </form>
-                                <form action="/products/?_method=DELETE" method="POST">
+                                <form action="/products?_method=DELETE" method="POST">
                                     <button class="submit-btn" type="submit" >Eliminar</button>
                                 </form>
                             </div>

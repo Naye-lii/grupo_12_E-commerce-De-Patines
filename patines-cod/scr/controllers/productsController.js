@@ -43,13 +43,30 @@ const controlador = {
         res.render("productsListEdit", {products: productsList});
     },
 
-    edit: function (req, res){
+    formEdit: function (req, res){
         const idProduct = req.params.idProduct;
         const productEdit = productsList.find((articulo)=>{
             return articulo.id == idProduct;
         });
-        console.log(productEdit);
         res.render("productEdit", {productEdit});
+    },
+    edit: function (req, res){
+        const idProduct = req.params.idProduct;
+        const productAct = req.body;
+        productAct.size = productAct.size.split(",");
+        productAct.color = productAct.color.split(",");
+
+        const productInf = {id: idProduct, ...productAct};
+
+        const productEdit = productsList.findIndex((articulo)=>{
+            return articulo.id == idProduct;
+        });
+
+
+        productsList[productEdit] = productInf;
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(productsList, null, 2));
+        res.redirect("/products/list");
     },
     destroy: (req, res) => {
         const productIndex = products.findIndex(product => {return product.id === parseInt(req.params.id)});
