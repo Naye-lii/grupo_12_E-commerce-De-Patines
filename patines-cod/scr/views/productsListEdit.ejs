@@ -86,9 +86,9 @@
                     <div class="row-products">
                         <% for(let i = 0; i < products.length; i ++) { %>
                         <div class="product">
-                            <img src= "<%= products[i].image %>">
+                            <img src= "<%= products[i].image %>"></img>
                                                         <div class="caption">
-                                <h2><a href="/products/detail"><%=products[i].name%></a></h2>
+                                <h2><a href="/products/detail/<%= products[i].id %>"><%=products[i].name%></a></h2>
                                 <h3><%=products[i].price%></h3>
                                 <p class="marca"><%=products[i].brand%></p>
                             </div>
@@ -97,7 +97,7 @@
                                     <button class="submit-btn" type="submit">Editar</button>
                                 </form>
                                 <form action="/products/delete/<%= products[i].id%>?_method=DELETE" method="POST">
-                                    <button class="submit-btn" type="submit" >Eliminar</button>
+                                    <button class="submit-btn" type="submit">Eliminar</button>
                                 </form>
                             </div>
                             

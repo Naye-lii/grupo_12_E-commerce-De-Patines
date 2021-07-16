@@ -4,7 +4,6 @@ const router = express.Router();
 const productsController = require('../controllers/productsController.js');
 
 router.get('/products/list', productsController.index);
-router.get('/detail', productsController.detail);
 router.get('/detail/:id', productsController.detail);
 router.get('/create', productsController.form);
 router.get('/list', productsController.list);
