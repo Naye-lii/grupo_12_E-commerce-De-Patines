@@ -28,7 +28,7 @@
                     <input type="checkbox" id="filter-nav" hidden/>
                     <ul class="filtro_menu">
                         <li>
-                            <label for="show-CATEGORIAS"><h3 class="filter-h3">CATERGORÍAS</h3></label>
+                            <label for="show-CATEGORIAS"><h3 class="filter-h3">CATEGORÍAS</h3></label>
                             <input type="checkbox" id="show-CATEGORIAS" hidden>
                             <ul  class="lista-filter">
                                 <li class="filters-filter">Fitness</li>
@@ -85,13 +85,13 @@
                 <div class="products-container">
                     <div class="row-products">
                         <% for(let i = 0; i < products.length; i ++) { %>
-                        <div class="product">
-                            <img src= "<%= products[i].image %>"></img>
-                                                        <div class="caption">
-                                <h2><a href="/products/detail/<%= products[i].id %>"><%=products[i].name%></a></h2>
-                                <h3><%=products[i].price%></h3>
-                                <p class="marca"><%=products[i].brand%></p>
-                            </div>
+                            <div class="product">
+                                <img src= "<%= products[i].image %>">
+                                                            <div class="caption">
+                                    <h2><a href="/products/detail/<%= products[i].id %>"><%=products[i].name%></a></h2>
+                                    <h3><%=products[i].price%></h3>
+                                    <p class="marca"><%=products[i].brand%></p>
+                                </div>
                             <div class="contButton">
                                 <form action="/products/<%= products[i].id %>/edit" method="GET">
                                     <button class="submit-btn" type="submit">Editar</button>
@@ -100,7 +100,7 @@
                                     <button class="submit-btn" type="submit">Eliminar</button>
                                 </form>
                             </div>
-                            
+                        </a>
                         </div>
                         <% } %>
                     </div>

@@ -10,7 +10,7 @@
 <!--Imagenes del primer producto-->
     <div class="caja3">
         <div class="caja2">
-            <img class="img-producto" src = '/img/patin-01.jpg' alt='Patines clasicos blancos con flor bordada'>
+            <img class="img-producto" src = '<%=product.image%>' alt='Patines clasicos blancos con flor bordada'>
         </div>
 
         <div class="caja1">
@@ -22,21 +22,23 @@
     
 <!--Datos de vista rapida del producto-->
         <div class="sec-resum"> 
-            <h2 class="nombre-art"><%= products.name%></h2>
-            <p class="resum-des"><%= products.description%></p>
-            <h3 class="precio-des"><%= products.price%></h3>
+
+            <h2 class="nombre-art"><%=product.name%></h2>
+            <p class="resum-des"><%=product.description%></p>
+            <h3 class="precio-des"><%=product.price%></h3>
+
+<!-- TODO: Funcionalidad de option-->
 
             <form action="#none" method="GET">
-                <label class="resum-des"> Talla: </label> 
+                <label class="resum-des"> Talla: </label>
                 <select name="talla" class="selec">
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
+                    <% let size = product.size; %>
+                    <% for(let i=0 ; i < size.length ;i++) { %>
+                            <option value="size[i]%"><%= size[i]%>.</option>
+                        <% } %>
                 </select>
             </form>
-                
+            <br>
             <form action="#none" method="GET">
                 <label class="resum-des">Color: </label>
                 <select class="selec">
@@ -44,8 +46,9 @@
                     <option value="#000">negro</option>
                     <option value="#fff">blanco</option>
                 </select>
+                <br>
             </form>
-     
+     <br>
      <!-- Calificación por estrellas -->
             <span class="material-icons material-icons-round">
                 star
@@ -96,6 +99,7 @@
         <!-- Seccion de sugerencias -->
         <div class="caja4">
             <h2 class="nombre-art">También Podrías Necesitar </h2>
+            <br>
         </div>
         <section class="caja4">
                    
@@ -106,8 +110,8 @@
             </div>
 
             <div class="caja2">
-                <img class="img-sug" src = '/img/home-producto2.png' alt='Patines fitnes'>
-                <h2 class="nombre-sug">Patines fitnes ABEC</h2>
+                <img class="img-sug" src = '/img/home-producto2.jpg' alt='Patines fitnes'>
+                <h2 class="nombre-sug">Patines fitness ABEC</h2>
                 <button class= "boton-sug" type="submit">Agregar al carrito</button>
             </div>
 
@@ -121,7 +125,6 @@
                 <h2 class="nombre-sug">Kit de protectores</h2>
                 <button class= "boton-sug" type="submit">Agregar al carrito</button>
             </div>
-
         </section>
     </main>
 

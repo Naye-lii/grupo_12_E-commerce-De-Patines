@@ -9,21 +9,16 @@ const productsModel =  require('../models/products.model');
 
 const controlador = {
     index: function(req, res){
-        res.render("productsListEdit", { products });
+        res.render("productsListEdit", { products: productList });
     },
     detail: (req, res) => {
-        let productId = req.params.id;
-        console.log(productId);
-        const product = productsList.find((producto) => {
-          return producto.id == productId;
+        const idProduct = req.params.id;
+        const productSize = req.params.size;
+        const product = productsList.find((articulo)=>{
+            return articulo.id == idProduct;
         });
-        console.log(product);
-        if (product) {
-          res.render("productDetail", { product });
-        } else {
-          res.render("error");
-        }
-},
+        res.render("productDetail", {products: productsList, product, idProduct, productSize});
+    },
     form: function (req, res){
         res.render('productsAdd')
     },
@@ -44,7 +39,6 @@ const controlador = {
     list: function (req, res){
         res.render("productsListEdit", {products: productsList});
     },
-
     formEdit: function (req, res){
         const idProduct = req.params.idProduct;
         const productEdit = productsList.find((articulo)=>{
