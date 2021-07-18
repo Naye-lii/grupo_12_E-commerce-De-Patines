@@ -32,9 +32,8 @@
             <form action="#none" method="GET">
                 <label class="resum-des"> Talla: </label>
                 <select name="talla" class="selec">
-                    <% let size = product.size; %>
-                    <% for(let i=0 ; i < size.length ;i++) { %>
-                            <option value="size[i]%"><%= size[i]%>.</option>
+                    <% for(let i=0 ; i < product.size.length ;i++) { %>
+                        <option value="<%=product.size[0]%>"><%=product.size[i]%></option>
                         <% } %>
                 </select>
             </form>
@@ -42,9 +41,9 @@
             <form action="#none" method="GET">
                 <label class="resum-des">Color: </label>
                 <select class="selec">
-                    <option value="#DDA0DD">violeta</option>
-                    <option value="#000">negro</option>
-                    <option value="#fff">blanco</option>
+                    <% for(let i=0 ; i < product.color.length ;i++) { %>
+                    <option value="<%=product.color[0]%>"><%=product.color[i]%></option>
+                    <% } %>
                 </select>
                 <br>
             </form>
