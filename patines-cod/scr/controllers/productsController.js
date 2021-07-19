@@ -26,7 +26,12 @@ const controlador = {
         const newProduct = req.body;
         newProduct.size = newProduct.size.split(",");
         newProduct.color = newProduct.color.split(",");
-        newProduct.image = '/img/' + newProduct.image;
+        if (req.file){
+            newProduct.image = '/img/products/' + req.file.filename;
+        }else{
+          newProduct.image = '/img/products/No-img.png';  
+        };
+        
         
         productsList.push({
             id: productsList.length + 1,
@@ -51,15 +56,19 @@ const controlador = {
         const productAct = req.body;
         productAct.size = productAct.size.split(",");
         productAct.color = productAct.color.split(",");
-        productAct.image = '/img/' +  productAct.image;
+        if (req.file){
+            productAct.image = '/img/products/' + req.file.filename;
+        }else{
+            productAct.image = '/img/products/' +  productAct.image;
+        };
+        
 
         const productInf = {id: idProduct, ...productAct};
 
         const productEdit = productsList.findIndex((articulo)=>{
             return articulo.id == idProduct;
         });
-
-
+        
         productsList[productEdit] = productInf;
 
         fs.writeFileSync(productsFilePath, JSON.stringify(productsList, null, 2));

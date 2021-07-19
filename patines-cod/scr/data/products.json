@@ -1,1 +1,85 @@
-[{"id":"1","name":"Patines con flor bordada","price":"$750.00","brand":"Skate Roller","description":"  Patines 4 ruedas  ","image":"/img/product1.png","category":"patines","size":["22", "23", "24"],"color":["negro","blanco"]},{"id":2,"name":"Patines R12","price":"$1000","brand":"Adidas","description":"Roller blade","image":"/img/product2.png","category":"patines","size":["21"," 23"],"color":["azul"]},{"id":3,"name":"Patines Aerio10","price":"$1399","brand":"Fila","description":"4 ruedas","image":"/img/product3.png","category":"patines","size":["21"," 22"," 23"],"color":["gris"," amarillo"]}]
+[
+  {
+    "id": "1",
+    "name": "Patines con flor bordada",
+    "price": "$750.00",
+    "brand": "Skate Roller",
+    "description": "  Patines 4 ruedas  ",
+    "image": "/img/product1.png",
+    "category": "patines",
+    "size": [
+      "22",
+      "23",
+      "24"
+    ],
+    "color": [
+      "negro",
+      "blanco"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Patines R12",
+    "price": "$1000",
+    "brand": "Adidas",
+    "description": "Roller blade",
+    "image": "/img/product2.png",
+    "category": "patines",
+    "size": [
+      "21",
+      " 23"
+    ],
+    "color": [
+      "azul"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Equipo de protección",
+    "price": "$650.00",
+    "brand": "Ledivo",
+    "description": "Incluye un par de rodilleras, un par de coderas y un par de muñequeras con protección para la palma.",
+    "category": "protect",
+    "size": [
+      "Ch",
+      " M",
+      " G"
+    ],
+    "color": [
+      "negro"
+    ],
+    "image": "/img/products/imgP_1626734593393.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Casco para niñ@",
+    "price": "$1380.00",
+    "brand": "animiles",
+    "description": "Casco con forma de tiburón para niñ@s, ideal para practicar ciclismo y/o patinaje en mono-patín, patín o patineta. Cuenta con agujeros de ventilación y banda de ajuste",
+    "category": "protect",
+    "size": [
+      "Ch",
+      " M",
+      " G"
+    ],
+    "color": [
+      "unico"
+    ],
+    "image": "/img/products/imgP_1626735234129.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Juego de valeros para patines en línea ILQ-7",
+    "price": "$1200.66",
+    "brand": "RolleBlade",
+    "description": "16 rodamientos o valeros para patín en línea con retenedor de linón que facilita la limpieza.",
+    "category": "refaccion",
+    "size": [
+      "unica"
+    ],
+    "color": [
+      "unico"
+    ],
+    "image": "/img/products/No-img.png"
+  }
+]

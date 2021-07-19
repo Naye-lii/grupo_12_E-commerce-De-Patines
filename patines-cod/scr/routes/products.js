@@ -1,5 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const path = require('path');
+
+const storage = multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, './public/img/products')
+    },
+    filename: function(req, file, cb){
+        cb(null, `imgP_${Date.now()}${path.extname(file.originalname)}`)
+    }
+});
+
+const uploadFile = multer({ storage });
 
 const productsController = require('../controllers/productsController.js');
 
@@ -9,7 +22,7 @@ router.get('/create', productsController.form);
 router.get('/list', productsController.list);
 router.get('/:idProduct/edit', productsController.formEdit);
 router.put('/:idProduct', productsController.edit);
-router.post('/', productsController.crear);
+router.post('/', uploadFile.single('image'),productsController.crear);
 router.get('/edit/:id', productsController.edit); 
 router.delete('/delete/:id', productsController.delete);
 
