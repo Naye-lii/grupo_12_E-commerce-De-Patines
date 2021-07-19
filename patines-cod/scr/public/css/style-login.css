@@ -12,6 +12,12 @@
     padding-bottom: 30px;
     margin: 0;
 }
+h1.login-h1{
+    font-family: 'Bai Jamjuree', sans-serif;
+    text-align: center;
+    font-style: bold;
+    margin-top: 50px;
+}
 
 label.texto-inputs{
     display: none;
@@ -48,12 +54,21 @@ label.texto-inputs{
 }
     
 
+.div-input:hover,
+    .div-input:focus{
+    border: 2px solid #ffd522;
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+}
+    
+
 .login-data{
     border: none;
     padding: 0px 0px 0px 5px;
     width: 100%;
     outline: none;
     font-family: 'Lato', sans-serif;
+    width: 80%;
+    outline: none;
 }
 
 .no-password{
@@ -99,6 +114,7 @@ button.submit-btn{
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 10px;
+    border-style: none;
 }
 
 button.submit-btn:hover {
