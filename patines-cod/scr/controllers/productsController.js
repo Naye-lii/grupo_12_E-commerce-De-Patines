@@ -8,16 +8,7 @@ const productsModel =  require('../models/products.model');
 
 const controlador = {
     index: function(req, res){
-        try {
-        const products = productsModel.list();
-        res.status(200).render('products-list', { products });
-        console.log(products);
-        } catch(err){
-            console.log(err)
-            return res
-            .status(500)
-            .render('error', { message: 'Ocurrio un error al listar los productos'})
-        }  
+        res.render("/products/list", { products });
     },
     detail: function (req, res) {
         const product = products.find(product => product.id === parseInt(req.params.id));
@@ -68,11 +59,20 @@ const controlador = {
         fs.writeFileSync(productsFilePath, JSON.stringify(productsList, null, 2));
         res.redirect("/products/list");
     },
-    destroy: (req, res) => {
-        const productIndex = products.findIndex(product => {return product.id === parseInt(req.params.id)});
-        products.splice(index, 1);
-		fs.writeFileSync(productsFilePath,JSON.stringify(products));
-        res.redirect('/products', {products});
+    delete: (req, res) => {
+        const idProduct = req.params.idProduct;
+        const productAct = req.body;
+
+        const productInf = {id: idProduct, ...productAct};
+
+        const productDelete = productsList.findIndex((articulo)=>{
+            return articulo.id == idProduct;
+        });
+        productsList.splice(productDelete, 1);
+
+        productsList[productDelete] = productInf;
+		fs.writeFileSync(productsFilePath,JSON.stringify(productsList));
+        res.redirect("/products/list");
     }
 
 };

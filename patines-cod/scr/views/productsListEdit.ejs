@@ -96,7 +96,7 @@
                                 <form action="/products/<%= products[i].id %>/edit" method="GET">
                                     <button class="submit-btn" type="submit">Editar</button>
                                 </form>
-                                <form action="/products?_method=DELETE" method="POST">
+                                <form action="/products/delete/<%= products[i].id%>?_method=DELETE" method="POST">
                                     <button class="submit-btn" type="submit" >Eliminar</button>
                                 </form>
                             </div>
@@ -104,9 +104,13 @@
                         </div>
                         <% } %>
                     </div>
+
                 </div>
             </section>  
-              
+              <form action="/products/create" method="GET">
+                <div class="caption">
+                                    <button class="boton-negro" type="submit"> Añadir nuevo producto</button></div>
+                                </form>
         </main>
 
      <!--Pie de pagína-->
