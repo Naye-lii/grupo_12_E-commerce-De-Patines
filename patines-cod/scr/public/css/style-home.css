@@ -1,10 +1,14 @@
-* body {
+* .home{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: 'Bai Jamjuree', sans-serif;
   font-weight: 400;
   background-color: black;
+}
+
+.body-home{
+background-color: black;
 }
 
 .header-home{
@@ -64,7 +68,7 @@ z-index: 3;
 
   .texto-carrusel h1{
       color: #ffd522;
-      font-size: 4vh;
+      font-size: 5vh;
       }
 
       .texto-carrusel h3{
@@ -96,7 +100,7 @@ z-index: 3;
 /*Aquí comienza sección recomendaciones*/
 
 #recomendaciones-titulo{
-  color: #ffd522;
+color: #ffd522;
   font-family: 'Bai Jamjuree';
   text-align: center;
   margin: auto;
@@ -255,7 +259,7 @@ cursor: pointer;
   .texto-carrusel {
       position: absolute;
       width: 30vw;
-      bottom: -780px;
+      bottom: -740px;
       padding: 35px;
       text-align: center;
   }
@@ -359,19 +363,19 @@ cursor: pointer;
           flex-wrap: wrap;
           justify-content: center;
           flex-direction: row;
-          align-items: space-evenly;
+          align-items: center;
       }
 
       .info-recomendaciones{
           float: left;
-          width: 25.33%;
+          width: 33%;
           display: flex;
           flex-direction: column;
           text-align: center;
       }
 
       .info-recomendaciones > img{
-       width: 20vw;
+       width: 30vw;
        height: auto;
     }
 
@@ -382,6 +386,14 @@ cursor: pointer;
         justify-content: center;
       }
 
+      .space{
+        height: 65px
+      }
+
+      .space2{
+        margin-bottom: 30px;
+        height: 30px;
+      }
 
       .info-iconos{
           float: left;
@@ -468,4 +480,3 @@ cursor: pointer;
   }
 }
 }
-

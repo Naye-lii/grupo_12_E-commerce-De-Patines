@@ -1,0 +1,39 @@
+<!DOCTYPE html> <!-- Darle ! + enter y se crea el formato en automático -->
+<html lang="en">
+
+<%- include('partials/head.ejs')%>
+
+<body>
+    
+    <%- include('partials/header.ejs')%>
+
+    <main class="main-car"> 
+    <h1 class="login-h1">Iniciar sesión</h1>
+    <form class="login-form" method="POST" action="/login">
+
+        <label class="texto-inputs" for="email">Correo Electrónico</label>
+        <div class="div-input">
+            <i class="fas fa-at"></i>
+            <input type="email" name="email" id="email" class="login-data" placeholder="Correo" required>
+            <!-- required lo hace obligatorio -->
+        </div>
+
+        <label class="texto-inputs" for="password">Contraseña</label>
+        <div class="div-input">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" class="login-data" id="password" placeholder="Contraseña" required>
+        </div>
+        <a class="no-password" href="#">¿Olvidaste tu contraseña?</a>
+
+        <button type="submit" class="submit-btn">Ingresar</button>
+    </form>
+    <p class="texto-registro">¿No tienes una cuenta?</p>
+    <a class="link-registro" href="/registro">Regístrate</a>
+    </main>
+
+    <!--Pie de pagína-->
+    <%- include('partials/footer.ejs')%>
+
+</body>
+
+</html>

@@ -118,7 +118,7 @@ main{
     height: 20px;
     background-color: #fff;
     border: #e57d0c solid 1px;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     box-sizing: border-box;
 
 }
@@ -170,6 +170,7 @@ main{
 
 .main-car{
     background-color: #fff;
+    margin-bottom: 60px;
 }
 
 .titulo-carrito > h1 {
@@ -177,7 +178,7 @@ main{
     width: 100vw;
     font-family: 'Bai Jamjuree', sans-serif;
     text-align: center;
-    margin-top: 44px;
+    margin-top: 4px;
     padding-top: 30px;
     padding-bottom: 30px;
 
