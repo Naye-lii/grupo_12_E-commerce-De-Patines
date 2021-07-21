@@ -4,6 +4,7 @@ const rutasMain = require('./routes/main.js');
 const rutasProducts = require('./routes/products.js');
 const rutasUsers = require('./routes/users.js');
 const methodOverride =  require('method-override');
+const multer = require('multer');
 
 app.set('view engine', 'ejs');
 
@@ -19,3 +20,6 @@ app.listen (port, () => {console.log (`App listening at http://localhost:${port}
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/user', rutasUsers);
+app.use((req, res, next) => {
+    res.status(404).render('error404');
+});

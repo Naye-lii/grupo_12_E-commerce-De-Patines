@@ -1,0 +1,53 @@
+.background404 {
+    background-color: #e8e8e8;
+    height: 90vh;
+}
+
+.img-error{
+text-align: center;
+}
+
+.background404 h3{
+    font-family: 'Lato', sans-serif;
+    color: #898989;
+    font-size: 1.3rem;
+    margin: 20px 0;
+    background-color: #e8e8e8;
+    text-align: center;
+    position: relative;
+    bottom: 50px;
+}
+
+.div-inicio-error{
+    text-align: center;
+    max-height: 350px;
+    padding: 40px 0;
+    font-family: 'Lato', sans-serif;
+    color: black;
+    font-size: 24pt;
+    letter-spacing: 250;
+}
+
+#arrow{
+width: 60px;
+padding-left: 4px;
+}
+
+
+.inicio-error{
+    color: black;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 4pt;
+    transition: color 200ms;
+    padding: 50px 0;
+}
+
+.inicio-error:hover{
+    color: #e57d0c;
+    }
+
+.background {
+    background-color: #e8e8e8;
+    height: 250px;
+}

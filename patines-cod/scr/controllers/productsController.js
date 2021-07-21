@@ -3,6 +3,7 @@ const path = require("path");
 const { nextTick } = require("process");
 
 
+
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const productsModel =  require('../models/products.model');
