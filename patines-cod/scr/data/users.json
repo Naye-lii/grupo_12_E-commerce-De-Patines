@@ -6,7 +6,7 @@
     "email": "nayitze@gmail.com",
     "pasword": "123abc",
     "paswordConf": "123abc",
-    "imgUser": "imagen-user-default.png",
+    "imgUser": "/img/users/imagen-user-default.png",
     "type": "adminitrador"
   },
   {
@@ -16,7 +16,7 @@
     "email": "correo1@correo.com",
     "password": "123456",
     "passwordConf": "123456",
-    "imgUser": "imagen-user-default.png",
+    "imgUser": "/img/users/imagen-user-default.png",
     "type": "usuario"
   }
 ]

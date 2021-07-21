@@ -5,6 +5,9 @@ const usersFilePath = path.join(__dirname, "../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const controlador = {
+    list: function(req, res){
+        res.render("users-list", {users});
+    },
     logged: function(req, res){
         const userLogInf = req.body;
         const userLog = users.find((user)=>{
@@ -12,7 +15,7 @@ const controlador = {
         });
 
         if (userLog){
-            res.render("user-profile", {userLog: userLog}); 
+            res.render("user-profile", {user: userLog}); 
         }else{
             res.send("¡Correo electrónico o contraseña incorrecta¡")
         }        
@@ -29,6 +32,21 @@ const controlador = {
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
         res.redirect("/products");
     },
+    profile: function(req, res){
+        const userId = req.params.id;
+        const userD = users.find((user)=>{
+            return user.id == userId;
+        });
+        console.log(userId);
+        res.render("user-profile", {user: userD});
+
+    },
+    edit: function(res, req){
+        res.redirect("/products");
+    },
+    delete: function(res, req){
+        res.redirect("/products");
+    }
     
 };
 
