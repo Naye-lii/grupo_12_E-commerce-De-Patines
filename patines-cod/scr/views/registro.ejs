@@ -11,7 +11,7 @@
             <h1>Crear cuenta</h1>
         </div>
     
-        <form class="login-form" method="POST" action="/user/crear">
+        <form class="login-form" method="POST" action="/user/crear" enctype="multipart/form-data">
 
             <label class="texto-inputs" for="nombre">Nombre</label>
             <div class="div-input">
@@ -44,6 +44,11 @@
             <div class="div-input">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="passwordConf" id="password-conf" class="login-data" placeholder="Confirmar contraseña" required>
+            </div>
+
+            <label class="texto-inputs" for="imagenP">Imagen del usuario</label>
+            <div class="cont-chargeImg">
+                <input type="file" name="imgUser" id="imagenP" accept=".jpg, .png" class="chargeImg">  
             </div>
 
             <button type="submit" class="submit-btn">Regístrarse</button>

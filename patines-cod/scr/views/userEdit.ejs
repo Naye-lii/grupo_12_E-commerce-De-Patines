@@ -1,0 +1,47 @@
+<!DOCTYPE html> <!-- Darle ! + enter y se crea el formato en automático -->
+<html lang="en">
+
+<%- include('partials/head.ejs')%>
+
+<body>
+    <%- include('partials/header.ejs')%>
+
+    <main>
+        <div class="login-h1">
+            <h1>Crear cuenta</h1>
+        </div>
+    
+        <form class="login-form" method="POST" action="/user/<%= user.id%>/edit?_method=PUT" enctype="multipart/form-data">
+
+            <label class="texto-inputs" for="nombre">Nombre</label>
+            <div class="div-input">
+                <i class="far fa-user"></i>
+                <input type="text" name="firstName" class="login-data" id="nombre" placeholder="Nombre" required value="<%=user.firstName%>">
+                <!-- required lo hace obligatorio -->
+            </div>
+
+            <label class="texto-inputs" for="apellido">Apellido</label>
+            <div class="div-input">
+                <i class="far fa-user"></i>
+                <input type="text" name="lastName" class="login-data" id="apellido" placeholder="Apellido" required value="<%=user.lastName%>">
+                <!-- required lo hace obligatorio -->
+            </div>
+
+            <label class="texto-inputs" for="imagenP">Imagen del usuario</label>
+            <div class="cont-chargeImg">
+                <input type="file" name="imgUser" id="imagenP" accept=".jpg, .png" class="chargeImg">  
+            </div>
+
+            <button type="submit" class="submit-btn">Guardar</button>
+        </br>
+        </br>
+    </br>
+        </form>
+
+    </main>
+    <!--Pie de pagína-->
+    <%- include('partials/footer.ejs')%>
+
+</body>
+
+</html>

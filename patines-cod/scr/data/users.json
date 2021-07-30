@@ -11,12 +11,22 @@
   },
   {
     "id": 2,
-    "firstName": "Nombre1",
-    "lastName": "Apellido1",
+    "firstName": "Juan",
+    "lastName": "Sánchez",
     "email": "correo1@correo.com",
     "password": "123456",
     "passwordConf": "123456",
-    "imgUser": "/img/users/imagen-user-default.png",
+    "imgUser": "/img/users/imgU_1627676946525.jpg",
+    "type": "usuario"
+  },
+  {
+    "id": 3,
+    "firstName": "Natsumi",
+    "lastName": "Guerrero",
+    "email": "natsumi12@correo.com",
+    "password": "123456",
+    "passwordConf": "123456",
+    "imgUser": "/img/users/imgU_1627678136941.jpg",
     "type": "usuario"
   }
 ]

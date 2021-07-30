@@ -61,9 +61,16 @@
                 <li><a href="/products/create">Añadir/Editar</a></li>
             </ul>            
        </li>
-        <li><a href="/productCar">Carrito</a></li>
-        <li><a href="/registro">Regístrate</a></li>
-        <li><a href="/login">Mi cuenta</a></li>
+        <li>
+            <label for="show-subuser">Usuarios</label>
+            <input type="checkbox" id="show-subuser" hidden>
+<!--Lista del menu/users-->
+            <ul class="submenu">
+                <li><a href="/user/login">login</a></li>
+                <li><a href="/user/register">regitrate</a></li>
+                <li><a href="/user/list">lista de usuarios</a></li>
+            </ul> 
+        </li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#otros">Otros</a></li>
 

@@ -5,6 +5,12 @@ const usersFilePath = path.join(__dirname, "../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const controlador = {
+    login: function(req, res){
+        res.render('login');
+    },
+    register: function(req, res){
+        res.render('registro');
+    },
     list: function(req, res){
         res.render("users-list", {users});
     },
@@ -22,29 +28,68 @@ const controlador = {
     },
     crear: function (req, res){
         const userInfo = req.body;
+        console.log(userInfo)
+
+        if (req.file){
+            userInfo.imgUser = '/img/users/' + req.file.filename;
+        }else{
+            userInfo.imgUser = '/img/users/imagen-user-default.png';
+        };
+
         users.push({
             id: users.length + 1,
             ...userInfo, 
-            imgUser: "imagen-user-default.png",
-            type: "usuario"
+             type: "usuario"
         });
 
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-        res.redirect("/products");
+        res.redirect("/user/list");
     },
     profile: function(req, res){
         const userId = req.params.id;
         const userD = users.find((user)=>{
             return user.id == userId;
         });
-        console.log(userId);
         res.render("user-profile", {user: userD});
 
     },
-    edit: function(res, req){
-        res.redirect("/products");
+    edit: function(req, res){
+        const userEdit = req.params.id;
+        const userInfo = users.find((user)=>{
+            return user.id == userEdit;
+        });
+        res.render("userEdit", {user: userInfo});
     },
-    delete: function(res, req){
+    update: function(req, res){
+        const userEditId = req.params.id;
+        const userAct = req.body;
+
+        const userInfo = users.find((user)=>{
+            return user.id == userEditId;
+        });
+
+        userInfo.firstName = userAct.firstName;
+        userInfo.lastName = userAct.lastName;
+  
+        if (req.file){
+            userAct.imgUser = '/img/users/' + req.file.filename;
+        }else{
+            userAct.imgUser = '/img/users/' +  userAct.imgUser;
+        };
+
+        userInfo.imgUser = userAct.imgUser;
+        
+        const userUpdate = users.findIndex((u)=>{
+            return u.id == userEditId;
+        });
+        
+        users[userUpdate] = userInfo;
+
+        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+        res.redirect("/user/list");
+
+    },
+    delete: function(req, res){
         res.redirect("/products");
     }
     
