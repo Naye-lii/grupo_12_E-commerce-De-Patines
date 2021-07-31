@@ -33,3 +33,5 @@ Retrospectiva Sprint 3
 3.	Continuar haciendo uso de las plataformas de trello, github y slack, las cuales nos permiten organizar el proyecto y las actividades, así como mantener la comunicación entre los miembros del equipo.
 4.	Hacer menos acumulación de trabajo y evitar el trabajo individualizado.
 5.	Por ahora no hay algo que se deba dejar de hacer.
+
+RETROSPECTIVA SPRINT 4
