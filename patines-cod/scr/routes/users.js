@@ -26,5 +26,6 @@ router.put('/:id/edit', uploadFile.single('imgUser'), usersController.update);
 router.post('/delete/:id',usersController.delete);
 router.post('/crear', uploadFile.single('imgUser'), usersController.crear);
 router.get('/list', usersController.list);
+router.delete('/:id/delete', usersController.delete);
 
 module.exports = router;

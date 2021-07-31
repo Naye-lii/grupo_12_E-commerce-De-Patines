@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcrypt");
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
@@ -28,7 +29,8 @@ const controlador = {
     },
     crear: function (req, res){
         const userInfo = req.body;
-        console.log(userInfo)
+
+        userInfo.password = bcrypt.hashSync(userInfo.password, 11);
 
         if (req.file){
             userInfo.imgUser = '/img/users/' + req.file.filename;
@@ -74,7 +76,7 @@ const controlador = {
         if (req.file){
             userAct.imgUser = '/img/users/' + req.file.filename;
         }else{
-            userAct.imgUser = '/img/users/' +  userAct.imgUser;
+            userAct.imgUser = userInfo.imgUser;
         };
 
         userInfo.imgUser = userAct.imgUser;
@@ -90,7 +92,20 @@ const controlador = {
 
     },
     delete: function(req, res){
-        res.redirect("/products");
+        const userId = req.params.id;
+
+        const userDelete = users.findIndex((u)=>{
+            return u.id == userId;
+        });
+
+       users.splice(userDelete,1);
+
+       for (let i = 0; i < users.length ;i++){
+            users[i].id = i+1;
+       };
+       
+       fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
+       res.redirect("/user/list");
     }
     
 };

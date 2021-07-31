@@ -32,7 +32,7 @@
                 <form action="/user/<%= user.id %>/edit" method="GET">
                     <button class="submit-btn" type="submit">Editar</button>
                 </form>
-                <form action="/user/delete/<%= user.id%>?_method=DELETE" method="POST">
+                <form action="/user/<%= user.id%>/delete?_method=DELETE" method="POST">
                     <button class="submit-btn" type="submit">Eliminar</button>
                 </form>
             </div>
