@@ -27,6 +27,9 @@ const controlador = {
             res.send("¡Correo electrónico o contraseña incorrecta¡")
         }        
     },
+    userLogged: function(req, res){
+        res.render('user-profile', {'user': req.user, isAuthenticated: req.user});
+    },
     crear: function (req, res){
         const userInfo = req.body;
 

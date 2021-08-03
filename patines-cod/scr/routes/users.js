@@ -16,6 +16,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 const usersController = require('../controllers/usersController.js');
+const verificarUsuario = require('../middlewares/verificarUsuario');
 
 router.get('/login', usersController.login);
 router.get('/register', usersController.register);
@@ -27,5 +28,9 @@ router.post('/delete/:id',usersController.delete);
 router.post('/crear', uploadFile.single('imgUser'), usersController.crear);
 router.get('/list', usersController.list);
 router.delete('/:id/delete', usersController.delete);
+
+//Rutas de login
+
+router.get('/user-profile', verificarUsuario,usersController.userLogged);
 
 module.exports = router;
