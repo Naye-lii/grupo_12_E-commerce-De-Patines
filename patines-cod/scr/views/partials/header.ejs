@@ -16,10 +16,12 @@
 
         <div class="icon-right">
             <div class="usuario">
-                <img class="img-usuario" src = '/img/users/imagen-user-default.png' alt='imagen del  usuario'>
-                <p>Usuario</p>
+                <% if(locals.isLogged) { %>
+                <img class="img-usuario"  alt='imagen del  usuario' src='<%= locals.userLogged.imgUser %>''>
+                <p><%= locals.userLogged.firstName %></p>
             </div>
             <div>
+                <% } %>
                 <form action="/busqueda" method="get">
                 <label class= 'lupa' for="show-buscar">
                     <span class="icons material-icons material-icons-outlined">
@@ -61,18 +63,21 @@
                 <li><a href="/products/create">Añadir/Editar</a></li>
             </ul>            
        </li>
-        <li>
-            <label for="show-subuser">Usuarios</label>
-            <input type="checkbox" id="show-subuser" hidden>
-<!--Lista del menu/users-->
-            <ul class="submenu">
-                <li><a href="/user/login">login</a></li>
-                <li><a href="/user/register">regitrate</a></li>
-                <li><a href="/user/list">lista de usuarios</a></li>
-            </ul> 
-        </li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#otros">Otros</a></li>
-
+        <% if(locals.isLogged) { %>
+        <li><a href="/logout/">Cerrar sesión</a></li>
+<% } else { %>
+    <li>
+        <label for="show-subuser">Usuarios</label>
+        <input type="checkbox" id="show-subuser" hidden>
+<!--Lista del menu/users-->
+        <ul class="submenu">
+            <li><a href="/login">login</a></li>
+            <li><a href="/register">registrate</a></li>
+            <li><a href="/list">lista de usuarios</a></li>
+        </ul> 
+    </li>
+    <% } %>
     </ul>   
 </header>

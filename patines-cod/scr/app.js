@@ -4,7 +4,8 @@ const rutasMain = require('./routes/main.js');
 const rutasProducts = require('./routes/products.js');
 const rutasUsers = require('./routes/users.js');
 const methodOverride =  require('method-override');
-const multer = require('multer');
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+var session = require('express-session');
 
 app.set('view engine', 'ejs');
 
@@ -17,9 +18,19 @@ const port = process.env.PORT || 3000
 
 app.listen (port, () => {console.log (`App listening at http://localhost:${port}`)});
 
+//Session
+app.use(session({
+    secret: "shhh, it's a secret",
+    resave: false,
+    saveUninitialized: false,
+  }));
+
+  //UserLoggedMiddleware debe ir después de session !!
+  app.use(userLoggedMiddleware);
+
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
-app.use('/user', rutasUsers);
+app.use('/', rutasUsers);
 app.use((req, res, next) => {
     res.status(404).render('error404');
 });

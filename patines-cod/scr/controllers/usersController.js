@@ -1,33 +1,21 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const { raw } = require("express");
+const { validationResult } = require('express-validator');
+const userModel =require('../models/User');
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const controlador = {
-    login: function(req, res){
-        res.render('login');
-    },
     register: function(req, res){
         res.render('registro');
     },
     list: function(req, res){
         res.render("users-list", {users});
     },
-    logged: function(req, res){
-        const userLogInf = req.body;
-        const userLog = users.find((user)=>{
-            return user.email == userLogInf.email && user.password == userLogInf.password;
-        });
-
-        if (userLog){
-            res.render("user-profile", {user: userLog}); 
-        }else{
-            res.send("¡Correo electrónico o contraseña incorrecta¡")
-        }        
-    },
-    userLogged: function(req, res){
+    userLoggedProfile: function(req, res){
         res.render('user-profile', {'user': req.user, isAuthenticated: req.user});
     },
     crear: function (req, res){
@@ -50,14 +38,13 @@ const controlador = {
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
         res.redirect("/user/list");
     },
-    profile: function(req, res){
+   /* profile: function(req, res){
         const userId = req.params.id;
         const userD = users.find((user)=>{
             return user.id == userId;
         });
         res.render("user-profile", {user: userD});
-
-    },
+    },*/
     edit: function(req, res){
         const userEdit = req.params.id;
         const userInfo = users.find((user)=>{
@@ -109,8 +96,41 @@ const controlador = {
        
        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
        res.redirect("/user/list");
+    },/*Aquí comienza login*/
+    login: function(req, res){
+        res.render('login');
+    },
+    loginProcess: (req, res) => {
+        let userToLogin = userModel.findByField('email', req.body.email);
+        if(userToLogin){
+        let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+        if(isOkThePassword){
+            delete userToLogin.password;
+            req.session.userLogged = userToLogin;
+            return res.redirect('user-profile');
+        }
+        return res.render('login', {errors: {
+            email: {
+                msg: 'El e-mail no coincide con la contraseña'
+            }
+        }})
+        }
+        return res.render('/login', {errors: {
+            email: {
+                msg: 'E-mail no encontrado'
+            }
+        }})
+    },
+    profile: (req, res) => {
+       return res.render("user-profile", {
+           user: req.session.userLogged
+       });
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        console.log(req.session);
+        return res.redirect('home');
     }
-    
 };
 
 module.exports = controlador;

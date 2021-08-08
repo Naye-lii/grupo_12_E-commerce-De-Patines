@@ -230,8 +230,8 @@ input[type="checkbox"]:checked + .filtro_menu {
     }
 
     .usuario > p{
-        
-        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
         margin: 0;
         padding: 0;
     }

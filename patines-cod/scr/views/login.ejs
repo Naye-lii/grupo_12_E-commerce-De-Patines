@@ -1,18 +1,16 @@
 <!DOCTYPE html> <!-- Darle ! + enter y se crea el formato en automático -->
 <html lang="en">
-
-<%- include('partials/head.ejs')%>
-
-<body>
-    
     <%- include('partials/header.ejs')%>
-
+<head>
+    <%- include('partials/head.ejs')%>
+</head>
+<body>
     <main class="main-car"> 
         <div class="login-h1">
            <h1 >Iniciar sesión</h1> 
         </div>
     
-        <form class="login-form" method="POST" action="/user/profile">
+        <form class="login-form" method="POST" action="/login">
 
             <label class="texto-inputs" for="email">Correo Electrónico</label>
             <div class="div-input">
@@ -20,29 +18,36 @@
                 <input type="email" name="email" id="email" class="login-data" placeholder="Correo" required>
                 <!-- required lo hace obligatorio -->
             </div>
+            <% if(locals.errors && errors.email) { %>
+                <div class="alert">
+                    <i class="fas fa-times-circle"></i>
+                    <%=errors.email.msg%>
+                </div>
+                <%}%>
 
             <label class="texto-inputs" for="password">Contraseña</label>
             <div class="div-input">
                 <i class="fas fa-lock"></i>
                 <input type="password" name="password" class="login-data" id="password" placeholder="Contraseña" required>
             </div>
+            <div class="div-no-password">
             <a class="no-password" href="#">¿Olvidaste tu contraseña?</a>
-
-            <% if(locals.errors && errors.email){ %>
+            </div>
+            <% if(locals.errors && errors.password){ %>
                 <div class="alert">
-                    <%=errors.email.msg%>
+                    <i class="fas fa-times-circle"></i>
+                    <%=errors.password.msg%>
                 </div>
                 <%}%>
 
-            <button type="submit" class="submit-btn" a href="/user-profile">Ingresar</button>
+            <button type="submit" class="submit-btn" href="/user/user-profile">Ingresar</button>
         </form>
         <p class="texto-registro">¿No tienes una cuenta?</p>
-        <a class="link-registro" href="/user/register">Regístrate</a>
+        <a class="link-registro" href="/register">Regístrate</a>
     </main>
 
     <!--Pie de pagína-->
-    <%- include('partials/footer.ejs')%>
 
 </body>
-
+<%- include('partials/footer.ejs')%>
 </html>

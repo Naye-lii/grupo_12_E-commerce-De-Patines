@@ -3,6 +3,10 @@ const router = express.Router();
 
 const multer = require('multer');
 const path = require('path');
+const { body } = require('express-validator');
+
+const  guestMiddleware = require('../middlewares/guestMiddleware');
+const  authMiddleware = require('../middlewares/authMiddleware');
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb){
@@ -16,12 +20,8 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 const usersController = require('../controllers/usersController.js');
-const verificarUsuario = require('../middlewares/verificarUsuario');
 
-router.get('/login', usersController.login);
-router.get('/register', usersController.register);
-router.get('/:id/profile', usersController.profile);
-router.post('/:id/profile', usersController.logged);
+router.get('/register',  guestMiddleware, usersController.register);
 router.get('/:id/edit', usersController.edit);
 router.put('/:id/edit', uploadFile.single('imgUser'), usersController.update);
 router.post('/delete/:id',usersController.delete);
@@ -29,8 +29,17 @@ router.post('/crear', uploadFile.single('imgUser'), usersController.crear);
 router.get('/list', usersController.list);
 router.delete('/:id/delete', usersController.delete);
 
+
 //Rutas de login
+router.get('/login', guestMiddleware, usersController.login);
 
-router.get('/user-profile', verificarUsuario,usersController.userLogged);
+//Procesar login
+router.post('/login', usersController.loginProcess);
 
+//Perfil de usuario
+router.get('/user-profile', authMiddleware, usersController.profile);
+
+//Logout
+router.get('/logout/', usersController.logout);
+  
 module.exports = router;

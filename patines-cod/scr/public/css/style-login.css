@@ -87,22 +87,27 @@ label.texto-inputs{
 .link-registro{
     display: block;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 a.link-registro{
     color: #E57D0C;
     font-family:'Lato', sans-serif;
-    margin: 10px 0 30px 0;
 }
 
 a.no-password{
-    color:#A6AAAD;
-font-size: 10px;
-font-family:'Lato', sans-serif;
-
+    color: #A6AAAD;
+    font-size: 15px;
+    font-family:'Lato', sans-serif;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+    font-weight: 10;
 }
 
-button.submit-btn{
+
+  button.submit-btn{
     color: white;
     background-color: #000000;
     margin-top: 15px;
@@ -165,4 +170,33 @@ button.submit-btn:hover {
     label.texto-inputs{
         display:block;
   }
+}
+
+.div-checkbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 25px;
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+}
+
+.div-checkbox input{
+   margin: 10px;
+}
+
+.alert{
+    font-family: 'Lato', sans-serif;
+    color: red;
+}
+
+.fa-times-circle{
+    color: red;
+}
+
+.div-no-password{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: left;
 }

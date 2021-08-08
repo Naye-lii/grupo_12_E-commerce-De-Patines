@@ -34,5 +34,23 @@
     "password": "$2b$11$yWMSzr6VeHcRtx8BznglfeHSUzgT4h6nW5F2dkuXaUGFiukWIalv2",
     "imgUser": "/img/users/imagen-user-default.png",
     "type": "usuario"
+  },
+  {
+    "id": 5,
+    "firstName": "Leslie",
+    "lastName": "De la Cruz",
+    "email": "leslie123@correo.com",
+    "password": "$2b$11$ubhh/ZprKf1CElf6A2jgv.NP8kTY4v26R0OM/TeA.1bdTY.Lvg8O2",
+    "imgUser": "/img/users/imgU_1628022677564.jpeg",
+    "type": "usuario"
+  },
+  {
+    "id": 6,
+    "firstName": "Nuevo",
+    "lastName": "Prueba",
+    "email": "nuevo123@gmail.com",
+    "password": "$2b$11$DsPAenBhEAQUq/CW86GrlOtxTndFbgvskAVKTMLZuqJwfF2VnOTDa",
+    "imgUser": "/img/users/imgU_1628287152091.JPG",
+    "type": "usuario"
   }
 ]

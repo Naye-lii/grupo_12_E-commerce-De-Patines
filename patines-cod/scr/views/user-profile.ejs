@@ -11,7 +11,7 @@
     <Section class="sec-user">
         
         <div >
-            <img class="img-userProf" src = '<%= user.imgUser%>' alt='casco'>
+            <img class="img-userProf" src = <%= user.imgUser%> alt='casco'></img>
             
             <h2 class="text-userProf"><%= user.firstName%> <%= user.lastName%></h2>
 
@@ -29,11 +29,14 @@
             <br/>
 
             <div class="contButton">
-                <form action="/user/<%= user.id %>/edit" method="GET">
+                <form action="/<%= user.id %>/edit" method="GET">
                     <button class="submit-btn" type="submit">Editar</button>
                 </form>
-                <form action="/user/<%= user.id%>/delete?_method=DELETE" method="POST">
+                <form action="/<%= user.id%>/delete?_method=DELETE" method="POST">
                     <button class="submit-btn" type="submit">Eliminar</button>
+                </form>
+
+                    <button class="logout" type="submit" href="/logout/">Cerrar sesión</button>
                 </form>
             </div>
             
