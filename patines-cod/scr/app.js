@@ -5,7 +5,8 @@ const rutasProducts = require('./routes/products.js');
 const rutasUsers = require('./routes/users.js');
 const methodOverride =  require('method-override');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
-var session = require('express-session');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 app.set('view engine', 'ejs');
 
@@ -25,6 +26,8 @@ app.use(session({
     saveUninitialized: false,
   }));
 
+  app.use(cookies());
+  
   //UserLoggedMiddleware debe ir después de session !!
   app.use(userLoggedMiddleware);
 
