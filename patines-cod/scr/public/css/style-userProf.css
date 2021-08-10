@@ -60,7 +60,15 @@ button.logout{
     border-style: none;
 }
 
+button.logout a{
+    color: black;
+}
+
 button.logout:hover {
     background-color: black; /* Green */
     color: white;
   }
+
+  button.logout a:hover{
+    color: white;
+}

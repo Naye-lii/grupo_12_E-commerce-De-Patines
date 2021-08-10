@@ -15,7 +15,7 @@
             <label class="texto-inputs" for="email">Correo Electrónico</label>
             <div class="div-input">
                 <i class="fas fa-at"></i>
-                <input type="email" name="email" id="email" class="login-data" placeholder="Correo" required>
+                <input type="email" name="email" id="email" class="login-data" placeholder="Correo" value ="<%= locals.oldData ? oldData.email : null %>" required>
                 <!-- required lo hace obligatorio -->
             </div>
             <% if(locals.errors && errors.email) { %>

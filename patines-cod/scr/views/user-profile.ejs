@@ -2,47 +2,56 @@
 <html lang="en">
 <%- include('partials/head.ejs')%>
 
-<body>
-    <%- include('partials/header.ejs')%>
-    <div class="tituloPerfil">
-        <h1>Tu Perfil</h1>
-    </div>
-
-    <Section class="sec-user">
-        
-        <div >
-            <img class="img-userProf" src = <%= user.imgUser%> alt='casco'></img>
-            
-            <h2 class="text-userProf"><%= user.firstName%> <%= user.lastName%></h2>
-
-            <label class="etiqueta" for="nombre">Correo Electrónico</label>
-            <div class="div-text">
-                <h2 class="text-userProf"><%= user.email %></h2> 
+    <body>
+        <%- include('partials/header.ejs')%>
+            <div class="tituloPerfil">
+                <h1>Tu Perfil</h1>
             </div>
-            
 
-            <label class="etiqueta" for="nombre">Tipo</label>
-            <div class="div-text">
-                <h2 class="text-userProf"><%= user.type %></h2>   
-            </div>
-            
-            <br/>
+            <Section class="sec-user">
 
-            <div class="contButton">
-                <form action="/<%= user.id %>/edit" method="GET">
-                    <button class="submit-btn" type="submit">Editar</button>
-                </form>
-                <form action="/<%= user.id%>/delete?_method=DELETE" method="POST">
-                    <button class="submit-btn" type="submit">Eliminar</button>
-                </form>
+                <div>
+                    <img class="img-userProf" src=<%=user.imgUser%> alt='casco'></img>
 
-                    <button class="logout" type="submit" href="/logout/">Cerrar sesión</button>
-                </form>
-            </div>
-            
-        </div>
+                    <h2 class="text-userProf">
+                        <%= user.firstName%>
+                            <%= user.lastName%>
+                    </h2>
 
-    </Section>
-    <%- include('partials/footer.ejs')%>
-</body>
+                    <label class="etiqueta" for="nombre">Correo Electrónico</label>
+                    <div class="div-text">
+                        <h2 class="text-userProf">
+                            <%= user.email %>
+                        </h2>
+                    </div>
+
+
+                    <label class="etiqueta" for="nombre">Tipo</label>
+                    <div class="div-text">
+                        <h2 class="text-userProf">
+                            <%= user.type %>
+                        </h2>
+                    </div>
+
+                    <br />
+
+                    <div class="contButton">
+                        <form action="/<%= user.id %>/edit" method="GET">
+                            <button class="submit-btn" type="submit">Editar</button>
+                        </form>
+                        <form action="/<%= user.id%>/delete?_method=DELETE" method="POST">
+                            <button class="submit-btn" type="submit">Eliminar</button>
+                        </form>
+                        <form>
+                            <button class="logout" type="submit"><a href="/logout/" style="text-decoration:none;">Cerrar
+                                    sesión</a></button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </Section>
+            <%- include('partials/footer.ejs')%>
+    </body>
+
 </html>
