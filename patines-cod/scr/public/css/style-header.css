@@ -181,6 +181,15 @@ input[type="checkbox"]:checked + .filtro_menu {
         max-height: 40px;
     }
 
+    .lupa{
+       display: none; 
+    }
+
+    .submenu{
+        position: fixed;
+        top:165px;
+    }
+
     .submenu > li{
         width: 14.285vw;
         margin: 0;

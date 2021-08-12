@@ -5,12 +5,12 @@
 <body>
 
     <%- include('partials/header.ejs')%>
-
+    
     <main>
 <!--Imagenes del primer producto-->
     <div class="caja3">
         <div class="caja2">
-            <img class="img-producto" src = '/img/patin-01.jpg' alt='Patines clasicos blancos con flor bordada'>
+            <img class="img-producto" src = '<%=product.image%>' alt='Patines clasicos blancos con flor bordada'>
         </div>
 
         <div class="caja1">
@@ -22,30 +22,32 @@
     
 <!--Datos de vista rapida del producto-->
         <div class="sec-resum"> 
-            <h2 class="nombre-art">Patines con flor bordada</h2>
-            <p class="resum-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <h3 class="precio-des">$3658.70</h3>
+
+            <h2 class="nombre-art"><%=product.name%></h2>
+            <p class="resum-des"><%=product.description%></p>
+            <h3 class="precio-des"><%=product.price%></h3>
+
+<!-- TODO: Funcionalidad de option-->
 
             <form action="#none" method="GET">
-                <label class="resum-des"> Talla: </label> 
+                <label class="resum-des"> Talla: </label>
                 <select name="talla" class="selec">
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
+                    <% for(let i=0 ; i < product.size.length ;i++) { %>
+                        <option value="<%=product.size[0]%>"><%=product.size[i]%></option>
+                        <% } %>
                 </select>
             </form>
-                
+            <br>
             <form action="#none" method="GET">
                 <label class="resum-des">Color: </label>
                 <select class="selec">
-                    <option value="#DDA0DD">violeta</option>
-                    <option value="#000">negro</option>
-                    <option value="#fff">blanco</option>
+                    <% for(let i=0 ; i < product.color.length ;i++) { %>
+                    <option value="<%=product.color[0]%>"><%=product.color[i]%></option>
+                    <% } %>
                 </select>
+                <br>
             </form>
-     
+     <br>
      <!-- Calificación por estrellas -->
             <span class="material-icons material-icons-round">
                 star
@@ -77,7 +79,7 @@
                 <li >
                     <label for="show-des">Descripción</label>
                     <input type="checkbox" id="show-des" hidden checked>
-                    <div class="descripcion"><p class="cuadro-des">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt lacinia nunc nec venenatis. Sed euismod, lacus vel fermentum imperdiet, felis eros imperdiet enim, ac pulvinar lacus erat sit amet augue. Integer vitae ipsum varius, ultricies arcu nec, iaculis eros. Etiam non eleifend nibh. Aliquam ac erat sed velit rhoncus dictum. Aliquam suscipit convallis aliquet. Quisque in dolor sit amet tellus venenatis rutrum. Ut a mauris tincidunt, tempor purus eget, suscipit lacus. Nulla rutrum lectus at lacus dictum aliquam. Aliquam placerat consectetur elementum. Vestibulum quis tortor vitae ligula semper suscipit quis et diam. Donec non lorem sed magna scelerisque porta. Aenean nec turpis nisi. Mauris metus erat, pulvinar rhoncus turpis ut, rhoncus molestie ipsum. Vestibulum mattis risus ac mauris commodo, ut sodales nibh dictum.</p></div>
+                    <div class="descripcion"><p class="cuadro-des"><%=product.description%></p></div>
                 </li>
                 <li> 
                     <label for="show-talla">Selección de talla</label>
@@ -96,6 +98,7 @@
         <!-- Seccion de sugerencias -->
         <div class="caja4">
             <h2 class="nombre-art">También Podrías Necesitar </h2>
+            <br>
         </div>
         <section class="caja4">
                    
@@ -106,8 +109,8 @@
             </div>
 
             <div class="caja2">
-                <img class="img-sug" src = '/img/home-producto2.png' alt='Patines fitnes'>
-                <h2 class="nombre-sug">Patines fitnes ABEC</h2>
+                <img class="img-sug" src = '/img/home-producto2.jpg' alt='Patines fitnes'>
+                <h2 class="nombre-sug">Patines fitness ABEC</h2>
                 <button class= "boton-sug" type="submit">Agregar al carrito</button>
             </div>
 
@@ -121,12 +124,44 @@
                 <h2 class="nombre-sug">Kit de protectores</h2>
                 <button class= "boton-sug" type="submit">Agregar al carrito</button>
             </div>
-
         </section>
     </main>
 
 <!--Pie de pagína-->
 <%- include('partials/footer.ejs')%>
+<!--Pie de pagína-->
+    <footer>
+<!--Logo Fun N Skate-->
+         <div>
+            <img class="logo-footer" src = '/img/Logo Blanco.svg' alt='Logo Fun-N-Skate'>
+        </div>
+        
+        <!--Logotipos de redes sociales-->
+        <div class="caja-redes">
+            <h3 class="titulo-redes">¡Siguenos!</h3>
+            <a href="facebook">
+                <img class="redes" src = '/img/icon-fb.png' alt='Logo facebook'>
+            </a>
+
+            <a href="twitter">
+                <img class="redes" src = '/img/icon-twit.svg' alt='Logo twitter'>
+            </a>
+
+            <a href="whatsapp">
+                <img class="redes" src = '/img/icon-whats.svg' alt='Logo whatsapp'>
+            </a>
+
+            <a href="instagram">
+                <img class="redes" src = '/img/icon-inst.svg' alt='Logo instagram>
+            </a> 
+            <div>
+                <h3>¡Suscribete! <br> Obten noticias y ofertas</h3>
+                <input class="barra-correo" type="email"/>
+                <button class="boton-sus">Suscribete</button>
+            </div>
+        </div>
+        <!--Area de suscripción -->
+      
 
 </body>
 </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs')%>
+
+<body>
+    <%- include('partials/header.ejs')%>
+    <div class="tituloPerfil">
+        <h1>Tu Perfil</h1>
+    </div>
+
+    <Section class="sec-user">
+        
+        <div >
+            <img class="img-userProf" src = '/img/users/imagen-user-default.png' alt='casco'>
+            
+            <h2 class="text-userProf"><%= userLog.firstName%> <%= userLog.lastName%></h2>
+
+            <label class="etiqueta" for="nombre">Correo Electrónico</label>
+            <div class="div-text">
+                <h2 class="text-userProf"><%= userLog.email %></h2> 
+            </div>
+            
+
+            <label class="etiqueta" for="nombre">Tipo</label>
+            <div class="div-text">
+                <h2 class="text-userProf"><%= userLog.type %></h2>   
+            </div>
+            
+            <br/>
+            
+        </div>
+    </Section>
+    <%- include('partials/footer.ejs')%>
+</body>
+</html>
