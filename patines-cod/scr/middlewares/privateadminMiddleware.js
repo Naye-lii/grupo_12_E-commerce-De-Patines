@@ -6,4 +6,4 @@ function privateAdminMiddleware(req, res, next) {
     next();
 }
 
-module.exports = privateAdminMiddleware;
+module.exports = privateAdminMiddleware
