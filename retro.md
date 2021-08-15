@@ -35,3 +35,8 @@ Retrospectiva Sprint 3
 5.	Por ahora no hay algo que se deba dejar de hacer.
 
 RETROSPECTIVA SPRINT 4
+
+1. Comenzar a hacer organización, integración y colaboración entre nosotras y nuestra nueva compañera de equipo Ana para poder tener una visión común del proyecto y trabajar armoniosa y eficientemente. ¡ Bienvenida Ana al equipo!
+2. Hacer más. Mantenernos en mejor y mayor comunicación, así como realizar los reportes weekly para poder observar los avances obtenidos y organizarnos e integrar a Ana.
+3. Continuar organizándonos mediante las herramientas de Trello, colaborando mediante retroalimentación entre nosotras, trabajar de forma eficiente, organizada y realizar las entregas en tiempo y forma.
+4. Dejar de hacer o hacer menos, hasta ahora el quipo ha trabajado muy bien y no hay nada que dejar de hacer o hacer menos.

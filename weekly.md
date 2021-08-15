@@ -51,3 +51,28 @@ Agregue mi retrospectiva del sprint anterior y comencé a realizar las actividad
 2. Que hare la siguiente semana: 
 Planeo terminar el sprint y agregar la retrospectiva del equipo.
 
+WEEKLY SPRINT-5/SEMANA-1
+
+-- LESLIE --
+Esta semana:
+-Avance en la entrega del sprint
+-Comencé a ver videos para realizar el funcionamiento del login de usuarios
+-Añadí mi retrospectiva del sprint anterior
+La próxima semana terminaré mi parte sprint-5
+
+-- ANA --
+Esta semana:
+-Revisé la información y estoy conociendo la forma de trabajo del equipo.
+-Repasé los conceptos necesarios para realizar la actividad correspondiente para este sprint.
+-Estoy esperando a que se complete el registro y login de usuarios para comenzar con mi actividad programada.
+La próxima semana empezaré con la implementación de rutas de huéspedes y de usuarios.
+
+-- NAYELI --
+Esta semana:
+-hice el control para la edición de usuarios
+-hice el control para la actualización de usuarios
+-hice el control para la eliminación de usuarios
+-implemente multer para la creación y edición de usuarios
+-implemente bcrypt para la encriptar las contraseñas de los usuarios antes de guardarlas
+-cree la vista userEdit
+La próxima semana, me dedicare a apoyar a mis compañeras con lo que haga falta y hare correcciones sí es que se requiere
