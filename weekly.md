@@ -35,7 +35,7 @@ Me gustaría hacer el error 404, aunque no lo he visto en la entrega de algún s
 Por el momento no he encontrado algún problema.
 
 
-WEEKLY 5-1 SPRINT 5
+WEEKLY SPRINT 5/SEMANA 1
 
 -- Nayeli --
 1. Que hice en la semana:
@@ -76,3 +76,27 @@ Esta semana:
 -implemente bcrypt para la encriptar las contraseñas de los usuarios antes de guardarlas
 -cree la vista userEdit
 La próxima semana, me dedicare a apoyar a mis compañeras con lo que haga falta y hare correcciones sí es que se requiere
+
+WEEKLY SPRINT 6/SEMANA 1
+
+-- Nayeli --
+1. Esta semana hice:
+    * La organización y asignación de tareas del sprint-6.
+    * Añadí mi retrospectiva del sprint-5
+    * Realice junto con mis compañeras el diagrama de la base de datos.
+
+2. Para la semana siguiente planeo: Empezar con los scripts de escritura y datos.
+
+-- Leslie --
+1. Esta semana hice:
+    * Instalé y configuré sequelize
+    * Añadí mi retrospectiva del sprint-5
+    * Realice junto con mis compañeras el diagrama de la base de datos
+
+2. Para la semana siguiente planeo: Comenzar mi parte del CRUD y la creación de los modelos
+
+-- Anna --
+1. Esta semana: Ayudé con el diagrama de las bases de datos.
+
+2. La siguiente semana planeo: Comenzar con las tareas de CRUD asignadas.
+
