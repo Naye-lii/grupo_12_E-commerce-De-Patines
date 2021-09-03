@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS products_catalogue (
 
 CREATE TABLE IF NOT EXISTS sizes (
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    value_size TINYINT UNSIGNED NOT NULL,
+    value_size varchar(5) NOT NULL,
     PRIMARY KEY(id)
 );
 
@@ -83,3 +83,4 @@ CREATE TABLE IF NOT EXISTS products_stock (
     FOREIGN KEY (product_catalogue_id) REFERENCES products_catalogue(id),
     FOREIGN KEY (size_id) REFERENCES sizes(id)
 );
+
