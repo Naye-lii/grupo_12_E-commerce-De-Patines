@@ -26,17 +26,17 @@ let config = {
     tableName: "products",
     timestamps:false
 };
-let Product = sequelize.define(alias, cols, config);
+let Productos = sequelize.define(alias, cols, config);
 
-Product.associate = function(models) {
-    Product.belongsTo(models.Marcas, {
-        as: "productos",
+Productos.associate = function(models) {
+    Productos.belongsTo(models.Marcas, {
+        as: "Productos",
         foreignKey: "brand_id"
     }),
-    Product.belongsTo(models.Categoria, {
-        as: 'categorias',
+    Productos.belongsTo(models.Categoria, {
+        as: 'Categorias',
         foreignKey: 'category_id'
     });
 }
-return Product;
+return Productos;
 }

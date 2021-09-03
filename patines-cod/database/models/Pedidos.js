@@ -44,8 +44,3 @@ module.exports = function(sequelize, dataTypes){
     return Pedidos;
 
 }
-
-// PREGUNTAS
-// 1. ¿Qué tabla es Pedidos, es Order_detail?
-// 2. ¿La FK user_id de Order_detail debo conectarla con el modelo Shopping_cart o Users?
-// 3. En el archivo del modelo carrito se conecta a DetalleOrden, debo usar ese nombre o le pongo Pedidos?
