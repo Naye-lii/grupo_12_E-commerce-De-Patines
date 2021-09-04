@@ -100,3 +100,25 @@ WEEKLY SPRINT 6/SEMANA 1
 
 2. La siguiente semana planeo: Comenzar con las tareas de CRUD asignadas.
 
+WEEKLY SPRINT 6/SEMANA 2
+
+-- Nayeli --
+
+Esta semana cree el script de datos
+La próxima semana trabajare en los modelos.
+
+-- Anna --
+
+Esta semana:
+-Hice los archivos de los modelos correspondientes.
+
+La siguiente semana planeo:
+-Hacer las tareas de CRUD asignadas.
+
+-- Leslie --
+
+Esta semana:
+Realicé dos de los archivos de los modelos
+
+La siguiente semana planeo:
+Terminar el CRUD correspondiente
