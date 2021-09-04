@@ -5,6 +5,10 @@ const { raw } = require("express");
 const { validationResult } = require('express-validator');
 const userModel = require('../models/User');
 
+// Variable para requerir modelos
+const db = require("../database/models");
+const Usuarios = db.Ususarios;
+
 const usersFilePath = path.join(__dirname, "../data/users.json");
 var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
@@ -164,7 +168,13 @@ const controlador = {
         res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect('/');
+    },
+    //CRUD para base de datos
+    crear: function (req, res){
+        db.Usuarios.findAll()
+        .then(function(Usuarios) {
+            return res.render("users-list", {users:Usuarios});
+        })
     }
-};
-
+}
 module.exports = controlador;

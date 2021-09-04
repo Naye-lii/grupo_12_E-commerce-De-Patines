@@ -20,6 +20,9 @@ const uploadFile = multer({ storage });
 
 const productsController = require('../controllers/productsController.js');
 
+// Rutas nuevas para Sequelize
+const productController = ('./controllers/productController');
+
 router.get('/products/list', productsController.index);
 router.get('/detail/:id', productsController.detail); 
 router.get('/create', [authMiddleware, adminMiddleware, privateAdminMiddleware], productsController.form);
@@ -30,5 +33,9 @@ router.post('/', uploadFile.single('image'),[authMiddleware, adminMiddleware, pr
 router.get('/edit/:id', [authMiddleware, adminMiddleware, privateAdminMiddleware], productsController.edit); 
 router.delete('/delete/:id',[authMiddleware, adminMiddleware, privateAdminMiddleware], productsController.delete);
 router.post('/products/list', uploadFile.single('image'), [authMiddleware, adminMiddleware, privateAdminMiddleware], productsController.crear);
+
+
+//Rutas Sequelize
+router.get('products-list', productsController.listar)
 
 module.exports = router;

@@ -21,6 +21,10 @@ const uploadFile = multer({ storage });
 
 const usersController = require('../controllers/usersController.js');
 
+// Rutas nuevas para Sequelize
+const userController = ('./controllers/userController');
+
+
 const registerValidations = [
     body('firstName')
         .notEmpty().withMessage('Escribe tu nombre').bail()
@@ -90,5 +94,8 @@ router.get('/user-profile', authMiddleware, usersController.profile);
 
 //Logout
 router.get('/logout/', authMiddleware, usersController.logout);
+
+//Ruta nueva Sequelize
+router.get("/crear", usersController.crear);
 
 module.exports = router;

@@ -2,6 +2,9 @@ const fs = require("fs");
 const path = require("path");
 const { nextTick } = require("process");
 
+// Variable para requerir modelos
+let db = require("../database/models");
+const Productos = db.Productos;
 
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -90,8 +93,14 @@ const controlador = {
 		fs.writeFileSync(productsFilePath,JSON.stringify(productsList));
         res.redirect("/products/list");
         return location.reload();
-    }
-
+    },
+//CRUD para base de datos
+listar: function(req, res){
+    db.Productos.findAll()
+    .then(function(){
+        res.render("product-list", {products:Productos})
+    })
+}
 };
 
 module.exports = controlador;
