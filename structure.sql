@@ -91,5 +91,5 @@ CREATE TABLE IF NOT EXISTS order_detail (
     product_id INT UNSIGNED NOT NULL,
     PRIMARY KEY(id),
     FOREIGN KEY (shopping_cart_id) REFERENCES shopping_cart(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
-    FOREIGN KEY (product_id) REFERENCES products(id);
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (product_id) REFERENCES products (id));

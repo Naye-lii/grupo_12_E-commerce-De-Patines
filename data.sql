@@ -98,3 +98,15 @@ INSERT INTO products_stock(product_catalogue_id, size_id, quantity)VALUES
 (4, 1, 68),
 (4, 2, 37),
 (4, 3, 87);
+
+INSERT INTO order_detail(shopping_cart_id, user_id, product_id)VALUES
+(1, 4, 1),
+(2, 5, 2),
+(3, 6, 3),
+(4, 7, 4),
+(5, 8, 1),
+(6, 9, 2),
+(7, 5, 3),
+(8, 1, 4),
+(9, 2, 1),
+(10, 3, 2);
