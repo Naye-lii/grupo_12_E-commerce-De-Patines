@@ -5,6 +5,8 @@ const { nextTick } = require("process");
 // Variable para requerir modelos
 let db = require("../database/models");
 const Productos = db.Productos;
+const Marcas = db.Marcas;
+const Categorias = db.Categorias;
 
 
 const productsFilePath = path.join(__dirname, "../data/products.json");

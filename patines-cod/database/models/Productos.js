@@ -30,12 +30,16 @@ let Productos = sequelize.define(alias, cols, config);
 
 Productos.associate = function(models) {
     Productos.belongsTo(models.Marcas, {
-        as: "Productos",
+        as: "marcas",
         foreignKey: "brand_id"
     }),
     Productos.belongsTo(models.Categoria, {
-        as: 'Categorias',
+        as: 'categorias',
         foreignKey: 'category_id'
+    }),
+    Productos.hasMany(models.Catalogo, {
+        as: "catalogo",
+        foreignKey: "product_id"
     });
 }
 return Productos;

@@ -1,8 +1,8 @@
 module.exports = function(sequelize, dataTypes){
 
-    let alias = "Usuarios"
+    const alias = "Usuarios"
 
-    let cols = {
+    const cols = {
         id:{
             type: dataTypes.INTEGER,
             primaryKey:true,
@@ -28,26 +28,26 @@ module.exports = function(sequelize, dataTypes){
         }
     }
 
-    let config = {
+    const config = {
         tableName:"users",
         timestamps:false
     }
 
-    let Usuarios = sequelize.define(alias, cols, config);
+    const Usuarios = sequelize.define(alias, cols, config);
 
     Usuarios.associate = function(models){
         Usuarios.belongsTo(models.TipoUsuario, {
-            as: "TipoUsuario",
+            as: "tipoUsuario",
             foreignKey: "type_user_id"
         });
 
         Usuarios.hasMany(models.Pedidos, {
-            as: "Pedidos",
+            as: "pedidos",
             foreignKey: "user_id"
         });
 
         Usuarios.hasMany(models.Carrito, {
-            as: "Carrito",
+            as: "carrito",
             foreignKey: "user_id"
         });
     };
