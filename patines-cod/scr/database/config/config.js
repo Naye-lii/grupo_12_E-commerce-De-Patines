@@ -2,21 +2,23 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "root",
-    "database": "structure.sql",
+    "database": "patines_12",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "port": 3307,
+    "dialect": "mysql",
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "database_test",
+    "database": "patines_12",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "port": 3307,
+    "dialect": "mysql",
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
+    "password": "root",
+    "database": "patines_12",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }

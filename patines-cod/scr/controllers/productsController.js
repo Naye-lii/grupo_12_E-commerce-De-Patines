@@ -24,9 +24,17 @@ const controlador = {
             return articulo.id == idProduct;
         });
         res.render("productDetail", {products: productsList, product, idProduct, productSize});
+
+
     },
     form: function (req, res){
-        res.render('productsAdd')
+        //res.render('productsAdd')
+         Marcas.findAll()
+            .then(function(marca){
+                Categorias.findAll().then(function(categoria){
+                  return res.render('productsAdd', {marca: marca, categoria: categoria})  
+                }) 
+            })
     },
     crear: function (req, res){
         const newProduct = req.body;
