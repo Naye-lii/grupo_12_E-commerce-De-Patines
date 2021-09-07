@@ -8,6 +8,10 @@ const Op = db.Sequelize.Op;
 const Productos = db.Productos;
 const Marcas = db.Marcas;
 const Categorias = db.Categorias;
+const Colores = db.Colores;
+const Tallas = db.Tallas;
+const Catalogo = db.Catalogo;
+const Existencias = db.Existencias;
 
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -32,29 +36,76 @@ const controlador = {
         //res.render('productsAdd')
         Marcas.findAll()
             .then(function (marca) {
-                Categorias.findAll().then(function (categoria) {
-                    return res.render('productsAdd', { marca: marca, categoria: categoria })
-                })
+                Categorias.findAll()
+                    .then(function (categoria) {
+                        Colores.findAll()
+                            .then(function (color) {
+                                Tallas.findAll()
+                                    .then(function (talla) {
+                                        return res.render('productsAdd', { marca: marca, categoria: categoria, color: color, talla: talla})
+                                    })
+                            })                            
+                    })
             })
     },
     crear: function (req, res) {
         const newProduct = req.body;
-        newProduct.size = newProduct.size.split(",");
-        newProduct.color = newProduct.color.split(",");
-        if (req.file) {
-            newProduct.image = '/img/products/' + req.file.filename;
+        /*if (req.file) {
+            newProduct.img = '/img/products/' + req.file.filename;
         } else {
-            newProduct.image = '/img/products/No-img.png';
-        };
+            newProduct.img = '/img/products/No-img.png';
+        };*/
 
+        Productos.create({
+            name_product: newProduct.nombre,
+            price: newProduct.precio,  
+            brand_id: newProduct.marca,
+            description: newProduct.descripcion,
+            category_id: newProduct.categoria 
+        });
 
-        productsList.push({
+        Productos.findAll().then(function (result) {
+            console.log(result)
+        })
+
+        /*Catalogo.create({
+            product_id: Productos.findOne({
+                where:{
+                    name_product: newProduct.nombre 
+                }
+            }).then(function (resultado) {
+                return resultado.id
+            }),
+            url_imagen: '/img/products/No-img.png',
+            color_id: newProduct.color
+        })
+            
+            /*Catalogo.findOne({
+                where:{
+                    product_id: produ.id,
+                    url_imagen: '/img/products/No-img.png',
+                }
+            })
+            .then((catal)=>{
+                Existencias.create({
+                    product_catalogue_id: catal.id,
+                    size_id: newProduct.talla,
+                    quantity: newProduct.cantidad
+                })
+            })
+        })
+        ;
+
+        /*newProduct.size = newProduct.size.split(",");
+        newProduct.color = newProduct.color.split(",");*/
+     
+        /*productsList.push({
             id: productsList.length + 1,
             ...newProduct
         });
 
         fs.writeFileSync(productsFilePath, JSON.stringify(productsList, null, 2));
-        res.redirect("/products/list");
+        */res.redirect("/products/list");
     },
     list: function (req, res) {
         res.render("productsListEdit", { products: productsList });

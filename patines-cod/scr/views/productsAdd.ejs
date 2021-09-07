@@ -13,59 +13,64 @@
             <form class="login-form" method="POST" action="/products" enctype="multipart/form-data">
                 <label class="texto-inputs" for="productName">Nombre del producto</label>
                 <div class="div-input">
-                    <input type="text" name="name" id="productName" class="login-data" placeholder="Nombre del producto" required>
+                    <input type="text" name='nombre' id="productName" class="login-data" placeholder="Nombre del producto" required>
                 </div>
 
                 <label class="texto-inputs" for="precio">Precio</label>
                 <div class="div-input">
-                    <input type="text" name="price" id="precio" class="login-data" placeholder="$10000.00" required>   
+                    <input type="text" name="precio" id="precio" class="login-data" placeholder="10000.00" required>   
                 </div>
 
                 <label class="texto-inputs" for="marca">Marca</label>
                 <div class="cont-categoria" >
-                    <select name="brand" id="marca" required class="list-categoria">
+                    <select name="marca" id="marca" required class="list-categoria">
                         <% for (let i=0; i < marca.length; i++){ %>
                         <option value="<%= marca[i].id %>"><%= marca[i].name_brand %></option>
                         <% } %>
-                        <!--<option value="patines">Patines</option>
-                        <option value="protect">Equipo de protección</option>
-                        <option value="accesorio">Accesorio</option>
-                        <option value="refaccion">Refacción</option>-->
                     </select>  
                 </div>
 
                 <label class="texto-inputs" for="des">Descripción</label>
                 <div class="div-input">    
-                    <textarea name="description" id="des" class="login-data" placeholder="Descripción" rows="5" required></textarea>
+                    <textarea name="descripcion" id="des" class="login-data" placeholder="Descripción" rows="5" required></textarea>
                 </div>
-
-                <!--<label class="texto-inputs" for="imagenP">Imagen del producto</label>
-                <div class="cont-chargeImg">
-                    <input type="file" name="image" id="imagenP" accept=".jpg, .png" class="chargeImg">  
-                </div>-->
 
                 <label class="texto-inputs" for="categoria">Categoría</label>
                 <div class="cont-categoria" >
-                    <select name="category" id="categoria" required class="list-categoria">
-                        <% for (let i=0; i < categoria.length; i++){ %>
-                        <option value="<%= categoria[i].id %>"><%= categoria[i].name_category %></option>
+                    <select name="categoria" id="categoria" required class="list-categoria">
+                        <% for (let j=0; j < categoria.length; j++){ %>
+                        <option value="<%= categoria[j].id %>"><%= categoria[j].name_category %></option>
                         <% } %>
-                        <!--<option value="patines">Patines</option>
-                        <option value="protect">Equipo de protección</option>
-                        <option value="accesorio">Accesorio</option>
-                        <option value="refaccion">Refacción</option>-->
                     </select>  
                 </div>
-            
-                <!--<label class="texto-inputs" for="tallas">Tallas disponibles</label>
-                <div class="div-input">
-                    <input type="text" name="size" id="tallas" placeholder="talla1, talla2, ..." class="login-data">
+
+                <label class="texto-inputs" for="imagenP">Imagen del producto</label>
+                <div class="cont-chargeImg">
+                    <input type="file" name="img" id="imagenP" accept=".jpg, .png" class="chargeImg">  
                 </div>
-                
-                <label class="texto-inputs" for="colores">Colores disponibles</label>
+
+                <label class="texto-inputs" for="colores">Color</label>
+                <div class="cont-categoria" >
+                    <select name="color" id="color" required class="list-categoria">
+                        <% for (let i=0; i < color.length; i++){ %>
+                        <option value="<%= color[i].id %>"><%= color[i].color %></option>
+                        <% } %>
+                    </select>  
+                </div>
+
+                <label class="texto-inputs" for="talla">Talla</label>
+                <div class="cont-categoria" >
+                    <select name="talla" id="talla" required class="list-categoria">
+                        <% for (let i=0; i < talla.length; i++){ %>
+                        <option value="<%= talla[i].id %>"><%= talla[i].value_size %></option>
+                        <% } %>
+                    </select>  
+                </div>
+
+                <label class="texto-inputs" for="cantidad">Catindad disponible</label>
                 <div class="div-input">
-                    <input type="text" name="color" id="colores" class="login-data" placeholder="color1, color2, ...">
-                </div>-->
+                    <input type="text" name="cantidad" id="cantidad" class="login-data" required>   
+                </div>
                 
                 <button type="submit" class="submit-btn">Guardar</button>
                 <button type="reset" class="submit-btn"href="/products/list">Cancelar</button>

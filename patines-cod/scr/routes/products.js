@@ -29,7 +29,7 @@ router.get('/create', /*[authMiddleware, adminMiddleware, privateAdminMiddleware
 router.get('/list', /*adminMiddleware,*/ productsController.list);
 router.get('/:idProduct/edit', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.formEdit);
 router.put('/:idProduct', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit);
-router.post('/', /*uploadFile.single('image'),[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.crear);
+router.post('/', uploadFile.single('image'),/*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.crear);
 router.get('/edit/:id', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit); 
 router.delete('/delete/:id',/*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.delete);
 router.post('/products/list', uploadFile.single('image'), /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.crear);
