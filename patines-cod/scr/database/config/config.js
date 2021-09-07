@@ -4,7 +4,7 @@ module.exports = {
     "password": "root",
     "database": "patines_12",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 3307,
     "dialect": "mysql",
   },
   "test": {
@@ -12,7 +12,7 @@ module.exports = {
     "password": "root",
     "database": "patines_12",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 3307,
     "dialect": "mysql",
   },
   "production": {

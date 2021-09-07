@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS patines_12;
 CREATE DATABASE IF NOT EXISTS patines_12;
 USE patines_12;
 
@@ -45,12 +46,14 @@ CREATE TABLE IF NOT EXISTS products (
     name_product VARCHAR(50) NOT NULL,
     price DOUBLE DEFAULT 0 NOT NULL,
     brand_id INT UNSIGNED NOT NULL,
-    description TEXT NOT NULL,
+    descripcion TEXT NOT NULL,
     category_id INT UNSIGNED NOT NULL, 
     PRIMARY KEY(id),
-    FOREIGN KEY (brand_id) REFERENCES brands(id),
+    FOREIGN KEY (brand_id) REFERENCES brands(id) ON DELETE CASCADE,
     FOREIGN KEY (category_id) REFERENCES category(id)
+    ON DELETE CASCADE
 );
+
 
 CREATE TABLE IF NOT EXISTS color (
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -64,8 +67,9 @@ CREATE TABLE IF NOT EXISTS products_catalogue (
     url_imagen VARCHAR(500) NOT NULL,
     color_id INT UNSIGNED NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE,
     FOREIGN KEY (color_id) REFERENCES color(id)
+	ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS sizes (
@@ -80,8 +84,9 @@ CREATE TABLE IF NOT EXISTS products_stock (
     size_id INT UNSIGNED NOT NULL,
     quantity INT UNSIGNED NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY (product_catalogue_id) REFERENCES products_catalogue(id),
+    FOREIGN KEY (product_catalogue_id) REFERENCES products_catalogue(id) ON DELETE CASCADE,
     FOREIGN KEY (size_id) REFERENCES sizes(id)
+    ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS order_detail (
@@ -90,6 +95,7 @@ CREATE TABLE IF NOT EXISTS order_detail (
     user_id INT UNSIGNED NOT NULL,
     product_id INT UNSIGNED NOT NULL,
     PRIMARY KEY(id),
-    FOREIGN KEY (shopping_cart_id) REFERENCES shopping_cart(id),
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (product_id) REFERENCES products (id));
+    FOREIGN KEY (shopping_cart_id) REFERENCES shopping_cart(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products (id)
+    ON DELETE CASCADE);
