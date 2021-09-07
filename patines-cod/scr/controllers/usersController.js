@@ -7,7 +7,7 @@ const userModel = require('../models/User');
 
 // Variable para requerir modelos
 const db = require("../database/models");
-const Usuarios = db.Ususarios;
+const dbUsuarios = require("../database/models/Usuarios");
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
 var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
@@ -16,12 +16,6 @@ const controlador = {
     register: function (req, res) {
         res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 })
         res.render('registro');
-    },
-    list: function (req, res) {
-        res.render("users-list", { users });
-    },
-    userLoggedProfile: function (req, res) {
-        res.render('user-profile', { 'user': req.user, isAuthenticated: req.user });
     },
     crear: function (req, res) {
         const resultValidation = validationResult(req);
@@ -33,25 +27,36 @@ const controlador = {
                 oldData: req.body
             })
         };
-
         const userInfo = req.body;
-
         userInfo.password = bcrypt.hashSync(userInfo.password, 11);
 
+        let id = dbUsuarios.id.length + 1;
+
+       let dbUsuarios = dbUsuarios.create({
+            id: id,
+            first_name: req.body.nombre,
+            last_name: req.body.apellido,
+            email: req.body.email,
+            password: userInfo.password,
+            img_user: req.body.imgUser,
+            type_user_id: "usuario"
+         });
         if (req.file) {
-            userInfo.imgUser = '/img/users/' + req.file.filename;
-        } else {
-            userInfo.imgUser = '/img/users/imagen-user-default.png';
-        };
-
-        users.push({
-            id: users.length + 1,
-            ...userInfo,
-            type: "usuario"
-        });
-
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-        res.redirect("/list");
+            req.body.imgUser = '/img/users/imagen-user-default.png';
+            }
+        else {
+        req.body.imgUser = '/img/users/imagen-user-default.png';
+        }
+        res.redirect("/list", { dbUsuarios: dbUsuarios });
+    },
+    list: function (req, res) {
+        res.render("users-list", { users });
+    },
+    //list: function (req, res) {
+        //res.render("users-list", { dbUsuarios: dbUsuarios});
+    //},  
+    userLoggedProfile: function (req, res) {
+        res.render('user-profile', { 'user': req.user, isAuthenticated: req.user });
     },
     /* profile: function(req, res){
          const userId = req.params.id;
@@ -170,13 +175,6 @@ const controlador = {
         return res.redirect('/');
     },
     //CRUD para base de datos
-    crear: function (req, res){
-        db.Usuarios.findAll()
-        .then(function(Usuarios) {
-            return res.render("users-list", {users:Usuarios});
-        })
-    },
-
     editar:function(req,res){
         db.Usuarios.findByPk(req.params.id)
         .then(function(usuario){
