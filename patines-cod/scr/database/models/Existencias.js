@@ -20,7 +20,7 @@ module.exports = function(sequelize, dataTypes){
     }
 
     const config = {
-        tableName:"color",
+        tableName:"products_stock",
         timestamps:false
     }
 
@@ -29,7 +29,8 @@ module.exports = function(sequelize, dataTypes){
     Existencias.associate = function(models){
         Existencias.belongsTo(models.Catalogo, {
             as: "catalogo",
-            foreignKey: "product_catalogue_id"
+            foreignKey: "product_catalogue_id",
+            onDelete: 'cascade'
         }),
         Existencias.belongsTo(models.Tallas, {
             as: "tallas",

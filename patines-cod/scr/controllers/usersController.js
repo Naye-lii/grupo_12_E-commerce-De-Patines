@@ -175,6 +175,32 @@ const controlador = {
         .then(function(Usuarios) {
             return res.render("users-list", {users:Usuarios});
         })
+    },
+
+    editar:function(req,res){
+        db.Usuarios.findByPk(req.params.id)
+        .then(function(usuario){
+            res.render('userEdit', {user: usuario})
+        })
+    },
+
+    actualizar: function(req,res){
+        console.log(req.body.firstName);
+        const id= req.params.id;
+        console.log(id);
+        db.Usuarios.update({
+            first_name: req.body.firstName,
+            last_name: req.body.lastName
+        },{
+            where: {
+                id: id
+            }
+        }
+        )
+
+        .then(function(){
+            res.redirect('/user-profile')
+        })
     }
 }
 module.exports = controlador;

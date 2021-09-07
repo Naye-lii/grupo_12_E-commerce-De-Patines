@@ -106,7 +106,7 @@
                                             <%=products[i].brand%>
                                         </p>
                                     </div>
-                                    <% if(locals.isAdmin) { %>
+                                    
                                         <div class="contButton">
                                             <form action="/products/<%= products[i].id %>/edit" method="GET">
                                                 <button class="submit-btn" type="submit">Editar</button>
@@ -116,7 +116,8 @@
                                                 <button class="submit-btn" type="submit">Eliminar</button>
                                             </form>
                                         </div>
-                                        <% } %>
+                                        <!--<% if(locals.isAdmin) { %>-->
+                                        <!--<% } %>-->
                                             </a>
                                 </div>
                                 <% } %>
@@ -124,13 +125,14 @@
 
                     </div>
                 </section>
-                <% if(locals.isAdmin) { %>
+                
                     <form action="/products/create" method="GET">
                         <div class="caption">
                             <button class="boton-negro" type="submit"> Añadir nuevo producto</button>
                         </div>
                     </form>
-                <% } %>
+                    <!--<% if(locals.isAdmin) { %>-->
+                <!--<% } %>-->
 
             </main>
 

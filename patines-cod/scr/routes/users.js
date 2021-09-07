@@ -98,4 +98,7 @@ router.get('/logout/', authMiddleware, usersController.logout);
 //Ruta nueva Sequelize
 router.get("/crear", usersController.crear);
 
+router.get('/:id/editar', authMiddleware, usersController.editar);
+router.put('/:id/editar', uploadFile.single('imgUser'), editValidations, usersController.actualizar);
+
 module.exports = router;

@@ -51,7 +51,7 @@
     "email": "nuevo123@gmail.com",
     "password": "$2b$11$DsPAenBhEAQUq/CW86GrlOtxTndFbgvskAVKTMLZuqJwfF2VnOTDa",
     "imgUser": "/img/users/imgU_1628287152091.JPG",
-    "type": "usuario"
+    "type": "administrador"
   },
   {
     "id": 7,

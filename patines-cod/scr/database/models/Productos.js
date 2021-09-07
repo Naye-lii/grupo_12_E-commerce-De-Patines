@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Productos";
-    let cols = {
+    const alias = "Productos";
+    const cols = {
         id: {
             autoIncrement:true,
             primaryKey: true,
@@ -15,32 +15,34 @@ module.exports = (sequelize, dataTypes) => {
         brand_id: {
             type: dataTypes.INTEGER  
         },
-        description: {
+        descripcion: {
             type: dataTypes.STRING  
         },
         category_id: {
             type: dataTypes.INTEGER  
         }
     }
-let config = {
-    tableName: "products",
-    timestamps:false
-};
-let Productos = sequelize.define(alias, cols, config);
+    const config = {
+        tableName: "products",
+        timestamps:false
+    };
+    const Productos = sequelize.define(alias, cols, config);
 
-Productos.associate = function(models) {
-    Productos.belongsTo(models.Marcas, {
-        as: "marcas",
-        foreignKey: "brand_id"
-    }),
-    Productos.belongsTo(models.Categorias, {
-        as: 'categorias',
-        foreignKey: 'category_id'
-    }),
-    Productos.hasMany(models.Catalogo, {
-        as: "catalogo",
-        foreignKey: "product_id"
-    });
-}
-return Productos;
+    Productos.associate = function(models) {
+        Productos.belongsTo(models.Marcas, {
+            as: "marcas",
+            foreignKey: "brand_id"
+        }),
+        Productos.belongsTo(models.Categorias, {
+            as: 'categorias',
+            foreignKey: 'category_id'
+        }),
+        Productos.hasMany(models.Catalogo, {
+            as: "catalogo",
+            foreignKey: "product_id",
+            onDelete: 'cascade'
+        });
+    }
+
+    return Productos;
 }

@@ -42,8 +42,11 @@
 
     <!--Barra de busqueda-->
     <input type="checkbox" id="show-buscar" hidden>
-    <div class="bar_buscar">
-        <input class="barra-buscar" type="search" placeholder="  ¿Qué está buscando?" />
+    <div class="bar_buscar"> 
+        <form method="GET" action="/products/search?busqueda="+ busqueda>
+            <input class="barra-buscar" type="search" name="busqueda" placeholder="  ¿Qué está buscando?" />
+            <button type="submit" class="boton-buscar">BUSCAR</button>
+        </form>
     </div>
 
 
@@ -57,7 +60,7 @@
             <input type="checkbox" id="show-submenu" hidden>
             <!--Lista del menu/productos-->
             <ul class="submenu">
-                <li><a href="/products/list">Todos</a></li>
+                <li><a href="/products/products-list">Todos</a></li>
                 <li><a href="#patines">Patines</a></li>
                 <li><a href="#equipoProteccion">Equipo de protección</a></li>
                 <li><a href="#accesorios">Accesorios</a></li>

@@ -22,7 +22,7 @@ module.exports = function(sequelize, dataTypes){
 
     Marcas.associate = function(models){
         Marcas.hasMany(models.Productos, {
-            as: "Peliculas",
+            as: "marcas",
             foreignKey: "brand_id"
         })
     };
