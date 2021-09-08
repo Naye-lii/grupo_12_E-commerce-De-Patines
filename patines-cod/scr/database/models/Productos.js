@@ -37,11 +37,11 @@ module.exports = (sequelize, dataTypes) => {
             as: 'categorias',
             foreignKey: 'category_id'
         })
-        /*Productos.hasMany(models.Catalogo, {
+        Productos.hasMany(models.Catalogo, {
             as: "catalogo",
             foreignKey: "product_id",
             onDelete: 'cascade'
-        });*/
+        });
     }
 
     return Productos;

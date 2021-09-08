@@ -50,62 +50,53 @@ const controlador = {
     },
     crear: function (req, res) {
         const newProduct = req.body;
-        /*if (req.file) {
-            newProduct.img = '/img/products/' + req.file.filename;
+        
+        if (req.file) {
+            newProduct.imagenP = '/img/products/' + req.file.filename;
         } else {
-            newProduct.img = '/img/products/No-img.png';
-        };*/
+            newProduct.imagenP = '/img/products/No-img.png';
+        };
 
-        Productos.create({
+       Productos.create({
             name_product: newProduct.nombre,
             price: newProduct.precio,  
             brand_id: newProduct.marca,
             description: newProduct.descripcion,
             category_id: newProduct.categoria 
-        });
-
-        Productos.findAll().then(function (result) {
-            console.log(result)
         })
-
-        /*Catalogo.create({
-            product_id: Productos.findOne({
-                where:{
-                    name_product: newProduct.nombre 
+        .then((buscar) => { 
+            Productos.findOrCreate({
+                where: {
+                    name_product: newProduct.nombre
                 }
-            }).then(function (resultado) {
-                return resultado.id
-            }),
-            url_imagen: '/img/products/No-img.png',
-            color_id: newProduct.color
-        })
-            
-            /*Catalogo.findOne({
-                where:{
-                    product_id: produ.id,
-                    url_imagen: '/img/products/No-img.png',
-                }
-            })
-            .then((catal)=>{
-                Existencias.create({
-                    product_catalogue_id: catal.id,
-                    size_id: newProduct.talla,
-                    quantity: newProduct.cantidad
+                });
+                return buscar}) 
+            .then((product) => {
+                Catalogo.create({
+                    product_id: product.id,
+                    url_imagen: newProduct.imagenP,
+                    color_id: newProduct.color,
                 })
+                .then((buscarCat) => { 
+                    Catalogo.findOrCreate({
+                        where: {
+                            product_id: product.id,
+                            url_imagen: newProduct.imagenP,
+                            color_id: newProduct.color,
+                        }
+                        });
+                        return buscarCat})
+                        .then((catlg)=>{
+                            Existencias.create({
+                                product_catalogue_id: catlg.id,
+                                size_id: newProduct.talla,
+                                quantity: newProduct.cantidad
+                            })
+                        })                
             })
-        })
-        ;
 
-        /*newProduct.size = newProduct.size.split(",");
-        newProduct.color = newProduct.color.split(",");*/
-     
-        /*productsList.push({
-            id: productsList.length + 1,
-            ...newProduct
-        });
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(productsList, null, 2));
-        */res.redirect("/products/list");
+        res.redirect("/products/list");
     },
     list: function (req, res) {
         res.render("productsListEdit", { products: productsList });
