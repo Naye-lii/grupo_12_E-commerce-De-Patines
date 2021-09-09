@@ -21,15 +21,11 @@ const uploadFile = multer({ storage });
 
 const usersController = require('../controllers/usersController.js');
 
-// Rutas nuevas para Sequelize
-const userController = ('./controllers/userController');
-
-
 const registerValidations = [
-    body('firstName')
+    body('first_name')
         .notEmpty().withMessage('Escribe tu nombre').bail()
         .isAlpha().withMessage('El nombre solo debe contener letras'),
-    body('lastName')
+    body('last_name')
         .notEmpty().withMessage('Escribe tu apellido').bail()
         .isAlpha().withMessage('El apellido solo debe contener letras'),
     body('email')
@@ -38,7 +34,7 @@ const registerValidations = [
     body('password')
         .notEmpty().withMessage('Escribe una contraseña').bail()
         .isLength({min:8}).withMessage('La contraseña debe contener mínimo 8 caracteres'),
-    body('imgUser').custom((value, { req }) => {
+    body('img_user').custom((value, { req }) => {
         let file= req.file;
         let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
 
@@ -53,13 +49,13 @@ const registerValidations = [
 ];
 
 const editValidations = [
-    body('firstName')
+    body('first_name')
         .notEmpty().withMessage('Escribe tu nombre').bail()
         .isAlpha().withMessage('El nombre solo debe contener letras'),
-    body('lastName')
+    body('last_name')
         .notEmpty().withMessage('Escribe tu apellido').bail()
         .isAlpha().withMessage('El apellido solo debe contener letras'),
-    body('imgUser').custom((value, { req }) => {
+    body('img_user').custom((value, { req }) => {
         let file= req.file;
         let acceptedExtensions = ['.jpg', '.png', '.jpeg'];
 
@@ -76,9 +72,8 @@ const editValidations = [
 
 router.get('/register', guestMiddleware, usersController.register);
 router.get('/:id/edit', authMiddleware, usersController.edit);
-router.put('/:id/edit', uploadFile.single('imgUser'), editValidations, usersController.update);
+router.put('/:id/edit', uploadFile.single('img_user'), editValidations, usersController.update);
 router.post('/delete/:id', usersController.delete);
-router.post('/crear', uploadFile.single('imgUser'), registerValidations, usersController.crear);
 router.get('/list', usersController.list);
 router.delete('/:id/delete',authMiddleware, usersController.delete);
 
@@ -97,8 +92,9 @@ router.get('/logout/', authMiddleware, usersController.logout);
 
 //Ruta nueva Sequelize
 router.get("/crear", usersController.crear);
-
+router.get('/crear', uploadFile.single('img_user'), registerValidations, usersController.crear);
+router.post('/crear', uploadFile.single('img_user'), registerValidations, usersController.crear);
 router.get('/:id/editar', authMiddleware, usersController.editar);
-router.put('/:id/editar', uploadFile.single('imgUser'), editValidations, usersController.actualizar);
+router.put('/:id/editar', uploadFile.single('img_user'), editValidations, usersController.actualizar);
 
 module.exports = router;

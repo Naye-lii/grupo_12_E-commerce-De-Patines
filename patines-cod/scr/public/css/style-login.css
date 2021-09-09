@@ -161,6 +161,17 @@ button.submit-btn:hover {
       padding-bottom: 10px;
   }
  
+  #user-photo{
+    width: 80px;
+     height: 80px;
+     border-radius: 90%;
+     margin-right: 15px;
+  }
+
+  #upload-Img{
+      display: flex;
+      align-items: baseline;
+  }
 
   /* Media queries para dar formato a pantallas de diferente tamaño */
 
@@ -208,7 +219,7 @@ input[type=checkbox]{
     width: 15px;
     height: 15px;
 }
-}
+
 
 input[type=checkbox]:checked:after {
     background-color: black;

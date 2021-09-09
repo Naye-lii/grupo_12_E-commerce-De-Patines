@@ -22,13 +22,12 @@
                 <div class="products-container">
                     <div class="row-products">
                         <% for(let i = 0; i < users.length; i ++) { %>
-                            <div class="product">
-                                <img src= "<%= users[i].imgUser %>"> 
-                                
+                            <div class="product"> 
+                                <img src= "<%= users[i].img_user %>"> 
                                 <div class="caption">
-                                    <h2><a href="/user-profile"><%=users[i].firstName%> <%=users[i].lastName%></a></h2>
-                                    <p class="marca"><%=users[i].email%></p>
-                                    <h3><%=users[i].type%></h3>
+                                    <h2><a href="/user-profile%>"> <%=users[i].first_name + " " + users[i].last_name%></a></h2>
+                                    <p class="marca"><%= users[i].email %></p>
+                                    <h3><%= users[i].type_user_id %></h3>
                                 </div>
                                 <div class="contButton">
                                     <form action="/user-profile" method="GET">
@@ -49,7 +48,6 @@
 
      <!--Pie de pagína-->
      <%- include('partials/footer.ejs')%>
-           
     </body>
 
 </html>

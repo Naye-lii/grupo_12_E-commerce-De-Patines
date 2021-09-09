@@ -16,29 +16,29 @@
                     <label class="texto-inputs" for="nombre">Nombre</label>
                     <div class="div-input">
                         <i class="far fa-user"></i>
-                        <input type="text" name="firstName" class="login-data" id="nombre" placeholder="Nombre"
-                        value = "<%= locals.oldData ? oldData.firstName : null %>"
+                        <input type="text" name="first_name" class="login-data" id="nombre" placeholder="Nombre"
+                        value = "<%= locals.oldData ? oldData.first_name : null %>"
                         >
                         <!-- required lo hace obligatorio -->
                     </div>
-                    <% if(locals.errors && errors.firstName){ %>
+                    <% if(locals.errors && errors.first_name){ %>
                         <div class="alert">
                             <i class="fas fa-times-circle"></i>
-                            <%=errors.firstName.msg%>
+                            <%=errors.first_name.msg%>
                         </div>
                     <%}%>
 
                     <label class="texto-inputs" for="apellido">Apellido</label>
                     <div class="div-input">
                         <i class="far fa-user"></i>
-                        <input type="text" name="lastName" class="login-data" id="apellido"
-                            placeholder="Apellido" value = "<%= locals.oldData ? oldData.lastName : null %>">
+                        <input type="text" name="last_name" class="login-data" id="apellido"
+                            placeholder="Apellido" value = "<%= locals.oldData ? oldData.last_name : null %>">
                         <!-- required lo hace obligatorio -->
                     </div>
-                    <% if(locals.errors && errors.lastName){ %>
+                    <% if(locals.errors && errors.last_name){ %>
                         <div class="alert">
                             <i class="fas fa-times-circle"></i>
-                            <%=errors.lastName.msg%>
+                            <%=errors.last_name.msg%>
                         </div>
                     <%}%>
 
@@ -71,13 +71,14 @@
 
                     <label class="texto-inputs" for="imagenP">Imagen del usuario</label>
                     <div class="cont-chargeImg">
-                        <input type="file" name="imgUser" id="imagenP"
-                            accept=".jpg, .png" class="chargeImg">
+                        <input type="file" name="img_user" id="imagenP"
+                            accept=".jpg, .png" class="chargeImg"/>
+                            <!--<img id="user-photo" src="/img/users/imgProfile.jpg"></img>-->
                     </div>
-                    <% if(locals.errors && errors.imgUser){ %>
+                    <% if(locals.errors && errors.img_user){ %>
                         <div class="alert">
                             <i class="fas fa-times-circle"></i>
-                            <%=errors.imgUser.msg%>
+                            <%=errors.img_user.msg%>
                         </div>
                     <%}%>
 
@@ -87,8 +88,10 @@
                 <a class="link-registro" href="/login">Inicia sesión</a>
             </main>
             <!--Pie de pagína-->
+            <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>    
+           <script src="CLOUDINARY_URL=cloudinary://541755772963698:XRQJ4s9f8xAUPhfPSLa-4DUCyLY@dc7uyfv94"></script>
+            <script src="../js/servicio-imagen.js"></script>
             <%- include('partials/footer.ejs')%>
-
     </body>
 
 </html>
