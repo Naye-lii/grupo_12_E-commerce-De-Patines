@@ -24,12 +24,46 @@ const controlador = {
     },
     detail: (req, res) => {
         const idProduct = req.params.id;
-        const productSize = req.params.size;
+        let colorList=[];
+
+        Productos.findByPk(idProduct)
+        .then((productB) => {
+            Catalogo.findAll({
+                where:{
+                    product_id: productB.id
+                }
+            })
+            .then((catB) => {
+                catB.forEach(element => {
+                    Existencias.findAll({
+                        where:{
+                            product_catalogue_id: element.dataValues.id
+                        }
+                    })
+                    .then((existB)=>{
+
+                        catB.forEach(elem => {
+                            Colores.findByPk(elem.dataValues.color_id)
+                            .then((colorB)=>{
+                                colorList.push(colorB.color) 
+                                console.log(colorList);            
+                            }).then(()=>{
+                                res.render("productDetail", { product: productB, catlg: catB, color: colorList, talla: catB });
+                            })
+                        })                                                              
+                    });                              
+                });
+            });
+        });
+
+
+        /*const productSize = req.params.size;
         const product = productsList.find((articulo) => {
             return articulo.id == idProduct;
         });
         res.render("productDetail", { products: productsList, product, idProduct, productSize });
-
+*/
+        
 
     },
     form: function (req, res) {

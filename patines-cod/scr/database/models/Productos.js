@@ -40,6 +40,7 @@ module.exports = (sequelize, dataTypes) => {
         Productos.hasMany(models.Catalogo, {
             as: "catalogo",
             foreignKey: "product_id",
+            sourceKey:'id',
             onDelete: 'cascade'
         });
     }
