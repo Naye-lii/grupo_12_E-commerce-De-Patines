@@ -71,10 +71,9 @@
 
                     <label class="texto-inputs" for="imagenP">Imagen del usuario</label>
                     <div class="cont-chargeImg">
-                        <!--<input type="file" name="img_user" id="imagenP"
-                            accept=".jpg, .png" class="chargeImg">-->
-                            <img id="user-photo" src="/img/users/imgProfile.jpg"></img>
-                            <button type="button" id="btn-foto">Subir foto</button>
+                        <input type="file" name="img_user" id="imagenP"
+                            accept=".jpg, .png" class="chargeImg"/>
+                            <!--<img id="user-photo" src="/img/users/imgProfile.jpg"></img>-->
                     </div>
                     <% if(locals.errors && errors.img_user){ %>
                         <div class="alert">

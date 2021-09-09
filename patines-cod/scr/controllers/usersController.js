@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 const { raw } = require("express");
 const { validationResult } = require('express-validator');
 
@@ -36,12 +37,16 @@ const controlador = {
         else{
             imagen = '/img/users/imagen-user-default.png';
         }
+
+        let hashedPass = bcryptjs.hashSync(userInfo.password, 7);
+        hashedPass = hashedPass.slice(8, hashedPass.length);
+        
         userModel.create( {
             id: userModel.id += 1,
             first_name: userInfo.first_name,
             last_name: userInfo.last_name,
             email: userInfo.email,
-            password: userInfo.password,
+            password: hashedPass,
             //TO DO: No funciona hash sync
             img_user: imagen,
             type_user_id: 1
@@ -59,9 +64,9 @@ const controlador = {
             res.status(500).render('error', {
                 status: 500,
                 title: 'ERROR',
-                message: ' '
+                message: 'Error al crear usuario'
             });
-        });
+            console.log(err);});
 },
     list: function (req, res) {
         userModel.findAll()
