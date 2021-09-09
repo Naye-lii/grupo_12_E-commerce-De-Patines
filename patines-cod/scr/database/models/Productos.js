@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER   
         },
         name_product: {
-            type: dataTypes.STRING(50) 
+            type: dataTypes.STRING 
         },
         price: {
             type: dataTypes.DOUBLE
@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
         brand_id: {
             type: dataTypes.INTEGER  
         },
-        descripcion: {
+        description: {
             type: dataTypes.STRING  
         },
         category_id: {
@@ -36,12 +36,12 @@ module.exports = (sequelize, dataTypes) => {
         Productos.belongsTo(models.Categorias, {
             as: 'categorias',
             foreignKey: 'category_id'
-        }),
-        Productos.hasMany(models.Catalogo, {
+        })
+        /*Productos.hasMany(models.Catalogo, {
             as: "catalogo",
             foreignKey: "product_id",
             onDelete: 'cascade'
-        });
+        });*/
     }
 
     return Productos;

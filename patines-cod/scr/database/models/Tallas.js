@@ -14,7 +14,7 @@ module.exports = function(sequelize, dataTypes){
     }
 
     const config = {
-        tableName:"color",
+        tableName:"sizes",
         timestamps:false
     }
 

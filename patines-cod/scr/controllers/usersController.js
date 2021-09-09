@@ -3,14 +3,14 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const { raw } = require("express");
 const { validationResult } = require('express-validator');
-const userModel = require('../models/User');
 
 // Variable para requerir modelos
 const db = require("../database/models");
-const dbUsuarios = require("../database/models/Usuarios");
+const userModel = require('../database/models').Usuarios;
+const typeUser = require('../database/models').TipoUsuario;
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
-var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+//var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const controlador = {
     register: function (req, res) {
@@ -20,41 +20,55 @@ const controlador = {
     crear: function (req, res) {
         const resultValidation = validationResult(req);
         console.log(resultValidation.mapped());
-
-        if (resultValidation.errors.length > 0) {
+         if (resultValidation.errors.length > 0) {
             return res.render('registro', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
-        };
-        const userInfo = req.body;
-        userInfo.password = bcrypt.hashSync(userInfo.password, 11);
-
-        let id = dbUsuarios.id.length + 1;
-
-       let dbUsuarios = dbUsuarios.create({
-            id: id,
-            first_name: req.body.nombre,
-            last_name: req.body.apellido,
-            email: req.body.email,
-            password: userInfo.password,
-            img_user: req.body.imgUser,
-            type_user_id: "usuario"
-         });
-        if (req.file) {
-            req.body.imgUser = '/img/users/imagen-user-default.png';
-            }
-        else {
-        req.body.imgUser = '/img/users/imagen-user-default.png';
         }
-        res.redirect("/list", { dbUsuarios: dbUsuarios });
-    },
+        const userInfo = req.body;
+        //Creando usuario          
+        let imagen;
+        if(userInfo.img_user){
+            console.log(userInfo.img_user);
+            imagen = userInfo.img_user;
+        }
+        else{
+            imagen = '/img/users/imagen-user-default.png';
+        }
+        userModel.create( {
+            id: userModel.id += 1,
+            first_name: userInfo.first_name,
+            last_name: userInfo.last_name,
+            email: userInfo.email,
+            password: userInfo.password,
+            //TO DO: No funciona hash sync
+            img_user: imagen,
+            type_user_id: 1
+        })
+        .then((usuario)=>{
+            typeUser.create({
+                id: usuario.id,
+                user_type: 1
+            })
+        })
+        .then(() => {
+            res.redirect('/list');
+        })
+        .catch(err => {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                message: ' '
+            });
+        });
+},
     list: function (req, res) {
-        res.render("users-list", { users });
+        userModel.findAll()
+        .then(function(users){
+           return res.render("users-list", { users: users});
+        })
     },
-    //list: function (req, res) {
-        //res.render("users-list", { dbUsuarios: dbUsuarios});
-    //},  
     userLoggedProfile: function (req, res) {
         res.render('user-profile', { 'user': req.user, isAuthenticated: req.user });
     },
@@ -91,16 +105,16 @@ const controlador = {
             return user.id == userEditId;
         });
 
-        userInfo.firstName = userAct.firstName;
-        userInfo.lastName = userAct.lastName;
+        userInfo.first_name = userAct.first_name;
+        userInfo.last_name = userAct.last_name;
 
         if (req.file) {
-            userAct.imgUser = '/img/users/' + req.file.filename;
+            userAct.img_user = '/img/users/' + req.file.filename;
         } else {
-            userAct.imgUser = userInfo.imgUser;
+            userAct.img_user = userInfo.img_user;
         };
 
-        userInfo.imgUser = userAct.imgUser;
+        userInfo.img_user = userAct.img_user;
 
         const userUpdate = users.findIndex((u) => {
             return u.id == userEditId;
@@ -183,12 +197,12 @@ const controlador = {
     },
 
     actualizar: function(req,res){
-        console.log(req.body.firstName);
+        console.log(req.body.first_name);
         const id= req.params.id;
         console.log(id);
         db.Usuarios.update({
-            first_name: req.body.firstName,
-            last_name: req.body.lastName
+            first_name: req.body.first_name,
+            last_name: req.body.last_name
         },{
             where: {
                 id: id
