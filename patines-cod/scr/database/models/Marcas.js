@@ -7,9 +7,6 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true
-        },
-        name_brand:{
-            type: dataTypes.STRING
         }
     }
 

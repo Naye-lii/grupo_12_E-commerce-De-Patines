@@ -246,6 +246,9 @@ input[type="checkbox"]:checked + .filtro_menu {
         color:white;
         border:0px;
         outline: none;
+        width: 100px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 100;
     }
 
     .barra-buscar:focus{

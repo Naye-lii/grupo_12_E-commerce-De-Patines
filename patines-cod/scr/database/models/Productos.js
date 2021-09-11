@@ -15,11 +15,17 @@ module.exports = (sequelize, dataTypes) => {
         brand_id: {
             type: dataTypes.INTEGER  
         },
-        description: {
+        descripcion: {
             type: dataTypes.STRING  
         },
         category_id: {
             type: dataTypes.INTEGER  
+        },
+        brand_name:{
+            type: dataTypes.STRING,
+        },
+        url_imagen: {
+            type: dataTypes.STRING,
         }
     }
     const config = {

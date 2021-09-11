@@ -173,6 +173,7 @@ padding: 0 5px;
   flex-direction: column;
   margin: 0;
   padding: 0px;
+  font-family: 'Lato', sans-serif;
 }
 
 .product img {
@@ -253,6 +254,7 @@ padding: 0 5px;
   }
 
   .marca{
+    font-family: 'Lato', sans-serif;
     width: 100%;
     font-size: 0.6rem; 
     color: #29303B;
@@ -302,6 +304,7 @@ padding: 0 5px;
    color: white;
     }
   }
+
 
   @media (min-width: 561px) and (max-width: 867px){
     .product{

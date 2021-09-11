@@ -126,9 +126,11 @@ button.submit-btn:hover {
   }
 
   i{
-      color:#A6AAAD;
+      color:white;
       font-size: 14px;
       text-align: left;
+      margin-right: 10px;
+      bottom: 20px;
   }
 
   .cont-chargeImg, .cont-categoria{

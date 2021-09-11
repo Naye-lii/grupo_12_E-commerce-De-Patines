@@ -182,11 +182,10 @@ color: #ffd522;
   font-size: 25px;
   color: white;
   background-color: black;
-  justify-content: center;
+  text-align: center;
   padding:10px;
   padding-left: 2rem;
   padding-right: 2rem;
-  margin:30px;
   transition: background-color cursor 420ms;
   border-style: none;
 }
@@ -449,11 +448,6 @@ cursor: pointer;
     .img-info-iconos{
       width: 20vw;
       background-color: #fff;
-    }
-    
-    .boton-negro{
-        position: relative;
-        top: -5px;
     }
 
     .img-cuadrados{

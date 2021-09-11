@@ -16,7 +16,6 @@ const Existencias = db.Existencias;
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-const productsModel = require('../models/products.model');
 
 const controlador = {
     index: function (req, res) {
@@ -158,18 +157,21 @@ const controlador = {
     },
     //CRUD para base de datos
     listar: function (req, res) {
-        db.Productos.findAll(
+        Productos.findAll(
             {
                 attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id']
             }
             ,
             {
-               include: [{association: 'marcas'}]
+               includes: [{association: 'Marcas'}]
             }
         )
             .then(function (productos) {
                 console.log(productos);
-                res.render("products-list", { products: productos })
+            }
+            )
+            .then(function(marcas){
+                res.render("products-list", { products: productos})
             })
         .catch(function(e){
             console.log(e.toString());
@@ -185,7 +187,7 @@ const controlador = {
                     [Op.like]: '%' + req.query.busqueda + '%'
                 }
             },
-            attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id']
+            attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id', 'brand_name', 'url_imagen']
         })
             .then(function (productos) {
                 res.render("products-list", { products: productos })
