@@ -1,3 +1,4 @@
+const { DH_CHECK_P_NOT_SAFE_PRIME } = require("constants");
 const fs = require("fs");
 const path = require("path");
 const { nextTick } = require("process");
@@ -24,46 +25,31 @@ const controlador = {
     },
     detail: (req, res) => {
         const idProduct = req.params.id;
-        let colorList=[];
 
         Productos.findByPk(idProduct)
         .then((productB) => {
             Catalogo.findAll({
                 where:{
                     product_id: productB.id
-                }
+                },
+                include:[{association:"colores"}]
             })
-            .then((catB) => {
-                catB.forEach(element => {
+            .then((catB) =>{
+                catB.map((uno) => {
                     Existencias.findAll({
                         where:{
-                            product_catalogue_id: element.dataValues.id
-                        }
+                            product_catalogue_id: uno.id
+                        },
+                        include: [{association: "tallas"}]
                     })
-                    .then((existB)=>{
+                    .then( (exist)=>{
+                        res.render("productDetail", { product: productB, catlg: catB, exist: exist});
+                    })
+                    .catch(e => console.log(e))
+                })                    
+            })
 
-                        catB.forEach(elem => {
-                            Colores.findByPk(elem.dataValues.color_id)
-                            .then((colorB)=>{
-                                colorList.push(colorB.color) 
-                                console.log(colorList);            
-                            }).then(()=>{
-                                res.render("productDetail", { product: productB, catlg: catB, color: colorList, talla: catB });
-                            })
-                        })                                                              
-                    });                              
-                });
-            });
-        });
-
-
-        /*const productSize = req.params.size;
-        const product = productsList.find((articulo) => {
-            return articulo.id == idProduct;
-        });
-        res.render("productDetail", { products: productsList, product, idProduct, productSize });
-*/
-        
+        })      
 
     },
     form: function (req, res) {
@@ -78,6 +64,7 @@ const controlador = {
                                     .then(function (talla) {
                                         return res.render('productsAdd', { marca: marca, categoria: categoria, color: color, talla: talla})
                                     })
+                                    .catch(e => console.log(e))
                             })                            
                     })
             })
