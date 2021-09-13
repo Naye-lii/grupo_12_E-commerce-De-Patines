@@ -86,11 +86,15 @@
                     <div class="row-products">
                         <% for(let i = 0; i < products.length; i ++) { %>
                         <div class="product">
-                            <img src= "<%= products[i].url_imagen %>"></img>
+                            <% for(let i = 0; i < products.length; i ++) { %>
+                            <img src= "<%= catalogo[i].url_imagen %>"></img>
+                            <% } %>
                             <div class="caption">
                                 <h2><a href="/products/detail/<%=products[i].id%>"><%= products[i].name_product %></a></h2>
                                 <h3><%=products[i].price%></h3>
-                                    <p class="marca"><%= products[i].brand_name %></p>
+                                <% for(let i = 0; i < products.length; i ++) { %>
+                                   <p class="marca"><%= marcas[i].brand_name %></p>
+                                   <% } %>
                             </div>
 
                             <div class="contButton">

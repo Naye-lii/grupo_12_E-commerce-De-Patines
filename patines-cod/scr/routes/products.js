@@ -21,7 +21,6 @@ const uploadFile = multer({ storage });
 const productsController = require('../controllers/productsController.js');
 
 // Rutas nuevas para Sequelize
-const productController = ('./controllers/productController');
 
 router.get('/products/list', productsController.index);
 router.get('/detail/:id', productsController.detail); 

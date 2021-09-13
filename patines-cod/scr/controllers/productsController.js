@@ -106,9 +106,9 @@ const controlador = {
         fs.writeFileSync(productsFilePath, JSON.stringify(productsList, null, 2));
         */res.redirect("/products/list");
     },
-    //list: function (req, res) {
-        //res.render("productsListEdit", { products: productsList });
-    //},
+    list: function (req, res) {
+        res.render("productsListEdit", { products: productsList });
+    },
     formEdit: function (req, res) {
         const idProduct = req.params.idProduct;
         const productEdit = productsList.find((articulo) => {
@@ -156,28 +156,9 @@ const controlador = {
         return location.reload();
     },
     //CRUD para base de datos
-    listar: function (req, res) {
-        Productos.findAll(
-            {
-                attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id']
-            }
-            ,
-            {
-               includes: [{association: 'Marcas'}]
-            }
-        )
-            .then(function (productos) {
-                console.log(productos);
-            }
-            )
-            .then(function(marcas){
-                res.render("products-list", { products: productos})
-            })
-        .catch(function(e){
-            console.log(e.toString());
-        })
-    },
-
+    //listar: function (req, res) {
+      
+        //},
     search: function (req, res) {
         console.log('buscando');
         console.log(req.query.busqueda);
@@ -187,7 +168,7 @@ const controlador = {
                     [Op.like]: '%' + req.query.busqueda + '%'
                 }
             },
-            attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id', 'brand_name', 'url_imagen']
+            attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id']
         })
             .then(function (productos) {
                 res.render("products-list", { products: productos })
@@ -232,7 +213,33 @@ const controlador = {
             .then(function () {
                 res.redirect('/products/products-list')
             })
-    }
-};
-
+    },
+    //listar: function (req, res) {
+      //  Productos.findAll({
+        //    attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id'],
+          //  include: [{association: 'Marcas'}],
+            //include: [{association: 'Catalogo'}]
+            //})
+              //  let products = req.body;
+                //console.log(req.body)
+                //res.render("products-list", { products: products })
+        //}
+        listar: function (req, res) {
+            //res.render('productsAdd')
+            Productos.findAll()
+                .then(function (products) {
+                    Catalogo.findAll()
+                        .then(function (catalogo) {
+                            Marcas.findAll()
+                                .then(function (marca) {
+                           (res.render('products-list', { products: products, catalogo: catalogo, marca: marca})
+                                        )                           
+                        })
+                    })
+                })   
+            }     
+        };           
+            
+            
+        
     module.exports = controlador;

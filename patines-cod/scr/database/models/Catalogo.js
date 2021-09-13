@@ -29,7 +29,7 @@ module.exports = function(sequelize, dataTypes){
 
     Catalogo.associate = function(models){
         Catalogo.belongsTo(models.Productos, {
-            as: "productos",
+            as: "Productos",
             foreignKey: "product_id",
             onDelete: 'cascade'
         });

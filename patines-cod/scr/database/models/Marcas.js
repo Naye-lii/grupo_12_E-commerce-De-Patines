@@ -7,6 +7,9 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER,
             primaryKey:true,
             autoIncrement:true
+        },
+        name_brand:{
+            type: dataTypes.STRING
         }
     }
 
@@ -19,7 +22,7 @@ module.exports = function(sequelize, dataTypes){
 
     Marcas.associate = function(models){
         Marcas.hasMany(models.Productos, {
-            as: "marcas",
+            as: "Marcas",
             foreignKey: "brand_id"
         })
     };
