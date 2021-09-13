@@ -26,7 +26,7 @@ const productController = ('./controllers/productController');
 router.get('/products/list', productsController.index);
 router.get('/detail/:id', productsController.detail); 
 router.get('/create', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.form);
-router.get('/list', /*adminMiddleware,*/ productsController.list);
+//router.get('/list', /*adminMiddleware,*/ productsController.lis);
 router.get('/:idProduct/edit', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.formEdit);
 router.put('/:idProduct', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit);
 router.post('/', uploadFile.single('image'),/*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.crear);
@@ -37,7 +37,6 @@ router.post('/products/list', uploadFile.single('image'), /*[authMiddleware, adm
 
 //Rutas Sequelize
 router.get('/products-list', productsController.listar);
-
 router.get('/search', productsController.search);
 router.delete('/borrar/:id', productsController.borrar)
 

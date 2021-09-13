@@ -119,9 +119,9 @@ const controlador = {
 
         res.redirect("/products/list");
     },
-    list: function (req, res) {
-        res.render("productsListEdit", { products: productsList });
-    },
+    //list: function (req, res) {
+        //res.render("productsListEdit", { products: productsList });
+    //},
     formEdit: function (req, res) {
         const idProduct = req.params.idProduct;
         const productEdit = productsList.find((articulo) => {
@@ -170,23 +170,22 @@ const controlador = {
     },
     //CRUD para base de datos
     listar: function (req, res) {
-        console.log("hola")
         db.Productos.findAll(
             {
                 attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id']
             }
-            //,
-            //{
-            //    include: [{association: 'marcas'}]
-            //}
+            ,
+            {
+               include: [{association: 'marcas'}]
+            }
         )
             .then(function (productos) {
                 console.log(productos);
                 res.render("products-list", { products: productos })
             })
-        /*.catch(function(e){
+        .catch(function(e){
             console.log(e.toString());
-        })*/
+        })
     },
 
     search: function (req, res) {

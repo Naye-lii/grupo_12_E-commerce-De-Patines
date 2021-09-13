@@ -1,57 +1,81 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 const { raw } = require("express");
 const { validationResult } = require('express-validator');
-const userModel = require('../models/User');
 
 // Variable para requerir modelos
 const db = require("../database/models");
-const Usuarios = db.Ususarios;
+const userModel = require('../database/models').Usuarios;
+const typeUser = require('../database/models').TipoUsuario;
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
-var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+//var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const controlador = {
     register: function (req, res) {
         res.cookie('testing', 'Hola mundo', { maxAge: 1000 * 30 })
         res.render('registro');
     },
-    list: function (req, res) {
-        res.render("users-list", { users });
-    },
-    userLoggedProfile: function (req, res) {
-        res.render('user-profile', { 'user': req.user, isAuthenticated: req.user });
-    },
     crear: function (req, res) {
         const resultValidation = validationResult(req);
         console.log(resultValidation.mapped());
-
-        if (resultValidation.errors.length > 0) {
+         if (resultValidation.errors.length > 0) {
             return res.render('registro', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })
-        };
-
+        }
         const userInfo = req.body;
+        //Creando usuario          
+        let imagen;
+        if(userInfo.img_user){
+            console.log(userInfo.img_user);
+            imagen = userInfo.img_user;
+        }
+        else{
+            imagen = '/img/users/imagen-user-default.png';
+        }
 
-        userInfo.password = bcrypt.hashSync(userInfo.password, 11);
-
-        if (req.file) {
-            userInfo.imgUser = '/img/users/' + req.file.filename;
-        } else {
-            userInfo.imgUser = '/img/users/imagen-user-default.png';
-        };
-
-        users.push({
-            id: users.length + 1,
-            ...userInfo,
-            type: "usuario"
-        });
-
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-        res.redirect("/list");
+        let hashedPass = bcryptjs.hashSync(userInfo.password, 7);
+        hashedPass = hashedPass.slice(8, hashedPass.length);
+        
+        userModel.create( {
+            id: userModel.id += 1,
+            first_name: userInfo.first_name,
+            last_name: userInfo.last_name,
+            email: userInfo.email,
+            password: hashedPass,
+            //TO DO: No funciona hash sync
+            img_user: imagen,
+            type_user_id: 1
+        })
+        .then((usuario)=>{
+            typeUser.create({
+                id: usuario.id,
+                user_type: 1
+            })
+        })
+        .then(() => {
+            res.redirect('/list');
+        })
+        .catch(err => {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                message: 'Error al crear usuario'
+            });
+            console.log(err);});
+},
+    list: function (req, res) {
+        userModel.findAll()
+        .then(function(users){
+           return res.render("users-list", { users: users});
+        })
+    },
+    userLoggedProfile: function (req, res) {
+        res.render('user-profile', { 'user': req.user, isAuthenticated: req.user });
     },
     /* profile: function(req, res){
          const userId = req.params.id;
@@ -86,16 +110,16 @@ const controlador = {
             return user.id == userEditId;
         });
 
-        userInfo.firstName = userAct.firstName;
-        userInfo.lastName = userAct.lastName;
+        userInfo.first_name = userAct.first_name;
+        userInfo.last_name = userAct.last_name;
 
         if (req.file) {
-            userAct.imgUser = '/img/users/' + req.file.filename;
+            userAct.img_user = '/img/users/' + req.file.filename;
         } else {
-            userAct.imgUser = userInfo.imgUser;
+            userAct.img_user = userInfo.img_user;
         };
 
-        userInfo.imgUser = userAct.imgUser;
+        userInfo.img_user = userAct.img_user;
 
         const userUpdate = users.findIndex((u) => {
             return u.id == userEditId;
@@ -170,13 +194,6 @@ const controlador = {
         return res.redirect('/');
     },
     //CRUD para base de datos
-    crear: function (req, res){
-        db.Usuarios.findAll()
-        .then(function(Usuarios) {
-            return res.render("users-list", {users:Usuarios});
-        })
-    },
-
     editar:function(req,res){
         db.Usuarios.findByPk(req.params.id)
         .then(function(usuario){
@@ -185,12 +202,12 @@ const controlador = {
     },
 
     actualizar: function(req,res){
-        console.log(req.body.firstName);
+        console.log(req.body.first_name);
         const id= req.params.id;
         console.log(id);
         db.Usuarios.update({
-            first_name: req.body.firstName,
-            last_name: req.body.lastName
+            first_name: req.body.first_name,
+            last_name: req.body.last_name
         },{
             where: {
                 id: id

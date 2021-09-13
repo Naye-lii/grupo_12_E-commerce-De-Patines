@@ -1,74 +1,74 @@
 [
   {
     "id": 1,
-    "firstName": "Nayeli",
-    "lastName": "Hernández",
+    "first_name": "Nayeli",
+    "last_name": "Hernández",
     "email": "naye@correo.com",
     "password": "$2b$11$bxVDa.DCpG/KPSAe9Pc.suCnghcgKXG19bhYYCXmmwjKiqfS306aS",
-    "imgUser": "/img/users/imgU_1627693378178.jpg",
+    "img_user": "/img/users/imgU_1627693378178.jpg",
     "type": "administrador"
   },
   {
     "id": 2,
-    "firstName": "Leslie",
-    "lastName": "De la Cruz",
+    "first_name": "Leslie",
+    "last_name": "De la Cruz",
     "email": "leslie@correo.com",
     "password": "$2b$11$lJs4oPBThHyFyorTzre3Pu4kbfBhd595GJzB6Wqi3g7kx6KPMqnha",
-    "imgUser": "/img/users/imgU_1627692954019.jpg",
+    "img_user": "/img/users/imgU_1627692954019.jpg",
     "type": "usuario"
   },
   {
     "id": 3,
-    "firstName": "Ana",
-    "lastName": "Isabel",
+    "first_name": "Ana",
+    "last_name": "Isabel",
     "email": "anaisa@correo.com",
     "password": "$2b$11$tRBjuq8381VmONSgv3oVS.c4BaX3UMcGE8HRK7WAGPgiDvmcddQzO",
-    "imgUser": "/img/users/imgU_1627693061873.jpg",
+    "img_user": "/img/users/imgU_1627693061873.jpg",
     "type": "usuario"
   },
   {
     "id": 4,
-    "firstName": "Juan",
-    "lastName": "Donjuan",
+    "first_name": "Juan",
+    "last_name": "Donjuan",
     "email": "unjuan@correo.com",
     "password": "$2b$11$yWMSzr6VeHcRtx8BznglfeHSUzgT4h6nW5F2dkuXaUGFiukWIalv2",
-    "imgUser": "/img/users/imagen-user-default.png",
+    "img_user": "/img/users/imagen-user-default.png",
     "type": "usuario"
   },
   {
     "id": 5,
-    "firstName": "Leslie",
-    "lastName": "De la Cruz",
+    "first_name": "Leslie",
+    "last_name": "De la Cruz",
     "email": "leslie123@correo.com",
     "password": "$2b$11$ubhh/ZprKf1CElf6A2jgv.NP8kTY4v26R0OM/TeA.1bdTY.Lvg8O2",
-    "imgUser": "/img/users/imgU_1628022677564.jpeg",
+    "img_user": "/img/users/imgU_1628022677564.jpeg",
     "type": "usuario"
   },
   {
     "id": 6,
-    "firstName": "Nuevo",
-    "lastName": "Prueba",
+    "first_name": "Nuevo",
+    "last_name": "Prueba",
     "email": "nuevo123@gmail.com",
     "password": "$2b$11$DsPAenBhEAQUq/CW86GrlOtxTndFbgvskAVKTMLZuqJwfF2VnOTDa",
-    "imgUser": "/img/users/imgU_1628287152091.JPG",
+    "img_user": "/img/users/imgU_1628287152091.JPG",
     "type": "administrador"
   },
   {
     "id": 7,
-    "firstName": "Ana",
-    "lastName": "Balablabla",
+    "first_name": "Ana",
+    "last_name": "Balablabla",
     "email": "ana@gmail.com",
     "password": "$2b$11$Auwg3IZdwY.qf85TmWXpru6s3foGz7JXzZminTcwVk5Lg.eAkz/9C",
-    "imgUser": "/img/users/imgU_1628620239443.jpg",
+    "img_user": "/img/users/imgU_1628620239443.jpg",
     "type": "administrador"
   },
   {
     "id": 8,
-    "firstName": "blabla",
-    "lastName": "shalala",
+    "first_name": "blabla",
+    "last_name": "shalala",
     "email": "prueba@gmail.com",
     "password": "$2b$11$wuuDEd2UJzF8shdbwGttIOveKiWiWGAsTzIdBoKNT3xKBVrCsUgoK",
-    "imgUser": "/img/users/imagen-user-default.png",
+    "img_user": "/img/users/imagen-user-default.png",
     "type": "usuario"
   }
 ]
