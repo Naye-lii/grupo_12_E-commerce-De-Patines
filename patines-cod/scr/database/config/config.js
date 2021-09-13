@@ -1,18 +1,18 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": "Nutella_01",
+    "password": "root",
     "database": "patines_12",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 3307,
     "dialect": "mysql",
   },
   "test": {
     "username": "root",
-    "password": "Nutella_01",
+    "password": "root",
     "database": "patines_12",
     "host": "127.0.0.1",
-    "port": 3306,
+    "port": 3307,
     "dialect": "mysql",
   },
   "production": {

@@ -10,12 +10,12 @@
 
             <Section class="sec-user">
 
-                <div>
-                    <img class="img-userProf" src=<%=user.img_user%> alt='casco'></img>
+                <div class="cont_imgProf">
+                    <img class="img-userProf" alt='casco' src=<%= user.img_user %>></img>
 
                     <h2 class="text-userProf">
-                        <%= user.first_name%>
-                            <%= user.last_name%>
+                        <%= user.first_name %>
+                            <%= user.last_name %>
                     </h2>
 
                     <label class="etiqueta" for="nombre">Correo Electrónico</label>
@@ -29,7 +29,7 @@
                     <label class="etiqueta" for="nombre">Tipo</label>
                     <div class="div-text">
                         <h2 class="text-userProf">
-                            <%= user.type %>
+                            <%= user.tipoUsuario.user_type %>
                         </h2>
                     </div>
 

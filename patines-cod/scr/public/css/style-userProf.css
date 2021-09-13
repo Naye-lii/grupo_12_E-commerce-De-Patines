@@ -20,6 +20,13 @@
     margin-top: 50px;
     border-radius: 50%;
     width: 250px;
+    
+}
+
+.cont_imgProf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .etiqueta{
