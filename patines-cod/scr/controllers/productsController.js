@@ -169,25 +169,23 @@ const controlador = {
         return location.reload();
     },
     //CRUD para base de datos
-    listar: function (req, res) {
-        db.Productos.findAll(
-            {
-                attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id']
-            }
-            ,
-            {
-               include: [{association: 'marcas'}]
-            }
-        )
-            .then(function (productos) {
-                console.log(productos);
-                res.render("products-list", { products: productos })
-            })
-        .catch(function(e){
-            console.log(e.toString());
+    listar: (req, res) => {
+        Productos.findAll()
+        .then((products) =>{
+                Marcas.findAll({
+                    include: [{association: "marcas_id"}]
+                })
+                .then((marcas) =>{
+                        Catalogo.findAll({
+                            include: [{association: "productos"}]
+                        })
+                .then((catalogo)=>{
+                    res.render("products-list", { products: products, marcas: marcas, catalogo: catalogo,});  
+                    console.log(products, marcas, catalogo);              
         })
-    },
-
+})
+})
+},
     search: function (req, res) {
         console.log('buscando');
         console.log(req.query.busqueda);

@@ -15,7 +15,7 @@ module.exports = (sequelize, dataTypes) => {
         brand_id: {
             type: dataTypes.INTEGER  
         },
-        description: {
+        descripcion: {
             type: dataTypes.STRING  
         },
         category_id: {

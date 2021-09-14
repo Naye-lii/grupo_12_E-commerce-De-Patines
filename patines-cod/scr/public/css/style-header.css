@@ -235,6 +235,8 @@ input[type="checkbox"]:checked + .filtro_menu {
     }
 
     .boton-buscar{
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
         display: block;
         height: 30px;
         border-radius: 25px;
@@ -246,6 +248,11 @@ input[type="checkbox"]:checked + .filtro_menu {
         color:white;
         border:0px;
         outline: none;
+    }
+
+    .boton-buscar > i{
+        margin-right: 5px;
+        color: white;
     }
 
     .barra-buscar:focus{
