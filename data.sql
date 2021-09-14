@@ -5,16 +5,16 @@ INSERT INTO type_user(user_type)VALUES
 ('administrador');
 
 INSERT INTO users (first_name, last_name, email, password, img_user, type_user_id)VALUES 
-('Nayeli', 'Hernández', 'naye@correo.com', 'ab987654', '/img/users/imgU_1627693378178.jpg', 2),
-('Leslie', 'De La Cruz', 'leslie@correo.com', 'ac456123', '/img/users/imgU_1627692954019.jpg', 2),
-('Ana', 'Isabel', 'anaisa@correo.com', 'add1236g54', '/img/users/imgU_1627693061873.jpg', 2),
-('Ramon', 'Valdez', 'ramonv@correo.com', '4d563g21', '/img/users/imagen-user-default.png', 1),
-('Adela', 'Fuerte', 'adelita@correo.com', '454f781h06', '/img/users/imagen-user-default.png', 1),
-('Miguel', 'Tompson', 'miguelon@correo.com', 'sap0d9tg9', '/img/users/imagen-user-default.png', 1),
-('Pamela', 'Aguila', 'aguilapam@correo.com', '76tjaet', '/img/users/imagen-user-default.png', 1),
-('Pablo', 'Nail', 'Pablon@correo.com', '6\erbh45', '/img/users/imagen-user-default.png', 1),
-('Andrea', 'Muchi', 'muchimuchi@correo.com', 'v5489y178', '/img/users/imagen-user-default.png', 1),
-('Isaias', 'Rizotto', 'izoto@correo.com', 'ct53s57g', '/img/users/imagen-user-default.png', 1);
+('Nayeli', 'Hernández', 'naye@correo.com', '$2b$11$qdDl9BcjqW.9IfYhIl90DOniNw8VY9uMnJ0YKZKC97NSJdCJE966K', '/img/users/imgU_1627693378178.jpg', 2),
+('Leslie', 'De La Cruz', 'leslie@correo.com', '$2b$11$lJs4oPBThHyFyorTzre3Pu4kbfBhd595GJzB6Wqi3g7kx6KPMqnha', '/img/users/imgU_1627692954019.jpg', 2),
+('Ana', 'Isabel', 'anaisa@correo.com', '$2b$11$tRBjuq8381VmONSgv3oVS.c4BaX3UMcGE8HRK7WAGPgiDvmcddQzO', '/img/users/imgU_1627693061873.jpg', 2),
+('Ramon', 'Valdez', 'ramonv@correo.com', '$2b$11$yWMSzr6VeHcRtx8BznglfeHSUzgT4h6nW5F2dkuXaUGFiukWIalv2', '/img/users/imagen-user-default.png', 1),
+('Adela', 'Fuerte', 'adelita@correo.com', '$2b$11$ubhh/ZprKf1CElf6A2jgv.NP8kTY4v26R0OM/TeA.1bdTY.Lvg8O2', '/img/users/imagen-user-default.png', 1),
+('Miguel', 'Tompson', 'miguelon@correo.com', '$2b$11$DsPAenBhEAQUq/CW86GrlOtxTndFbgvskAVKTMLZuqJwfF2VnOTDa', '/img/users/imagen-user-default.png', 1),
+('Pamela', 'Aguila', 'aguilapam@correo.com', '$2b$11$Auwg3IZdwY.qf85TmWXpru6s3foGz7JXzZminTcwVk5Lg.eAkz/9C', '/img/users/imagen-user-default.png', 1),
+('Pablo', 'Nail', 'Pablon@correo.com', '$2b$11$wuuDEd2UJzF8shdbwGttIOveKiWiWGAsTzIdBoKNT3xKBVrCsUgoK', '/img/users/imagen-user-default.png', 1),
+('Andrea', 'Muchi', 'muchimuchi@correo.com', '$2b$11$wuuDEd2UJzF8shdbwGttIOveKiWiWGAsTzIdBoKNT3xKBVrCsUgoK', '/img/users/imagen-user-default.png', 1),
+('Isaias', 'Rizotto', 'izoto@correo.com', '$2b$11$wuuDEd2UJzF8shdbwGttIOveKiWiWGAsTzIdBoKNT3xKBVrCsUgoK', '/img/users/imagen-user-default.png', 1);
 
 INSERT INTO shopping_cart(user_id, quantity_items, total_price)VALUES 
 (2, 8, 2475.50),

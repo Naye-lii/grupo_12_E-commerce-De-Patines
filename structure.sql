@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users (
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(70) NOT NULL,
     email VARCHAR(30) NOT NULL,
-    password VARCHAR(20) NOT NULL,
+    password VARCHAR(500) NOT NULL,
     img_user VARCHAR(500),
     type_user_id INT UNSIGNED NOT NULL, 
     PRIMARY KEY(id),

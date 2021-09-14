@@ -303,9 +303,11 @@ padding: 0 5px;
    background-color: black;
    color: white;
     }
+
+  .secProduct *{
+    font-family: 'Lato', sans-serif;
   }
-
-
+}
   @media (min-width: 561px) and (max-width: 867px){
     .product{
       float: left;

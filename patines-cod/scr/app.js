@@ -3,7 +3,6 @@ const app = express();
 const rutasMain = require('./routes/main.js');
 const rutasProducts = require('./routes/products.js');
 const rutasUsers = require('./routes/users.js');
-//const rutasUser = require('./routes/user.js')
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const session = require('express-session');

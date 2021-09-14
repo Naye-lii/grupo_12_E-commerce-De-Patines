@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
-const bcryptjs = require("bcryptjs");
+/*const bcryptjs = require("bcryptjs");*/
 const { raw } = require("express");
 const { validationResult } = require('express-validator');
 
@@ -152,35 +152,43 @@ const controlador = {
         res.render('login');
     },
     loginProcess: (req, res) => {
-        let userToLogin = userModel.findByField('email', req.body.email);
-        if (userToLogin) {
-            let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-            if (isOkThePassword) {
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-
-                if (req.body.recordarUsuario) {
-                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+        userModel.findOne({where:{
+            email: req.body.email
+            },
+            include: [{association: 'tipoUsuario'}]
+        })
+        .then((userToLogin) => {
+            if (userToLogin) {
+                let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                if (isOkThePassword) {
+                    delete userToLogin.password;
+                    req.session.userLogged = userToLogin;
+    
+                    if (req.body.recordarUsuario) {
+                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
+                    }
+    
+                    return res.redirect('user-profile');
                 }
-
-                return res.redirect('user-profile');
+                return res.render('login', {
+                    errors: {
+                        email: {
+                            msg: 'El e-mail no coincide con la contraseña'
+                        }
+                    },oldData : req.body
+                })
+            } else {
+                return res.render('login', {
+                    errors: {
+                        email: {
+                            msg: 'E-mail no encontrado'
+                        }
+                    },oldData: req.body
+                })
             }
-            return res.render('login', {
-                errors: {
-                    email: {
-                        msg: 'El e-mail no coincide con la contraseña'
-                    }
-                },oldData : req.body
-            })
-        } else {
-            return res.render('login', {
-                errors: {
-                    email: {
-                        msg: 'E-mail no encontrado'
-                    }
-                },oldData: req.body
-            })
-        }
+
+        })
+
     },
     profile: (req, res) => {
         console.log(req.cookies.userEmail);

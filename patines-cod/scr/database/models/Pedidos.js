@@ -35,7 +35,7 @@ module.exports = function(sequelize, dataTypes){
             as: "Usuario",
             foreignKey: "user_id"
         }),
-        Pedidos.hasMany(models.Productos, {
+        Pedidos.belongsTo(models.Productos, {
             as: "Producto",
             foreignKey: "product_id",
             onDelete: 'cascade'
