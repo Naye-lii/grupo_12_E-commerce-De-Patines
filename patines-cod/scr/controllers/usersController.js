@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcrypt");
-/*const bcryptjs = require("bcryptjs");*/
+const bcryptjs = require("bcryptjs");
 const { raw } = require("express");
 const { validationResult } = require('express-validator');
 
@@ -47,7 +47,6 @@ const controlador = {
             last_name: userInfo.last_name,
             email: userInfo.email,
             password: hashedPass,
-            //TO DO: No funciona hash sync
             img_user: imagen,
             type_user_id: 1
         })
