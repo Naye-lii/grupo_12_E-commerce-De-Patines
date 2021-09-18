@@ -197,9 +197,19 @@ const controlador = {
             },
             attributes: ['id', 'name_product', 'price', 'brand_id', 'descripcion', 'category_id']
         })
-            .then(function (productos) {
-                res.render("products-list", { products: productos })
+        .then((productos) =>{
+            Catalogo.findAll({
+                include: [{association: "productos"}]
             })
+            .then((catalogo) =>{
+                Marcas.findAll({
+                    include: [{association: "marcas_id"}]
+                })
+            .then(function (marcas) {
+                res.render("products-list", { products: productos, catalogo: catalogo, marcas: marcas })
+            })
+        })
+    })
     },
 
     borrar: function (req, res) {
