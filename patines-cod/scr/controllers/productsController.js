@@ -17,7 +17,6 @@ const Existencias = db.Existencias;
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-const productsModel = require('../models/products.model');
 
 const controlador = {
     index: function (req, res) {
@@ -119,9 +118,6 @@ const controlador = {
 
         res.redirect("/products/list");
     },
-    //list: function (req, res) {
-        //res.render("productsListEdit", { products: productsList });
-    //},
     formEdit: function (req, res) {
         const idProduct = req.params.idProduct;
         const productEdit = productsList.find((articulo) => {
@@ -168,7 +164,6 @@ const controlador = {
         res.redirect("/products/list");
         return location.reload();
     },
-    //CRUD para base de datos
     listar: (req, res) => {
         Productos.findAll()
         .then((products) =>{

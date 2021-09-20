@@ -11,7 +11,7 @@ main * {
     margin-bottom: 50px;
 }
 
-.flat-table {
+.table {
     margin-bottom: 20px;
     font-family: 'Lato', sans-serif;
     border: none;
@@ -23,11 +23,6 @@ main * {
 .td.i{
     color: white;
     background-color: white;
-}
-
-#edit{
-    color: white;
-    font-size: 1.2rem;
 }
 
 #delete{
@@ -46,11 +41,6 @@ main * {
     background-color: #e57d0c;
 }
 
-.add-td:hover{
-    margin: auto;
-    background-color: 
-}
-
 .submit-sec{
     background-color: #e57d0c;
     color: white;
@@ -66,27 +56,45 @@ main * {
     padding: 10px;
 }
 
-.flat-table td {
+
+#edit{
+    background-color: #29303B;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.a-edit{
+    background-color: #29303B;
+     color: #29303B;
+    border: none;
+}
+
+.sec-label{
+    font-family: 'Lato', sans-serif;
+}
+
+.table td {
     box-shadow: inset 0 -1px rgba(0,0,0,0.10), 
         inset 0 1px rgba(0,0,0,0.10);
 }
-.flat-table th {
+.table th {
     font-weight: normal;
     padding: 1em;
     color:black;
     background-color: #A6AAAD;
     font-size: 1.5em;
 }
-.flat-table td {
+.table td {
     color: #f7f7f7;
     padding: 0.7em 1em 0.7em 1.15em;
     text-shadow: 0 0 1px rgba(255,255,255,0.1);
     font-size: 1.4em;
 }
 
-.flat-table-1 {
+.table-1 {
     background: #29303B;
 }
-.flat-table-1 tr:hover {
+.table-1 tr:hover {
     background: #A6AAAD;
 }

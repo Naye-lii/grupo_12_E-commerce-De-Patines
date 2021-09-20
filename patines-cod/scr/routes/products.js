@@ -19,6 +19,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 
 const productsController = require('../controllers/productsController.js');
+const cartController = require('../controllers/carritoController.js');
 
 router.get('/products/list', productsController.index);
 router.get('/detail/:id', productsController.detail); 
@@ -41,14 +42,26 @@ const secProducts = require('../controllers/secTablesController.js');
 
 //listar
 router.get('/secProducts', secProducts.listar);
+
 //crear
     //marcas
-router.post('/secProducts/crear', secProducts.guardadoMarca);
+router.post('/secProducts/createBrand', secProducts.guardadoMarca);
     //categorias
-router.post('/secProducts/crearCategoria', secProducts.guardadoCategoria);
+router.post('/secProducts/createCategory', secProducts.guardadoCategoria);
     //colores
-router.post('/secProducts/crearColor', secProducts.guardadoColor);
+router.post('/secProducts/createColor', secProducts.guardadoColor);
+
 //editar
+    //marcas
+router.get('/secProducts/:id/editBrand', secProducts.editarMarca);
+router.post('/secProducts/:id/editBrand', secProducts.actualizarMarca);
+    //categorias
+router.get('/secProducts/:id/editCategory', secProducts.editarCategoria);
+router.post('/secProducts/:id/editCategory', secProducts.actualizarCategoria);
+    //colores
+router.get('/secProducts/:id/editColor', secProducts.editarColor);
+router.post('/secProducts/:id/editColor', secProducts.actualizarColor);
+
 //eliminar
     //marcas
 router.delete('/secProducts/deleteBrand/:id', secProducts.borrarMarca);
@@ -57,5 +70,11 @@ router.delete('/secProducts/deleteCategory/:id', secProducts.borrarCategoria);
     //colores
 router.delete('/secProducts/deleteColor/:id', secProducts.borrarColores);
 
+//CART
+
+//Ver productos en el carrito
+router.get('/productCar', cartController.detalleOrden);
+//Agregar productos
+router.post('/detail/:id', cartController.agregarProducto);
 
 module.exports = router;

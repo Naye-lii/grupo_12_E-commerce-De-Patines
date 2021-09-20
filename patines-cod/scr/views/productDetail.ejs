@@ -25,7 +25,7 @@
 
             <h2 class="nombre-art"><%=product.name_product%></h2>
             <p class="resum-des"><%=product.description%></p>
-            <h3 class="precio-des">$ <%=product.price%></h3>
+            <h3 class="precio-des" name="price">$ <%=product.price%></h3>
 
 <!-- TODO: Funcionalidad de option-->
 
@@ -67,9 +67,10 @@
             <br>
             <a href="#reseñas">12 reseñas</a>
             <br>
-        
             <button class= "boton-detail" type="submit">Agregar al carrito</button>
+            <form action="/products/productCar" method="POST">
             <button class= "boton-detail" type="submit">Comprar ahora</button> 
+        </form>
 
         </div>
     </div>

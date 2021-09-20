@@ -126,19 +126,19 @@
                     delete_outline
                 </span>
             </div>
-            
+            <% for(let i = 0; i < products.length; i ++) { %>
             <div class="cont-prdct-car">
-                <img class="img-car" src = '/img/casco-01.jpg' alt='Casco verde militar'>
+                <img class="img-car" src = '<%= catalogo[i].url_imagen%>' alt='Imagen de producto'>
 
                 <div class="resum-productcar"> 
                     <div class="cont-des-tit">
-                        <h2>Patines con flor bordada</h2>
-                        <p class="resum-des">Talla: 26 <br> Color: negro</p> 
+                        <h2><%= products[i].name %></h2>
+                        <p class="resum-des"><%= products[i].name %><br> <%=colores[i].color%></p> 
                     </div>
                       
                     <div class="cont-precio">
                         <h3>Precio:</h3>
-                        <h3 class="precio-car">$3658.70</h3>   
+                        <h3 class="precio-car"><%= products[i].price %></h3>   
                     </div>
                     
                     <form  action="none" method="POST">
@@ -158,7 +158,7 @@
                         </select>
                     </form>           
                 </div>
-
+                <% } %>
                 <div class="cont-total">
                 <h3 class="total">Total: </h3>
                 <h3 class="precio-total">$20000.00</h3>                     
@@ -200,7 +200,9 @@
         </div>
 
         <div class="cont-boton">
-            <button class="boton-car" type="submit">Seguir comprando</button>
+     
+            <button class="boton-car" type="submit" >Seguir comprando</button>
+
             <button class="boton-car" type="submit">Pagar</button>            
         </div>
 

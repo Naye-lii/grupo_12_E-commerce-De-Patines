@@ -3,7 +3,6 @@
     <%- include('partials/head.ejs')%>
     <%- include('partials/header.ejs')%>
     <body>
-        <link href="/css/style-sec-tables.css" rel = "stylesheet" >
         <main>
         <h1 id="products-titulo">Productos lista avanzada</h1>
         <div class="container">
@@ -12,7 +11,7 @@
 
             <h1>Marcas</h1>
             
-            <table class="flat-table flat-table-1">
+            <table class="table table-1">
                 <thead>
                     <th>id</th>
                 <th>Marca</th>
@@ -24,9 +23,9 @@
                     <tr>
                         <td><%=marcas[i].id%></td>
                         <td><%=marcas[i].name_brand%></td>
-                        <td><i class="fas fa-pen" id="edit"></i></td>
+                        <td><a href="/products/secProducts/<%=marcas[i].id%>/editBrand"><button class="sec-delete"><i class="fas fa-pen" id="edit"></i></button></td>
                         <td> <form action="/products/secProducts/deleteBrand/<%= marcas[i].id%>?_method=DELETE"
-                            method="POST"><button class="sec-delete"><i class="fas fa-trash" id="delete"></i></td>
+                            method="POST"><button class="sec-delete"><i class="fas fa-trash" id="delete"></i></button></td>
                         </form>
                     </tr>
                 </tbody>
@@ -36,20 +35,20 @@
 
                     <!-- Formulario agregar marcas-->
 
-                    <h1 id="products-titulo">Crear marca</h1>
-                    <form action="/products/secProducts/crear" method="POST">
-                        <div>
+                    <h1 id="products-title-brand">Crear marca</h1>
+                    <form action="/products/secProducts/createBrand" method="POST">
+                      <div class="div-input">
                             <label for="marca">Marca</label>
-                            <input type="text" name="marca">
+                            <input type="text" name="marca" class="login-data" required>
                             </div>
-                            <button type="submit">Agregar marca</button>
+                            <button type="submit" class="submit-btn">Agregar marca</button>
                     </form>
-                    
+
                    <!-- Tabla de categorías -->
 
                    <h1>Categorías</h1>
 
-            <table class="flat-table flat-table-1">
+            <table class="table table-1">
                 <thead>
                     <th>id</th>
                 <th>Categoría</th>
@@ -61,9 +60,9 @@
                     <tr>
                         <td><%=categorias[i].id%></td>
                         <td><%=categorias[i].name_category%></td>
-                        <td><i class="fas fa-pen" id="edit"></i></td>
+                        <td><a href="/products/secProducts/<%=categorias[i].id%>/editCategory"><button class="sec-delete"><i class="fas fa-pen" id="edit"></i></button></td>
                         <td> <form action="/products/secProducts/deleteCategory/<%= categorias[i].id%>?_method=DELETE"
-                            method="POST"><button class="sec-delete"><i class="fas fa-trash" id="delete"></i></td>
+                            method="POST"><button class="sec-delete" class="submit-btn"><i class="fas fa-trash" id="delete"></i></td>
                         </form>
                 </tbody>
                 <% } %>
@@ -72,20 +71,20 @@
 
              <!-- Formulario agregar categorías-->
 
-            <h1 id="products-titulo">Crear categoría</h1>
-            <form action="/products/secProducts/crearCategoria" method="POST">
-                <div>
+            <h1 id="products-title-category">Crear categoría</h1>
+            <form action="/products/secProducts/createCategory" method="POST">
+                <div class="div-input">
                     <label for="categoria">Categoría</label>
-                    <input type="text" name="categoria">
+                    <input type="text" name="categoria" class="login-data" required>
                     </div>
-                    <button type="submit">Agregar categoría</button>
+                    <button type="submit" class="submit-btn">Agregar categoría</button>
             </form>
 
                       <!-- Tabla de colores -->
 
                    <h1>Colores</h1>
 
-                   <table class="flat-table flat-table-1">
+                   <table class="table table-1">
                        <thead>
                            <th>id</th>
                        <th>Color</th>
@@ -97,7 +96,7 @@
                            <tr>
                                <td><%=color[i].id%></td>
                                <td><%=color[i].color%></td>
-                               <td><i class="fas fa-pen" id="edit"></i></td>
+                               <td><form action="/products/secProducts/<%=color[i].id%>/editColor" method="GET"><button class="sec-delete"><i class="fas fa-pen" id="edit"></i></button></td></form>
                                <td> <form action="/products/secProducts/deleteColor/<%= color[i].id%>?_method=DELETE"
                                 method="POST"><button class="sec-delete"><i class="fas fa-trash" id="delete"></i></td>
                             </form>
@@ -108,13 +107,13 @@
 
                    <!-- Formulario agregar color-->
 
-                   <h1 id="products-titulo">Crear color</h1>
-                   <form action="/products/secProducts/crearColor" method="POST">
-                       <div>
+                   <h1 id="products-title-color">Crear color</h1>
+                   <form action="/products/secProducts/createColor" method="POST">
+                    <div class="div-input">
                            <label for="color">Color</label>
-                           <input type="text" name="color">
+                           <input type="text" name="color" class="login-data" required>
                            </div>
-                           <button type="submit">Agregar color</button>
+                           <button type="submit" class="submit-btn">Agregar color</button>
                    </form>
                    <br>
                    </div>

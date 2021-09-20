@@ -1,7 +1,9 @@
+const { response } = require("express");
 const db = require("../database/models");
 const Marcas = db.Marcas;
 const Categorias = db.Categorias;
 const Colores = db.Colores;
+const Productos = db.Productos;
 
 // CRUD de brands, category, color
 
@@ -80,7 +82,41 @@ const controlador = {
                                 res.redirect('/products/secProducts')
                             })
                     },
-             // CRUD Cateegorías
+                    editarMarca: (req, res) => {
+                            const idMarca = req.params.id;
+                            Marcas.findByPk(idMarca)
+                            .then((marcaB) => 
+                            {
+                                Marcas.findAll({
+                                    where: {
+                                      id: marcaB.id
+                                       }
+                            })
+                                console.log(idMarca, marcaB)
+                                res.render('brandEdit', {brand: marcaB, id: idMarca})   
+                            })
+                    },
+                    actualizarMarca: (req, res) => {
+                        Marcas.update({
+                            id: req.params.id,
+                            name_brand: req.body.marca
+                        }, {
+                            where: {
+                                id: req.params.id
+                        }})
+                                .then(() => {
+                                    res.redirect('/products/secProducts');
+                                })
+                                .catch(err => {
+                                    res.status(500).render('error', {
+                                        status: 500,
+                                        title: 'ERROR',
+                                        message: 'Error al crear marca'
+                                    });
+                                    console.log(err);
+                                })
+                    },
+             // CRUD Categorías
              guardadoCategoria: (req, res) => {
                 Categorias.create({
                      id: req.body.id,
@@ -138,6 +174,40 @@ const controlador = {
                                 res.redirect('/products/secProducts')
                             })
                         },
+                        editarCategoria: (req, res) => {
+                            const idCategoria = req.params.id;
+                            Categorias.findByPk(idCategoria)
+                            .then((categoriaB) => 
+                            {
+                               Categorias.findAll({
+                                    where: {
+                                      id: categoriaB.id
+                                       }
+                            })
+                                console.log(idCategoria, categoriaB)
+                                res.render('categoryEdit', {category: categoriaB, id: idCategoria})   
+                            })
+                    },
+                    actualizarCategoria: (req, res) => {
+                        Categorias.update({
+                            id: req.params.id,
+                            name_category: req.body.category
+                        }, {
+                            where: {
+                                id: req.params.id
+                        }})
+                                .then(() => {
+                                    res.redirect('/products/secProducts');
+                                })
+                                .catch(err => {
+                                    res.status(500).render('error', {
+                                        status: 500,
+                                        title: 'ERROR',
+                                        message: 'Error al crear marca'
+                                    });
+                                    console.log(err);
+                                })
+                    },
                     // CRUD Colores
                     guardadoColor: (req, res) => {
                         Colores.create({
@@ -196,6 +266,40 @@ const controlador = {
                                 res.redirect('/products/secProducts')
                             })
                         },
+                        editarColor: (req, res) => {
+                            const idColor = req.params.id;
+                            Colores.findByPk(idColor)
+                            .then((colorB) => 
+                            {
+                               Colores.findAll({
+                                    where: {
+                                      id: colorB.id
+                                       }
+                            })
+                                console.log(idColor, colorB)
+                                res.render('colorEdit', {color: colorB, id: idColor})   
+                            })
+                    },
+                    actualizarColor: (req, res) => {
+                        Colores.update({
+                            id: req.params.id,
+                            color: req.body.color
+                        }, {
+                            where: {
+                                id: req.params.id
+                        }})
+                                .then(() => {
+                                    res.redirect('/products/secProducts');
+                                })
+                                .catch(err => {
+                                    res.status(500).render('error', {
+                                        status: 500,
+                                        title: 'ERROR',
+                                        message: 'Error al crear marca'
+                                    });
+                                    console.log(err);
+                                })
+                            }
 
             };
 

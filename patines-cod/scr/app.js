@@ -3,6 +3,7 @@ const app = express();
 const rutasMain = require('./routes/main.js');
 const rutasProducts = require('./routes/products.js');
 const rutasUsers = require('./routes/users.js');
+const rutasCart = require('./routes/cart.js');
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 const session = require('express-session');
@@ -34,6 +35,7 @@ app.use(userLoggedMiddleware);
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/', rutasUsers);
+app.use('/order', rutasCart);
 //app.use('/user', rutasUser);
 app.use((req, res, next) => {
   res.status(404).render('error404');
