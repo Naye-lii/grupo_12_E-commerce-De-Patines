@@ -25,7 +25,7 @@
                         <td><%=marcas[i].id%></td>
                         <td><%=marcas[i].name_brand%></td>
                         <td><i class="fas fa-pen" id="edit"></i></td>
-                        <td> <form action="/products/secProducts/delete/<%= marcas[i].id%>?_method=DELETE"
+                        <td> <form action="/products/secProducts/deleteBrand/<%= marcas[i].id%>?_method=DELETE"
                             method="POST"><button class="sec-delete"><i class="fas fa-trash" id="delete"></i></td>
                         </form>
                     </tr>
@@ -62,7 +62,7 @@
                         <td><%=categorias[i].id%></td>
                         <td><%=categorias[i].name_category%></td>
                         <td><i class="fas fa-pen" id="edit"></i></td>
-                        <td> <form action="/products/secProducts/delete/<%= categorias[i].id%>?_method=DELETE"
+                        <td> <form action="/products/secProducts/deleteCategory/<%= categorias[i].id%>?_method=DELETE"
                             method="POST"><button class="sec-delete"><i class="fas fa-trash" id="delete"></i></td>
                         </form>
                 </tbody>
@@ -98,7 +98,7 @@
                                <td><%=color[i].id%></td>
                                <td><%=color[i].color%></td>
                                <td><i class="fas fa-pen" id="edit"></i></td>
-                               <td> <form action="/products/secProducts/delete/<%= color[i].id%>?_method=DELETE"
+                               <td> <form action="/products/secProducts/deleteColor/<%= color[i].id%>?_method=DELETE"
                                 method="POST"><button class="sec-delete"><i class="fas fa-trash" id="delete"></i></td>
                             </form>
                            </tr>
@@ -107,7 +107,7 @@
                    </table>
 
                    <!-- Formulario agregar color-->
-                   
+
                    <h1 id="products-titulo">Crear color</h1>
                    <form action="/products/secProducts/crearColor" method="POST">
                        <div>

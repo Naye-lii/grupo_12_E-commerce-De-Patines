@@ -105,6 +105,39 @@ const controlador = {
                          })
                    })
                     },
+                    borrarCategoria: function (req, res) {
+                        const idCategoria = req.params.id;
+                
+                        Categorias.destroy({
+                            where: {
+                                id: idCategoria
+                            }
+                        }).then(function () {
+                            Categorias.findAll({
+                                where: {
+                                    id: idCategoria
+                                }
+                            })
+                            .then(function (categoria) {
+                                for (let i = 0; i < color.length; i++) {
+                                   Categorias.destroy({
+                                        where: {
+                                            id: categoria[i].id
+                                        }
+                                    })
+                                }
+                            })
+                        }).then(function () {
+                            Categorias.destroy({
+                                where: {
+                                    id: idCategoria
+                                }
+                            })
+                        })
+                            .then(function () {
+                                res.redirect('/products/secProducts')
+                            })
+                        },
                     // CRUD Colores
                     guardadoColor: (req, res) => {
                         Colores.create({

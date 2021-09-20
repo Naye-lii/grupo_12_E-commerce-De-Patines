@@ -50,9 +50,12 @@ router.post('/secProducts/crearCategoria', secProducts.guardadoCategoria);
 router.post('/secProducts/crearColor', secProducts.guardadoColor);
 //editar
 //eliminar
-router.delete('/secProducts/delete/:id', secProducts.borrarMarca);
-//router.delete('/secProducts/delete/:id', secProducts.borrarCategoria);
-router.delete('/secProducts/delete/:id', secProducts.borrarColores);
+    //marcas
+router.delete('/secProducts/deleteBrand/:id', secProducts.borrarMarca);
+    //categorias
+router.delete('/secProducts/deleteCategory/:id', secProducts.borrarCategoria);
+    //colores
+router.delete('/secProducts/deleteColor/:id', secProducts.borrarColores);
 
 
 module.exports = router;
