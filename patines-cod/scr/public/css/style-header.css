@@ -75,7 +75,13 @@ header{
     right: 7.5vw;
     margin: 5px;
     box-sizing: border-box;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    font-family: 'Lato', sans-serif;
+    font-style: bold;
 }
+
+
 
 
 /*Define el estilo de de la lista del menú principal*/

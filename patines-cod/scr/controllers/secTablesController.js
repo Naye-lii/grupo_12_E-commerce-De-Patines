@@ -210,6 +210,7 @@ const controlador = {
                     },
                     // CRUD Colores
                     guardadoColor: (req, res) => {
+                        idColor = req.body.id
                         Colores.create({
                              id: req.body.id,
                              color: req.body.color
