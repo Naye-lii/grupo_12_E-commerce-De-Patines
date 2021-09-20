@@ -126,44 +126,7 @@
                     delete_outline
                 </span>
             </div>
-            <% for(let i = 0; i < products.length; i ++) { %>
-            <div class="cont-prdct-car">
-                <img class="img-car" src = '<%= catalogo[i].url_imagen%>' alt='Imagen de producto'>
-
-                <div class="resum-productcar"> 
-                    <div class="cont-des-tit">
-                        <h2><%= products[i].name %></h2>
-                        <p class="resum-des"><%= products[i].name %><br> <%=colores[i].color%></p> 
-                    </div>
-                      
-                    <div class="cont-precio">
-                        <h3>Precio:</h3>
-                        <h3 class="precio-car"><%= products[i].price %></h3>   
-                    </div>
-                    
-                    <form  action="none" method="POST">
-                        <label>Cantidad:</label>
-                        <select name="cantidad" >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="4">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                        </select>
-                    </form>           
-                </div>
-                <% } %>
-                <div class="cont-total">
-                <h3 class="total">Total: </h3>
-                <h3 class="precio-total">$20000.00</h3>                     
-                </div>
-             
+           
                 <span class="quitar material-icons material-icons-outlined">
                     delete_outline
                 </span>
@@ -242,66 +205,6 @@
     </main>
 
 <%- include('partials/footer.ejs')%>
-    <footer>
-        <!--Logo Fun N Skate-->
-                 <div>
-                    <img class="logo-footer" src = '/img/Logo Blanco.svg' alt='Logo Fun-N-Skate'>
-                </div>
-                
-                <!--Logotipos de redes sociales-->
-                <div class="caja-redes">
-                    <h3 class="titulo-redes">¡Siguenos!</h3>
-                    <a href="facebook">
-                        <img class="redes" src = '/img/icon-fb.png' alt='Logo facebook'>
-                    </a>
-        
-                    <a href="twitter">
-                        <img class="redes" src = '/img/icon-twit.svg' alt='Logo twiter'>
-                    </a>
-        
-                    <a href="whatsapp">
-                        <img class="redes" src = '/img/icon-whats.svg' alt='Logo whatsapp'>
-                    </a>
-        
-                    <a href="instagram">
-                        <img class="redes" src = '/img/icon-inst.svg' alt='Logo instagram'>
-                    </a> 
-                    <div>
-                        <h3>¡Suscribete! <br> Obten noticias y ofertas</h3>
-                        <input class="barra-correo" type="email"/>
-                        <button class="boton-sus">Suscribete</button>
-                    </div>
-                </div>
-                <!--Area de suscripción -->
-              
-        
-                <div class="cont-list">
-                    <ul>
-                        <li>
-                            <a href="#terminos-condiciones">Terminos y condiciones</a>
-                        </li>
-                        <li>
-                            <a href="#metodosEnvio">Metodos de envio</a>
-                        </li>
-                        <li>
-                            <a href="#privacidad">politicas de privacidad</a>
-                        </li>
-                    </ul>
-                
-                    <ul>
-                        <li>
-                            <a href="#sucursal1">Sucursal 1. direccion</a>
-                        </li>
-                        <li>
-                            <a href="#sucursal2">Sucursal 2. dirección</a>
-                        </li>
-                        <li>
-                            <a href="#sucursal3">Sucursal 3. direccion</a>
-                        </li>
-                    </ul>
-                </div>
-            
-            </footer>
     
 </body>
 </html>

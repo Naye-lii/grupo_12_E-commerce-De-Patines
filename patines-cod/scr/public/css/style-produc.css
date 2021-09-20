@@ -196,7 +196,7 @@ main{
 .cont-prdct-car{
     margin-top: 10px ;
     margin-left: 5vw;
-    border: #29303B solid 3px;
+    border: #29303B solid 2px;
     background-color: #A6AAAD;
     border-radius: 15px;
     width: 90vw;
@@ -223,7 +223,7 @@ main{
 
 .cont-des-tit > h2{
     font-family: 'Bai jamjuree', sans-serif;
-    font-size: 15px;
+    font-size: 20pxs;
     margin:0;
     padding: 0;
     width: 47vw;
@@ -246,7 +246,7 @@ main{
 }
 
 .precio-car{
-    color: #e57d0c;
+    color: black;
 }
 
 .resum-productcar > form{
@@ -285,9 +285,9 @@ a{
 
 
 .precio-total{
-    margin-left: 10px;
+    margin-left: 20px;
     font-family: 'lato', sans-serif;
-    color: #e57d0c;
+    color: black;
 }
 
 .cont-producto> p{
