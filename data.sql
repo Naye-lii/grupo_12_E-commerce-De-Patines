@@ -45,7 +45,7 @@ INSERT INTO category(name_category)VALUES
 ('Accesorio'),
 ('Refaccion');
 
-INSERT INTO products(name_product, price, brand_id, description, category_id)VALUES 
+INSERT INTO products(name_product, price, brand_id, descripcion, category_id)VALUES 
 ('Patines NEXT CORE 80', 5742.50, 7, 'Patines freeskate con tecnología de de bota NEX termo moldeable My Fit
 , cierre de carraca y micrométricos, refuerzo extraible en puntera y chasis Trinity de 243 mm, ruedas de 80 mm 85A y rodamietos Wicked Abec 9. 
 Disponible en color negro y rosa', 1),
@@ -71,10 +71,10 @@ INSERT INTO color(color)VALUES
 ('gris oscuro');
 
 INSERT INTO products_catalogue(product_id, url_imagen, color_id)VALUES
-(1, '/img/products/No-img.png', 3),
-(2, '/img/products/No-img.png', 6),
-(3, '/img/products/No-img.png', 1),
-(4, '/img/products/No-img.png', 8);
+(1, 'https://res.cloudinary.com/dc7uyfv94/image/upload/v1631301547/product4_ugluob.png', 3),
+(2, 'https://res.cloudinary.com/dc7uyfv94/image/upload/v1631301544/product2_xwuzdi.png', 6),
+(3, 'https://res.cloudinary.com/dc7uyfv94/image/upload/v1631301497/imgP_1626735234130_pammeb.jpg', 1),
+(4, 'https://res.cloudinary.com/dc7uyfv94/image/upload/v1631301325/imgP_1626734593393_ivhaih.jpg', 8);
 
 INSERT INTO sizes(value_size)VALUES
 ('CH'),
