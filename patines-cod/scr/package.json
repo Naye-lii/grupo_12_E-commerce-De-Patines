@@ -26,7 +26,8 @@
     "mysql2": "^2.3.0",
     "nodemon": "^2.0.12",
     "path": "^0.12.7",
-    "sequelize": "^6.6.5"
+    "sequelize": "^6.6.5",
+    "sweetalert2": "^11.1.5"
   },
   "devDependencies": {
     "sequelize-cli": "^6.2.0"

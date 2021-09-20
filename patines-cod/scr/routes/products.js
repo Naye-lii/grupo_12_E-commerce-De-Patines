@@ -42,7 +42,17 @@ const secProducts = require('../controllers/secTablesController.js');
 //listar
 router.get('/secProducts', secProducts.listar);
 //crear
+    //marcas
+router.post('/secProducts/crear', secProducts.guardadoMarca);
+    //categorias
+router.post('/secProducts/crearCategoria', secProducts.guardadoCategoria);
+    //colores
+router.post('/secProducts/crearColor', secProducts.guardadoColor);
 //editar
 //eliminar
+router.delete('/secProducts/delete/:id', secProducts.borrarMarca);
+//router.delete('/secProducts/delete/:id', secProducts.borrarCategoria);
+router.delete('/secProducts/delete/:id', secProducts.borrarColores);
+
 
 module.exports = router;
