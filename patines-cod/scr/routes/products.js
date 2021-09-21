@@ -36,6 +36,8 @@ router.post('/products/list', uploadFile.single('image'), /*[authMiddleware, adm
 router.get('/products-list', productsController.listar);
 router.get('/search', productsController.search);
 router.delete('/borrar/:id', productsController.borrar);
+router.get('/editar/:id', productsController.formularioEditar)
+router.put('/editar/:id', uploadFile.single('image'), productsController.actualizar);
 
 // Rutas de CRUD Tablas secundarias
 const secProducts = require('../controllers/secTablesController.js');

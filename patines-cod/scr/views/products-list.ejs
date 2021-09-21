@@ -94,7 +94,7 @@
                            </div>
  
                            <div class="contButton">
-                               <form action="/products/<%= products[i].id %>/edit" method="GET">
+                               <form action="/products/editar/<%= products[i].id %>" method="GET">
                                    <button class="submit-btn" type="submit">Editar</button>
                                </form>
                                <form action="/products/borrar/<%= products[i].id%>?_method=DELETE"

@@ -15,7 +15,7 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING
         },
         color_id:{
-            type: dataTypes.STRING
+            type: dataTypes.INTEGER
         },
 
     }
@@ -32,7 +32,13 @@ module.exports = function(sequelize, dataTypes){
             as: "productos",
             foreignKey: "product_id",
             onDelete: 'cascade'
-        });
+        }),
+        Catalogo.hasMany(models.Existencias, {
+            as: "existencias",
+            foreignKey: "product_catalogue_id",
+            sourceKey:'id',
+            onDelete: 'cascade'
+        }),
         Catalogo.belongsTo(models.Colores, {
             as: "colores",
             foreignKey: "color_id"
