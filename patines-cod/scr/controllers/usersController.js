@@ -28,6 +28,17 @@ const controlador = {
             })
         }
         const userInfo = req.body;
+
+        // TO DO Verificación de email en db
+        let userEmailValidation = userModel.findOne({
+            where: { email: userInfo.email }
+        });
+
+        //if(userEmailValidation){
+         //   return res.render('registro', {
+           //     errors: { email: { msg: 'El correo ya se encuentra registrado' }}});
+        //}
+
         //Creando usuario          
         let imagen;
         if(userInfo.img_user){

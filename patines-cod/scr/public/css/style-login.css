@@ -197,6 +197,12 @@ button.submit-btn:hover {
 .alert{
     font-family: 'Lato', sans-serif;
     color: red;
+    text-align: center;
+    margin:auto;
+}
+
+.errors-login{
+    text-align: center;
 }
 
 .fa-times-circle{
