@@ -48,3 +48,11 @@ RETROSPECTIVA SPRINT 5
 3.  Continuar organizándonos mediante las herramientas de Trello, colaborando mediante retroalimentación entre nosotras, trabajar de forma eficiente, organizada y realizar las entregas en tiempo y forma.
 4. Hacer menos entregas de avances tardíos.
 5. Hasta ahora el quipo ha trabajado muy bien y no hay nada que  se deba dejar de hacer.
+
+RETROSPECTIVA SPRINT 6
+
+1. Avanzar progresivamente con las actividades, determinar qué tareas requieren de otras para poder avanzar ya que algunas bloquean a otras
+2. Presentar los avances en el grupo y trabajo colaborativo
+3. Trabajar armoniosamente, apoyándonos y comunicándonos sobre las tareas y complicaciones por medio de slack
+4. Hacer menos procrastinación, no organizar tiempos
+5. Dejar de hacer: No hay nada que dejemos de hacer
