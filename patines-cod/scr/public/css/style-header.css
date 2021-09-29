@@ -75,7 +75,13 @@ header{
     right: 7.5vw;
     margin: 5px;
     box-sizing: border-box;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    font-family: 'Lato', sans-serif;
+    font-style: bold;
 }
+
+
 
 
 /*Define el estilo de de la lista del menú principal*/
@@ -155,9 +161,13 @@ input[type="checkbox"]:checked + .filtro_menu {
         position:inherit;
     }
 /*Muestra las barras de menu principal y la de los detalles*/
-    .navbar_menu, .details-menu, .bar_buscar{
+    .navbar_menu, .details-menu{
         display: inline-block;
         width: 100vw;
+    }
+
+    .bar_buscar{
+        display: block;
     }
 
     /*Oculta el menu de hamburguesa*/
@@ -227,11 +237,37 @@ input[type="checkbox"]:checked + .filtro_menu {
         top: 3.5vw;
         left: 25vw;
         z-index: 10;
+        padding: 15px;
+    }
+
+    .boton-buscar{
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        display: block;
+        height: 30px;
+        border-radius: 25px;
+        position: absolute;
+        top: 4vw;
+        left: 76vw;
+        z-index: 10;
+        background-color: #000;
+        color:white;
+        border:0px;
+        outline: none;
+    }
+
+    .boton-buscar > i{
+        margin-right: 5px;
+        color: white;
+    }
+
+    .barra-buscar:focus{
+        outline:none;
     }
 
     .usuario > p{
-        
-        font-size: 14px;
+        font-family: 'Lato', sans-serif;
+        font-size: 15px;
         margin: 0;
         padding: 0;
     }

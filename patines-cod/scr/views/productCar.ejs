@@ -3,10 +3,10 @@
     <%- include('partials/head.ejs')%>
 <body>
     <%- include('partials/header.ejs')%>
-    <header>
-        <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa-->
+   <!-- <header>
+        <!--Se hizo una caja que contiene la imagen del usuario, el logo y el menu tipo hamburguesa -- >
         <div class="img-cabecera">
-            <!--Aqui esta el menu tipo hamburguesa-->
+            <!--Aqui esta el menu tipo hamburguesa-- >
             <div class="icons navbar_button">
                 <label for="show-nav">
                     <span class = "material-icons material-icons-outlined" >
@@ -39,22 +39,22 @@
             </div>          
         </div>
 
-        <!--Barra de busqueda--> 
+        <!--Barra de busqueda-- > 
         <input type="checkbox" id="show-buscar" hidden>
         <div class="navbar_menu">
             <input class="barra-buscar" type="search" placeholder="  ¿Qué está buscando?"/>
         </div>
    
 
-<!--Se declara el chec box que permite ocultar y mostra la lista del menu-->
+<!--Se declara el chec box que permite ocultar y mostra la lista del menu-- >
         <input type="checkbox" id="show-nav" hidden/>
-<!--lista del menu principal-->
+<!--lista del menu principal-- >
         <ul class="navbar_menu">
             <li><a href="/">Inicio</a></li>
             <li>
                 <label for="show-submenu">Productos</label>
                 <input type="checkbox" id="show-submenu" hidden>
-<!--Lista del menu/productos-->
+<!--Lista del menu/productos-- >
                 <ul class="submenu">
                     <li><a href="/Details">Patines</a></li>
                     <li><a href="#equipoProteccion">Equipo de protección</a></li>
@@ -69,7 +69,7 @@
             <li><a href="#otros">Otros</a></li>
 
         </ul>   
-    </header>
+    </header>-->
 
     <main class="main-car">
 
@@ -126,44 +126,7 @@
                     delete_outline
                 </span>
             </div>
-            
-            <div class="cont-prdct-car">
-                <img class="img-car" src = '/img/casco-01.jpg' alt='Casco verde militar'>
-
-                <div class="resum-productcar"> 
-                    <div class="cont-des-tit">
-                        <h2>Patines con flor bordada</h2>
-                        <p class="resum-des">Talla: 26 <br> Color: negro</p> 
-                    </div>
-                      
-                    <div class="cont-precio">
-                        <h3>Precio:</h3>
-                        <h3 class="precio-car">$3658.70</h3>   
-                    </div>
-                    
-                    <form  action="none" method="POST">
-                        <label>Cantidad:</label>
-                        <select name="cantidad" >
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="4">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                        </select>
-                    </form>           
-                </div>
-
-                <div class="cont-total">
-                <h3 class="total">Total: </h3>
-                <h3 class="precio-total">$20000.00</h3>                     
-                </div>
-             
+           
                 <span class="quitar material-icons material-icons-outlined">
                     delete_outline
                 </span>
@@ -200,7 +163,9 @@
         </div>
 
         <div class="cont-boton">
-            <button class="boton-car" type="submit">Seguir comprando</button>
+     
+            <button class="boton-car" type="submit" >Seguir comprando</button>
+
             <button class="boton-car" type="submit">Pagar</button>            
         </div>
 
@@ -240,66 +205,6 @@
     </main>
 
 <%- include('partials/footer.ejs')%>
-    <footer>
-        <!--Logo Fun N Skate-->
-                 <div>
-                    <img class="logo-footer" src = '/img/Logo Blanco.svg' alt='Logo Fun-N-Skate'>
-                </div>
-                
-                <!--Logotipos de redes sociales-->
-                <div class="caja-redes">
-                    <h3 class="titulo-redes">¡Siguenos!</h3>
-                    <a href="facebook">
-                        <img class="redes" src = '/img/icon-fb.png' alt='Logo facebook'>
-                    </a>
-        
-                    <a href="twitter">
-                        <img class="redes" src = '/img/icon-twit.svg' alt='Logo twiter'>
-                    </a>
-        
-                    <a href="whatsapp">
-                        <img class="redes" src = '/img/icon-whats.svg' alt='Logo whatsapp'>
-                    </a>
-        
-                    <a href="instagram">
-                        <img class="redes" src = '/img/icon-inst.svg' alt='Logo instagram'>
-                    </a> 
-                    <div>
-                        <h3>¡Suscribete! <br> Obten noticias y ofertas</h3>
-                        <input class="barra-correo" type="email"/>
-                        <button class="boton-sus">Suscribete</button>
-                    </div>
-                </div>
-                <!--Area de suscripción -->
-              
-        
-                <div class="cont-list">
-                    <ul>
-                        <li>
-                            <a href="#terminos-condiciones">Terminos y condiciones</a>
-                        </li>
-                        <li>
-                            <a href="#metodosEnvio">Metodos de envio</a>
-                        </li>
-                        <li>
-                            <a href="#privacidad">politicas de privacidad</a>
-                        </li>
-                    </ul>
-                
-                    <ul>
-                        <li>
-                            <a href="#sucursal1">Sucursal 1. direccion</a>
-                        </li>
-                        <li>
-                            <a href="#sucursal2">Sucursal 2. dirección</a>
-                        </li>
-                        <li>
-                            <a href="#sucursal3">Sucursal 3. direccion</a>
-                        </li>
-                    </ul>
-                </div>
-            
-            </footer>
     
 </body>
 </html>

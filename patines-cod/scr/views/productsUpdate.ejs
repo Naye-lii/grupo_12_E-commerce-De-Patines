@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head.ejs')%>
+
+<body>
+    <%- include('partials/header.ejs')%>
+
+    <main class="main-car">
+        <div class="titulo-carrito">
+            <h1>Editar Producto</h1>
+        </div>
+        
+            <form class="login-form" action="/products/editar/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <section class="sec-addProduct">
+                <label class="texto-inputs" for="productName">Nombre del producto</label>
+                <div class="div-input">
+                    <input type="text" name='nombre' id="productName" class="login-data" placeholder="Nombre del producto" value="<%=product.name_product%>" required>
+                </div>
+
+                <label class="texto-inputs" for="precio">Precio</label>
+                <div class="div-input">
+                    <input type="text" name="precio" id="precio" class="login-data" placeholder="10000.00" value="<%=product.price%>" required>   
+                </div>
+
+                <label class="texto-inputs" for="marca">Marca</label>
+                <div class="cont-categoria" >
+                    <select name="marca" id="marca" required class="list-categoria">
+                        <% for (let i=0; i < marca.length; i++){ %>
+                            <% if (marca[i].id == product.brand_id){ %>
+                                <option value="<%= marca[i].id %>" selected><%= marca[i].name_brand %></option>
+                            <% } else { %> 
+                                <option value="<%= marca[i].id %>"><%= marca[i].name_brand %></option>
+                            <% } %>   
+                        <% } %>
+                    </select>  
+                </div>
+
+                <label class="texto-inputs" for="des">Descripción</label>
+                <div class="div-input">    
+                    <textarea name="descripcion" id="des" class="login-data" placeholder="Descripción" rows="5" required><%=product.descripcion%></textarea>
+                </div>
+
+                <label class="texto-inputs" for="categoria">Categoría</label>
+                <div class="cont-categoria" >
+                    <select name="categoria" id="categoria" required class="list-categoria">
+                        <% for (let j=0; j < categoria.length; j++){ %>
+                            <% if (categoria[j].id == product.category_id){ %>
+                                <option value="<%= categoria[j].id %>" selected><%= categoria[j].name_category %></option>
+                            <% } else { %> 
+                                <option value="<%= categoria[j].id %>"><%= categoria[j].name_category %></option>
+                            <% } %>
+                        <% } %>
+                    </select>  
+                </div>
+
+                <label class="texto-inputs" for="imagenP">Imagen del producto</label>
+                <div class="cont-chargeImg">
+                    <input type="file" name="imagenP" id="imagenP" accept=".jpg, .png" class="chargeImg">  
+                </div>
+
+                <label class="texto-inputs" for="colores">Color</label>
+                <div class="cont-categoria" >
+                    <select name="color" id="color" required class="list-categoria">
+                        <% for (let i=0; i < color.length; i++){ %>
+                            <% if (color[i].id === catalogo[0].color_id){ %>
+                                <option value="<%= color[i].id %>" selected><%= color[i].color %></option>
+                            <% } else { %> 
+                                <option value="<%= color[i].id %>"><%= color[i].color %></option>
+                            <% } %> 
+                        <% } %>
+                    </select>  
+                </div>
+
+                
+                <% for (let i=0; i < existencias.length; i++){ %>
+                <hr>
+                <label class="texto-inputs" for="talla">Talla</label>
+                <div class="cont-categoria" >
+                    <select name="talla<%= i %>" id="talla" required class="list-categoria">
+                        <% for (let j=0; j < talla.length; j++){ %>
+                            <% if (talla[j].id == existencias[i].size_id){ %>
+                                <option value="<%= talla[j].id %>" selected><%= talla[j].value_size %></option>
+                                <% } %> 
+                        <% } %>
+                    </select>  
+                </div>
+
+                <label class="texto-inputs" for="cantidad">Cantidad disponible</label>
+                <div class="div-input">
+                    <input type="text" name="cantidad<%= i %>" id="cantidad" class="login-data" value="<%=existencias[i].quantity%>" required>   
+                </div>
+                <% } %>
+            
+
+                <button type="submit" class="submit-btn">Guardar cambios</button>
+            </section>
+            </form>
+        
+
+        <section >
+            <a class="link-registro" href="/products/products-list">Lista de productos</a>
+        </section>
+        </main>
+
+    </main>
+
+    <%- include('partials/footer.ejs')%>    
+</body>
+</html>

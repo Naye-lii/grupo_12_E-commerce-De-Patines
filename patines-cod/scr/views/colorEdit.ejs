@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<%- include('partials/head.ejs')%>
+    <body>
+        <%- include('partials/header.ejs')%>
+        <link href="/css/style-sec-tables.css" rel = "stylesheet" >
+        <main>
+  <!-- Formulario editar marcas-->
+
+  <div class="login-h1"><h1>Editar color</h1></div>
+  <br>
+  <br>
+  <label for="color" class="texto-inputs">Nombre del color</label>
+  <form action="/products/secProducts/<%= color.id %>/editColor" method="POST">
+    <div class="div-input">
+          <input id="id" name="id" value="color.id" hidden> 
+          <label for="color">Color</label>
+          <input type="text" name="color" class="login-data" value="<%= color.color %>">
+          </div>
+          <button type="submit" class="submit-btn">Editar</button>
+          <br>
+          <br>
+          <br>
+          <br>
+  </form>
+
+</main>
+</body>
+<%- include('partials/footer.ejs')%>    
+</html>       

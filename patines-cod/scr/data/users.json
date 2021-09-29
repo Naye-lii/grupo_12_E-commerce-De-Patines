@@ -1,22 +1,74 @@
 [
   {
     "id": 1,
-    "firstName": "Nayeli",
-    "lastName": "Hernández",
-    "email": "nayitze@gmail.com",
-    "pasword": "123abc",
-    "paswordConf": "123abc",
-    "imgUser": "imagen-user-default.png",
-    "type": "adminitrador"
+    "first_name": "Nayeli",
+    "last_name": "Hernández",
+    "email": "naye@correo.com",
+    "password": "$2b$11$qdDl9BcjqW.9IfYhIl90DOniNw8VY9uMnJ0YKZKC97NSJdCJE966K",
+    "img_user": "/img/users/imgU_1627693378178.jpg",
+    "type": "administrador"
   },
   {
     "id": 2,
-    "firstName": "Nombre1",
-    "lastName": "Apellido1",
-    "email": "correo1@correo.com",
-    "password": "123456",
-    "passwordConf": "123456",
-    "imgUser": "imagen-user-default.png",
+    "first_name": "Leslie",
+    "last_name": "De la Cruz",
+    "email": "leslie@correo.com",
+    "password": "$2b$11$lJs4oPBThHyFyorTzre3Pu4kbfBhd595GJzB6Wqi3g7kx6KPMqnha",
+    "img_user": "/img/users/imgU_1627692954019.jpg",
+    "type": "usuario"
+  },
+  {
+    "id": 3,
+    "first_name": "Ana",
+    "last_name": "Isabel",
+    "email": "anaisa@correo.com",
+    "password": "$2b$11$tRBjuq8381VmONSgv3oVS.c4BaX3UMcGE8HRK7WAGPgiDvmcddQzO",
+    "img_user": "/img/users/imgU_1627693061873.jpg",
+    "type": "usuario"
+  },
+  {
+    "id": 4,
+    "first_name": "Juan",
+    "last_name": "Donjuan",
+    "email": "unjuan@correo.com",
+    "password": "$2b$11$yWMSzr6VeHcRtx8BznglfeHSUzgT4h6nW5F2dkuXaUGFiukWIalv2",
+    "img_user": "/img/users/imagen-user-default.png",
+    "type": "usuario"
+  },
+  {
+    "id": 5,
+    "first_name": "Leslie",
+    "last_name": "De la Cruz",
+    "email": "leslie123@correo.com",
+    "password": "$2b$11$ubhh/ZprKf1CElf6A2jgv.NP8kTY4v26R0OM/TeA.1bdTY.Lvg8O2",
+    "img_user": "/img/users/imgU_1628022677564.jpeg",
+    "type": "usuario"
+  },
+  {
+    "id": 6,
+    "first_name": "Nuevo",
+    "last_name": "Prueba",
+    "email": "nuevo123@gmail.com",
+    "password": "$2b$11$DsPAenBhEAQUq/CW86GrlOtxTndFbgvskAVKTMLZuqJwfF2VnOTDa",
+    "img_user": "/img/users/imgU_1628287152091.JPG",
+    "type": "administrador"
+  },
+  {
+    "id": 7,
+    "first_name": "Ana",
+    "last_name": "Balablabla",
+    "email": "ana@gmail.com",
+    "password": "$2b$11$Auwg3IZdwY.qf85TmWXpru6s3foGz7JXzZminTcwVk5Lg.eAkz/9C",
+    "img_user": "/img/users/imgU_1628620239443.jpg",
+    "type": "administrador"
+  },
+  {
+    "id": 8,
+    "first_name": "blabla",
+    "last_name": "shalala",
+    "email": "prueba@gmail.com",
+    "password": "$2b$11$wuuDEd2UJzF8shdbwGttIOveKiWiWGAsTzIdBoKNT3xKBVrCsUgoK",
+    "img_user": "/img/users/imagen-user-default.png",
     "type": "usuario"
   }
 ]

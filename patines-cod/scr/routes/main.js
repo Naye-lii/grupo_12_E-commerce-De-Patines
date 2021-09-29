@@ -4,8 +4,6 @@ const router = express.Router();
 const mainController = require('../controllers/mainController.js');
 
 router.get('/', mainController.index);
-router.get('/login', mainController.login);
-router.get('/registro', mainController.registro); 
 router.get('/productCar', mainController.productCar);
 router.get('/products', mainController.products);
 
