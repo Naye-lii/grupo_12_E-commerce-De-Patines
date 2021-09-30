@@ -3,6 +3,10 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+// Express Validator
+const {body} = require('express-validator');
+
+
 const  authMiddleware = require('../middlewares/authMiddleware');
 const  adminMiddleware = require('../middlewares/adminMiddleware');
 const  privateAdminMiddleware = require('../middlewares/privateAdminMiddleware');
@@ -21,6 +25,31 @@ const uploadFile = multer({ storage });
 const productsController = require('../controllers/productsController.js');
 const cartController = require('../controllers/carritoController.js');
 
+
+//Express Validator para Editar Producto
+const editProductValidations = [
+    body('nombre')
+        .notEmpty().withMessage('Se debe escribir el nombre del producto').bail()
+        .isLength({min:5}).withMessage('El nombre debe contener mínimo 5 caracteres'),
+    body('precio')
+        .notEmpty().withMessage('Se debe escribir el precio del producto').bail()
+        .isNumeric().withMessage('El precio debe ser una cifra'),
+    body('descripcion')
+        .isLength({min:20}).withMessage('La descripcion debe contener mínimo 20 caracteres'),                                 
+    body('imagenP').custom((value, { req }) => {
+        let file= req.file;
+        let acceptedExtensions = ['.jpg', '.png', '.jpeg', '.gif'];
+
+        if(file){
+            let fileExtension = path.extname(file.originalname);    
+            if(!acceptedExtensions.includes(fileExtension)){
+                throw new Error('Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}')
+            }
+        }
+        return true;
+    })
+];
+
 router.get('/products/list', productsController.index);
 router.get('/detail/:id', productsController.detail); 
 router.get('/create', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.form);
@@ -37,7 +66,7 @@ router.get('/products-list', productsController.listar);
 router.get('/search', productsController.search);
 router.delete('/borrar/:id', productsController.borrar);
 router.get('/editar/:id', productsController.formularioEditar)
-router.put('/editar/:id', uploadFile.single('image'), productsController.actualizar);
+router.put('/editar/:id', uploadFile.single('image'), editProductValidations, productsController.actualizar);
 
 // Rutas de CRUD Tablas secundarias
 const secProducts = require('../controllers/secTablesController.js');
