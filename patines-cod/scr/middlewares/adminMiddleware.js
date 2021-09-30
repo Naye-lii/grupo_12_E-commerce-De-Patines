@@ -1,4 +1,5 @@
-const User = require('../models/User');
+const userModel = require('../database/models').Usuarios;
+//const User = require('../models/User');
 
 function adminMiddleware(req, res, next) {
     res.locals.isAdmin = false;

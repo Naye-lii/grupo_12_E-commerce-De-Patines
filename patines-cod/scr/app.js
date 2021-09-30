@@ -36,7 +36,6 @@ app.use('/', rutasMain);
 app.use('/products', rutasProducts);
 app.use('/', rutasUsers);
 app.use('/order', rutasCart);
-//app.use('/user', rutasUser);
 app.use((req, res, next) => {
   res.status(404).render('error404');
 });

@@ -15,9 +15,6 @@ const Catalogo = db.Catalogo;
 const Existencias = db.Existencias;
 
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
 const controlador = {
     index: function (req, res) {
         res.render("productsListEdit", { products: productList });
