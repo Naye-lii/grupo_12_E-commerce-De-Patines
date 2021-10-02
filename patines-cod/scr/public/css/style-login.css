@@ -71,6 +71,16 @@ label.texto-inputs{
     outline: none;
 }
 
+.login-data-cantidad{
+    border: none;
+    padding: 0px 0px 0px 5px;
+    width: 100%;
+    outline: none;
+    font-family: 'Lato', sans-serif;
+    width: 80%;
+    outline: none;
+}
+
 .no-password{
     display: block;
     margin-left: 40%;
@@ -159,6 +169,7 @@ button.submit-btn:hover {
   .sec-addProduct{
       padding-top: 20px;
       padding-bottom: 10px;
+      text-align: center;
   }
  
   #user-photo{
@@ -199,6 +210,7 @@ button.submit-btn:hover {
     color: red;
     text-align: center;
     margin:auto;
+    padding: 15px;
 }
 
 .errors-login{

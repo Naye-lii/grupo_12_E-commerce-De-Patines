@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head.ejs')%>
+<script src="/js/validacionProductUpdate.js"></script>
+
 
     <body>
         <%- include('partials/header.ejs')%>
@@ -9,6 +11,7 @@
                 <div class="titulo-carrito">
                     <h1>Editar Producto</h1>
                 </div>
+
 
                 <form class="login-form" action="/products/editar/<%=product.id%>?_method=PUT" method="POST"
                     enctype="multipart/form-data">
@@ -185,7 +188,7 @@
                                                                 disponible</label>
                                                             <div class="div-input">
                                                                 <input type="text" name="cantidad<%= i %>" id="cantidad"
-                                                                    class="login-data"
+                                                                    class="login-data-cantidad"
                                                                     value="<%=existencias[i].quantity%>" required>
                                                             </div>
                                                             <% } %>
@@ -193,6 +196,12 @@
 
                                                                 <button type="submit" class="submit-btn">Guardar
                                                                     cambios</button>
+
+                                                                    <div class="alert">
+                                                                        <ul>
+                                                                            
+                                                                        </ul>
+                                                                    </div>
                     </section>
                 </form>
 
