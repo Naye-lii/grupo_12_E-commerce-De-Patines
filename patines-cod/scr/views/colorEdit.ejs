@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+  <script src="/js/validacionEditColor.js"></script>
 <%- include('partials/head.ejs')%>
     <body>
         <%- include('partials/header.ejs')%>
@@ -12,12 +12,14 @@
   <br>
   <br>
   <label for="color" class="texto-inputs">Nombre del color</label>
-  <form action="/products/secProducts/<%= color.id %>/editColor" method="POST">
+  <form action="/products/secProducts/<%= color.id %>/editColor" method="POST" class="categoryColor-form">
     <div class="div-input">
           <input id="id" name="id" value="color.id" hidden> 
           <label for="color">Color</label>
-          <input type="text" name="color" class="login-data" value="<%= color.color %>">
-          </div>
+          <input type="text" name="color" class="login-data" value="<%= color.color %>" required>
+        </div>
+        <div class="alert-sec-tableColor">
+        </div> 
           <button type="submit" class="submit-btn">Editar</button>
           <br>
           <br>

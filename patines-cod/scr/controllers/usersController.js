@@ -87,13 +87,6 @@ const controlador = {
     userLoggedProfile: function (req, res) {
         res.render('user-profile', { 'user': req.user, isAuthenticated: req.user });
     },
-    /* profile: function(req, res){
-         const userId = req.params.id;
-         const userD = users.find((user)=>{
-             return user.id == userId;
-         });
-         res.render("user-profile", {user: userD});
-     },*/
     edit: function (req, res) {
         const userEdit = req.params.id;
         const userInfo = users.find((user) => {

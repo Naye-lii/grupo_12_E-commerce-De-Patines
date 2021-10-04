@@ -5,6 +5,7 @@
     <body>
         <%- include('partials/header.ejs')%>
         <link href="/css/style-sec-tables.css" rel = "stylesheet" >
+        <script src="/js/validacionSecTables.js"></script>
         <main>
   <!-- Formulario editar marcas-->
 
@@ -12,11 +13,11 @@
   <br>
   <br>
 <label for="category" class="texto-inputs">Nombre de la categoría</label>
-  <form action="/products/secProducts/<%= category.id %>/editCategory" method="POST">
+  <form action="/products/secProducts/<%= category.id %>/editCategory" method="POST" class="categoryColor-form">
     <div class="div-input">
           <input id="id" name="id" value="category.id" hidden> 
           <label for="category" class="sec-label">Categoría</label>
-          <input type="text" name="category" class="login-data" value="<%= category.name_category %>">
+          <input type="text" name="category" class="login-data" id="category" value="<%= category.name_category %>" required>
           </div>
           <button type="submit" class="submit-btn">Editar</button>
           <br>

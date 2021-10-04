@@ -2,7 +2,7 @@ window.addEventListener("load", function(){
 
     // Validación para añadir marca
 
-    let formBrand = document.querySelector("form.brandCreate-form");
+    let formBrand = document.querySelector("form.categoryColor-form");
     
     formBrand.addEventListener("submit", function(e){
         let errores = [];
