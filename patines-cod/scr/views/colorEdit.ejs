@@ -16,7 +16,7 @@
     <div class="div-input">
           <input id="id" name="id" value="color.id" hidden> 
           <label for="color">Color</label>
-          <input type="text" name="color" class="login-data" value="<%= color.color %>" required>
+          <input type="text" name="color" class="login-data" value="<%= color.color %>" id="color">
         </div>
         <div class="alert-sec-tableColor">
         </div> 
@@ -25,6 +25,16 @@
           <br>
           <br>
           <br>
+          <div class="alert-sec-sec-tableColor">
+          </div>
+
+          <% if(typeof errores != 'undefined'){ %>
+            <% for(let i = 0; i < errores.length; i++){ %>
+                <% if(errores[i].param == "color"){ %>
+                    <div class="alert"> <%= errores[i].msg %></div>
+                    <% } %>
+                    <% } %>
+                    <% } %>
   </form>
 
 </main>

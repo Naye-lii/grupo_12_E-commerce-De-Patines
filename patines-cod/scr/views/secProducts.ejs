@@ -45,6 +45,13 @@
                             </div>
                                 <div class="alert-sec-tableBrand">
                                 </div>
+                                <% if(typeof errores != 'undefined'){ %>
+                                <% for(let i = 0; i < errores.length; i++){ %>
+                                    <% if(errores[i].param == "marca"){ %>
+                                        <div class="alert"> <%= errores[i].msg %></div>
+                                        <% } %>
+                                        <% } %>
+                                        <% } %>
                                 <button type="submit" class="submit-btn">Agregar marca</button>
                     </form>
 
