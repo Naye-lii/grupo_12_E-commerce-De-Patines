@@ -10,7 +10,7 @@
 <!--Imagenes del primer producto-->
     <div class="caja3">
         <div class="caja2">
-            <img class="img-producto" src = '<%=product.image%>' alt='Patines clasicos blancos con flor bordada'>
+            <img class="img-producto" src = '<%=catlg[0].url_imagen%>' alt='Patines clasicos blancos con flor bordada'>
         </div>
 
         <div class="caja1">
@@ -23,17 +23,17 @@
 <!--Datos de vista rapida del producto-->
         <div class="sec-resum"> 
 
-            <h2 class="nombre-art"><%=product.name%></h2>
+            <h2 class="nombre-art"><%=product.name_product%></h2>
             <p class="resum-des"><%=product.description%></p>
-            <h3 class="precio-des"><%=product.price%></h3>
+            <h3 class="precio-des" name="price">$ <%=product.price%></h3>
 
 <!-- TODO: Funcionalidad de option-->
 
-            <form action="#none" method="GET">
+           <form action="#none" method="GET">
                 <label class="resum-des"> Talla: </label>
                 <select name="talla" class="selec">
-                    <% for(let i=0 ; i < product.size.length ;i++) { %>
-                        <option value="<%=product.size[0]%>"><%=product.size[i]%></option>
+                    <% for(let i=0 ; i < exist.length ;i++) { %>
+                        <option value="<%=exist[i].size_id%>"><%=exist[i].tallas.value_size%></option>
                         <% } %>
                 </select>
             </form>
@@ -41,8 +41,8 @@
             <form action="#none" method="GET">
                 <label class="resum-des">Color: </label>
                 <select class="selec">
-                    <% for(let i=0 ; i < product.color.length ;i++) { %>
-                    <option value="<%=product.color[0]%>"><%=product.color[i]%></option>
+                    <% for(let i = 0 ; i < catlg.length; i++) { %>
+                    <option value="<%=catlg[i].color_id%>"><%=catlg[i].colores.color %></option>
                     <% } %>
                 </select>
                 <br>
@@ -67,9 +67,10 @@
             <br>
             <a href="#reseñas">12 reseñas</a>
             <br>
-        
             <button class= "boton-detail" type="submit">Agregar al carrito</button>
+            <form action="/productCar" method="GET">
             <button class= "boton-detail" type="submit">Comprar ahora</button> 
+        </form>
 
         </div>
     </div>
@@ -152,7 +153,7 @@
             </a>
 
             <a href="instagram">
-                <img class="redes" src = '/img/icon-inst.svg' alt='Logo instagram>
+                <img class="redes" src = '/img/icon-inst.svg' alt='Logo instagram'>
             </a> 
             <div>
                 <h3>¡Suscribete! <br> Obten noticias y ofertas</h3>

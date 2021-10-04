@@ -3,57 +3,95 @@
 
 <%- include('partials/head.ejs')%>
 
-<body>
-    <%- include('partials/header.ejs')%>
+    <body>
+        <%- include('partials/header.ejs')%>
 
-    <main>
-        <div class="login-h1">
-            <h1>Crear cuenta</h1>
-        </div>
-    
-        <form class="login-form" method="POST" action="/user/crear">
+            <main>
+                <div class="login-h1">
+                    <h1>Crear cuenta</h1>
+                </div>
 
-            <label class="texto-inputs" for="nombre">Nombre</label>
-            <div class="div-input">
-                <i class="far fa-user"></i>
-                <input type="text" name="firstName" class="login-data" id="nombre" placeholder="Nombre" required>
-                <!-- required lo hace obligatorio -->
-            </div>
+                <form class="login-form" method="POST" action="/crear" enctype="multipart/form-data">
 
-            <label class="texto-inputs" for="apellido">Apellido</label>
-            <div class="div-input">
-                <i class="far fa-user"></i>
-                <input type="text" name="lastName" class="login-data" id="apellido" placeholder="Apellido" required>
-                <!-- required lo hace obligatorio -->
-            </div>
+                    <label class="texto-inputs" for="nombre">Nombre</label>
+                    <div class="div-input">
+                        <i class="far fa-user"></i>
+                        <input type="text" name="first_name" class="login-data" id="nombre" placeholder="Nombre"
+                        value = "<%= locals.oldData ? oldData.first_name : null %>"
+                        >
+                        <!-- required lo hace obligatorio -->
+                    </div>
+                    <% if(locals.errors && errors.first_name){ %>
+                        <div class="alert">
+                            <i class="fas fa-times-circle"></i>
+                            <%=errors.first_name.msg%>
+                        </div>
+                    <%}%>
 
-            <label class="texto-inputs" for="email">Correo Electrónico</label>
-            <div class="div-input">
-                <i class="fas fa-at"></i>
-                <input type="email" name="email" class="login-data" id="email" placeholder="Correo" required>
-                <!-- required lo hace obligatorio -->
-            </div>
+                    <label class="texto-inputs" for="apellido">Apellido</label>
+                    <div class="div-input">
+                        <i class="far fa-user"></i>
+                        <input type="text" name="last_name" class="login-data" id="apellido"
+                            placeholder="Apellido" value = "<%= locals.oldData ? oldData.last_name : null %>">
+                        <!-- required lo hace obligatorio -->
+                    </div>
+                    <% if(locals.errors && errors.last_name){ %>
+                        <div class="alert">
+                            <i class="fas fa-times-circle"></i>
+                            <%=errors.last_name.msg%>
+                        </div>
+                    <%}%>
 
-            <label class="texto-inputs" for="password">Contraseña</label>
-            <div class="div-input">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" class="login-data" placeholder="Contraseña" required>
-            </div>
+                    <label class="texto-inputs" for="email">Correo Electrónico</label>
+                    <div class="div-input">
+                        <i class="fas fa-at"></i>
+                        <input type="email" name="email" class="login-data" id="email"
+                            placeholder="Correo" value = "<%= locals.oldData ? oldData.email : null %>">
+                        <!-- required lo hace obligatorio -->
+                    </div>
+                    <% if(locals.errors && errors.email){ %>
+                        <div class="alert">
+                            <i class="fas fa-times-circle"></i>
+                            <%=errors.email.msg%>
+                        </div>
+                    <%}%>
 
-            <label class="texto-inputs" for="password-conf">Confirmar Contraseña</label>
-            <div class="div-input">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="passwordConf" id="password-conf" class="login-data" placeholder="Confirmar contraseña" required>
-            </div>
+                    <label class="texto-inputs" for="password">Contraseña</label>
+                    <div class="div-input">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" id="password" class="login-data"
+                            placeholder="Contraseña">
+                    </div>
+                    <% if(locals.errors && errors.password){ %>
+                        <div class="alert">
+                            <i class="fas fa-times-circle"></i>
+                            <%=errors.password.msg%>
+                        </div>
+                    <%}%>
 
-            <button type="submit" class="submit-btn">Regístrarse</button>
-        </form>
-        <p class="texto-registro">¿Ya tienes una cuenta?</p>
-        <a class="link-registro" href="/login">Inicia sesión</a>
-    </main>
-    <!--Pie de pagína-->
-    <%- include('partials/footer.ejs')%>
+                    <label class="texto-inputs" for="imagenP">Imagen del usuario</label>
+                    <div class="cont-chargeImg">
+                        <input type="file" name="img_user" id="imagenP"
+                            accept=".jpg, .png" class="chargeImg"/>
+                            <!--<img id="user-photo" src="/img/users/imgProfile.jpg"></img>-->
+                    </div>
+                    <% if(locals.errors && errors.img_user){ %>
+                        <div class="alert">
+                            <i class="fas fa-times-circle"></i>
+                            <%=errors.img_user.msg%>
+                        </div>
+                    <%}%>
 
-</body>
+                    <button type="submit" class="submit-btn">Regístrarse</button>
+                </form>
+                <p class="texto-registro">¿Ya tienes una cuenta?</p>
+                <a class="link-registro" href="/login">Inicia sesión</a>
+            </main>
+            <!--Pie de pagína-->
+            <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>    
+           <script src="CLOUDINARY_URL=cloudinary://541755772963698:XRQJ4s9f8xAUPhfPSLa-4DUCyLY@dc7uyfv94"></script>
+            <script src="../js/servicio-imagen.js"></script>
+            <%- include('partials/footer.ejs')%>
+    </body>
 
 </html>
