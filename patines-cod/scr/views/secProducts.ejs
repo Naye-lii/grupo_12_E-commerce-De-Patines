@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="/js/validacionSecTables.js"></script>
     <%- include('partials/head.ejs')%>
     <%- include('partials/header.ejs')%>
-    <body>
         <link href="/css/style-sec-tables.css" rel = "stylesheet" >
+    <body>
         <main>
         <h1 id="products-titulo">Productos lista avanzada</h1>
         <div class="container">
@@ -37,12 +38,14 @@
                     <!-- Formulario agregar marcas-->
 
                     <h1 id="products-title-brand">Crear marca</h1>
-                    <form action="/products/secProducts/createBrand" method="POST">
+                    <form action="/products/secProducts/createBrand" method="POST" class="brandCreate-form">
                       <div class="div-input">
                             <label for="marca">Marca</label>
-                            <input type="text" name="marca" class="login-data" required>
+                            <input type="text" name="marca" class="login-data" id="brand">
                             </div>
-                            <button type="submit" class="submit-btn">Agregar marca</button>
+                                <div class="alert-sec-tableBrand">
+                                </div>
+                                <button type="submit" class="submit-btn">Agregar marca</button>
                     </form>
 
                    <!-- Tabla de categorías -->
@@ -73,10 +76,12 @@
              <!-- Formulario agregar categorías-->
 
             <h1 id="products-title-category">Crear categoría</h1>
-            <form action="/products/secProducts/createCategory" method="POST">
+            <form action="/products/secProducts/createCategory" method="POST" class="categoryCreate-form">
                 <div class="div-input">
                     <label for="categoria">Categoría</label>
-                    <input type="text" name="categoria" class="login-data" required>
+                    <input type="text" name="categoria" class="login-data" id="category">
+                    </div>
+                    <div class="alert-sec-tableCategory">
                     </div>
                     <button type="submit" class="submit-btn">Agregar categoría</button>
             </form>
@@ -109,11 +114,13 @@
                    <!-- Formulario agregar color-->
 
                    <h1 id="products-title-color">Crear color</h1>
-                   <form action="/products/secProducts/createColor" method="POST">
+                   <form action="/products/secProducts/createColor" method="POST" class="categoryColor-form">
                     <div class="div-input">
                            <label for="color">Color</label>
-                           <input type="text" name="color" class="login-data" required>
+                           <input type="text" name="color" class="login-data" id="color">
                            </div>
+                           <div class="alert-sec-tableColor">
+                        </div>
                            <button type="submit" class="submit-btn">Agregar color</button>
                    </form>
                    <br>

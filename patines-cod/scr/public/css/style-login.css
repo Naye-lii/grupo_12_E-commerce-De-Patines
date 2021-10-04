@@ -36,6 +36,11 @@ label.texto-inputs{
     margin-top: 30px;
 }
 
+.register-forn{
+        text-align: left;
+        margin-top: 30px;
+}
+
 .div-input{
     border: 2px solid #E57D0C;
     border-radius: 5px;
