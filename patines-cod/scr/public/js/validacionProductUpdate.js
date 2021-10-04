@@ -68,9 +68,9 @@ window.addEventListener("load", function(){
             e.preventDefault();
 
             let icono = "fas fa-times-circle";
-            let ulErrores = document.querySelector("div.alert ul");
+            let ulErrores = document.querySelector("div.alert");
             for(let i=0; i<errores.length; i++){
-                ulErrores.innerHTML += "<li> <i class=" + icono + "></i>" + errores[i] + "</li>"
+                ulErrores.innerHTML += "<i class=" + icono + "></i>" + errores[i]
             }
         }
         

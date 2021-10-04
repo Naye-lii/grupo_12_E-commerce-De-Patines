@@ -5,13 +5,14 @@
 
     <body>
         <%- include('partials/header.ejs')%>
+        <script src="/js/validacionRegister.js"></script>    
 
             <main>
                 <div class="login-h1">
                     <h1>Crear cuenta</h1>
                 </div>
 
-                <form class="register-form" method="POST" action="/crear" enctype="multipart/form-data" id="register-form">
+                <form class="login-form" method="POST" action="/crear" enctype="multipart/form-data" id="register-form">
 
                     <label class="texto-inputs" for="nombre">Nombre</label>
                     <div class="div-input">
@@ -57,7 +58,16 @@
                     <div class="div-input">
                         <i class="fas fa-at"></i>
                         <input type="email" name="email" class="login-data" id="email"
-                            placeholder="Correo" value = "<%= locals.oldData ? oldData.email : null %>">
+                            placeholder="Correo" value = "<%= locals.oldData ? oldData.email : null %>" <% if(typeof errores != 'undefined'){ %>
+                        <% for(let i = 0; i < errores.length; i++) { %>
+                            <% if (errores[i].param == "name"){ %>
+                        <div class="alert">
+                            <i class="fas fa-times-circle"></i>
+                            <%= errores[i].msg %>
+                        </div>
+                    <%}%>
+                    <%}%>
+                    <%}%>>
                         <!-- required lo hace obligatorio -->
                     </div>
                     <% if(locals.errors && errors.email){ %>
@@ -92,6 +102,9 @@
                             <%=errors.img_user.msg%>
                         </div>
                     <%}%>
+                    <div class="alert-sec-tableColor">
+                        <li></li>
+                    </div>
 
                     <div class="errors-login">
                     <button type="submit" class="submit-btn" id="submit-btn-register">Regístrarse</button>
@@ -101,10 +114,6 @@
                 <a class="link-registro" href="/login">Inicia sesión</a>
             </main>
             <!--Pie de pagína-->
-            <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>    
-           <script src="CLOUDINARY_URL=cloudinary://541755772963698:XRQJ4s9f8xAUPhfPSLa-4DUCyLY@dc7uyfv94"></script>
-            <script src="../js/servicio-imagen.js"></script>
-            <script src="../public/js/validacionRegister.js" type="text/javascript"></script>    
             <%- include('partials/footer.ejs')%>
     </body>
 
