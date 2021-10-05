@@ -10,7 +10,7 @@ const db = require("../database/models");
 const userModel = require('../database/models').Usuarios;
 const typeUser = require('../database/models').TipoUsuario;
 
-const usersFilePath = path.join(__dirname, "../data/users.json");
+//const usersFilePath = path.join(__dirname, "../data/users.json");
 //var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const controlador = {
@@ -201,7 +201,7 @@ const controlador = {
 
     },
     profile: (req, res) => {
-        console.log(req.cookies.userEmail);
+        console.log(req.session.userLogged);
         return res.render("user-profile", {
             user: req.session.userLogged
         });
