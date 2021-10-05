@@ -5,6 +5,9 @@ const Categorias = db.Categorias;
 const Colores = db.Colores;
 const Productos = db.Productos;
 
+// Express validator
+const { validationResult } = require('express-validator');
+
 // CRUD de brands, category, color
 
 const controlador = {
@@ -26,6 +29,8 @@ const controlador = {
 },
     // CRUD Marcas
         guardadoMarca: (req, res) => {
+            let resultadoValidacion = validationResult(req);
+            if (resultadoValidacion.errors.length  < 0){
                Marcas.create({
                     id: req.body.id,
                     name_brand: req.body.marca
@@ -48,6 +53,10 @@ const controlador = {
                             console.log(err);
                         })
                   })
+                }
+                else {
+                    res.render('secTables', { errores: resultadoValidacion.errors})
+                }
                     },
                     borrarMarca: function (req, res) {
                         const idMarca = req.params.id;
@@ -83,6 +92,7 @@ const controlador = {
                             })
                     },
                     editarMarca: (req, res) => {
+                        let errores = validationResult(req);
                             const idMarca = req.params.id;
                             Marcas.findByPk(idMarca)
                             .then((marcaB) => 
@@ -93,10 +103,13 @@ const controlador = {
                                        }
                             })
                                 console.log(idMarca, marcaB)
-                                res.render('brandEdit', {brand: marcaB, id: idMarca})   
-                            })
-                    },
+                                res.render('brandEdit', {brand: marcaB, id: idMarca, errores: errores.array()})
+                        })
+                            },
                     actualizarMarca: (req, res) => {
+                        let errores = validationResult(req);
+
+                        if(errores.isEmpty()) {
                         Marcas.update({
                             id: req.params.id,
                             name_brand: req.body.marca
@@ -115,6 +128,10 @@ const controlador = {
                                     });
                                     console.log(err);
                                 })
+                            }
+                    else {
+                        res.render ('brandEdit', { errores: errores.array(), old: req.body, brand: req.body.marca });
+                        }
                     },
              // CRUD Categorías
              guardadoCategoria: (req, res) => {
@@ -175,6 +192,7 @@ const controlador = {
                             })
                         },
                         editarCategoria: (req, res) => {
+                            let resultadoValidacion = validationResult(req);
                             const idCategoria = req.params.id;
                             Categorias.findByPk(idCategoria)
                             .then((categoriaB) => 
@@ -185,7 +203,7 @@ const controlador = {
                                        }
                             })
                                 console.log(idCategoria, categoriaB)
-                                res.render('categoryEdit', {category: categoriaB, id: idCategoria})   
+                                res.render('categoryEdit', {category: categoriaB, id: idCategoria, errores: resultadoValidacion.errors})   
                             })
                     },
                     actualizarCategoria: (req, res) => {
@@ -268,6 +286,7 @@ const controlador = {
                             })
                         },
                         editarColor: (req, res) => {
+                            let resultadoValidacion = validationResult(req);
                             const idColor = req.params.id;
                             Colores.findByPk(idColor)
                             .then((colorB) => 
@@ -278,7 +297,7 @@ const controlador = {
                                        }
                             })
                                 console.log(idColor, colorB)
-                                res.render('colorEdit', {color: colorB, id: idColor})   
+                                res.render('colorEdit', {color: colorB, id: idColor, errores: resultadoValidacion.errors})   
                             })
                     },
                     actualizarColor: (req, res) => {

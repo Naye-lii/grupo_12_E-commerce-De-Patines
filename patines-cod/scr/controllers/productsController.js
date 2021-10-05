@@ -3,6 +3,9 @@ const fs = require("fs");
 const path = require("path");
 const { nextTick } = require("process");
 
+//Express Validator
+const { validationResult } = require('express-validator');
+
 // Variable para requerir modelos
 let db = require("../database/models");
 const Op = db.Sequelize.Op;
@@ -15,10 +18,10 @@ const Catalogo = db.Catalogo;
 const Existencias = db.Existencias;
 
 
+//const productsFilePath = path.join(__dirname, "../data/products.json");
+//const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
 const controlador = {
-    index: function (req, res) {
-        res.render("productsListEdit", { products: productList });
-    },
     detail: (req, res) => {
         const idProduct = req.params.id;
 
@@ -140,9 +143,9 @@ const controlador = {
                                             .then(function (color) {
                                                 Tallas.findAll()
                                                     .then(function (talla) {
-                                                        console.log('//////////////////prueba');
-                                                        console.log(catalogo);
-                                                        console.log(existencias);
+                                                       // console.log('//////////////////prueba');
+                                                        //console.log(catalogo);
+                                                       // console.log(existencias);
                                                         return res.render('productsUpdate',
                                                             {
                                                                 product: producto,
@@ -164,70 +167,120 @@ const controlador = {
     },
 
     actualizar: function (req, res) {
+        const resultValidation = validationResult(req);
+        //console.log(resultValidation.mapped());
+
         const changeProduct = req.body;
-        console.log("////////////UPDATE")
-        console.log(changeProduct);
+       // console.log("////////////UPDATE")
+      //  console.log(changeProduct);
 
-        let num;
-        let array;
-        array = Object.values(changeProduct)
-        num = array.length;
+        if (resultValidation.errors.length > 0) {
 
-        console.log("////////////ATRIBUTOS EN BODY");
-        console.log(array);
-        console.log(num);
-
-        if (req.file) {
-            req.body.imagenP = '/img/products/' + req.file.filename;
+            Productos.findByPk(req.params.id)
+                .then(function (producto) {
+                    Catalogo.findAll({
+                        where: {
+                            product_id: req.params.id
+                        }
+                    }).then(function (catalogo) {
+                        Existencias.findAll({
+                            where: {
+                                product_catalogue_id: catalogo[0].id
+                            }
+                        }).then(function (existencias) {
+                            Marcas.findAll()
+                                .then(function (marca) {
+                                    Categorias.findAll()
+                                        .then(function (categoria) {
+                                            Colores.findAll()
+                                                .then(function (color) {
+                                                    Tallas.findAll()
+                                                        .then(function (talla) {
+                                                            //console.log('//////////////////OLD DATA');
+                                                            //console.log(req.body);
+                                                            return res.render('productsUpdate',
+                                                                {
+                                                                    product: producto,
+                                                                    catalogo: catalogo,
+                                                                    existencias: existencias,
+                                                                    marca: marca,
+                                                                    categoria: categoria,
+                                                                    color: color,
+                                                                    talla: talla,
+                                                                    errors: resultValidation.mapped(),
+                                                                    oldData: req.body
+                                                                })
+                                                        })
+                                                        .catch(e => console.log(e))
+                                                })
+                                        })
+                                })
+                        })
+                    })
+                })
         } else {
-            req.body.imagenP = '/img/products/No-img.png';
-        };
 
-        Productos.update({
-            name_product: req.body.nombre,
-            price: req.body.precio,
-            brand_id: req.body.marca,
-            description: req.body.descripcion,
-            category_id: req.body.categoria
-        }, {
-            where: {
-                id: req.params.id
-            }
-        }).then(function () {
-            Catalogo.update({
-                color_id: req.body.color
+            let num;
+            let array;
+            array = Object.values(changeProduct)
+            num = array.length;
+
+            //console.log("////////////ATRIBUTOS EN BODY");
+            //console.log(array);
+            //console.log(num);
+
+            if (req.file) {
+                req.body.imagenP = '/img/products/' + req.file.filename;
+            } else {
+                req.body.imagenP = '/img/products/No-img.png';
+            };
+
+            Productos.update({
+                name_product: req.body.nombre,
+                price: req.body.precio,
+                brand_id: req.body.marca,
+                description: req.body.descripcion,
+                category_id: req.body.categoria
             }, {
                 where: {
-                    product_id: req.params.id
+                    id: req.params.id
                 }
-            })
-        }).then(function () {
-            db.Catalogo.findAll({
-                where: {
-                    product_id: req.params.id
-                }
-            })
-                .then(function (productos) {
-                        console.log("////////existencias");
-                        console.log(productos);
-                        let id= productos[0].id;
-                        for(let i=0; i<(num-6); i++){
-                            console.log(array[6+i]);
-                            console.log('id: ' +id);
-                            Existencias.update({
-                                quantity: array[6+i+1]
-                            },{
-                                where:{
-                                    product_catalogue_id: id,
-                                    size_id: array[6+i]
-                                }
-                            })
-                            i=i+1;
+            }).then(function () {
+                Catalogo.update({
+                    color_id: req.body.color
+                }, {
+                    where: {
+                        product_id: req.params.id
                     }
                 })
-        }).then(function () {
+            }).then(function () {
+                db.Catalogo.findAll({
+                    where: {
+                        product_id: req.params.id
+                    }
+                })
+                    .then(function (productos) {
+                        //console.log("////////existencias");
+                        //console.log(productos);
+                        let id = productos[0].id;
+                        for (let i = 0; i < (num - 6); i++) {
+                            //console.log(array[6 + i]);
+                            //console.log('id: ' + id);
+                            Existencias.update({
+                                quantity: array[6 + i + 1]
+                            }, {
+                                where: {
+                                    product_catalogue_id: id,
+                                    size_id: array[6 + i]
+                                }
+                            })
+                            i = i + 1;
+                        }
+                    })
+            }).then(function () {
                 res.redirect("/products/detail/" + req.params.id);
             })
+        }
     },
 
     formEdit: function (req, res) {
@@ -294,8 +347,8 @@ const controlador = {
             })
     },
     search: function (req, res) {
-        console.log('buscando');
-        console.log(req.query.busqueda);
+        //console.log('buscando');
+        //console.log(req.query.busqueda);
         db.Productos.findAll({
             where: {
                 name_product: {
@@ -355,7 +408,7 @@ const controlador = {
             })
         })
             .then(function () {
-                res.redirect('/products/products-list')
+                res.redirect('/products/list')
             })
     }
 };
