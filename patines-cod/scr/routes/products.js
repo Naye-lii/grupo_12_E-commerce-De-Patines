@@ -52,11 +52,66 @@ const editProductValidations = [
 
 
 
+//Express Validator para Tablas secundarias - CREATE
+
+//Marcas
+
+const brandCreateValidations = [
+    body('marca')
+    .notEmpty().withMessage('Se debe escribir el nombre de la marca').bail()
+    .isLength({min:2}).withMessage('La marca debe contener mínimo 2 caracteres')
+];
+
+//Categorías
+
+const categoryCreateValidations = [
+    body('categoria')
+    .notEmpty().withMessage('Se debe escribir el nombre de la categoría').bail()
+    .isLength({min:2}).withMessage('La marca debe contener mínimo 2 caracteres')
+];
+
+//Colores
+
+const colorCreateValidations = [
+    body('color')
+    .notEmpty().withMessage('Se debe escribir el nombre del color').bail()
+    .isLength({min:2}).withMessage('La marca debe contener mínimo 2 caracteres')
+];
+
+//Express Validator para Tablas secundarias - EDIT 
+
+//Marcas
+
+const brandEditValidations = [
+    body('marca')
+    .notEmpty().withMessage('Se debe escribir el nombre de la marca').bail()
+    .isLength({min:2}).withMessage('La marca debe contener mínimo 2 caracteres')
+];
+
+//Categorías
+
+const categoryEditValidations = [
+    body('category')
+    .notEmpty().withMessage('Se debe escribir el nombre de la categoría').bail()
+    .isLength({min:2}).withMessage('La marca debe contener mínimo 2 caracteres')
+];
+
+//Colores
+
+const colorEditValidations = [
+    body('color')
+    .notEmpty().withMessage('Se debe escribir el nombre del color').bail()
+    .isLength({min:2}).withMessage('La marca debe contener mínimo 2 caracteres')
+];
+
+// Rutas de CRUD de products
+
+router.get('/products/list', productsController.index);
 router.get('/detail/:id', productsController.detail); 
 router.get('/create', /*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/ productsController.form);
 router.get('/:idProduct/edit', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.formEdit);
 router.put('/:idProduct', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit);
-router.post('/', editProductValidations, uploadFile.single('imageP'),/*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/  productsController.crear);
+router.post('/', /*editProductValidations,*/ uploadFile.single('imageP'),/*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/  productsController.crear);
 router.get('/edit/:id', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit); 
 router.delete('/delete/:id',/*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.delete);
 /*router.post('/products/list', uploadFile.single('imageP'), editProductValidations,[authMiddleware, adminMiddleware, privateAdminMiddleware], productsController.crear);*/
@@ -77,22 +132,22 @@ router.get('/secProducts', secProducts.listar);
 
 //crear
     //marcas
-router.post('/secProducts/createBrand', secProducts.guardadoMarca);
+router.post('/secProducts/createBrand', brandCreateValidations, secProducts.guardadoMarca);
     //categorias
-router.post('/secProducts/createCategory', secProducts.guardadoCategoria);
+router.post('/secProducts/createCategory', categoryCreateValidations, secProducts.guardadoCategoria);
     //colores
-router.post('/secProducts/createColor', secProducts.guardadoColor);
+router.post('/secProducts/createColor', colorCreateValidations, secProducts.guardadoColor);
 
 //editar
     //marcas
 router.get('/secProducts/:id/editBrand', secProducts.editarMarca);
-router.post('/secProducts/:id/editBrand', secProducts.actualizarMarca);
+router.post('/secProducts/:id/editBrand', brandEditValidations, secProducts.actualizarMarca);
     //categorias
 router.get('/secProducts/:id/editCategory', secProducts.editarCategoria);
-router.post('/secProducts/:id/editCategory', secProducts.actualizarCategoria);
+router.post('/secProducts/:id/editCategory', categoryEditValidations, secProducts.actualizarCategoria);
     //colores
 router.get('/secProducts/:id/editColor', secProducts.editarColor);
-router.post('/secProducts/:id/editColor', secProducts.actualizarColor);
+router.post('/secProducts/:id/editColor', colorEditValidations, secProducts.actualizarColor);
 
 //eliminar
     //marcas

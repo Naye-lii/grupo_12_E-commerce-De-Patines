@@ -30,9 +30,6 @@ const registerValidations = [
         .notEmpty().withMessage('Escribe tu apellido').bail()
         .isAlpha().withMessage('El apellido solo debe contener letras')
         .isLength({min:2}).withMessage('El apellido debe contener mínimo 2 caracteres'),
-    //body('email')
-      //  .notEmpty().withMessage('Escribe un e-mail').bail()
-       // .isEmail().withMessage('E-mail inválido'),
        body('email')
        .notEmpty().withMessage('Escribe un e-mail').bail()
        .isEmail().withMessage('E-mail inválido'),

@@ -5,6 +5,7 @@
     <body>
         <%- include('partials/header.ejs')%>
         <link href="/css/style-sec-tables.css" rel = "stylesheet" >
+        <script src="/js/validacionSecTables.js"></script>
         <main>
   <!-- Formulario editar marcas-->
 
@@ -12,17 +13,24 @@
           <br>
           <br>
   <label for="marca" class="texto-inputs">Nombre de la marca</label>
-  <form action="/products/secProducts/<%= brand.id %>/editBrand" method="POST">
+  <form action="/products/secProducts/<%= brand.id %>/editBrand" method="POST" class="brandCreate-form">
     <div class="div-input">
           <input id="id" name="id" value="brand.id" hidden> 
           <label for="marca" class="sec-label">Marca</label>
-          <input type="text" name="marca"  class="login-data" value="<%= brand.name_brand %>">
-          </div>
+          <input type="text" name="marca"  class="login-data" id="brand" value="<%= brand.name_brand %>">
+    </div>
+    <div class="alert-sec-tableBrand">
+</div>
+    <% if(typeof errores != 'undefined'){ %>
+        <% for(let i = 0; i < errores.length; i++){ %>
+                <div class="alert"> <%= errores[i].msg %></div>
+                <% } %>
+                <% } %>
           <button type="submit" class="submit-btn">Editar</button>
           <br>
           <br>
           <br>
-          <br>
+          <br>   
   </form>
 
 </main>
