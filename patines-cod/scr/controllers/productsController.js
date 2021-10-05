@@ -18,13 +18,10 @@ const Catalogo = db.Catalogo;
 const Existencias = db.Existencias;
 
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+//const productsFilePath = path.join(__dirname, "../data/products.json");
+//const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 const controlador = {
-    index: function (req, res) {
-        res.render("productsListEdit", { products: productList });
-    },
     detail: (req, res) => {
         const idProduct = req.params.id;
 
@@ -146,9 +143,9 @@ const controlador = {
                                             .then(function (color) {
                                                 Tallas.findAll()
                                                     .then(function (talla) {
-                                                        console.log('//////////////////prueba');
-                                                        console.log(catalogo);
-                                                        console.log(existencias);
+                                                       // console.log('//////////////////prueba');
+                                                        //console.log(catalogo);
+                                                       // console.log(existencias);
                                                         return res.render('productsUpdate',
                                                             {
                                                                 product: producto,
@@ -171,11 +168,11 @@ const controlador = {
 
     actualizar: function (req, res) {
         const resultValidation = validationResult(req);
-        console.log(resultValidation.mapped());
+        //console.log(resultValidation.mapped());
 
         const changeProduct = req.body;
-        console.log("////////////UPDATE")
-        console.log(changeProduct);
+       // console.log("////////////UPDATE")
+      //  console.log(changeProduct);
 
         if (resultValidation.errors.length > 0) {
 
@@ -199,8 +196,8 @@ const controlador = {
                                                 .then(function (color) {
                                                     Tallas.findAll()
                                                         .then(function (talla) {
-                                                            console.log('//////////////////OLD DATA');
-                                                            console.log(req.body);
+                                                            //console.log('//////////////////OLD DATA');
+                                                            //console.log(req.body);
                                                             return res.render('productsUpdate',
                                                                 {
                                                                     product: producto,
@@ -228,9 +225,9 @@ const controlador = {
             array = Object.values(changeProduct)
             num = array.length;
 
-            console.log("////////////ATRIBUTOS EN BODY");
-            console.log(array);
-            console.log(num);
+            //console.log("////////////ATRIBUTOS EN BODY");
+            //console.log(array);
+            //console.log(num);
 
             if (req.file) {
                 req.body.imagenP = '/img/products/' + req.file.filename;
@@ -263,12 +260,12 @@ const controlador = {
                     }
                 })
                     .then(function (productos) {
-                        console.log("////////existencias");
-                        console.log(productos);
+                        //console.log("////////existencias");
+                        //console.log(productos);
                         let id = productos[0].id;
                         for (let i = 0; i < (num - 6); i++) {
-                            console.log(array[6 + i]);
-                            console.log('id: ' + id);
+                            //console.log(array[6 + i]);
+                            //console.log('id: ' + id);
                             Existencias.update({
                                 quantity: array[6 + i + 1]
                             }, {
@@ -350,8 +347,8 @@ const controlador = {
             })
     },
     search: function (req, res) {
-        console.log('buscando');
-        console.log(req.query.busqueda);
+        //console.log('buscando');
+        //console.log(req.query.busqueda);
         db.Productos.findAll({
             where: {
                 name_product: {
@@ -411,7 +408,7 @@ const controlador = {
             })
         })
             .then(function () {
-                res.redirect('/products/products-list')
+                res.redirect('/products/list')
             })
     }
 };
