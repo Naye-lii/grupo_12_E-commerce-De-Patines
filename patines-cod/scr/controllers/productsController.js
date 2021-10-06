@@ -52,7 +52,6 @@ const controlador = {
 
     },
     form: function (req, res) {
-        //res.render('productsAdd')
         Marcas.findAll()
             .then(function (marca) {
                 Categorias.findAll()
@@ -61,7 +60,12 @@ const controlador = {
                             .then(function (color) {
                                 Tallas.findAll()
                                     .then(function (talla) {
-                                        return res.render('productsAdd', { marca: marca, categoria: categoria, color: color, talla: talla })
+                                        return res.render('productsAdd', { 
+                                            marca: marca, 
+                                            categoria: categoria, 
+                                            color: color, 
+                                            talla: talla,
+                                        })
                                     })
                                     .catch(e => console.log(e))
                             })
@@ -69,21 +73,49 @@ const controlador = {
             })
     },
     crear: function (req, res) {
+        const errorValidación = validationResult(req);
         const newProduct = req.body;
+        console.log("----------Errores------------")
+        console.log(errorValidación)
 
-        if (req.file) {
-            newProduct.imagenP = '/img/products/' + req.file.filename;
-        } else {
-            newProduct.imagenP = '/img/products/No-img.png';
-        };
+        if (!errorValidación.isEmpty()) {
+            
+            Marcas.findAll()
+            .then(function (marca) {
+                Categorias.findAll()
+                    .then(function (categoria) {
+                        Colores.findAll()
+                            .then(function (color) {
+                                Tallas.findAll()
+                                    .then(function (talla) {
+                                        return res.render('productsAdd', { 
+                                            marca: marca, 
+                                            categoria: categoria, 
+                                            color: color, 
+                                            talla: talla, 
+                                            msjError: errorValidación.mapped(),
+                                            old: newProduct,
+                                     })
+                                    })
+                                    .catch(e => console.log(e))
+                            })
+                    })
+            })
+    
+        }else{
+            if (req.file) {
+                newProduct.imagenP = '/img/products/' + req.file.filename;
+            } else {
+                newProduct.imagenP = '/img/products/No-img.png';
+            };
 
-        Productos.create({
-            name_product: newProduct.nombre,
-            price: newProduct.precio,
-            brand_id: newProduct.marca,
-            description: newProduct.descripcion,
-            category_id: newProduct.categoria
-        })
+            Productos.create({
+                name_product: newProduct.nombre,
+                price: newProduct.precio,
+                brand_id: newProduct.marca,
+                description: newProduct.descripcion,
+                category_id: newProduct.categoria
+            })
             .then((buscar) => {
                 Productos.findOrCreate({
                     where: {
@@ -116,9 +148,10 @@ const controlador = {
                         })
                     })
             })
+            res.redirect("/products/list");
+        }
 
-
-        res.redirect("/products/list");
+        
     },
 
     formularioEditar: function (req, res) {
@@ -341,7 +374,7 @@ const controlador = {
                         })
                             .then((catalogo) => {
                                 res.render("products-list", { products: products, marcas: marcas, catalogo: catalogo, });
-                                console.log(products, marcas, catalogo);
+                                //console.log(products, marcas, catalogo);
                             })
                     })
             })

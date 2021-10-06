@@ -13,33 +13,71 @@
             <form class="login-form" method="POST" action="/products" enctype="multipart/form-data">
                 <label class="texto-inputs" for="productName">Nombre del producto</label>
                 <div class="div-input">
-                    <input type="text" name='nombre' id="productName" class="login-data" placeholder="Nombre del producto">
+                    <input type="text" name='nombre' id="productName" class="login-data" placeholder="Nombre del producto" value = "<%= locals.old && old.nombre ? old.nombre : '' %>">
                 </div>
+                <% if(locals.msjError && msjError.nombre){ %>
+                    <div class="alert">
+                        <i class="fas fa-times-circle"></i>
+                        <%= msjError.nombre.msg %>   
+                    </div>
+                <% } %>
 
                 <label class="texto-inputs" for="precio">Precio</label>
                 <div class="div-input">
-                    <input type="text" name="precio" id="precio" class="login-data" placeholder="10000.00">   
+                    <input type="text" name="precio" id="precio" class="login-data" placeholder="10000.00" value = "<%= locals.old && old.precio ? old.precio : '' %>">   
                 </div>
+                <% if(locals.msjError && msjError.precio){ %>
+                    <div class="alert">
+                        <i class="fas fa-times-circle"></i>
+                        <%= msjError.precio.msg %>   
+                    </div>
+                <% } %>
 
                 <label class="texto-inputs" for="marca">Marca</label>
                 <div class="cont-categoria" >
                     <select name="marca" id="marca" class="list-categoria">
-                        <% for (let i=0; i < marca.length; i++){ %>
-                        <option value="<%= marca[i].id %>"><%= marca[i].name_brand %></option>
+                        <% if (locals.old && old.marca) { %>
+                            <% for (let i=0; i < marca.length; i++){ %>
+                                <% if (marca[i].id == old.marca) { %> 
+                                    <option value="<%= marca[i].id %>" selected><%= marca[i].name_brand %></option>
+                                <% } else { %>
+                                    <option value="<%= marca[i].id %>" ><%= marca[i].name_brand %></option>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i=0; i < marca.length; i++){ %>
+                                <option value="<%= marca[i].id %>"><%= marca[i].name_brand %></option>
+                                <% } %>
                         <% } %>
                     </select>  
                 </div>
 
                 <label class="texto-inputs" for="des">Descripción</label>
                 <div class="div-input">    
-                    <textarea name="descripcion" id="des" class="login-data" placeholder="Descripción" rows="5" ></textarea>
+                    <textarea name="descripcion" id="des" class="login-data" placeholder="Descripción" rows="5"><%=locals.old && old.descripcion ? old.descripcion : '' %> </textarea>
                 </div>
+                <% if(locals.msjError && msjError.descripcion){ %>
+                    <div class="alert">
+                        <i class="fas fa-times-circle"></i>
+                        <%= msjError.descripcion.msg %>   
+                    </div>
+                <% } %>
 
                 <label class="texto-inputs" for="categoria">Categoría</label>
                 <div class="cont-categoria" >
                     <select name="categoria" id="categoria" class="list-categoria">
-                        <% for (let j=0; j < categoria.length; j++){ %>
-                        <option value="<%= categoria[j].id %>"><%= categoria[j].name_category %></option>
+                        <% if (locals.old && old.categoria) { %>
+                            <% for (let i=0; i < categoria.length; i++){ %>
+                                <% if (categoria[i].id == old.categoria) { %> 
+                                    <option value="<%= categoria[i].id %>" selected> <%= categoria[i].name_category %></option>
+                                <% } else { %>
+                                    <option value="<%= categoria[i].id %>" > <%= categoria[i].name_category %></option>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i=0; i < categoria.length; i++){ %>
+                                <option value="<%= categoria[i].id %>"><%= categoria[i].name_category %></option>
+                                <% } %>
                         <% } %>
                     </select>  
                 </div>
@@ -52,8 +90,18 @@
                 <label class="texto-inputs" for="colores">Color</label>
                 <div class="cont-categoria" >
                     <select name="color" id="color" class="list-categoria">
-                        <% for (let i=0; i < color.length; i++){ %>
-                        <option value="<%= color[i].id %>"><%= color[i].color %></option>
+                        <% if (locals.old && old.color) { %>
+                            <% for (let i=0; i < color.length; i++){ %>
+                                <% if (color[i].id == old.color) { %> 
+                                    <option value="<%= color[i].id %>" selected> <%= color[i].color %></option>
+                                <% } else { %>
+                                    <option value="<%= color[i].id %>" > <%= color[i].color %></option>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i=0; i < color.length; i++){ %>
+                                <option value="<%= color[i].id %>"><%= color[i].color %></option>
+                                <% } %>
                         <% } %>
                     </select>  
                 </div>
@@ -61,16 +109,32 @@
                 <label class="texto-inputs" for="talla">Talla</label>
                 <div class="cont-categoria" >
                     <select name="talla" id="talla" class="list-categoria">
-                        <% for (let i=0; i < talla.length; i++){ %>
-                        <option value="<%= talla[i].id %>"><%= talla[i].value_size %></option>
+                        <% if (locals.old && old.talla) { %>
+                            <% for (let i=0; i < talla.length; i++){ %>
+                                <% if (talla[i].id == old.talla) { %> 
+                                    <option value="<%= talla[i].id %>" selected> <%= talla[i].value_size %></option>
+                                <% } else { %>
+                                    <option value="<%= talla[i].id %>" > <%= talla[i].value_size %></option>
+                                <% } %>
+                            <% } %>
+                        <% } else { %>
+                            <% for (let i=0; i < talla.length; i++){ %>
+                                <option value="<%= talla[i].id %>"><%= talla[i].value_size %></option>
+                                <% } %>
                         <% } %>
                     </select>  
                 </div>
 
                 <label class="texto-inputs" for="cantidad">Cantidad disponible</label>
                 <div class="div-input">
-                    <input type="text" name="cantidad" id="cantidad" class="login-data">   
+                    <input type="text" name="cantidad" id="cantidad" class="login-data" value = "<%= locals.old && old.cantidad ? old.cantidad : '' %>">   
                 </div>
+                <% if(locals.msjError && msjError.cantidad){ %>
+                    <div class="alert">
+                        <i class="fas fa-times-circle"></i>
+                        <%= msjError.cantidad.msg %>   
+                    </div>
+                <% } %>
 
                 <div class="boton-añadir">
                 <button type="submit" class="submit-btn">Guardar</button>

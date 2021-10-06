@@ -4,13 +4,7 @@ function userLoggedMiddleware(req, res, next){
 res.locals.isLogged = false;
 
 let emailInCookie = req.cookies.userEmail;
-let userFromCookie = (userCooki)=> {
-    userModel.findOne({
-        where: {email: emailInCookie}
-    }).then((usCook)=>{return usCook})
-};
-
-let userFromCookie = userModel.findOne({
+userModel.findOne({
     where:{ email: emailInCookie}
 })
 .then((userFromCookie)=>{
@@ -23,8 +17,6 @@ let userFromCookie = userModel.findOne({
     res.locals.userLogged = req.session.userLogged;
     }
 })
-
-
 
 next();
 }

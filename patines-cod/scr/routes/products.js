@@ -33,7 +33,7 @@ const editProductValidations = [
         .isLength({min:5}).withMessage('El nombre debe contener mínimo 5 caracteres'),
     body('precio')
         .notEmpty().withMessage('Se debe escribir el precio del producto').bail()
-        .isNumeric().withMessage('El precio debe ser una cifra'),
+        .isNumeric().withMessage('El precio debe ser una cifra numérica'),
     body('descripcion')
         .isLength({min:20}).withMessage('La descripcion debe contener mínimo 20 caracteres'),                                 
     body('imagenP').custom((value, { req }) => {
@@ -47,7 +47,9 @@ const editProductValidations = [
             }
         }
         return true;
-    })
+    }),
+    body('cantidad')
+        .isNumeric().withMessage('Asegurese de solo usar números, si no hay existencias ingrese 0')
 ];
 
 
@@ -105,13 +107,11 @@ const colorEditValidations = [
 ];
 
 // Rutas de CRUD de products
-
-router.get('/products/list', productsController.index);
 router.get('/detail/:id', productsController.detail); 
 router.get('/create', /*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/ productsController.form);
 router.get('/:idProduct/edit', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.formEdit);
 router.put('/:idProduct', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit);
-router.post('/', /*editProductValidations,*/ uploadFile.single('imageP'),/*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/  productsController.crear);
+router.post('/', uploadFile.single('imageP'), editProductValidations, /*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/  productsController.crear);
 router.get('/edit/:id', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit); 
 router.delete('/delete/:id',/*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.delete);
 /*router.post('/products/list', uploadFile.single('imageP'), editProductValidations,[authMiddleware, adminMiddleware, privateAdminMiddleware], productsController.crear);*/
