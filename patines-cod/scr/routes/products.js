@@ -114,8 +114,6 @@ router.put('/:idProduct', /*[authMiddleware, adminMiddleware, privateAdminMiddle
 router.post('/', uploadFile.single('imageP'), editProductValidations, /*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/  productsController.crear);
 router.get('/edit/:id', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit); 
 router.delete('/delete/:id',/*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.delete);
-/*router.post('/products/list', uploadFile.single('imageP'), editProductValidations,[authMiddleware, adminMiddleware, privateAdminMiddleware], productsController.crear);*/
-
 
 //Rutas Sequelize
 router.get('/list', productsController.listar);

@@ -17,10 +17,6 @@ const Tallas = db.Tallas;
 const Catalogo = db.Catalogo;
 const Existencias = db.Existencias;
 
-
-//const productsFilePath = path.join(__dirname, "../data/products.json");
-//const productsList = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
-
 const controlador = {
     detail: (req, res) => {
         const idProduct = req.params.id;
@@ -75,8 +71,6 @@ const controlador = {
     crear: function (req, res) {
         const errorValidación = validationResult(req);
         const newProduct = req.body;
-        console.log("----------Errores------------")
-        console.log(errorValidación)
 
         if (!errorValidación.isEmpty()) {
             

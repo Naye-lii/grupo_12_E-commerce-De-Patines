@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('partials/head.ejs')%>
+    <script src="/js/validacionAddProduct.js"></script>
 
 <body>
     <%- include('partials/header.ejs')%>
@@ -11,13 +12,14 @@
         </div>
         <section class="sec-addProduct">
             <form class="login-form" method="POST" action="/products" enctype="multipart/form-data">
+                
                 <label class="texto-inputs" for="productName">Nombre del producto</label>
                 <div class="div-input">
                     <input type="text" name='nombre' id="productName" class="login-data" placeholder="Nombre del producto" value = "<%= locals.old && old.nombre ? old.nombre : '' %>">
                 </div>
                 <% if(locals.msjError && msjError.nombre){ %>
                     <div class="alert">
-                        <i class="fas fa-times-circle"></i>
+                        <i class="fas fa-times-circle" id = 'nombre'></i>
                         <%= msjError.nombre.msg %>   
                     </div>
                 <% } %>
@@ -86,6 +88,13 @@
                 <div class="cont-chargeImg">
                     <input type="file" name="imagenP" id="imagenP" accept=".jpg, .png" class="chargeImg">  
                 </div>
+                <% if(locals.msjError && msjError.imagenP){ %>
+                    <div class="alert">
+                        <i class="fas fa-times-circle"></i>
+                        <%= msjError.imagenP.msg %>   
+                    </div>
+                <% } %>
+
 
                 <label class="texto-inputs" for="colores">Color</label>
                 <div class="cont-categoria" >
@@ -127,7 +136,7 @@
 
                 <label class="texto-inputs" for="cantidad">Cantidad disponible</label>
                 <div class="div-input">
-                    <input type="text" name="cantidad" id="cantidad" class="login-data" value = "<%= locals.old && old.cantidad ? old.cantidad : '' %>">   
+                    <input type="text" name="cantidad" id="cantidad" class="login-data" value ="<%= locals.old && old.cantidad ? old.cantidad : '' %>">   
                 </div>
                 <% if(locals.msjError && msjError.cantidad){ %>
                     <div class="alert">
