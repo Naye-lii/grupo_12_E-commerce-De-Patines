@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,14 +9,15 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #ffd522;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  font-family: 'Bai Jamjuree';
 }
 
 .App-link {
@@ -36,3 +32,25 @@
     transform: rotate(360deg);
   }
 }
+
+.cont-recurso{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5vw;
+}
+
+.view-recurso{
+  width: 25vw;
+  background-color: #29303b;
+  font-family: 'Oswald';
+  font-size: 3vw;
+  color: #e57d0c;
+}
+
+.icono{
+  font-size: 8vw;
+}
+
+
+

@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import Titulo from './components/Titulo';
+import Recurso from './components/recursos/Recurso';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@1,700&family=Oswald:wght@600&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald&display=swap" rel="stylesheet"></link>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+      <Titulo/>
+      <Recurso/>
+    
     </div>
   );
 }
