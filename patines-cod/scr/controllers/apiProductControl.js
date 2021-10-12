@@ -76,7 +76,6 @@ module.exports = {
                             })
                                 .then((exist) => {
                                     db.Marcas.findByPk(productB.brand_id).then((marca)=>{
-                                        console.log(productB, catB, exist, marca);
                                         const color = [];
                                         const imagen = [];
                                         const tallas = [];
@@ -84,7 +83,7 @@ module.exports = {
                                             color[i]=catB[i].colores.color;
                                             imagen[i]=catB[i].url_imagen;
                                         }
-                                        for (let i = 0; i < catB.length; i++){
+                                        for (let i = 0; i < exist.length; i++){
                                             tallas[i]={
                                                 talla: exist[i].tallas.value_size,
                                                 existencia: exist[i].quantity
