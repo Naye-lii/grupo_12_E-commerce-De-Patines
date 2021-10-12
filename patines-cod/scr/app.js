@@ -5,6 +5,7 @@ const rutasProducts = require('./routes/products.js');
 const rutasUsers = require('./routes/users.js');
 const rutasCart = require('./routes/cart.js');
 const rutasApiUsers = require('./routes/apiUsers.js');
+const rutasApiProducts = require('./routes/apiProducts.js');
 
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
@@ -40,6 +41,7 @@ app.use('/', rutasUsers);
 app.use('/order', rutasCart);
 
 app.use('/apiUsers', rutasApiUsers);
+app.use('/apiProducts', rutasApiProducts);
 
 app.use((req, res, next) => {
   res.status(404).render('error404');
