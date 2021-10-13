@@ -105,14 +105,17 @@ module.exports = {
 
 
                                         return res.status(200).json({
-                                            name: productB.name_product,
-                                            price: productB.price,
-                                            marca: marca.name_brand,
-                                            descripcion: productB.descripcion,
-                                            categoria: catB.name_category,
-                                            color:color,
-                                            talla:tallas,
-                                            img_product: imagen
+                                            data:[{
+                                                name: productB.name_product},
+                                                {price: productB.price},
+                                                {marca: marca.name_brand},
+                                                {descripcion: productB.descripcion},
+                                                {categoria: catB.name_category},
+                                                {color:color},
+                                                {talla:tallas},
+                                                {img_product: imagen}
+                                            ]
+                                            
                                         })
                                     }).catch(e => console.log(e))
                                     
@@ -122,16 +125,69 @@ module.exports = {
                     })
 
             })
+    },
+    ultimo:(req, res) => {
+        db.Productos.findAll({ 
+            include: [{ association: "categorias" }]
+        }). then(product => {
+            const ultimo = product.pop()
+            const idProduct = ultimo.id
+            db.Productos.findByPk(idProduct)
+            .then((productB) => {
+                db.Catalogo.findAll({
+                    where: {
+                        product_id: productB.id
+                    },
+                    include: [{ association: "colores" }]
+                })
+                    .then((catB) => {
+                        catB.map((uno) => {
+                            db.Existencias.findAll({
+                                where: {
+                                    product_catalogue_id: uno.id
+                                },
+                                include: [{ association: "tallas" }]
+                            })
+                                .then((exist) => {
+                                    db.Marcas.findByPk(productB.brand_id).then((marca)=>{
+                                        const catalogo = [];
+                                        const tallas = [];
+                                        for (let i = 0; i < catB.length; i++){
+                                            catalogo[i]= {
+                                                color: catB[i].colores.color,
+                                                img: catB[i].url_imagen
+                                            };
+                                        }
+                                        for (let i = 0; i < exist.length; i++){
+                                            tallas[i]={
+                                                talla: exist[i].tallas.value_size,
+                                                existencia: exist[i].quantity
+                                            };
+                                        }
+                                    
 
-       /* const id = req.params.id
 
-        db.Productos.findByPk(id).then(productDetail => {
-            return res.status(200).json({
-                name: productDetail.name_product,
-                price: productDetail.price,
-                img_product: productDetail.img_product
+                                        return res.status(200).json({
+                                            data:[
+                                                {name: productB.name_product,
+                                                price: productB.price,
+                                                marca: marca.name_brand,
+                                                descripcion: productB.descripcion,
+                                                categoria: catB.name_category}],
+                                            catalogo:catalogo,
+                                            talla:tallas,
+                                               
+                                        })
+                                    }).catch(e => console.log(e))
+                                    
+                                })
+                                
+                        })
+                    })
+
             })
-        })*/
+            
+        })
     }
 
 }
