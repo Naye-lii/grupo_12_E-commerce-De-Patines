@@ -1,45 +1,85 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import Productos from "./Productos";
+import DetalleView from "./DetalleView";
+import Imagen from "./Imagen";
+import ListDetalle from "./ListDetalle";
+import ListTalla from "./ListTalla";
 
-function Usuarios() {
-    const [users, setUsers] = useState();
-    const [usersCount, setCount] = useState();
 
-    const getProductsData = async function () {
+function Detalle() {
+    const [productsDetail, setDetail] = useState();
+    const [productsCatalogo, setCatalogo] = useState();
+    const [productsTalla, setTalla] = useState();
+
+    const getProductsDetail = async function () {
         try {
-            let response = await fetch('http://localhost:3001/apiUsers');
+            let response = await fetch('http://localhost:3001/apiProducts/ultimo');
             let data = await response.json();
-            setUsers(data.data);
-            setCount(data.total)
+            setDetail(data.data);
+            setCatalogo(data.catalogo);
+            setTalla(data.talla);            
+            
         } catch (error) {
             console.log(error);
         }
     }
 
     useEffect(() => {
-        getProductsData();
+        getProductsDetail();
     }, []);
 
+
+
     return (
-        <div>
-            <h1>Usuarios</h1>
-            <h2>Total de Usuarios: {usersCount}</h2>
-            
-            <table className="table table-1">
-            
-                {!users ? (
+        <div className = "contDetalle">
+            <h1>Descripcion</h1>
+            {!productsCatalogo ? (
                     <p>Cargando...</p>
                 ) :
                     (
-                    users.map((user, i) => <Productos id={user.id} name={user.name} />)
+                        productsCatalogo.map(catalogo => <Imagen
+                            img= {catalogo.img}
+                        />)
+                        
                     )
                 }
-            </table>
+                {!productsDetail ? (
+                    <p>Cargando...</p>
+                ) :
+                    (
+                        productsDetail.map((detalle) =>  <DetalleView 
+                            name = {detalle.name}
+                            price = {detalle.proce}
+                            descripcion = {detalle.descripcion}  
+                        /> )
+                        
+                    )
+                }
+                {!productsCatalogo ? (
+                    <p>Cargando...</p>
+                ) :
+                    (
+                        productsCatalogo.map((c) =>  <ListDetalle 
+                            color = {c.color}
+                        /> )
+                        
+                    )
+                }
+                {!productsTalla ? (
+                    <p>Cargando...</p>
+                ) :
+                    (
+                        productsTalla.map((t) =>  <ListTalla 
+                            talla = {t.talla}
+                            exist = {t.existencia}
+                        /> )
+                        
+                    )
+                } 
+      
+         
         </div>
-
-
 
     )
 }
-export default Listado;
+export default Detalle;

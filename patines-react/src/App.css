@@ -86,4 +86,19 @@
   background: #A6AAAD;
 }
 
+.contDetalle{
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #29303b;
+  font-family: 'Oswald';
+  font-size: 2vw;
+  color: white;
+}
+.imd-product{
+  width: 80%;
+}
 
