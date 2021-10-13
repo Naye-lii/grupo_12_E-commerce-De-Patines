@@ -157,10 +157,13 @@ const controlador = {
         })
         .then((userToLogin) => {
             if (userToLogin) {
-                let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                let isOkThePassword = bcrypt.compare(req.body.password, userToLogin.password);
                 if (isOkThePassword) {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;
+                    console.log("USER LOGGEADOOOO")
+                    console.log(req.session.userLogged)
+                    console.log("///////////////////")
     
                     if (req.body.recordarUsuario) {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
@@ -219,10 +222,15 @@ const controlador = {
                 id: id
             }
         }
-        )
-
-        .then(function(){
-            res.redirect('/user-profile')
+        ).then(function(){
+            db.Usuarios.findOne({where:{
+                id: req.params.id
+                },
+                include: [{association: 'tipoUsuario'}]
+            })
+        .then(function(usuario){
+            res.render('user-profile', {user: usuario})
+        })
         })
     }
 }

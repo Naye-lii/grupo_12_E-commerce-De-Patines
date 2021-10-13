@@ -8,7 +8,6 @@ const {body} = require('express-validator');
 
 
 const  authMiddleware = require('../middlewares/authMiddleware');
-const  adminMiddleware = require('../middlewares/adminMiddleware');
 const  privateAdminMiddleware = require('../middlewares/privateAdminMiddleware');
 
 const storage = multer.diskStorage({
@@ -108,52 +107,52 @@ const colorEditValidations = [
 
 // Rutas de CRUD de products
 router.get('/detail/:id', productsController.detail); 
-router.get('/create', /*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/ productsController.form);
-router.get('/:idProduct/edit', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.formEdit);
-router.put('/:idProduct', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit);
-router.post('/', uploadFile.single('imageP'), editProductValidations, /*[authMiddleware, adminMiddleware, privateAdminMiddleware]*/  productsController.crear);
-router.get('/edit/:id', /*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.edit); 
-router.delete('/delete/:id',/*[authMiddleware, adminMiddleware, privateAdminMiddleware],*/ productsController.delete);
+router.get('/create', [authMiddleware, privateAdminMiddleware], productsController.form);
+router.get('/:idProduct/edit', [authMiddleware, privateAdminMiddleware], productsController.formEdit);
+router.put('/:idProduct', [authMiddleware, privateAdminMiddleware], productsController.edit);
+router.post('/', uploadFile.single('imageP'), editProductValidations, [authMiddleware, privateAdminMiddleware],  productsController.crear);
+router.get('/edit/:id', [authMiddleware, privateAdminMiddleware], productsController.edit); 
+router.delete('/delete/:id',[authMiddleware, privateAdminMiddleware], productsController.delete);
 
 //Rutas Sequelize
 router.get('/list', productsController.listar);
 router.get('/search', productsController.search);
-router.delete('/borrar/:id', productsController.borrar);
-router.get('/editar/:id', productsController.formularioEditar)
-router.put('/editar/:id', uploadFile.single('image'), editProductValidations, productsController.actualizar);
+router.delete('/borrar/:id',[authMiddleware, privateAdminMiddleware], productsController.borrar);
+router.get('/editar/:id',[authMiddleware, privateAdminMiddleware], productsController.formularioEditar)
+router.put('/editar/:id',[authMiddleware, privateAdminMiddleware], uploadFile.single('image'), editProductValidations, productsController.actualizar);
 
 // Rutas de CRUD Tablas secundarias
 const secProducts = require('../controllers/secTablesController.js');
 
 //listar
-router.get('/secProducts', secProducts.listar);
+router.get('/secProducts',[authMiddleware, privateAdminMiddleware], secProducts.listar);
 
 //crear
     //marcas
-router.post('/secProducts/createBrand', brandCreateValidations, secProducts.guardadoMarca);
+router.post('/secProducts/createBrand',[authMiddleware, privateAdminMiddleware], brandCreateValidations, secProducts.guardadoMarca);
     //categorias
-router.post('/secProducts/createCategory', categoryCreateValidations, secProducts.guardadoCategoria);
+router.post('/secProducts/createCategory',[authMiddleware, privateAdminMiddleware], categoryCreateValidations, secProducts.guardadoCategoria);
     //colores
-router.post('/secProducts/createColor', colorCreateValidations, secProducts.guardadoColor);
+router.post('/secProducts/createColor',[authMiddleware, privateAdminMiddleware], colorCreateValidations, secProducts.guardadoColor);
 
 //editar
     //marcas
-router.get('/secProducts/:id/editBrand', secProducts.editarMarca);
-router.post('/secProducts/:id/editBrand', brandEditValidations, secProducts.actualizarMarca);
+router.get('/secProducts/:id/editBrand',[authMiddleware, privateAdminMiddleware], secProducts.editarMarca);
+router.post('/secProducts/:id/editBrand',[authMiddleware, privateAdminMiddleware], brandEditValidations, secProducts.actualizarMarca);
     //categorias
-router.get('/secProducts/:id/editCategory', secProducts.editarCategoria);
-router.post('/secProducts/:id/editCategory', categoryEditValidations, secProducts.actualizarCategoria);
+router.get('/secProducts/:id/editCategory',[authMiddleware, privateAdminMiddleware], secProducts.editarCategoria);
+router.post('/secProducts/:id/editCategory',[authMiddleware, privateAdminMiddleware], categoryEditValidations, secProducts.actualizarCategoria);
     //colores
-router.get('/secProducts/:id/editColor', secProducts.editarColor);
-router.post('/secProducts/:id/editColor', colorEditValidations, secProducts.actualizarColor);
+router.get('/secProducts/:id/editColor',[authMiddleware, privateAdminMiddleware], secProducts.editarColor);
+router.post('/secProducts/:id/editColor',[authMiddleware, privateAdminMiddleware], colorEditValidations, secProducts.actualizarColor);
 
 //eliminar
     //marcas
-router.delete('/secProducts/deleteBrand/:id', secProducts.borrarMarca);
+router.delete('/secProducts/deleteBrand/:id',[authMiddleware, privateAdminMiddleware], secProducts.borrarMarca);
     //categorias
-router.delete('/secProducts/deleteCategory/:id', secProducts.borrarCategoria);
+router.delete('/secProducts/deleteCategory/:id',[authMiddleware, privateAdminMiddleware], secProducts.borrarCategoria);
     //colores
-router.delete('/secProducts/deleteColor/:id', secProducts.borrarColores);
+router.delete('/secProducts/deleteColor/:id',[authMiddleware, privateAdminMiddleware], secProducts.borrarColores);
 
 //CART
 

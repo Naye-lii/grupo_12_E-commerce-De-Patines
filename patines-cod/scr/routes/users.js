@@ -7,6 +7,8 @@ const { body } = require('express-validator');
 
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+//const  adminMiddleware = require('../middlewares/adminMiddleware');
+const  privateAdminMiddleware = require('../middlewares/privateAdminMiddleware');
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -74,9 +76,9 @@ const editValidations = [
 
 router.get('/register', guestMiddleware, usersController.register);
 router.get('/:id/edit', authMiddleware, usersController.edit);
-router.put('/:id/edit', uploadFile.single('img_user'), editValidations, usersController.update);
+router.put('/:id/edit', authMiddleware, uploadFile.single('img_user'), editValidations, usersController.update);
 router.post('/delete/:id', usersController.delete);
-router.get('/list', usersController.list);
+router.get('/list',[authMiddleware, privateAdminMiddleware], usersController.list);
 router.delete('/:id/delete',authMiddleware, usersController.delete);
 
 
@@ -97,7 +99,7 @@ router.get("/crear", usersController.crear);
 router.get('/crear', uploadFile.single('img_user'), registerValidations, usersController.crear);
 router.post('/crear', uploadFile.single('img_user'), registerValidations, usersController.crear);
 router.get('/:id/editar', authMiddleware, usersController.editar);
-router.put('/:id/editar', uploadFile.single('img_user'), editValidations, usersController.actualizar);
+router.put('/:id/editar', authMiddleware, uploadFile.single('img_user'), editValidations, usersController.actualizar);
 
 module.exports = router;
 

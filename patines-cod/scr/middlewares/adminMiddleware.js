@@ -1,16 +1,16 @@
-const userModel = require('../database/models').Usuarios;
+//const userModel = require('../database/models').Usuarios;
 
 function adminMiddleware(req, res, next) {
     res.locals.isAdmin = false;
-    console.log(req.session.userLogged.type)
     if(req.session.userLogged){
-        if(req.session.userLogged.type !== "administrador"){
+        if(req.session.userLogged.type_user_id !== 2){
             res.locals.isAdmin = false;
-            console.log(req.session.userLogged.type);
+            //console.log('No es admin');
+            //console.log(req.session.userLogged.type_user_id);
         }else{
             res.locals.isAdmin =true;
-            console.log('Es admin');
-            console.log(req.session.userLogged.type);
+            //console.log('Es admin');
+            //console.log(req.session.userLogged.type_user_id);
         }
     }
     next();

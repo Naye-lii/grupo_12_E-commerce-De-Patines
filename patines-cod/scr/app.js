@@ -9,6 +9,7 @@ const rutasApiProducts = require('./routes/apiProducts.js');
 
 const methodOverride = require('method-override');
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+const adminMiddleware = require('./middlewares/adminMiddleware');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const cors = require('cors')
@@ -32,9 +33,9 @@ app.use(session({
 }));
 
 app.use(cookies());
-
 //UserLoggedMiddleware debe ir después de session !!
 app.use(userLoggedMiddleware);
+app.use(adminMiddleware);
 
 app.use('/', rutasMain);
 app.use('/products', rutasProducts);
