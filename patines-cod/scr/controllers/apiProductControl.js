@@ -39,12 +39,24 @@ module.exports = {
                     }).then((refacciones) => {
                         return res.status(200).json({
                             total: products.length,
-                            countByCategory: {
-                                patines: patines.length,
-                                proteccion: proteccion.length,
-                                accesorios: accesorios.length,
-                                refacciones: refacciones.length
-                            },
+                            countByCategory: [
+                                {
+                                    name: "Patines",
+                                    cantidad: patines.length,
+                                },
+                                {
+                                    name: "proteccion",
+                                    cantidad: proteccion.length,
+                                },
+                                {
+                                    name: "accesorios",
+                                    cantidad: accesorios.length,
+                                },
+                                {
+                                    name: "refacciones",
+                                    cantidad: refacciones.length
+                                }
+                            ],
                             data: productsList
                         })
                     }).catch(console.log())
