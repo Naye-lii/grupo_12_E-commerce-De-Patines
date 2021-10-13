@@ -29,13 +29,11 @@ function Categorias() {
                     <p>Cargando...</p>
                 ) :
                     (
-                        categorias.map((categoria, i) => <Productos id={product.id} name={product.name} />)
+                        categorias.map((categoria, i) => <Productos id={categoria.name} name={categoria.cantidad} />)
                     )
                 }
             </table>
         </div>
-
-
 
     )
 }

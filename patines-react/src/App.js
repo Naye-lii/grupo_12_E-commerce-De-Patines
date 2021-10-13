@@ -4,6 +4,8 @@ import Titulo from './components/Titulo';
 import Recurso from './components/recursos/Recurso';
 import Listado from './components/Listado';
 import Usuarios from './components/Usuarios';
+import Categorias from './components/Categorias';
+import Detalle from './components/Detalle';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Recurso/>
       <Listado/>
       <Usuarios/>
+      <Categorias/>
+      <Detalle/>
     
     </div>
   );
