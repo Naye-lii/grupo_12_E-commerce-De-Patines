@@ -4,7 +4,6 @@ const fs = require('fs');
 
 const User = {
     //Buscar todos los usuarios
-    filename: './data/users.json',
 
     getData: function(){
         return JSON.parse(fs.readFileSync(this.filename, 'utf-8'));
