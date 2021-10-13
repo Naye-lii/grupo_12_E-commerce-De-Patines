@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import Titulo from './components/Titulo';
 import Recurso from './components/recursos/Recurso';
+import Listado from './components/Listado';
+import Usuarios from './components/Usuarios';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <Titulo/>
       <Recurso/>
+      <Listado/>
+      <Usuarios/>
     
     </div>
   );
