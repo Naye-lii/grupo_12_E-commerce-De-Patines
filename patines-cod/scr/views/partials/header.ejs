@@ -15,15 +15,15 @@
         </div>
 
         <div class="icon-right">
+            <% if(locals.isLogged) { %>
             <div class="usuario">
-                <% if(locals.isLogged) { %>
                     <a href="/user-profile">
                         <img class="img-usuario" alt='imagen del  usuario' src='<%= locals.userLogged.img_user %>''>
             </a>
                 <p><%= locals.userLogged.first_name %></p>
             </div>
+            <% } %>
             <div>
-                <% } %>
                 <form action="/busqueda" method="get">
                 <label class= ' lupa' for="show-buscar">
                         <span class="icons material-icons material-icons-outlined">
@@ -42,8 +42,8 @@
 
     <!--Barra de busqueda-->
     <input type="checkbox" id="show-buscar" hidden>
-    <div class="bar_buscar"> 
-        <form method="GET" action="/products/search?busqueda="+ busqueda>
+    <div class="bar_buscar">
+        <form method="GET" action="/products/search?busqueda=" + busqueda>
             <input class="barra-buscar" type="search" name="busqueda" placeholder=" ¿Qué está buscando?" />
             <button type="submit" class="boton-buscar"><i class="fas fa-search"></i>Buscar</button>
         </form>
@@ -65,8 +65,10 @@
                 <li><a href="#equipoProteccion">Equipo de protección</a></li>
                 <li><a href="#accesorios">Accesorios</a></li>
                 <li><a href="#refacciones">Refacciones</a></li>
-                <li><a href="/products/create">Añadir/Editar</a></li>
-                <li><a href="/products/secProducts">Tablas secundarias</a></li>
+                <% if(locals.isAdmin) { %>
+                    <li><a href="/products/create">Añadir/Editar</a></li>
+                    <li><a href="/products/secProducts">Tablas secundarias</a></li>
+                    <% } %>
             </ul>
         </li>
         <li><a href="#blog">Blog</a></li>
@@ -78,22 +80,22 @@
                 <!--Lista del menu/users-->
                 <ul class="submenu">
                     <li><a href="/user-profile">Mi perfil</a></li>
+                    <% if(locals.isAdmin) { %>
+                    <li><a href="/list">lista de usuarios</a></li>
+                    <% } %>
                     <li><a href="/logout/">Cerrar sesión</a></li>
                 </ul>
             </li>
-
-
-            <% } else { %>
-                <li>
-                    <label for="show-subuser">Usuarios</label>
-                    <input type="checkbox" id="show-subuser" hidden>
-                    <!--Lista del menu/users-->
-                    <ul class="submenu">
-                        <li><a href="/login">login</a></li>
-                        <li><a href="/register">registrate</a></li>
-                        <li><a href="/list">lista de usuarios</a></li>
-                    </ul>
-                </li>
-                <% } %>
+        <% } else { %>
+            <li>
+                <label for="show-subuser">Usuarios</label>
+                <input type="checkbox" id="show-subuser" hidden>
+                <!--Lista del menu/users-->
+                <ul class="submenu">
+                    <li><a href="/login">login</a></li>
+                    <li><a href="/register">registrate</a></li>
+                </ul>
+            </li>
+        <% } %>
     </ul>
 </header>
