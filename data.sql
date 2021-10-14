@@ -1,8 +1,6 @@
-USE patines_12;
-
-INSERT INTO type_user(user_type)VALUES 
-('usuario'),
-('administrador');
+INSERT INTO type_user VALUES 
+(1, 'usuario'),
+(2, 'administrador');
 
 INSERT INTO users (first_name, last_name, email, password, img_user, type_user_id)VALUES 
 ('Nayeli', 'Hernández', 'naye@correo.com', '$2b$11$qdDl9BcjqW.9IfYhIl90DOniNw8VY9uMnJ0YKZKC97NSJdCJE966K', '/img/users/imgU_1627693378178.jpg', 2),
