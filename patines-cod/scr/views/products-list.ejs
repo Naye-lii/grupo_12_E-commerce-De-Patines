@@ -1,125 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-   <%- include('partials/head.ejs')%>
- 
-   <body>
- 
-       <%- include('partials/header.ejs')%>
-       <!--Comienza lista de productos-->
- 
-       <main>
- 
-           <h1 id="products-titulo">Todos los productos</h1>
-           <!--lista del menu principal-->
-           <div id="filter">
-               <section class="filter-container">
-                   <h2 class="filter-h2">Filtro
- 
-                       <div class="icons filter_button">
-                           <label for="filter-nav">
-                               <span class = "material-icons material-icons-outlined" >
-                                   menu
-                               </span> 
-                           </label>
-                       </div>
-                   </h2>
-                   <!--Se declara el chec box que permite ocultar y mostra la lista de filter-->
-                   <input type="checkbox" id="filter-nav" hidden/>
-                   <ul class="filtro_menu">
-                       <li>
-                           <label for="show-CATEGORIAS"><h3 class="filter-h3">CATEGORÍAS</h3></label>
-                           <input type="checkbox" id="show-CATEGORIAS" hidden>
-                           <ul  class="lista-filter">
-                               <li class="filters-filter">Fitness</li>
-                               <li class="filters-filter">Freeskate</li>
-                               <li class="filters-filter">Agresivo</li>
-                               <li class="filters-filter">Para hielo</li>
-                               <li class="filters-filter">Clásico</li>
-                               <li class="filters-filter">Otros</li>
-                           </ul>
-                       </li>
- 
-                       <li>
-                           <label for="show-TALLAS"><h3 class="filter-h3">TALLA</h3></label>
-                           <input type="checkbox" id="show-TALLAS" hidden>
-                           <ul class="lista-filter" >
-                               <li class="filters-filter">22</li>
-                               <li class="filters-filter">23</li>
-                               <li class="filters-filter">24</li>
-                               <li class="filters-filter">25</li>
-                               <li class="filters-filter">26</li>
-                               <li class="filters-filter">27</li>
-                           </ul>
-                       </li>
- 
-                       <li>
-                           <label for="show-PRECIO"><h3 class="filter-h3">PRECIO</h3></label>
-                           <input type="checkbox" id="show-PRECIO" hidden>
-                           <ul class="lista-filter">
-                               <li class="filters-filter">$</li>
-                               <li class="filters-filter">$$</li>
-                               <li class="filters-filter">$$$</li>
-                           </ul>
-                       </li>
- 
-                       <li>
-                           <label for="show-color"><h3 class="filter-h3">COLORES</h3></label>
-                           <input type="checkbox" id="show-color" hidden>
-                           <ul class="lista-filter">
-                               <li id="negro" class="filters-filter">Negro</li>
-                               <li class="filters-filter">Blanco</li>
-                               <li id="rojo" class="filters-filter">Rojo</li>
-                               <li id="naranja" class="filters-filter">Naranja</li>
-                               <li id="azul" class="filters-filter">Azul</li>
-                               <li class="filters-filter">Otros</li>
-                           </ul>
-                       </li>
-                   </ul>
-               </section>
-           </div>
- 
-               <!-- Lista de Productos -->
-      
-           <section class="secProduct">
-               <div class="products-container">
-                   <div class="row-products">
-                       <% for(let i = 0; i < products.length; i ++) { %>
-                       <div class="product">
-                           <img src= "<%= catalogo[i].url_imagen%>"%>/>
-                           <div class="caption">
-                               <h2><a href="/products/detail/<%=products[i].id%>"><%= products[i].name_product %></a></h2>
-                               <h3><%=products[i].price%></h3>
-                                <p class="marca"><%=marcas[i].name_brand%></p>
-                           </div>
- 
-                           <div class="contButton">
-                               <form action="/products/editar/<%= products[i].id %>" method="GET">
-                                   <button class="submit-btn" type="submit">Editar</button>
-                               </form>
-                               <form action="/products/borrar/<%= products[i].id%>?_method=DELETE"
-                                   method="POST">
-                                   <button class="submit-btn" type="submit">Eliminar</button>
-                               </form>
-                           </div>
-                           </div>
-                          
-                       </div>
-                       <% } %>
-                   </div>
-               </div>
-           </section> 
- 
-           <form action="/products/create" method="GET">
-               <div class="caption">
-                   <button class="boton-negro" type="submit"> Añadir nuevo producto</button>
-               </div>
-           </form>
-       </main>
- 
-    <!--Pie de pagína-->
-    <%- include('partials/footer.ejs')%>
-         
-   </body>
- 
+
+<%- include('partials/head.ejs')%>
+
+    <body>
+
+        <%- include('partials/header.ejs')%>
+            <!--Comienza lista de productos-->
+
+            <main>
+
+                <h1 id="products-titulo">Todos los productos</h1>
+                <!--lista del menu principal-->
+                <div id="filter">
+                    <section class="filter-container">
+                        <h2 class="filter-h2">Filtro
+
+                            <div class="icons filter_button">
+                                <label for="filter-nav">
+                                    <span class="material-icons material-icons-outlined">
+                                        menu
+                                    </span>
+                                </label>
+                            </div>
+                        </h2>
+                        <!--Se declara el chec box que permite ocultar y mostra la lista de filter-->
+                        <input type="checkbox" id="filter-nav" hidden />
+                        <ul class="filtro_menu">
+                            <li>
+                                <label for="show-CATEGORIAS">
+                                    <h3 class="filter-h3">CATEGORÍAS</h3>
+                                </label>
+                                <input type="checkbox" id="show-CATEGORIAS" hidden>
+                                <ul class="lista-filter">
+                                    <li class="filters-filter">Patines</li>
+                                    <li class="filters-filter">Protecciones</li>
+                                    <li class="filters-filter">Accesorios</li>
+                                    <li class="filters-filter">Refacciones</li>
+                                    <!--<li class="filters-filter">Clásico</li>
+                                    <li class="filters-filter">Otros</li>-->
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="show-TALLAS">
+                                    <h3 class="filter-h3">TALLA</h3>
+                                </label>
+                                <input type="checkbox" id="show-TALLAS" hidden>
+                                <ul class="lista-filter">
+                                    <li class="filters-filter">22</li>
+                                    <li class="filters-filter">23</li>
+                                    <li class="filters-filter">24</li>
+                                    <li class="filters-filter">25</li>
+                                    <li class="filters-filter">26</li>
+                                    <li class="filters-filter">27</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="show-PRECIO">
+                                    <h3 class="filter-h3">PRECIO</h3>
+                                </label>
+                                <input type="checkbox" id="show-PRECIO" hidden>
+                                <ul class="lista-filter">
+                                    <li class="filters-filter">$</li>
+                                    <li class="filters-filter">$$</li>
+                                    <li class="filters-filter">$$$</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <label for="show-color">
+                                    <h3 class="filter-h3">COLORES</h3>
+                                </label>
+                                <input type="checkbox" id="show-color" hidden>
+                                <ul class="lista-filter">
+                                    <li id="negro" class="filters-filter">Negro</li>
+                                    <li class="filters-filter">Blanco</li>
+                                    <li id="rojo" class="filters-filter">Rojo</li>
+                                    <li id="naranja" class="filters-filter">Naranja</li>
+                                    <li id="azul" class="filters-filter">Azul</li>
+                                    <li class="filters-filter">Otros</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+                <!-- Lista de Productos -->
+
+                <section class="secProduct">
+                    <div class="products-container">
+                        <div class="row-products">
+                            <% for(let i=0; i < products.length; i ++) { %>
+                                <div class="product">
+                                    <img src="<%= catalogo[i].url_imagen%>" %>/>
+                                    <div class="caption">
+                                        <h2><a href="/products/detail/<%=products[i].id%>">
+                                                <%= products[i].name_product %>
+                                            </a></h2>
+                                        <h3>
+                                            <%=products[i].price%>
+                                        </h3>
+                                        <p class="marca">
+                                            <%=marcas[i].name_brand%>
+                                        </p>
+                                    </div>
+
+                                    <% if(locals.isAdmin) { %>
+                                        <div class="contButton">
+                                            <form action="/products/editar/<%= products[i].id %>" method="GET">
+                                                <button class="submit-btn" type="submit">Editar</button>
+                                            </form>
+                                            <form action="/products/borrar/<%= products[i].id%>?_method=DELETE"
+                                                method="POST">
+                                                <button class="submit-btn" type="submit">Eliminar</button>
+                                            </form>
+                                        </div>
+                                    <% } %>
+                                </div>
+
+                        </div>
+                        <% } %>
+                    </div>
+                    </div>
+                </section>
+
+                <% if(locals.isAdmin) { %>
+                <form action="/products/create" method="GET">
+                    <div class="caption">
+                        <button class="boton-negro" type="submit"> Añadir nuevo producto</button>
+                    </div>
+                </form>
+                <% } %>
+            </main>
+
+            <!--Pie de pagína-->
+            <%- include('partials/footer.ejs')%>
+
+    </body>
+
 </html>

@@ -196,8 +196,8 @@ input[type="checkbox"]:checked + .filtro_menu {
     }
 
     .submenu{
-        position: fixed;
-        top:165px;
+        position: relative;
+        top:5px;
     }
 
     .submenu > li{
