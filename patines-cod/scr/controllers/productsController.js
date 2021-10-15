@@ -198,8 +198,8 @@ const controlador = {
         //console.log(resultValidation.mapped());
 
         const changeProduct = req.body;
-       // console.log("////////////UPDATE")
-      //  console.log(changeProduct);
+        //console.log("////////////UPDATE")
+        //console.log(changeProduct);
 
         if (resultValidation.errors.length > 0) {
 

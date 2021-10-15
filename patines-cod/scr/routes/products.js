@@ -46,9 +46,7 @@ const editProductValidations = [
             }
         }
         return true;
-    }),
-    body('cantidad')
-        .isNumeric().withMessage('Asegurese de solo usar números, si no hay existencias ingrese 0')
+    })
 ];
 
 
