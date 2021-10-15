@@ -56,3 +56,11 @@ RETROSPECTIVA SPRINT 6
 3. Trabajar armoniosamente, apoyándonos y comunicándonos sobre las tareas y complicaciones por medio de slack
 4. Hacer menos procrastinación, no organizar tiempos
 5. Dejar de hacer: No hay nada que dejemos de hacer
+
+RETROSPECTIVA SPRINT 7
+ 
+1. Reuniones y trabajar en conjunto de forma síncrona para avanzar juntas.
+2. Externar las dudas que surgen en el proceso con nuestros compañeros del curso
+3. Trabajar de forma ordenada y entregar a tiempo, informar sobre avances y colaborar entre nosotras
+4. Dejar pasar días sin avances
+5. Hasta ahora el quipo ha trabajado muy bien y no hay nada que  se deba dejar de hacer.
