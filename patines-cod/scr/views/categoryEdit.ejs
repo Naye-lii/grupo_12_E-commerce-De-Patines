@@ -5,6 +5,7 @@
     <body>
         <%- include('partials/header.ejs')%>
         <link href="/css/style-sec-tables.css" rel = "stylesheet" >
+        <script src="/js/validacionEditCategory.js"></script>
         <main>
   <!-- Formulario editar marcas-->
 
@@ -12,17 +13,26 @@
   <br>
   <br>
 <label for="category" class="texto-inputs">Nombre de la categoría</label>
-  <form action="/products/secProducts/<%= category.id %>/editCategory" method="POST">
+  <form action="/products/secProducts/<%= category.id %>/editCategory" method="POST" class="categoryCreate-form">
     <div class="div-input">
           <input id="id" name="id" value="category.id" hidden> 
           <label for="category" class="sec-label">Categoría</label>
-          <input type="text" name="category" class="login-data" value="<%= category.name_category %>">
+          <input type="text" name="category" class="login-data" id="category" value="<%= category.name_category %>">
+          </div>
+          <div class="alert-sec-tableCategory">
           </div>
           <button type="submit" class="submit-btn">Editar</button>
           <br>
           <br>
           <br>
           <br>
+          <% if(typeof errores != 'undefined'){ %>
+            <% for(let i = 0; i < errores.length; i++){ %>
+                <% if(errores[i].param == "category"){ %>
+                    <div class="alert"> <%= errores[i].msg %></div>
+                    <% } %>
+                    <% } %>
+                    <% } %>
   </form>
 
 </main>

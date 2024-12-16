@@ -9,9 +9,7 @@ const { validationResult } = require('express-validator');
 const db = require("../database/models");
 const userModel = require('../database/models').Usuarios;
 const typeUser = require('../database/models').TipoUsuario;
-
-const usersFilePath = path.join(__dirname, "../data/users.json");
-//var users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+const { userInfo } = require("os");
 
 const controlador = {
     register: function (req, res) {
@@ -28,6 +26,20 @@ const controlador = {
             })
         }
         const userInfo = req.body;
+
+        // TO DO Verificación de email en db
+       userModel.findOne({
+            where: { email: userInfo.email }
+        }).then( (userEmailValidation) =>{
+            if(userEmailValidation){
+            return res.render('registro', {
+                errors: {
+                     email: { msg: 'El correo ya se encuentra registrado' }
+                    }
+                });
+            }
+        });
+
         //Creando usuario          
         let imagen;
         if(userInfo.img_user){
@@ -76,19 +88,11 @@ const controlador = {
     userLoggedProfile: function (req, res) {
         res.render('user-profile', { 'user': req.user, isAuthenticated: req.user });
     },
-    /* profile: function(req, res){
-         const userId = req.params.id;
-         const userD = users.find((user)=>{
-             return user.id == userId;
-         });
-         res.render("user-profile", {user: userD});
-     },*/
     edit: function (req, res) {
         const userEdit = req.params.id;
-        const userInfo = users.find((user) => {
-            return user.id == userEdit;
-        });
-        res.render("userEdit", { user: userInfo });
+        userModel.findByPk(userEdit). then((userInfo) =>{
+            res.render("userEdit", { user: userInfo });
+        })
     },
     update: function (req, res) {
 
@@ -102,34 +106,29 @@ const controlador = {
             })
         };
 
-        const userEditId = req.params.id;
-        const userAct = req.body;
+        const id = req.params.id;
+        db.Usuarios.findByPk(id).then(userInfo => {
+            if (req.file) {
+                req.body.img_user = '/img/users/' + req.file.filename;
+            } else {
+                req.body.img_user = userInfo.img_user;
+            };
+    
+            db.Usuarios.update({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                img_user: req.body.img_user
+    
+            },{
+                where: {
+                    id: id
+                }
+            }).then(function(){
+                res.redirect('/user-profile')
+            })
+        })
 
-        const userInfo = users.find((user) => {
-            return user.id == userEditId;
-        });
-
-        userInfo.first_name = userAct.first_name;
-        userInfo.last_name = userAct.last_name;
-
-        if (req.file) {
-            userAct.img_user = '/img/users/' + req.file.filename;
-        } else {
-            userAct.img_user = userInfo.img_user;
-        };
-
-        userInfo.img_user = userAct.img_user;
-
-        const userUpdate = users.findIndex((u) => {
-            return u.id == userEditId;
-        });
-
-        users[userUpdate] = userInfo;
-
-        fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
-        res.redirect("/user-profile");
-
-
+            
     },
     delete: function (req, res) {
         const userId = req.params.id;
@@ -158,10 +157,13 @@ const controlador = {
         })
         .then((userToLogin) => {
             if (userToLogin) {
-                let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password);
+                let isOkThePassword = bcrypt.compare(req.body.password, userToLogin.password);
                 if (isOkThePassword) {
                     delete userToLogin.password;
                     req.session.userLogged = userToLogin;
+                    console.log("USER LOGGEADOOOO")
+                    console.log(req.session.userLogged)
+                    console.log("///////////////////")
     
                     if (req.body.recordarUsuario) {
                         res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) * 2 })
@@ -190,7 +192,7 @@ const controlador = {
 
     },
     profile: (req, res) => {
-        console.log(req.cookies.userEmail);
+        console.log(req.session.userLogged);
         return res.render("user-profile", {
             user: req.session.userLogged
         });
@@ -220,10 +222,15 @@ const controlador = {
                 id: id
             }
         }
-        )
-
-        .then(function(){
-            res.redirect('/user-profile')
+        ).then(function(){
+            db.Usuarios.findOne({where:{
+                id: req.params.id
+                },
+                include: [{association: 'tipoUsuario'}]
+            })
+        .then(function(usuario){
+            res.render('user-profile', {user: usuario})
+        })
         })
     }
 }

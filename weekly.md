@@ -122,3 +122,52 @@ Realicé dos de los archivos de los modelos
 
 La siguiente semana planeo:
 Terminar el CRUD correspondiente
+
+WEEKLY SPRINT 7/SEMANA 1
+
+-- Nayeli --
+
+Está semana:
+Estuve trabajando en el CRUD del sprint anterior ya que tengo complicaciones con el manejo de las relaciones entre tablas y el despliegue de datos.
+
+La próxima semana:
+Espero empezar con el Sprint-7.
+
+-- Ana --
+
+Esta semana:
+-Trabajé en hacer cambios y completar los requerimientos del sprint pasado.
+
+La próxima semana:
+-Comenzaré a trabajar en las validaciones del back-end de la sección de Modificar Producto.
+
+-- Leslie --
+
+Esta semana:
+-Trabajé en los requerimientos del CRUD del sprint pasado.
+
+La próxima semana:
+-Comenzaré a trabajar en las validaciones del back-end y front-end de register y login
+
+WEEKLY SPRINT 7/SEMANA 2
+
+-- Nayeli --
+
+Esta semana termine el CRUD del sprint-6 y actualice el tablero de actividades para el Sprint-7.
+La próxima semana espero empezar con las actividades del Sprint-7
+
+-- Ana --
+
+Esta semana:
+-Revisé las actividades asignadas del sprint 7 y continué con las actualizaciones a los requerimientos del sprint pasado.
+
+La siguiente semana:
+-Espero empezar con las validaciones del back-end de Modificar Producto
+
+-- Leslie --
+
+Esta semana:
+-Revisión de las actividades para el sprint 7, completé la retrospectiva del sprint anterior, actualización de actividades del CRUD del sprint 6
+
+La siguiente semana:
+-Comenzar las actividades del sprint 7

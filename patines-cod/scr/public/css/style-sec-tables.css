@@ -98,3 +98,24 @@ main * {
 .table-1 tr:hover {
     background: #A6AAAD;
 }
+
+.alert-sec-tableBrand{
+    font-family: 'Lato', sans-serif;
+    color: red;
+    text-align: center;
+    margin:auto;
+}
+
+.alert-sec-tableCategory{
+    font-family: 'Lato', sans-serif;
+    color: red;
+    text-align: center;
+    margin:auto;
+}
+
+.alert-sec-tableColor{
+    font-family: 'Lato', sans-serif;
+    color: red;
+    text-align: center;
+    margin:auto;
+}
